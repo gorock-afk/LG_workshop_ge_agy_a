@@ -8,14 +8,96 @@
   <style>
     :root {
       --theme-color: #A50034;
-      --base-font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", Roboto, sans-serif;
-      --sidebar-width: 290px;
+      --base-font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", "Malgun Gothic", Roboto, sans-serif;
+      --base-color: #1F2937;
+      --base-background-color: #FFFFFF;
+      --sidebar-width: 300px;
+      --sidebar-background: #F8FAFC;
+      --content-max-width: 1040px;
+
+      /* Inline code (`...`) — High-contrast dark text on soft light gray/pink badge */
+      --code-inline-background: #F1F5F9;
+      --code-inline-color: #9F1239;
+      --code-inline-border-radius: 5px;
+      --code-inline-padding: 0.18em 0.45em;
+
+      /* Multi-line code blocks (```...```) — Dark slate background with bright readable text */
       --code-theme-background: #0F172A;
       --code-theme-text: #F8FAFC;
+      --code-block-border-radius: 8px;
     }
-    .sidebar { background-color: #F8FAFC; border-right: 1px solid #E2E8F0; }
-    .markdown-section pre > code { color: #F8FAFC; background: #0F172A; }
-    .docsify-copy-code-button { background: #A50034 !important; color: #FFFFFF !important; border-radius: 4px !important; font-weight: 700 !important; }
+
+    /* Force crisp contrast for ALL inline code badges (including inside tables and links) */
+    .markdown-section code:not([class*="lang-"]):not([class*="language-"]),
+    .markdown-section :not(pre) > code {
+      background-color: #F1F5F9 !important;
+      color: #9F1239 !important;
+      border: 1px solid #CBD5E1 !important;
+      font-weight: 600 !important;
+      padding: 2px 7px !important;
+      border-radius: 5px !important;
+      font-size: 0.9em !important;
+    }
+
+    /* Links wrapping inline code (e.g. file download links in tables) */
+    .markdown-section a code,
+    .markdown-section a > code {
+      background-color: #FFF1F2 !important;
+      color: #A50034 !important;
+      border: 1px solid #FECDD3 !important;
+      text-decoration: underline !important;
+      font-weight: 700 !important;
+    }
+    .markdown-section a:hover code {
+      background-color: #FFE4E6 !important;
+      color: #881337 !important;
+    }
+
+    /* Multi-line prompt/code blocks (<pre><code>) */
+    .markdown-section pre,
+    .markdown-section pre > code {
+      background-color: #0F172A !important;
+      color: #F8FAFC !important;
+      border: 1px solid #1E293B !important;
+      border-radius: 8px !important;
+      line-height: 1.6 !important;
+      font-weight: 400 !important;
+    }
+
+    /* Clean screenshot framing */
+    .markdown-section img {
+      border: 1px solid #CBD5E1;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+      margin: 8px 0;
+      max-width: 100%;
+    }
+
+    /* Table styling */
+    .markdown-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+    }
+    .markdown-section th {
+      background-color: #F8FAFC !important;
+      color: #111827 !important;
+      font-weight: 700 !important;
+      border-bottom: 2px solid #CBD5E1 !important;
+    }
+    .markdown-section td {
+      color: #1F2937 !important;
+      vertical-align: middle !important;
+    }
+
+    /* Copy button styling */
+    .docsify-copy-code-button {
+      background: #A50034 !important;
+      color: #FFFFFF !important;
+      border-radius: 6px !important;
+      font-weight: 700 !important;
+      padding: 6px 12px !important;
+    }
   </style>
 </head>
 <body>
@@ -43,11 +125,5 @@
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
-  <script type="module">
-    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
-    mermaid.initialize({ startOnLoad: true });
-    window.mermaid = mermaid;
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-mermaid@2/dist/docsify-mermaid.js"></script>
 </body>
 </html>
