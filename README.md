@@ -27,9 +27,11 @@
 
 ---
 
-## 📦 실습 전 준비: 실습 파일 8종 바로 열기 (`./files/`)
+## 📦 실습 전 준비: 실습 파일 한 번에 다운로드 (`LG_Workshop_Files.zip`)
 
-아래 파일명을 클릭하면 내용을 바로 확인하거나 다운로드할 수 있습니다. 2부 실습 전에 내 PC의 로컬 작업 폴더(예: `lg-work-portal`)에 넣어두세요.
+> <strong>📥 번거롭게 하나씩 받지 마세요!</strong> 아래 초록색 버튼을 누르면 오늘 실습에 쓰이는 <strong>8개 파일 전체가 압축된 `LG_Workshop_Files.zip` (32KB)</strong>이 내 PC로 즉시 다운로드됩니다. 다운로드 후 압축을 풀어 작업 폴더(예: `lg-work-portal`)에 넣어두세요.
+>
+> 👉 <a href="./LG_Workshop_Files.zip" download="LG_Workshop_Files.zip"><strong>[📥 실습 파일 8종 전체 ZIP 한 번에 다운로드 (LG_Workshop_Files.zip)]</strong></a>
 
 | 번호 | 파일명 (클릭 시 열기) | 사용 파트 | 파일 역할 및 핵심 내용 |
 | :---: | :--- | :---: | :--- |
