@@ -5,8 +5,8 @@
 > 각 단계마다 <strong>① 화면에서 어디를 보는지</strong> ➔ <strong>② 무엇을 복사해 입력하는지</strong> ➔ <strong>③ 어떤 결과 화면이 나오는지</strong> 순서대로 따라오시면 됩니다.
 >
 > * 🌐 <strong>라이브 웹페이지 버전 (좌측 목차 · 원클릭 복사 · 이미지 클릭 확대)</strong>: <a href="https://gorock-afk.github.io/LG_workshop_ge_agy_a/"><strong>https://gorock-afk.github.io/LG_workshop_ge_agy_a/</strong></a>
-> * 📂 <strong>실습 파일 패키지 (Google Drive 폴더)</strong>: <a href="https://drive.google.com/drive/folders/1dxqldyrsQ7oSRi-d1ieRdDVJmTmQ0r2V"><strong>실습 파일 9종 전체 열기</strong></a>
-> * 📊 <strong>발표 슬라이드 원본 (Google Slides)</strong>: <a href="https://docs.google.com/presentation/d/1IYXVTVUEw_TKte4I1Ff31scmNEY7ueXCZ2i8AKiZWog/edit"><strong>교안 슬라이드 열기</strong></a>
+> * 📂 <strong>실습 파일 패키지 (Google Drive 폴더)</strong>: <a href="./LG_Workshop_Files.zip"><strong>실습 파일 9종 전체 열기</strong></a>
+> * 📊 <strong>발표 슬라이드 원본 (Google Slides)</strong>: <a href="./LG_Workshop_Slides.pdf"><strong>교안 슬라이드 열기</strong></a>
 
 ---
 
