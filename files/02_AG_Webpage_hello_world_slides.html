@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>LG Market Trend Presentation (Starter)</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #F8F9FA; color: #111827; overflow: hidden; }
+    .slide { display: none; width: 100vw; height: 100vh; padding: 72px 96px; flex-direction: column; justify-content: center; background: #FFFFFF; }
+    .slide.active { display: flex; }
+    .badge { font-size: 13px; font-weight: 700; color: #A50034; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
+    h1 { font-size: 48px; line-height: 1.2; margin-bottom: 24px; color: #111827; }
+    p.subtitle { font-size: 22px; color: #4B5563; margin-bottom: 40px; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 16px; }
+    .card { background: #F8F9FA; border: 1px solid #E5E7EB; border-top: 4px solid #A50034; border-radius: 8px; padding: 28px; }
+    .card h3 { font-size: 20px; margin-bottom: 12px; color: #111827; }
+    .card p { font-size: 15px; color: #374151; line-height: 1.6; }
+    .footer-nav { position: fixed; bottom: 24px; right: 48px; font-size: 14px; color: #6B7280; }
+  </style>
+</head>
+<body>
+  <div class="slide active">
+    <div class="badge">HELLO WORLD · SINGLE WEBPAGE PRESENTATION</div>
+    <h1>2026 LG AI 가전 & OLED<br>글로벌 시장 트렌드 브리핑</h1>
+    <p class="subtitle">키보드 좌우 방향키(← / →)를 눌러 슬라이드를 넘겨보세요.</p>
+    <div class="grid">
+      <div class="card"><h3>01. 공감지능(Affectionate Intelligence)</h3><p>온디바이스 AI 칩셋 탑재로 사용자 생활 패턴을 학습하는 초개인화 가전 수요 급증</p></div>
+      <div class="card"><h3>02. 프리미엄 OLED TV 초격차</h3><p>무선 전송 기술 및 AI 화질 업스케일링으로 글로벌 75인치+ 초대형 시장 선도</p></div>
+      <div class="card"><h3>03. 구독 경제 & B2B HVAC 성장</h3><p>가전 구독 케어 서비스 결합률 확대 및 AI 데이터센터 칠러(HVAC) 수주 호조</p></div>
+    </div>
+  </div>
+  <div class="slide">
+    <div class="badge">SLIDE 02 · MARKET INSIGHTS</div>
+    <h1>핵심 마켓 인사이트 & 액션 플랜</h1>
+    <p class="subtitle">.agents/skills/lg-brand-slides/SKILL.md 스킬로 색감(Hex)을 고정하고 내용을 자유롭게 확장해보세요.</p>
+    <div class="grid">
+      <div class="card"><h3>북미 시장 YoY +18%</h3><p>에너지 고효율 히트펌프 건조기 및 워시타워 라인업 판매 호조</p></div>
+      <div class="card"><h3>유럽 시장 친환경 규제 대응</h3><p>EU 에너지 효율 A등급 대비 최대 40% 추가 절감 모델 라인업 확대</p></div>
+      <div class="card"><h3>Next Action</h3><p>이 슬라이드 파일(HTML)을 다음 세션 '나만의 대시보드' 1번 사이드 탭으로 그대로 연결합니다.</p></div>
+    </div>
+  </div>
+  <div class="footer-nav">← / → 방향키로 이동 (<span id="page-num">1 / 2</span>)</div>
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let idx = 0;
+    function show(n) {
+      slides[idx].classList.remove('active');
+      idx = (n + slides.length) % slides.length;
+      slides[idx].classList.add('active');
+      document.getElementById('page-num').innerText = (idx + 1) + ' / ' + slides.length;
+    }
+    window.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight' || e.key === ' ') show(idx + 1);
+      if (e.key === 'ArrowLeft') show(idx - 1);
+    });
+  </script>
+</body>
+</html>
