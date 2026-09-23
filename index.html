@@ -2,128 +2,540 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>LG Electronics · Gemini Enterprise & Antigravity 2.0 실무 핸즈온 가이드</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+  <title>LG Electronics · Gemini Enterprise & Antigravity 2.0 Hands-on Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/marked@13.0.3/marked.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
   <style>
     :root {
-      --theme-color: #A50034;
-      --base-font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", "Malgun Gothic", Roboto, sans-serif;
-      --base-color: #1F2937;
-      --base-background-color: #FFFFFF;
-      --sidebar-width: 300px;
-      --sidebar-background: #F8FAFC;
-      --content-max-width: 1040px;
-
-      /* Inline code (`...`) — High-contrast dark text on soft light gray/pink badge */
-      --code-inline-background: #F1F5F9;
-      --code-inline-color: #9F1239;
-      --code-inline-border-radius: 5px;
-      --code-inline-padding: 0.18em 0.45em;
-
-      /* Multi-line code blocks (```...```) — Dark slate background with bright readable text */
-      --code-theme-background: #0F172A;
-      --code-theme-text: #F8FAFC;
-      --code-block-border-radius: 8px;
+      --lg-red: #A50034;
+      --lg-red-hover: #88002B;
+      --lg-red-light: #FFF1F2;
+      --g-blue: #1a73e8;
+      --g-blue-light: #e8f0fe;
+      --g-green: #1e8e3e;
+      --g-green-light: #e6f4ea;
+      --bg-main: #ffffff;
+      --bg-surface: #f8f9fa;
+      --bg-sidebar: #fafbfd;
+      --text-primary: #202124;
+      --text-secondary: #5f6368;
+      --text-muted: #80868b;
+      --border-color: #dadce0;
+      --divider-color: #e8eaed;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 1px 2px 0 rgba(60,64,67,0.2), 0 1px 3px 1px rgba(60,64,67,0.1);
+      --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+      --font-sans: 'Google Sans', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', Consolas, monospace;
+      --brand-gradient: linear-gradient(90deg, #A50034 0%, #D93025 35%, #1A73E8 75%, #1E8E3E 100%);
     }
 
-    /* Force crisp contrast for ALL inline code badges (including inside tables and links) */
-    .markdown-section code:not([class*="lang-"]):not([class*="language-"]),
-    .markdown-section :not(pre) > code {
-      background-color: #F1F5F9 !important;
-      color: #9F1239 !important;
-      border: 1px solid #CBD5E1 !important;
-      font-weight: 600 !important;
-      padding: 2px 7px !important;
-      border-radius: 5px !important;
-      font-size: 0.9em !important;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg-main);
+      color: var(--text-primary);
+      line-height: 1.68;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* Links wrapping inline code (e.g. file download links in tables) */
-    .markdown-section a code,
-    .markdown-section a > code {
-      background-color: #FFF1F2 !important;
-      color: #A50034 !important;
-      border: 1px solid #FECDD3 !important;
-      text-decoration: underline !important;
-      font-weight: 700 !important;
+    /* Top Progress Bar */
+    .top-brand-bar {
+      height: 4px; background: #e2e8f0; width: 100%; position: fixed; top: 0; left: 0; z-index: 1000;
     }
-    .markdown-section a:hover code {
-      background-color: #FFE4E6 !important;
-      color: #881337 !important;
+    .reading-progress-bar {
+      height: 4px; background: var(--brand-gradient); width: 0%; position: fixed; top: 0; left: 0; z-index: 1001; transition: width 0.1s ease-out;
     }
 
-    /* Multi-line prompt/code blocks (<pre><code>) */
-    .markdown-section pre,
-    .markdown-section pre > code {
-      background-color: #0F172A !important;
-      color: #F8FAFC !important;
-      border: 1px solid #1E293B !important;
-      border-radius: 8px !important;
-      line-height: 1.6 !important;
-      font-weight: 400 !important;
+    /* Sticky Header */
+    header.app-header {
+      position: sticky; top: 4px; background: rgba(255,255,255,0.96); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color); z-index: 990; padding: 0.65rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+    }
+    .header-left { display: flex; align-items: center; gap: 0.75rem; }
+    .brand-pill {
+      background: var(--lg-red); color: #fff; font-weight: 800; font-size: 0.78rem;
+      padding: 0.28rem 0.65rem; border-radius: 6px; letter-spacing: 0.03em;
+    }
+    .header-title { font-weight: 700; font-size: 1.15rem; color: var(--text-primary); letter-spacing: -0.02em; }
+    .header-title span { color: var(--g-blue); }
+
+    /* Part Filter Bar */
+    .part-nav-bar {
+      background: #f8fafc; border-bottom: 1px solid var(--border-color);
+      padding: 0.5rem 1.5rem; position: sticky; top: 57px; z-index: 980;
+      display: flex; align-items: center; gap: 0.45rem; overflow-x: auto;
+    }
+    .part-tab {
+      border: 1px solid #cbd5e1; background: #ffffff; color: #334155;
+      padding: 0.35rem 0.85rem; border-radius: var(--radius-full); font-size: 0.83rem;
+      font-weight: 600; cursor: pointer; white-space: nowrap; transition: all 0.18s ease;
+    }
+    .part-tab:hover { border-color: var(--lg-red); color: var(--lg-red); background: var(--lg-red-light); }
+    .part-tab.active {
+      background: var(--lg-red); color: #ffffff; border-color: var(--lg-red);
+      box-shadow: 0 2px 6px rgba(165, 0, 52, 0.25);
     }
 
-    /* Clean screenshot framing */
-    .markdown-section img {
-      border: 1px solid #CBD5E1;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
-      margin: 8px 0;
-      max-width: 100%;
+    .header-right { display: flex; align-items: center; gap: 0.5rem; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.82rem; font-weight: 600;
+      padding: 0.42rem 0.85rem; border-radius: 8px; text-decoration: none; border: 1px solid var(--border-color);
+      background: #fff; color: var(--text-primary); cursor: pointer; transition: all 0.18s;
+    }
+    .btn:hover { background: #f1f5f9; border-color: #94a3b8; }
+    .btn-primary { background: var(--g-blue); color: #fff; border-color: var(--g-blue); }
+    .btn-primary:hover { background: #1557b0; color: #fff; }
+
+    /* Reader Layout */
+    .portal-layout {
+      display: grid; grid-template-columns: 290px minmax(0, 1fr); max-width: 1380px; margin: 0 auto;
+    }
+    @media (max-width: 980px) {
+      .portal-layout { grid-template-columns: 1fr; }
+      aside.toc-sidebar { display: none; }
     }
 
-    /* Table styling */
-    .markdown-section table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 16px 0;
+    /* Sticky Left TOC */
+    aside.toc-sidebar {
+      position: sticky; top: 102px; height: calc(100vh - 102px); overflow-y: auto;
+      background: var(--bg-sidebar); border-right: 1px solid var(--border-color); padding: 1.25rem 1rem 3rem;
     }
-    .markdown-section th {
-      background-color: #F8FAFC !important;
-      color: #111827 !important;
-      font-weight: 700 !important;
-      border-bottom: 2px solid #CBD5E1 !important;
+    .toc-search-box {
+      width: 100%; padding: 0.5rem 0.75rem; border: 1px solid var(--border-color);
+      border-radius: 8px; font-size: 0.85rem; margin-bottom: 1rem; background: #fff;
     }
-    .markdown-section td {
-      color: #1F2937 !important;
-      vertical-align: middle !important;
+    .toc-header {
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);
+      letter-spacing: 0.05em; margin-bottom: 0.6rem; display: flex; justify-content: space-between;
+    }
+    .toc-link {
+      display: block; text-decoration: none; color: var(--text-secondary); font-size: 0.84rem;
+      padding: 0.38rem 0.65rem; border-radius: 6px; margin-bottom: 2px; line-height: 1.35;
+      border-left: 3px solid transparent; transition: all 0.15s;
+    }
+    .toc-link:hover { background: #eef2f6; color: var(--text-primary); }
+    .toc-link.active {
+      background: var(--lg-red-light); color: var(--lg-red); font-weight: 700; border-left-color: var(--lg-red);
+    }
+    .toc-link.level-1 { font-weight: 700; color: #111827; margin-top: 0.75rem; background: #f1f5f9; }
+    .toc-link.level-3 { padding-left: 1.15rem; font-size: 0.81rem; }
+
+    /* Main Content Area */
+    main.reader-content {
+      padding: 2rem 2.75rem 5rem; max-width: 960px; width: 100%;
+    }
+    @media (max-width: 640px) { main.reader-content { padding: 1.25rem 1rem 4rem; } }
+
+    /* Hero Banner inside Reader */
+    .lab-reader-hero {
+      background: #ffffff; border: 1px solid var(--border-color); border-top: 4px solid var(--lg-red);
+      border-radius: var(--radius-lg); padding: 1.75rem 2rem; margin-bottom: 2rem; box-shadow: var(--shadow-sm);
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem; background: var(--lg-red-light);
+      color: var(--lg-red); font-size: 0.78rem; font-weight: 700; padding: 0.28rem 0.75rem;
+      border-radius: var(--radius-full); margin-bottom: 0.75rem;
+    }
+    .hero-title { font-size: 1.85rem; font-weight: 800; color: #111827; line-height: 1.3; margin-bottom: 0.5rem; }
+    .hero-desc { font-size: 0.98rem; color: var(--text-secondary); margin-bottom: 1rem; }
+    .meta-chips { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+    .meta-chip {
+      font-size: 0.8rem; background: var(--bg-surface); border: 1px solid var(--border-color);
+      padding: 0.28rem 0.7rem; border-radius: var(--radius-full); color: var(--text-secondary); font-weight: 500;
     }
 
-    /* Copy button styling */
-    .docsify-copy-code-button {
-      background: #A50034 !important;
-      color: #FFFFFF !important;
-      border-radius: 6px !important;
-      font-weight: 700 !important;
-      padding: 6px 12px !important;
+    /* Markdown Typography (Codelabs Style) */
+    .markdown-body h1 {
+      font-size: 1.6rem; font-weight: 800; margin-top: 3rem; margin-bottom: 1.2rem;
+      padding: 0.85rem 1.2rem; background: #1e293b; color: #ffffff; border-radius: var(--radius-md);
+      letter-spacing: -0.02em; box-shadow: var(--shadow-sm);
+    }
+
+    /* Milestone Step Header (H2 / H3) */
+    .markdown-body h2, .markdown-body h3 {
+      font-size: 1.22rem; font-weight: 700; margin-top: 2.4rem; margin-bottom: 1rem;
+      padding: 0.75rem 1.1rem; background: linear-gradient(90deg, #fff1f2 0%, #f8fafc 100%);
+      border-left: 4px solid var(--lg-red); border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      border-top: 1px solid #fecdd3; border-right: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;
+      color: #111827; display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap;
+    }
+    .step-pill {
+      background: var(--lg-red); color: #fff; font-size: 0.73rem; font-weight: 700;
+      padding: 0.2rem 0.6rem; border-radius: var(--radius-full); letter-spacing: 0.03em; flex-shrink: 0;
+    }
+    .step-check-btn {
+      margin-left: auto; background: #fff; border: 1px solid #cbd5e1; color: #475569;
+      font-size: 0.75rem; font-weight: 600; padding: 0.22rem 0.6rem; border-radius: 6px; cursor: pointer;
+    }
+    .step-check-btn.done { background: var(--g-green-light); border-color: var(--g-green); color: var(--g-green); }
+
+    .markdown-body p { margin-bottom: 0.85rem; color: #1f2937; font-size: 1rem; }
+    .markdown-body ul, .markdown-body ol { margin-bottom: 1rem; padding-left: 1.5rem; }
+    .markdown-body li { margin-bottom: 0.35rem; }
+
+    /* Crisp Inline Code (`...`) */
+    .markdown-body :not(pre) > code {
+      background: #f1f5f9 !important; color: #9f1239 !important; border: 1px solid #cbd5e1 !important;
+      padding: 0.15rem 0.42rem !important; border-radius: 5px !important; font-family: var(--font-mono) !important;
+      font-size: 0.88em !important; font-weight: 600 !important;
+    }
+    .markdown-body a > code {
+      background: #fff1f2 !important; color: #a50034 !important; border-color: #fecdd3 !important;
+      text-decoration: underline !important; font-weight: 700 !important;
+    }
+
+    /* Callout Blockquotes */
+    .markdown-body blockquote {
+      background: #f8fafc; border-left: 4px solid var(--g-blue); border-radius: 0 10px 10px 0;
+      padding: 0.85rem 1.15rem; margin: 1rem 0; color: #334155; font-size: 0.94rem;
+      border-top: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;
+    }
+
+    /* Interactive Prompt Card (mee-nam-lee style) */
+    .code-block-wrapper {
+      margin: 1.1rem 0 1.35rem; border-radius: var(--radius-md); overflow: hidden;
+      border: 1px solid #bfdbfe; border-left: 4px solid var(--g-blue);
+      background: #ffffff; box-shadow: 0 2px 10px rgba(26, 115, 232, 0.07);
+    }
+    .code-block-wrapper.code-script {
+      border-color: #cbd5e1; border-left-color: #334155;
+    }
+    .code-block-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.48rem 0.95rem; background: linear-gradient(90deg, #eff6ff 0%, #f8fafc 100%);
+      border-bottom: 1px solid #dbeafe; font-size: 0.8rem; font-weight: 700; color: #1d4ed8;
+    }
+    .code-block-wrapper.code-script .code-block-header {
+      background: #f1f5f9; border-bottom-color: #e2e8f0; color: #334155;
+    }
+    .code-copy-btn {
+      display: inline-flex; align-items: center; gap: 0.35rem; background: #ffffff;
+      border: 1px solid #93c5fd; border-radius: 6px; font-size: 0.78rem; font-weight: 700;
+      padding: 0.28rem 0.75rem; cursor: pointer; color: #1d4ed8; transition: all 0.15s;
+    }
+    .code-copy-btn:hover { background: var(--g-blue); color: #fff; border-color: var(--g-blue); }
+    .code-copy-btn.copied { background: var(--g-green) !important; color: #fff !important; border-color: var(--g-green) !important; }
+
+    .markdown-body pre {
+      margin: 0 !important; padding: 1rem 1.15rem !important; background: #ffffff !important;
+      overflow-x: auto; font-family: var(--font-mono); font-size: 0.92rem; line-height: 1.62;
+      color: #0f172a !important; white-space: pre-wrap; word-break: break-word;
+    }
+    .markdown-body pre > code {
+      background: transparent !important; color: inherit !important; border: none !important; padding: 0 !important;
+    }
+
+    /* Smart 680px Screenshot Container + Zoom Lightbox */
+    .screenshot-figure {
+      margin: 1rem 0 1.6rem; display: flex; flex-direction: column; align-items: flex-start;
+    }
+    .screenshot-frame {
+      position: relative; display: inline-block; max-width: 680px; width: 100%;
+      border: 1px solid #cbd5e1; border-radius: 10px; overflow: hidden;
+      box-shadow: var(--shadow-md); background: #f8fafc; cursor: zoom-in; transition: transform 0.18s, box-shadow 0.18s;
+    }
+    .screenshot-frame:hover {
+      transform: translateY(-2px); box-shadow: 0 8px 20px rgba(15, 23, 42, 0.13); border-color: var(--g-blue);
+    }
+    .screenshot-frame img {
+      display: block; width: 100%; height: auto; max-height: 440px; object-fit: contain; background: #fff;
+    }
+    .zoom-hint {
+      position: absolute; bottom: 8px; right: 10px; background: rgba(15, 23, 42, 0.75);
+      color: #fff; font-size: 0.72rem; font-weight: 600; padding: 3px 8px; border-radius: 6px;
+      pointer-events: none; backdrop-filter: blur(4px);
+    }
+    .screenshot-caption {
+      margin-top: 0.42rem; font-size: 0.83rem; color: var(--text-secondary); font-weight: 500;
+      display: flex; align-items: center; gap: 0.35rem;
+    }
+
+    /* Tables */
+    .markdown-body table {
+      width: 100%; border-collapse: collapse; margin: 1.1rem 0 1.5rem; font-size: 0.9rem;
+      border: 1px solid var(--border-color); border-radius: 10px; overflow: hidden;
+    }
+    .markdown-body th {
+      background: #f8fafc; color: #111827; font-weight: 700; padding: 0.7rem 0.9rem;
+      border-bottom: 2px solid var(--border-color); text-align: left;
+    }
+    .markdown-body td {
+      padding: 0.65rem 0.9rem; border-bottom: 1px solid var(--divider-color); color: #1f2937;
+    }
+
+    /* Lightbox Modal */
+    .lightbox-overlay {
+      display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.88);
+      z-index: 2000; align-items: center; justify-content: center; padding: 2rem; cursor: zoom-out;
+    }
+    .lightbox-overlay.open { display: flex; }
+    .lightbox-overlay img {
+      max-width: 94vw; max-height: 90vh; border-radius: 10px; box-shadow: 0 12px 36px rgba(0,0,0,0.5); background: #fff;
     }
   </style>
 </head>
 <body>
-  <div id="app">로딩 중...</div>
+  <div class="top-brand-bar"></div>
+  <div class="reading-progress-bar" id="progress-bar"></div>
+
+  <header class="app-header">
+    <div class="header-left">
+      <span class="brand-pill">LG ELECTRONICS</span>
+      <div class="header-title">Gemini Enterprise &amp; <span>Antigravity 2.0</span> 실습 포털</div>
+    </div>
+    <div class="header-right">
+      <span id="done-counter" style="font-size:0.82rem; font-weight:700; color:var(--g-green); background:var(--g-green-light); padding:0.32rem 0.7rem; border-radius:999px;">✓ 완료: 0 스텝</span>
+      <a href="https://drive.google.com/drive/folders/1dxqldyrsQ7oSRi-d1ieRdDVJmTmQ0r2V" target="_blank" class="btn">📂 실습 파일 폴더</a>
+      <a href="https://docs.google.com/presentation/d/1IYXVTVUEw_TKte4I1Ff31scmNEY7ueXCZ2i8AKiZWog/edit" target="_blank" class="btn btn-primary">📊 발표 슬라이드 열기</a>
+    </div>
+  </header>
+
+  <nav class="part-nav-bar" id="part-nav">
+    <button class="part-tab active" onclick="filterPart('all', this)">🗺️ 전체 코스 보기 (Part 1~5)</button>
+    <button class="part-tab" onclick="filterPart('part-1', this)">🌐 Part 1. GE 프로젝트 &amp; 지침</button>
+    <button class="part-tab" onclick="filterPart('part-2', this)">⚡ Part 2. GE Workflow &amp; HITL</button>
+    <button class="part-tab" onclick="filterPart('part-3', this)">💻 Part 3. AG 웹 슬라이드</button>
+    <button class="part-tab" onclick="filterPart('part-4', this)">📊 Part 4. 실시간 대시보드 &amp; Skill</button>
+    <button class="part-tab" onclick="filterPart('part-5', this)">📈 Part 5. 가전 CSV &amp; 95점 게이트</button>
+  </nav>
+
+  <div class="portal-layout">
+    <aside class="toc-sidebar">
+      <input type="text" class="toc-search-box" id="toc-search" placeholder="🔍 스텝, 커맨드(/grill-me) 검색..." oninput="filterToc(this.value)">
+      <div class="toc-header">
+        <span>실습 단계 목차</span>
+        <span id="toc-count"></span>
+      </div>
+      <div id="toc-container"></div>
+    </aside>
+
+    <main class="reader-content">
+      <div class="lab-reader-hero">
+        <div class="hero-badge">⚡ HANDS-ON LAB PORTAL · 화면만 보고 바로 따라하는 가이드</div>
+        <h1 class="hero-title">LG Electronics · GE &amp; Antigravity 2.0 실무 마스터 코스</h1>
+        <p class="hero-desc">
+          상단 탭에서 원하는 <strong>Part(1~5)</strong>를 선택하거나 순서대로 따라오세요. 모든 프롬프트 박스는 <strong>[📋 프롬프트 복사]</strong> 버튼으로 즉시 복사되며, 모든 화면 캡처는 클릭 시 원본 크기로 확대됩니다.
+        </p>
+        <div class="meta-chips">
+          <span class="meta-chip">⏱️ 총 소요시간: <strong>3시간 (1부 GE 1h + 2부 AG 2h)</strong></span>
+          <span class="meta-chip">🤖 권장 모델: <strong>Gemini 3.8 Flash</strong></span>
+          <span class="meta-chip">🖼️ 모든 이미지 클릭 시 <strong>원본 확대(Zoom)</strong> 지원</span>
+        </div>
+      </div>
+
+      <div id="markdown-container" class="markdown-body">로딩 중...</div>
+    </main>
+  </div>
+
+  <div class="lightbox-overlay" id="lightbox" onclick="this.classList.remove('open')">
+    <img id="lightbox-img" src="" alt="확대 이미지">
+  </div>
+
   <script>
-    window.$docsify = {
-      name: "LG · GE & Antigravity 2.0",
-      repo: "",
-      loadSidebar: false,
-      subMaxLevel: 3,
-      auto2top: true,
-      search: {
-        placeholder: "프롬프트, 커맨드(/grill-me), 키워드 검색...",
-        noData: "검색 결과가 없습니다.",
-        depth: 3
-      },
-      copyCode: {
-        buttonText: "📋 프롬프트 복사",
-        errorText: "오류",
-        successText: "✅ 복사됨!"
-      }
-    };
+    let allSections = [];
+
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      document.getElementById('progress-bar').style.width = (height > 0 ? (winScroll / height) * 100 : 0) + '%';
+      updateActiveToc();
+    });
+
+    async function initPortal() {
+      const res = await fetch('./README.md');
+      let md = await res.text();
+      // Remove top title/hero from README since our custom hero renders it cleanly
+      md = md.replace(/^# 🚀[\s\S]*?---
+/, '');
+      const container = document.getElementById('markdown-container');
+      container.innerHTML = marked.parse(md);
+
+      enhanceHeadingsAndSections(container);
+      enhancePromptCards(container);
+      enhanceScreenshots(container);
+      buildToc();
+      updateDoneCount();
+    }
+
+    function enhanceHeadingsAndSections(container) {
+      // Wrap content into logical Part blocks for instant Part tab filtering
+      const children = Array.from(container.children);
+      let currentPart = 'intro';
+      const wrappers = {};
+
+      children.forEach(el => {
+        if (el.tagName === 'H1') {
+          const txt = el.textContent;
+          if (txt.includes('Part 1')) currentPart = 'part-1';
+          else if (txt.includes('Part 2')) currentPart = 'part-2';
+          else if (txt.includes('Part 3')) currentPart = 'part-3';
+          else if (txt.includes('Part 4')) currentPart = 'part-4';
+          else if (txt.includes('Part 5')) currentPart = 'part-5';
+          else currentPart = 'intro';
+        }
+        el.setAttribute('data-part', currentPart);
+      });
+
+      const headings = container.querySelectorAll('h1, h2, h3');
+      headings.forEach((h, idx) => {
+        const text = h.textContent.trim();
+        const slug = 'step-' + idx;
+        h.id = slug;
+
+        if (h.tagName === 'H3' && text.includes('Step')) {
+          const match = text.match(/(Step\s+[0-9\-]+)/i);
+          const pillText = match ? match[1].toUpperCase() : 'STEP';
+          const cleanTitle = text.replace(/^🔹\s*Step\s+[0-9\-]+\.\s*/i, '');
+          const saved = localStorage.getItem('lg_ws_' + slug) === '1';
+          h.innerHTML = `
+            <span class="step-pill">${pillText}</span>
+            <span style="flex:1;">${cleanTitle}</span>
+            <button class="step-check-btn ${saved ? 'done' : ''}" onclick="toggleStepDone('${slug}', this)">
+              ${saved ? '✓ 실습 완료됨' : '○ 완료 체크'}
+            </button>
+          `;
+        }
+      });
+    }
+
+    function toggleStepDone(slug, btn) {
+      const isDone = btn.classList.toggle('done');
+      localStorage.setItem('lg_ws_' + slug, isDone ? '1' : '0');
+      btn.textContent = isDone ? '✓ 실습 완료됨' : '○ 완료 체크';
+      updateDoneCount();
+    }
+
+    function updateDoneCount() {
+      const total = document.querySelectorAll('.step-check-btn').length;
+      const done = document.querySelectorAll('.step-check-btn.done').length;
+      document.getElementById('done-counter').textContent = `✓ 진행률: ${done} / ${total} 완료`;
+    }
+
+    function enhancePromptCards(container) {
+      container.querySelectorAll('pre').forEach(pre => {
+        const code = pre.querySelector('code');
+        const lang = code ? (code.className || '') : '';
+        const isScript = lang.includes('python') || lang.includes('bash');
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'code-block-wrapper ' + (isScript ? 'code-script' : 'prompt-card');
+        if (pre.getAttribute('data-part')) wrapper.setAttribute('data-part', pre.getAttribute('data-part'));
+
+        const header = document.createElement('div');
+        header.className = 'code-block-header';
+        header.innerHTML = `
+          <span>${isScript ? '🐍 실행 코드 / 스크립트' : '✨ 대화창에 그대로 복사해 붙여넣을 프롬프트'}</span>
+          <button class="code-copy-btn" onclick="copyBlock(this)">📋 ${isScript ? '코드 복사' : '프롬프트 복사'}</button>
+        `;
+        pre.parentNode.insertBefore(wrapper, pre);
+        wrapper.appendChild(header);
+        wrapper.appendChild(pre);
+
+        if (isScript && window.hljs && code) hljs.highlightElement(code);
+      });
+    }
+
+    function copyBlock(btn) {
+      const pre = btn.closest('.code-block-wrapper').querySelector('pre');
+      navigator.clipboard.writeText(pre.innerText.trim());
+      const orig = btn.innerHTML;
+      btn.classList.add('copied');
+      btn.innerHTML = '✅ 복사 완료!';
+      setTimeout(() => { btn.classList.remove('copied'); btn.innerHTML = orig; }, 1800);
+    }
+
+    function enhanceScreenshots(container) {
+      container.querySelectorAll('img').forEach(img => {
+        const alt = img.getAttribute('alt') || '실습 화면 가이드';
+        const src = img.getAttribute('src');
+        const fig = document.createElement('div');
+        fig.className = 'screenshot-figure';
+        const pPart = img.closest('[data-part]');
+        if (pPart) fig.setAttribute('data-part', pPart.getAttribute('data-part'));
+
+        fig.innerHTML = `
+          <div class="screenshot-frame" onclick="openLightbox('${src}')">
+            <img src="${src}" alt="${alt}" loading="lazy">
+            <span class="zoom-hint">🔍 클릭하여 크게 보기</span>
+          </div>
+          <div class="screenshot-caption">👆 ${alt}</div>
+        `;
+        const parentP = img.parentElement;
+        if (parentP && parentP.tagName === 'P' && parentP.childNodes.length === 1) {
+          parentP.replaceWith(fig);
+        } else {
+          img.replaceWith(fig);
+        }
+      });
+    }
+
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('open');
+    }
+
+    function buildToc() {
+      const toc = document.getElementById('toc-container');
+      toc.innerHTML = '';
+      allSections = Array.from(document.querySelectorAll('#markdown-container h1, #markdown-container h2, #markdown-container h3'));
+      document.getElementById('toc-count').textContent = allSections.length + '개 항목';
+
+      allSections.forEach(h => {
+        const a = document.createElement('a');
+        a.href = '#' + h.id;
+        const lv = h.tagName === 'H1' ? 1 : (h.tagName === 'H2' ? 2 : 3);
+        a.className = 'toc-link level-' + lv;
+        a.setAttribute('data-part', h.getAttribute('data-part') || 'all');
+        a.textContent = h.textContent.replace('○ 완료 체크', '').replace('✓ 실습 완료됨', '').trim();
+        toc.appendChild(a);
+      });
+    }
+
+    function filterToc(q) {
+      const query = q.toLowerCase();
+      document.querySelectorAll('.toc-link').forEach(a => {
+        a.style.display = a.textContent.toLowerCase().includes(query) ? 'block' : 'none';
+      });
+    }
+
+    function filterPart(partId, btn) {
+      document.querySelectorAll('.part-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      document.querySelectorAll('#markdown-container > [data-part]').forEach(el => {
+        if (partId === 'all' || el.getAttribute('data-part') === partId || (partId === 'part-1' && el.getAttribute('data-part') === 'intro')) {
+          el.style.display = '';
+        } else {
+          el.style.display = 'none';
+        }
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function updateActiveToc() {
+      let currentId = '';
+      allSections.forEach(h => {
+        if (h.offsetParent !== null && window.scrollY >= h.offsetTop - 160) {
+          currentId = h.id;
+        }
+      });
+      document.querySelectorAll('.toc-link').forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + currentId);
+      });
+    }
+
+    initPortal();
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
 </body>
 </html>

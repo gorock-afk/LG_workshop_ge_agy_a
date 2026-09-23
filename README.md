@@ -51,12 +51,11 @@
 > <strong>🎯 왜 하나요?</strong>  
 > 개인 채팅창이 아니라 팀 전용 <strong>`Project`</strong>를 만들고 우측 상단 <strong>`Invite+`</strong>로 팀원을 초대(`Editor` 권한)하면, 프로젝트에 등록한 사내 보고서 양식(`Knowledge`)을 팀원 모두가 똑같이 공유받게 됩니다.
 
-#### 1️⃣ 따라하기 순서
 1. 크롬에서 <strong>Gemini Enterprise</strong> 접속 ➔ 좌측 메뉴 <strong>`Projects` ➔ `[+ New Project]`</strong> 클릭
 2. 프로젝트 이름(예: `LG` 또는 `LG-Market-Trends`)을 입력하고 우측 상단 <strong>`Invite+`</strong> 버튼을 눌러 팀원 이메일 추가 (권한: <strong>`Editor`</strong>)
 3. 좌측 사이드바 <strong>`Team`</strong> 메뉴에서 초대된 팀원이 정상 추가되었는지 확인
 
-#### 🖼️ 실제 화면 확인 (`우측 상단 Invite 버튼 & 좌측 Knowledge / Team 메뉴`)
+👉 **화면 확인 포인트:** (`우측 상단 Invite 버튼 & 좌측 Knowledge / Team 메뉴`)
 ![Step 1-1 프로젝트 생성 및 팀원 공유 화면](assets/screenshots/slide_04_ui_1.png)
 
 ---
@@ -66,7 +65,6 @@
 > <strong>🎯 왜 하나요?</strong>  
 > 매번 프롬프트에 긴 보고서 서식을 붙여넣지 않아도, <strong>`Knowledge`</strong>에 [`01_GE_Workflow_lg_weekly_report_template.md`](./files/01_GE_Workflow_lg_weekly_report_template.md) 파일을 한 번만 올려두면 언제든 사내 표준 보고서 포맷(`Executive Summary` + `비교표` + `인라인 출처`)으로 출력됩니다.
 
-#### 1️⃣ 따라하기 순서
 1. 좌측 사이드바 <strong>`Knowledge`</strong> 메뉴 클릭 ➔ 실습 파일 <strong>[`01_GE_Workflow_lg_weekly_report_template.md`](./files/01_GE_Workflow_lg_weekly_report_template.md)</strong> 업로드
 2. 업로드가 완료되면 <strong>`New chat`</strong>을 눌러 아래 프롬프트를 그대로 복사해 입력합니다:
 
@@ -74,7 +72,7 @@
 최근 1개월간 LG 전자 프리미엄 시장 트렌드를 조사해서 템플릿 '01_lg_weekly_report_template.md' 양식으로 출력해줘
 ```
 
-#### 🖼️ 실제 결과 화면 (`01_lg_weekly_report_template.md` 서식이 자동 반영된 보고서)
+👉 **실행 결과 화면:** (`01_lg_weekly_report_template.md` 서식이 자동 반영된 보고서)
 ![Step 1-2 Knowledge 양식 기반 LG전자 프리미엄 시장 트렌드 보고서 생성 화면](assets/screenshots/slide_05_ui_1.png)
 
 ---
@@ -86,12 +84,11 @@
 > <strong>🎯 왜 하나요?</strong>  
 > 매주 반복되는 <strong>`트렌드 수집` ➔ `양식 정리(01_template.md)` ➔ `사람 최종 검토(Approval)` ➔ `Gmail 초안 생성`</strong> 과정을 하나의 정형화된 파이프라인으로 묶어 자동화합니다.
 
-#### 1️⃣ 따라하기 순서
 1. 좌측 메뉴 <strong>`New Agent` ➔ `Workflow`</strong> 선택
 2. 아래 화면과 같이 노드를 차례대로 연결합니다:
    - <strong>`Manual` (또는 Schedule)</strong> ➔ <strong>`Gemini Agent` (트렌드 뉴스 수집)</strong> ➔ <strong>`Gemini Agent 1` (`01_template.md` 양식 포맷팅, `Step Output` 변수 전달)</strong> ➔ <strong>`Approval` (사람의 개입 HITL)</strong> ➔ <strong>`Gemini Agent 2` (Gmail 드래프트 생성)</strong>
 
-#### 🖼️ 실제 화면 확인 (`Approval` 노드에서 `Approved` / `Rejected` 갈림길이 연결된 워크플로우)
+👉 **화면 확인 포인트:** (`Approval` 노드에서 `Approved` / `Rejected` 갈림길이 연결된 워크플로우)
 ![Step 2-1 워크플로우 에이전트 및 Approval 노드 연결 화면](assets/screenshots/slide_07_ui_1.png)
 
 ---
@@ -101,24 +98,22 @@
 > <strong>🎯 왜 하나요?</strong>  
 > AI가 검증되지 않은 수치를 상사에게 바로 발송하는 사고를 막기 위해, <strong>`Approval` 노드에서 실행이 일시 정지</strong>되고 사람이 내용을 검토한 뒤 <strong>`[Approved]`를 눌렀을 때만</strong> Gmail 임시보관함 생성 단계로 넘어갑니다.
 
-#### 1️⃣ 따라하기 순서
 1. 상단 <strong>`Test`</strong> 탭에서 워크플로우를 실행하면, 보고서 초안 생성 직후 <strong>`Approval`</strong> 단계에서 자동 대기 상태가 됩니다.
 2. 생성된 보고서의 수치 출처와 내용을 검토한 뒤 <strong>`[Approved]`</strong>를 클릭합니다.
 3. 우측 패널에 초록색 체크와 함께 <strong>`The AI trends report workflow has completed, and a Gmail draft has been successfully created for you.`</strong> 완료 메시지가 뜨는지 확인합니다.
 
-#### 🖼️ 실제 화면 확인 (`Approval` 통과 후 Gmail Draft 생성 완료 메시지)
+👉 **화면 확인 포인트:** (`Approval` 통과 후 Gmail Draft 생성 완료 메시지)
 ![Step 2-2 HITL 승인 완료 및 Gmail Draft 생성 완료 화면](assets/screenshots/slide_08_ui_1.png)
 
 ---
 
 ### 🔹 Step 2-3. 내 Gmail `[임시보관함(Drafts)]`에서 보고 메일 확인 & 본문 복사하기 (슬라이드 9)
 
-#### 1️⃣ 따라하기 순서
 1. 내 <strong>Gmail</strong>을 열고 좌측 <strong>`임시보관함(Drafts)`</strong> 탭을 클릭합니다.
 2. 방금 워크플로우가 만들어 놓은 <strong>`[사내 표준] 주간 LG 제품 시장 트렌드 보고서`</strong> 메일을 엽니다.
 3. 상단 `📌 [Executive Summary] 금주 핵심 요약 (3줄)`, 중앙 `📊 제품군별 글로벌 시장 트렌드 비교표`, 하단 `🚨 [HITL 검수 게이트] 확인 사항`까지 표 서식이 깔끔하게 들어왔는지 확인하고, <strong>메일 본문 전체를 드래그해 복사(`Ctrl + C`)</strong>합니다. *(이제 이 본문을 2부 Antigravity에 붙여넣어 웹 슬라이드로 변신시킵니다!)*
 
-#### 🖼️ 실제 화면 확인 (내 Gmail 임시보관함에 생성된 `[사내 표준] 주간 LG 제품 시장 트렌드 보고서`)
+👉 **화면 확인 포인트:** (내 Gmail 임시보관함에 생성된 `[사내 표준] 주간 LG 제품 시장 트렌드 보고서`)
 ![Step 2-3 내 Gmail 임시보관함에 저장된 사내 표준 주간 트렌드 보고서 화면](assets/screenshots/slide_09_ui_1.png)
 
 ---
@@ -170,7 +165,6 @@
 
 ### 🔹 Step 3-2. 생성된 발표용 웹 슬라이드(`index.html`) 브라우저 시연 & 방향키(`←`/`→`) 확인 (슬라이드 13)
 
-#### 1️⃣ 따라하기 순서
 1. 에이전트가 생성한 `index.html` (또는 스타터 파일 [`02_AG_Webpage_hello_world_slides.html`](./files/02_AG_Webpage_hello_world_slides.html))을 브라우저에서 엽니다.
 2. 키보드 <strong>좌우 방향키(`←` / `→`)</strong> 또는 `Space` 키로 슬라이드를 넘겨보고, `N` 키(발표자 노트)와 `F` 키(전체화면)를 눌러봅니다.
 3. *(확인 포인트: 아래 두 화면처럼 슬라이드 구조와 차트는 멋지게 나왔지만, <strong>아직 LG 브랜드 컬러 스킬을 입히기 전이라 기본 다크 블루(`#1a73e8`) 색감</strong>으로 만들어진 상태입니다!)*
@@ -203,7 +197,6 @@
 > <strong>🎯 왜 하나요?</strong>  
 > 슬라이드를 수정할 때마다 색상이 파란색·보라색으로 제멋대로 바뀌는 것을 막기 위해, 실습 파일 [`02_AG_Webpage_lg_brand_slides_SKILL.md`](./files/02_AG_Webpage_lg_brand_slides_SKILL.md)를 스킬(`lg-brand-slides`)로 등록하고 호출하여 <strong>모든 슬라이드를 LG 시그니처 레드(`#A50034`) 포인트 + 순백색(`#FFFFFF`) 배경 + 라이트그레이(`#F8F9FA`) 카드</strong>로 단번에 고정합니다!
 
-#### 1️⃣ 따라하기 순서
 1. 실습 폴더의 <strong>[`02_AG_Webpage_lg_brand_slides_SKILL.md`](./files/02_AG_Webpage_lg_brand_slides_SKILL.md)</strong> 파일을 프로젝트 스킬(`.agents/skills/lg-brand-slides/SKILL.md`)에 넣거나 `/learn`으로 학습시킵니다. *(스킬이 안 보일 때는 `Ctrl + R` 또는 `View ➔ Reload`)*
 2. 채팅창에 아래 프롬프트를 복사해 입력합니다 (슬라이드 15 원문 그대로!):
 
@@ -211,7 +204,7 @@
 /lg-brand-slides 스킬을 적용해서 지금 웹 프레젠테이션의 색감(Hex)을 LG 브랜드 컬러(#A50034 포인트 & 화이트/그레이 배경)로 고정하여 다시 제작해줘.
 ```
 
-#### 🖼️ 실제 결과 화면 (다크 블루였던 슬라이드가 화이트 + LG 시그니처 레드 `#A50034`로 100% 변환된 모습!)
+👉 **실행 결과 화면:** (다크 블루였던 슬라이드가 화이트 + LG 시그니처 레드 `#A50034`로 100% 변환된 모습!)
 ![Step 3-4 LG 브랜드 컬러(#A50034) 스킬이 적용된 Slide 1 화면](assets/screenshots/slide_15_ui_1.png)
 
 ![Step 3-4 LG 브랜드 컬러(#A50034) 스킬이 적용된 Slide 2 차트 화면](assets/screenshots/slide_15_ui_2.png)
@@ -230,7 +223,7 @@
 /grill-me 평소 자주 쓰는 업무들을 왼쪽 사이드 탭에 차례차례 추가하는 나만의 대시보드를 만들고 싶어. html/js을 사용하는게 좋을것 같아. 사이드바 1번 메뉴를 'LG 시장 트렌드'로 만들고, 방금 만든 웹 슬라이드 페이지를 이 사이드바 메뉴 안에 넣어줘.
 ```
 
-#### 🖼️ 실제 결과 화면 (`업무 메뉴` 좌측 사이드바 `1. LG 시장 트렌드` 탭 안에 웹 슬라이드가 탑재된 포털!)
+👉 **실행 결과 화면:** (`업무 메뉴` 좌측 사이드바 `1. LG 시장 트렌드` 탭 안에 웹 슬라이드가 탑재된 포털!)
 ![Step 4-1 왼쪽 사이드바 1번 메뉴에 LG 시장 트렌드 슬라이드가 탑재된 대시보드 화면](assets/screenshots/slide_17_ui_1.png)
 
 ---
@@ -264,7 +257,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 [2] /python-api-trend 스킬을 실행해 사이드바 '실시간 시장·뉴스(LIVE)' 탭에 LG전자(066570) 실시간 주가·환율(USD/KRW, EUR/KRW)과 구글 뉴스 헤드라인 5건(클릭 시 원문 이동)을 연결해줘.
 ```
 
-#### 🖼️ 실제 결과 화면 (`실시간 시장·뉴스 LIVE` 탭 — LG전자 `214,500원 +5.93%`, 환율 `1,372.18원`, 실시간 뉴스 5건)
+👉 **실행 결과 화면:** (`실시간 시장·뉴스 LIVE` 탭 — LG전자 `214,500원 +5.93%`, 환율 `1,372.18원`, 실시간 뉴스 5건)
 ![Step 4-2 실시간 시장·뉴스 LIVE 탭에 LG전자 주가·환율·구글 뉴스가 연동된 화면](assets/screenshots/slide_18_ui_1.png)
 
 ---
@@ -306,7 +299,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 @04_AG_Analytics_lg_appliance_data.csv 이 LG 가전·TV 데이터의 제품군별(OLED evo, 워시타워, 디오스, HVAC, 스탠바이미) 결측치(ThinQ 점수 빈 값)와 마진 계산 시 주의할 이상치(스탠바이미 시제품 매출 0원)를 먼저 진단해줘. 아직 코드는 짜지 마.
 ```
 
-#### 🖼️ 실제 결과 화면 (전체 920건 중 `thinq_satisfaction_score` 결측치 <strong>총 23건(2.50%)</strong> 제품군별 정밀 포착!)
+👉 **실행 결과 화면:** (전체 920건 중 `thinq_satisfaction_score` 결측치 <strong>총 23건(2.50%)</strong> 제품군별 정밀 포착!)
 ![Step 5-1 제품군별 ThinQ 만족도 점수 결측치 23건 진단 표 화면](assets/screenshots/slide_22_ui_1.png)
 
 ---
@@ -322,7 +315,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 [2] 스탠바이미 시제품(매출 0원, 18건) 분리 처리(포함/제외 토글 필터)와 워시타워 ThinQ 결측치(23건) 스마트 보정 리포트, 제품군별 매출·마진율 차트 및 권역별 HaaS 구독 전환율 차트도 넣어줘.
 ```
 
-#### 🖼️ 실제 결과 화면 (상단 4대 KPI 카드 + `시제품 18건 포함/제외` 필터 + 이상치·결측치 리포트 + 차트 2종 완성!)
+👉 **실행 결과 화면:** (상단 4대 KPI 카드 + `시제품 18건 포함/제외` 필터 + 이상치·결측치 리포트 + 차트 2종 완성!)
 ![Step 5-2 4번째 가전 실적·구독 분석 탭 전체 완성 화면](assets/screenshots/slide_26_ui_1.png)
 
 ![Step 5-2 가전 실적·구독 분석 탭 하단 상세 경영 지표 테이블 화면](assets/screenshots/slide_23_ui_1.png)
@@ -339,7 +332,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 /browser 로컬 대시보드에 접속해서 사이드 탭 전환과 제품군 필터('OLED evo', 'StanbyME 시제품') 클릭 시 콘솔 에러나 0 나눗셈 오류가 없는지 검증해
 ```
 
-#### 🖼️ 실제 화면 확인 (에이전트가 스스로 Chrome을 실행해 Tab 1, Tab 2, Tab 4를 캡처·분석하는 과정)
+👉 **화면 확인 포인트:** (에이전트가 스스로 Chrome을 실행해 Tab 1, Tab 2, Tab 4를 캡처·분석하는 과정)
 ![Step 5-3 에이전트가 브라우저를 직접 실행해 각 탭을 캡처 및 검증하는 화면](assets/screenshots/slide_24_ui_1.png)
 
 ---
@@ -355,7 +348,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 너는 품질 감사관이야. @index.html 을 100점 만점 채점해. 90점 미만이면 감점 요인을 직접 고쳐서 90점을 넘길 때까지 재채점 루프를 반복하고, 통과 후 /learn으로 저장해줘.
 ```
 
-#### 🖼️ 실제 결과 화면 (`1차 점수 82점` ➔ 자동 패치 후 `2차 점수 99점 🏆 [품질 인증 기준 통과]` 및 `/learn` 영구 저장 안내!)
+👉 **실행 결과 화면:** (`1차 점수 82점` ➔ 자동 패치 후 `2차 점수 99점 🏆 [품질 인증 기준 통과]` 및 `/learn` 영구 저장 안내!)
 ![Step 5-4 새 세션 품질 감사관 1차 82점 ➔ 2차 99점 통과 및 learn 저장 안내 화면](assets/screenshots/slide_25_ui_1.png)
 
 ---
