@@ -3,6 +3,7 @@
 > **화면만 보고 바로 따라하는 직관적 실습 매뉴얼 (`Step-by-Step Visual Guide`)**  
 > 복잡한 이론 설명 대신 **① 화면 어디를 클릭하는지(실제 UI 캡처)** ➔ **② 무엇을 복사해서 붙여넣는지(프롬프트·코드)** ➔ **③ 어떤 화면이 나오면 성공인지(결과 UI)** 순서로만 구성했습니다.
 >
+> * 🌐 **라이브 웹페이지 버전 (좌측 목차 · 원클릭 복사 · 이미지 확대)**: **[https://gorock-afk.github.io/LG_workshop_ge_agy_a/](https://gorock-afk.github.io/LG_workshop_ge_agy_a/)**
 > * 📂 **실습 파일 폴더 (Google Drive)**: [실습 파일 전체 다운로드](https://drive.google.com/drive/folders/1dxqldyrsQ7oSRi-d1ieRdDVJmTmQ0r2V)
 > * 📊 **발표 슬라이드 원본 (Google Slides)**: [교안 슬라이드 열기](https://docs.google.com/presentation/d/1IYXVTVUEw_TKte4I1Ff31scmNEY7ueXCZ2i8AKiZWog/edit)
 
