@@ -13,7 +13,7 @@
 ## 🗺️ 0. 오늘 함께 완성할 5단계 누적 빌드업 로드맵 (총 3시간)
 
 오늘 실습은 단발성 예제를 여러 개 만드는 과정이 아닙니다.  
-<strong>1부(크롬 GE Web, 1시간)</strong>에서 만든 <strong>LG 프리미엄 가전·OLED 주간 트렌드 보고서(Gmail 드래프트)</strong>를 <strong>2부(Antigravity 2.0, 2시간)</strong>로 가져와 <strong>발표용 웹 슬라이드(`index.html`)</strong>로 변환하고, 여기에 <strong>왼쪽 사이드바 포털(`1. LG 시장 트렌드` ➔ `2. 실시간 시장·뉴스 LIVE` ➔ `3. 가전 실적·구독 분석 NEW`)</strong>을 단계별로 누적 빌드업하여 완성합니다.
+<strong>1부(크롬 GE Web, 1시간)</strong>에서는 팀 공유 <strong>`Project Knowledge`</strong>와 <strong>`HITL 승인 워크플로우`</strong>로 주간 트렌드 보고서 이메일 자동화를 완성하고, <strong>2부(Antigravity 2.0, 2시간)</strong>에서는 한 줄 프롬프트로 만든 <strong>LG 가전 트렌드 발표용 웹 슬라이드(`index.html`)</strong>에 <strong>왼쪽 사이드바 포털(`1. LG 시장 트렌드` ➔ `2. 실시간 시장·뉴스 LIVE` ➔ `3. 가전 실적·구독 분석 NEW`)</strong>을 단계별로 누적 빌드업하여 완성합니다.
 
 ![5단계 누적 빌드업 로드맵 다이어그램](assets/screenshots/slide_02_ui_1.png)
 
@@ -99,7 +99,7 @@
    - <strong>`Manual` (또는 Schedule)</strong> ➔ <strong>`Gemini Agent` (트렌드 뉴스 수집)</strong> ➔ <strong>`Gemini Agent 1` (`01_template.txt` 양식 포맷팅, `Step Output` 변수 전달)</strong> ➔ <strong>`Approval` (사람의 개입 HITL)</strong> ➔ <strong>`Gemini Agent 2` (Gmail 드래프트 생성)</strong>
 3. ⚠️ <strong>[외부 환경 주의 포인트 2가지]</strong>
    - <strong>포인트 ① (`Workflow` 내 양식 연결)</strong>: `Workflow` 에이전트는 Part 1의 `Project Knowledge`와 저장소가 분리되어 있습니다. 따라서 두 번째 <strong>`Gemini Agent 1` 노드의 우측 설정창 `Knowledge`에 [`01_GE_Workflow_lg_weekly_report_template.txt`](./files/01_GE_Workflow_lg_weekly_report_template.txt) 파일을 직접 업로드</strong>하거나, 파일 내용을 복사해 `Instructions` 칸에 바로 붙여넣어 주세요.
-   - <strong>포인트 ② (외부 계정에서 `Gmail` 연동 권한이 없을 때)</strong>: 만약 실습 계정에 Google Workspace `Gmail` 커넥터(OAuth)가 비활성화되어 있다면, 마지막 `Gemini Agent 2` 노드에서 Gmail 도구 대신 <strong>"승인된 보고서를 이메일 발송용 제목/본문 포맷으로 화면에 바로 출력해줘"</strong>라고 지시한 뒤 출력된 결과를 드래그해 복사(`Ctrl + C`)하시면 Part 3 실습으로 100% 동일하게 이어집니다!
+   - <strong>포인트 ② (외부 계정에서 `Gmail` 연동 권한이 없을 때)</strong>: 만약 실습 계정에 Google Workspace `Gmail` 커넥터(OAuth)가 비활성화되어 있다면, 마지막 `Gemini Agent 2` 노드에서 Gmail 도구 대신 <strong>"승인된 보고서를 이메일 발송용 제목/본문 포맷으로 화면에 바로 출력해줘"</strong>라고 지시하여 최종 보고서 포맷을 확인하시면 됩니다.
 
 👉 **화면 확인 포인트:** (`Approval` 노드에서 `Approved` / `Rejected` 갈림길이 연결된 워크플로우)
 ![Step 2-1 워크플로우 에이전트 및 Approval 노드 연결 화면](assets/screenshots/slide_07_ui_1.png)
@@ -120,11 +120,11 @@
 
 ---
 
-### 🔹 Step 2-3. 내 Gmail `[임시보관함(Drafts)]`에서 보고 메일 확인 & 본문 복사하기 (슬라이드 9)
+### 🔹 Step 2-3. 내 Gmail `[임시보관함(Drafts)]`에 생성된 사내 표준 보고 메일 최종 확인하기 (슬라이드 9)
 
 1. 내 <strong>Gmail</strong>을 열고 좌측 <strong>`임시보관함(Drafts)`</strong> 탭을 클릭합니다.
 2. 방금 워크플로우가 만들어 놓은 <strong>`[사내 표준] 주간 LG 제품 시장 트렌드 보고서`</strong> 메일을 엽니다.
-3. 상단 `📌 [Executive Summary] 금주 핵심 요약 (3줄)`, 중앙 `📊 제품군별 글로벌 시장 트렌드 비교표`, 하단 `🚨 [HITL 검수 게이트] 확인 사항`까지 표 서식이 깔끔하게 들어왔는지 확인하고, <strong>메일 본문 전체를 드래그해 복사(`Ctrl + C`)</strong>합니다. *(이제 이 본문을 2부 Antigravity에 붙여넣어 웹 슬라이드로 변신시킵니다!)*
+3. 상단 `📌 [Executive Summary] 금주 핵심 요약 (3줄)`, 중앙 `📊 제품군별 글로벌 시장 트렌드 비교표`, 하단 `🚨 [HITL 검수 게이트] 확인 사항`까지 표 서식이 깔끔하게 들어왔는지 확인합니다.
 
 👉 **화면 확인 포인트:** (내 Gmail 임시보관함에 생성된 `[사내 표준] 주간 LG 제품 시장 트렌드 보고서`)
 ![Step 2-3 내 Gmail 임시보관함에 저장된 사내 표준 주간 트렌드 보고서 화면](assets/screenshots/slide_09_ui_1.png)
@@ -165,7 +165,7 @@
 > 처음부터 완벽한 프롬프트를 길게 쓰려고 애쓸 필요가 없습니다. <strong>`/grill-me`</strong> 한 줄만 치면 에이전트가 먼저 <strong>객관식 역질문 카드</strong>를 띄워 기획을 구체화해 주고, 깔끔한 <strong>`Implementation Plan`(구현 계획서)</strong>을 만들어 <strong>`[Proceed]`</strong> 버튼 하나로 코딩을 시작합니다.
 
 #### 1️⃣ 작업 폴더 열기 & `/grill-me` 프롬프트 입력
-로컬 작업 폴더(예: `C:/Users/abcd/lg-work-portal`)를 열고, 채팅창에 아래 한 줄을 복사해 입력합니다 (Part 2에서 복사한 Gmail 보고서 본문을 함께 붙여넣어도 좋습니다):
+로컬 작업 폴더(예: `C:/Users/abcd/lg-work-portal`)를 열고, 채팅창에 아래 한 줄 프롬프트를 복사해 입력합니다:
 
 ```text
 /grill-me LG AI 가전 트렌드 보고서를 임원 발표용 Single Webpage 슬라이드로 만들고 싶어.
