@@ -92,76 +92,119 @@
 ### 🔹 Step 2-1. 트렌드 조사 + 양식 포맷팅 + 사람 승인(`Approval`)을 Workflow로 연결하기 (슬라이드 7)
 
 > <strong>🎯 왜 하나요?</strong>  
-> 매주 반복되는 <strong>`트렌드 수집` ➔ `양식 정리(01_template.txt)` ➔ `사람 최종 검토(Approval)` ➔ `Gmail 초안 생성`</strong> 과정을 하나의 정형화된 파이프라인으로 묶어 자동화합니다.
+> 매주 반복되는 <strong>`트렌드 수집` ➔ `양식 정리(01_template.txt)` ➔ `사람 최종 검토(Approval)` ➔ `Gmail 초안 생성`</strong> 과정을 하나의 정형화된 파이프라인으로 묶어 자동화합니다. 특히 앞 단계의 결과물을 다음 단계가 요약·누락 없이 그대로 이어받도록 <strong>`Structured output`에 단일 변수 `content` (`Text`) 하나만 지정</strong>하여 가장 직관적으로 연결합니다.
 
-1. 좌측 메뉴 <strong>`New Agent` ➔ `Workflow`</strong> 선택
-2. 아래 화면과 같이 <strong>5개 노드를 차례대로 연결</strong>하고, 앞 단계의 출력을 다음 단계가 흔들림 없이(Deterministic) 그대로 받아 쓸 수 있도록 <strong>`Structured output`에 단일 변수 `content` (`Text`) 하나만 지정</strong>하여 심플하게 구성합니다:
-   - <strong>`Manual` (또는 Schedule)</strong> ➔ <strong>`Gemini Agent` (트렌드 뉴스 수집 · `content` 변수 출력)</strong> ➔ <strong>`Gemini Agent 1` (`01_template.txt` 양식 포맷팅 · `content` 변수 출력)</strong> ➔ <strong>`Approval` (사람의 개입 HITL)</strong> ➔ <strong>`Gemini Agent 2` (Gmail 드래프트 생성)</strong>
-
----
-
-#### ① `Manual` (또는 `Schedule`) — 시작 트리거 노드
-* **노드 선택**: 첫 번째 루트 노드로 **`Manual`** (수동 실행 테스트용) 또는 **`Schedule`** (정기 자동 실행)을 선택합니다.
+* **전체 연결 흐름 (5단계 노드)**:
+  - <strong>`Manual` (시작 트리거)</strong> ➔ <strong>`Gemini Agent` (트렌드 뉴스 수집 · `content` 출력)</strong> ➔ <strong>`Gemini Agent 1` (`01_template.txt` 양식 포맷팅 · `content` 출력)</strong> ➔ <strong>`Approval` (사람의 개입 HITL)</strong> ➔ <strong>`Gemini Agent 2` (Gmail 드래프트 생성)</strong>
 
 ---
 
-#### ② `Gemini Agent` — 1단계: 트렌드 뉴스 수집 & `content` 변수 출력
-* **노드 추가**: `Manual` 노드 아래 `+` 버튼 클릭 ➔ **`Gemini Agent`** 선택
-* **우측 패널 세팅사항**:
-  - **`Connected apps` / `Tools`**: **`Google Search`** (웹 검색 그라운딩) 켜기
-  - **`Output` (`Structured output` 단일 변수 설정 — 핵심!)**:
-    1. 우측 패널 하단 **`Output`** 섹션에서 `Plain text` 대신 **`Structured output`** 선택 ➔ **`[Define output schema]`** 버튼 클릭
-    2. **`Output Format`** 팝업창에서 아래 **변수 딱 1개만** 입력한 뒤 **`[Apply Schema]`** 클릭:
-       - **필드명**: **`content`** | **타입**: **`Text`** *(설명: 조사된 LG전자 프리미엄 가전·OLED 트렌드 뉴스 및 출처 전체 텍스트)*
-* **`Instructions` 입력 프롬프트** (우측 패널 `Instructions` 칸에 복사·붙여넣기):
+#### 0️⃣ 워크플로우 생성 시작 — `Build manually` (수동 빌더 진입)
+1. 좌측 메뉴에서 <strong>`New Agent` ➔ `Workflow`</strong>를 클릭합니다.
+2. **"Let's build your workflow"** 시작 화면 우측 하단의 <strong>`🔧 Build manually`</strong> 버튼을 클릭해 캔버스 편집기를 엽니다.
+
+![Step 2-1-0 Workflow 시작 화면 우측 하단 Build manually 버튼 클릭](assets/screenshots/wf_step_01.png)
+
+---
+
+#### ① `1. Manual` — 시작 트리거 노드 & 입력 필드(`content`) 설정
+1. **루트 트리거 확인**: 캔버스 상단에 기본 생성된 <strong>`1 Manual`</strong> 노드를 클릭하고 우측 패널의 `Trigger type`이 <strong>`Manual`</strong>(수동 실행)로 되어 있는지 확인합니다.
+
+![Step 2-1-1 Manual 시작 트리거 노드 확인](assets/screenshots/wf_step_02.png)
+
+2. **`Input fields`에 `content` 필드 추가**: 우측 패널 <strong>`Input fields`</strong> 옆의 <strong>`+ Add field`</strong>를 클릭한 뒤, 팝업창에 필드명 <strong>`content`</strong> (타입: <strong>`Text`</strong>)를 입력하고 <strong>`Save`</strong>를 누릅니다.
+
+![Step 2-1-2 Manual 노드 Input fields에 content(Text) 추가 및 Save](assets/screenshots/wf_step_03.png)
+
+---
+
+#### ② `2. Gemini Agent` — 1단계: 트렌드 뉴스 수집 & `Structured output`(`content`) 설정
+1. **노드 추가 및 프롬프트 입력**: `Manual` 노드 아래 <strong>`+ Add step`</strong> 클릭 ➔ 첫 번째 <strong>`Gemini Agent`</strong>를 추가합니다. 우측 패널 <strong>`Connected apps`</strong>에 <strong>`Google Search` (G 아이콘)</strong>가 켜져 있는지 확인하고, <strong>`Instructions`</strong> 칸에 아래 프롬프트를 입력합니다:
 
 ```text
-최근 1개월간 LG전자 프리미엄 AI 가전(OLED evo, 워시타워, 디오스, HVAC, 스탠바이미) 및 글로벌 경쟁사 시장 트렌드 뉴스를 조사해서 핵심 요약, 제품군별 시장 동향·수치, 출처 링크([매체명, 날짜])를 상세히 정리해 content 변수에 담아줘.
+최근 1개월간 LG전자 프리미엄 AI 가전(OLED evo, 워시타워, 디오스, HVAC, 스탠바이미) 및 글로벌 경쟁사 시장 트렌드 뉴스를 조사해서 핵심 요약, 제품군별 시장 동향·수치, 출처 링크([매체명, 날짜])를 상세히 정리해줘.
 ```
+
+![Step 2-1-3 첫 번째 Gemini Agent 프롬프트 입력 및 Google Search 활성화 확인](assets/screenshots/wf_step_04.png)
+
+2. **`More` ➔ `Output`을 `Structured output`으로 변경**: 우측 패널 맨 아래 <strong>`More`</strong>를 클릭해 펼친 뒤, <strong>`Output`</strong> 드롭다운(`Plain text`)을 눌러 <strong>`Structured output` (`Define a manual JSON schema`)</strong>을 선택합니다.
+
+![Step 2-1-4 우측 패널 하단 More 펼치기 및 Output에서 Structured output 선택](assets/screenshots/wf_step_05.png)
+
+3. **`Output Format`에 `content` (`Text`) 단일 변수 등록**: <strong>`+ Define output schema`</strong>를 클릭해 팝업창을 열고, 필드명 <strong>`content`</strong> (타입: <strong>`Text`</strong>) **딱 1개만** 입력한 뒤 우측 하단 <strong>`Apply Schema`</strong>를 클릭합니다. (설정이 완료되면 우측 패널 Output 아래에 `= content` 칩이 표시됩니다.)
+
+![Step 2-1-5 Output Format 팝업에서 content(Text) 단일 변수 정의 및 Apply Schema 클릭](assets/screenshots/wf_step_06.png)
 
 ---
 
-#### ③ `Gemini Agent 1` — 2단계: `01_template.txt` 사내 표준 양식 포맷팅 & `content` 변수 출력
-* **노드 추가**: 첫 번째 `Gemini Agent` 아래 `+` 버튼 클릭 ➔ 두 번째 **`Gemini Agent`** (`Gemini Agent 1`) 추가
-* **우측 패널 세팅사항**:
-  - **`Files` (`Add file`)**: **`[+ Add file]`** 클릭 ➔ 실습 파일 **[`01_GE_Workflow_lg_weekly_report_template.txt`](./files/01_GE_Workflow_lg_weekly_report_template.txt)** 업로드
-  - **`Output` (`Structured output` 단일 변수 설정)**:
-    1. 우측 패널 **`Output`**에서 **`Structured output`** 선택 ➔ **`[Define output schema]`** 클릭
-    2. 마찬가지로 다음 노드가 그대로 받아 쓸 수 있도록 **변수 딱 1개만** 입력 후 **`[Apply Schema]`** 클릭:
-       - **필드명**: **`content`** | **타입**: **`Text`** *(설명: `01_GE_Workflow_lg_weekly_report_template.txt` 양식으로 포맷팅이 완료된 최종 주간 트렌드 보고서 전문)*
-* **`Instructions` 입력 프롬프트** (`@`를 입력해 이전 `Gemini Agent`의 `@content` 변수를 선택하여 삽입):
+#### ③ `3. Gemini Agent 1` — 2단계: `01_template.txt` 사내 표준 양식 포맷팅 & `content` 변수 전달
+1. **이전 단계 `content` 변수 불러오기 (`+` ➔ `{} Variables`)**: 첫 번째 `Gemini Agent` 아래 <strong>`+ Add step`</strong>을 눌러 두 번째 에이전트(<strong>`Gemini Agent 1`</strong>)를 추가합니다. 우측 <strong>`Instructions`</strong> 입력창 우측 하단의 <strong>`+` 아이콘</strong>을 클릭하고 <strong>`{} Variables`</strong>를 선택합니다.
+
+![Step 2-1-6 Gemini Agent 1 Instructions 입력창 하단 + 버튼 클릭 후 Variables 선택](assets/screenshots/wf_step_07.png)
+
+2. **`2 ✨ Gemini Agent: content` 클릭 및 지시문 작성**: 변수 목록에서 앞 단계의 출력 변수인 <strong>`2 ✨ Gemini Agent: content` (`Text`)</strong>를 클릭해 삽입하고, 아래와 같이 양식 변환 프롬프트를 작성합니다:
 
 ```text
-첨부된 01_GE_Workflow_lg_weekly_report_template.txt 사내 표준 보고서 양식에 맞춰, 이전 단계(Gemini Agent)에서 전달된 @content 내용을 바탕으로 주간 LG 제품 시장 트렌드 보고서 전문(1. 금주 핵심 요약, 2. 제품군별 비교표, 3. HITL 검수 게이트)을 작성해 content 변수에 담아줘.
+[= Gemini Agent: content]
+첨부된 사내 표준 보고서 양식(01_GE_Workflow_lg_weekly_report_template.txt)에 맞춰 위 트렌드 조사 내용을 주간 LG 제품 시장 트렌드 보고서 전문으로 포맷팅해줘.
 ```
+
+![Step 2-1-7 Variables 목록에서 2 Gemini Agent: content 선택하여 프롬프트에 삽입](assets/screenshots/wf_step_08.png)
+
+3. **`Files`에 사내 표준 양식(`.txt`) 업로드**: 우측 패널 중앙의 <strong>`Files 0`</strong> 옆 <strong>`+` 버튼 (`Ground the agent in your data`)</strong>을 클릭하여 실습 파일 **[`01_GE_Workflow_lg_weekly_report_template.txt`](./files/01_GE_Workflow_lg_weekly_report_template.txt)**를 업로드합니다.
+
+![Step 2-1-8 Gemini Agent 1 우측 패널 Files + 버튼을 눌러 01_template.txt 양식 업로드](assets/screenshots/wf_step_09.png)
+
+4. **`Files 1` 업로드 확인 & `Structured output` (`= content`) 설정**: 파일이 업로드되어 <strong>`Files 1`</strong>로 바뀐 것을 확인하고, 1단계와 동일하게 하단 <strong>`More` ➔ `Output` ➔ `Structured output`</strong>을 선택해 <strong>`content` (`Text`)</strong> 단일 변수를 등록합니다.
+
+![Step 2-1-9 Files 1 업로드 완료 및 More > Output에 Structured output(= content) 설정 완료 화면](assets/screenshots/wf_step_10.png)
 
 ---
 
-#### ④ `Approval` — 3단계: `HITL (Human-in-the-Loop)` 사람 검토·승인 게이트
-* **노드 추가**: `Gemini Agent 1` 아래 `+` 버튼 클릭 ➔ **`Approval`** 노드 선택 (하단에 초록색 **`Approved`** / 회색 **`Rejected`** 분기 자동 생성)
-* **우측 패널 세팅사항 (`Approval` ➔ `Message`)**:
-  - 사람이 승인 팝업에서 바로 보고서 전문을 확인하고 판단할 수 있도록 **`Message`** 입력칸에 이전 단계(`Gemini Agent 1`)의 `@content` 변수를 넣어줍니다:
+#### ④ `4. Approval` — 3단계: `HITL (Human-in-the-Loop)` 사람 검토·승인 게이트
+1. **`Human in the Loop` ➔ `Approval` 노드 추가**: `Gemini Agent 1` 아래 <strong>`+ Add step`</strong>을 클릭한 뒤, 우측 패널에서 <strong>`Human in the Loop`</strong> 카테고리를 펼치고 <strong>`Approval`</strong>을 선택합니다. (캔버스에 초록색 `Approved` / 회색 `Rejected` 갈림길이 자동 생성됩니다.)
+
+![Step 2-1-10 + Add step 클릭 후 Human in the Loop > Approval 선택](assets/screenshots/wf_step_11.png)
+
+2. **`Approval` ➔ `Message`에 `3 ✨ Gemini Agent 1: content` 변수 삽입**: 우측 패널 <strong>`Message`</strong> 입력칸 우측 하단의 <strong>`+` 아이콘 ➔ `{} Variables`</strong>를 누르고, 포맷팅이 완료된 보고서 변수인 <strong>`3 ✨ Gemini Agent 1: content` (`Text`)</strong>를 클릭합니다.
+
+![Step 2-1-11 Approval 노드의 Message 칸에서 + > Variables > 3 Gemini Agent 1: content 선택](assets/screenshots/wf_step_12.png)
+
+3. **결재 요청 문구 작성**: 삽입된 <strong>`= Gemini Agent 1: content`</strong> 칩 아래에 아래와 같이 결재 확인 문구를 입력합니다:
 
 ```text
-작성된 주간 트렌드 보고서(@content)의 핵심 수치와 인라인 출처를 검토한 뒤 승인(Approved) 여부를 선택해 주세요. 승인 시 내 Gmail 임시보관함(Drafts)에 보고 메일이 생성됩니다.
+[= Gemini Agent 1: content]
+결재하시겠습니까?
 ```
+
+![Step 2-1-12 Approval Message에 Gemini Agent 1: content 칩과 결재하시겠습니까 문구 입력 완료](assets/screenshots/wf_step_13.png)
 
 ---
 
-#### ⑤ `Gemini Agent 2` — 4단계: 승인(`Approved`) 시 내 Gmail 임시보관함 드래프트 생성
-* **노드 추가**: `Approval` 노드 아래의 초록색 **`Approved` 분기 아래 `+` 버튼** 클릭 ➔ **`Gemini Agent`** (`Gemini Agent 2`) 추가
-* **우측 패널 세팅사항**:
-  - **`Connected apps` / `Tools`**: **`Gmail`** 앱 켜기 (`Create draft` 도구 활성화)
-  - **`Output`**: 최종 단계이므로 기본값 **`Plain text`** 유지
-* **`Instructions` 입력 프롬프트** (`Gemini Agent 1`의 `@content` 변수 참조):
+#### ⑤ `5. Gemini Agent 2` — 4단계: 승인(`Approved`) 시 내 Gmail 임시보관함 드래프트 생성
+1. **`Approved` 분기 아래에 `Gemini Agent 2` 추가 & `content` 변수 삽입**: 캔버스의 초록색 <strong>`Approved`</strong> 경로 아래 <strong>`+` 버튼</strong>을 눌러 <strong>`Gemini Agent 2`</strong>를 추가합니다. 우측 <strong>`Instructions`</strong> 칸에서 <strong>`+` ➔ `{} Variables` ➔ `3 ✨ Gemini Agent 1: content` (`Text`)</strong>를 클릭해 승인된 보고서 본문을 불러옵니다.
+
+![Step 2-1-13 Approved 분기 아래 Gemini Agent 2 추가 후 Instructions에 3 Gemini Agent 1: content 삽입](assets/screenshots/wf_step_14.png)
+
+2. **`Connected apps`에서 `Mail` (Gmail) 연동 켜기**: 우측 패널의 <strong>`Connected apps`</strong>를 클릭해 펼친 뒤, <strong>`Mail` (Gmail 아이콘)</strong> 우측 토글 스위치를 <strong>ON (파란색)</strong>으로 켭니다.
+
+![Step 2-1-14 Gemini Agent 2의 Connected apps에서 Mail(Gmail) 토글 활성화](assets/screenshots/wf_step_15.png)
+
+3. **Gmail 드래프트 생성 프롬프트 완성**: `Instructions`의 <strong>`= Gemini Agent 1: content`</strong> 칩 뒤에 아래 지시문을 입력합니다 (최종 단계이므로 `Output`은 기본 `Plain text` 그대로 둡니다):
 
 ```text
-사람의 최종 승인(Approved)이 완료되었습니다.
-Gmail 도구를 사용하여 내 이메일 주소(본인 계정)를 수신자로 하고, 제목은 "[사내 표준] 주간 LG 제품 시장 트렌드 보고서", 본문은 이전 단계(Gemini Agent 1)에서 작성된 @content 전문을 그대로 넣어 Gmail 임시보관함(Draft) 메일을 생성해줘.
+[= Gemini Agent 1: content]
+해당 내용으로 메일 드래프트를 써놔
 ```
 
-👉 **화면 확인 포인트:** (`Manual` ➔ `Gemini Agent` ➔ `Gemini Agent 1` ➔ `Approval` (`Approved` / `Rejected`) ➔ `Gemini Agent 2` 5단계 연결 화면)
-![Step 2-1 워크플로우 에이전트 및 Approval 노드 연결 화면](assets/screenshots/slide_07_ui_1.png)
+![Step 2-1-15 Gemini Agent 2 Instructions에 메일 드래프트 작성 지시문 입력 및 Mail 앱 연동 확인](assets/screenshots/wf_step_16.png)
+
+---
+
+#### ⑥ 워크플로우 활성화(`Turn on`) 및 테스트(`Test`) 실행
+* 5개 노드(`Manual` ➔ `Gemini Agent` ➔ `Gemini Agent 1` ➔ `Approval` ➔ `Gemini Agent 2`) 설정이 모두 끝났다면, 화면 우측 상단의 파란색 <strong>`Turn on`</strong> 버튼을 눌러 워크플로우를 활성화하고 좌측 상단의 <strong>`Test`</strong> 탭을 눌러 실행을 시작합니다!
+
+![Step 2-1-16 상단 Test 탭 및 우측 상단 Turn on 버튼 클릭으로 워크플로우 실행](assets/screenshots/wf_step_17.png)
 
 ---
 
