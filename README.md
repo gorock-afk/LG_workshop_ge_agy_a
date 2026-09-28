@@ -65,9 +65,6 @@
 
 > <strong>🎯 왜 하나요?</strong>  
 > 매번 프롬프트에 긴 보고서 서식을 붙여넣지 않아도, <strong>`Knowledge`</strong>에 [`01_GE_Workflow_lg_weekly_report_template.txt`](./files/01_GE_Workflow_lg_weekly_report_template.txt) 파일을 한 번만 올려두면 언제든 사내 표준 보고서 포맷(`Executive Summary` + `비교표` + `인라인 출처`)으로 출력됩니다.
->
-> 💡 <strong>[중요 팁] 왜 `.md`가 아니라 `.txt` 파일을 올리나요?</strong>  
-> 크롬 Gemini Enterprise의 <strong>일반 채팅창(`+` 첨부)</strong>에서는 `.md` 파일이 바로 첨부되지만, <strong>`Projects ➔ Knowledge ➔ Upload files`</strong> 업로더는 시스템 정책상 <strong>`.txt`, `.pdf`, `.docx`, `.pptx`, `.xlsx`, `.csv`, `.html`</strong> 포맷만 허용합니다 (`.md` 확장자는 파일 선택 창에서 비활성화됨). 따라서 프로젝트 Knowledge에는 반드시 <strong>`.txt` 버전(`01_GE_Workflow_lg_weekly_report_template.txt`)을 업로드</strong>하거나, <strong>`Upload ➔ Paste text`(텍스트 직접 붙여넣기)</strong>로 양식을 등록해 주세요!
 
 1. 좌측 사이드바 <strong>`Knowledge`</strong> 메뉴 ➔ 우측 <strong>`Upload` (`Add`)</strong> 클릭 ➔ <strong>`Upload files`</strong>에서 실습 파일 <strong>[`01_GE_Workflow_lg_weekly_report_template.txt`](./files/01_GE_Workflow_lg_weekly_report_template.txt)</strong> 업로드 *(또는 `Paste text`를 눌러 파일 내용 붙여넣기)*
 2. 업로드가 완료되면 <strong>`New chat`</strong>을 눌러 아래 프롬프트를 그대로 복사해 입력합니다:
