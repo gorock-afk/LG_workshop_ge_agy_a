@@ -19,7 +19,7 @@
 
 | 파트 (시간) | 실습 환경 | 내가 직접 만드는 누적 산출물 | 핵심 사용 기능 |
 | :--- | :---: | :--- | :--- |
-| <strong>Part 1 (30분)</strong> | 🌐 크롬 GE Web | <strong>[주간 동향 보고서] LG전자 프리미엄 시장 트렌드 분석 보고서</strong> | `Projects` (`Invite+`) + `Knowledge` (`01_template.md`) |
+| <strong>Part 1 (30분)</strong> | 🌐 크롬 GE Web | <strong>[주간 동향 보고서] LG전자 프리미엄 시장 트렌드 분석 보고서</strong> | `Projects` (`Invite+`) + `Knowledge` (`01_template.txt`) |
 | <strong>Part 2 (30분)</strong> | 🌐 크롬 GE Web | <strong>내 Gmail 임시보관함(`Drafts`)에 저장된 사내 표준 보고 메일</strong> | `Workflow` 에이전트 연결 + <strong>`Approval (HITL 사람 승인)`</strong> |
 | <strong>Part 3 (30분)</strong> | 💻 Antigravity 2.0 | <strong>LG 브랜드 컬러(`#A50034` 레드 + 화이트) 고정 웹 슬라이드(`index.html`)</strong> | 세팅 점검 + `/grill-me` · `Proceed` · `/btw` · `/learn` + `/lg-brand-slides` |
 | <strong>Part 4 (30분)</strong> | 💻 Antigravity 2.0 | <strong>좌측 사이드 탭 업무 포털 (`탭 1: 트렌드 슬라이드` + `탭 2: 실시간 시세·뉴스`)</strong> | <strong>15줄 무인증 파이썬 코드</strong> 스킬 등록 + 우측 상단 `Pull` 버튼 & `/schedule` |
@@ -35,7 +35,7 @@
 
 | 번호 | 파일명 (클릭 시 열기) | 사용 파트 | 파일 역할 및 핵심 내용 |
 | :---: | :--- | :---: | :--- |
-| <strong>01</strong> | [`01_GE_Workflow_lg_weekly_report_template.md`](./files/01_GE_Workflow_lg_weekly_report_template.md) | <strong>Part 1~2</strong> | 크롬 GE `Knowledge`에 업로드할 <strong>사내 주간 트렌드 보고서 표준 서식</strong> |
+| <strong>01</strong> | [`01_GE_Workflow_lg_weekly_report_template.txt`](./files/01_GE_Workflow_lg_weekly_report_template.txt) | <strong>Part 1~2</strong> | 크롬 GE `Project Knowledge`에 업로드할 <strong>사내 주간 트렌드 보고서 표준 서식 (`.txt`)</strong> *(일반 채팅 첨부용 [`.md`](./files/01_GE_Workflow_lg_weekly_report_template.md) 동봉)* |
 | <strong>02</strong> | [`02_AG_Webpage_hello_world_slides.html`](./files/02_AG_Webpage_hello_world_slides.html) | <strong>Part 3</strong> | 방향키(`←`/`→`)로 넘기는 <strong>웹 슬라이드 스타터 파일</strong> |
 | <strong>03</strong> | [`02_AG_Webpage_lg_brand_slides_SKILL.md`](./files/02_AG_Webpage_lg_brand_slides_SKILL.md) | <strong>Part 3</strong> | 다크 블루 화면을 <strong>LG 시그니처 레드(`#A50034`) + 화이트 배경</strong>으로 고정하는 스킬 |
 | <strong>04</strong> | [`03_AG_Dashboard_fetch_lg_live_market.py`](./files/03_AG_Dashboard_fetch_lg_live_market.py) | <strong>Part 4</strong> | <strong>API 키·설치 불필요!</strong> 15줄 무인증 LG전자(`066570`) 현재가·환율·구글 뉴스 수집 코드 |
@@ -65,13 +65,16 @@
 ### 🔹 Step 1-2. 프로젝트 `Knowledge`(양식 파일) 등록 & 주간 트렌드 보고서 생성 (슬라이드 5)
 
 > <strong>🎯 왜 하나요?</strong>  
-> 매번 프롬프트에 긴 보고서 서식을 붙여넣지 않아도, <strong>`Knowledge`</strong>에 [`01_GE_Workflow_lg_weekly_report_template.md`](./files/01_GE_Workflow_lg_weekly_report_template.md) 파일을 한 번만 올려두면 언제든 사내 표준 보고서 포맷(`Executive Summary` + `비교표` + `인라인 출처`)으로 출력됩니다.
+> 매번 프롬프트에 긴 보고서 서식을 붙여넣지 않아도, <strong>`Knowledge`</strong>에 [`01_GE_Workflow_lg_weekly_report_template.txt`](./files/01_GE_Workflow_lg_weekly_report_template.txt) 파일을 한 번만 올려두면 언제든 사내 표준 보고서 포맷(`Executive Summary` + `비교표` + `인라인 출처`)으로 출력됩니다.
+>
+> 💡 <strong>[중요 팁] 왜 `.md`가 아니라 `.txt` 파일을 올리나요?</strong>  
+> 크롬 Gemini Enterprise의 <strong>일반 채팅창(`+` 첨부)</strong>에서는 `.md` 파일이 바로 첨부되지만, <strong>`Projects ➔ Knowledge ➔ Upload files`</strong> 업로더는 시스템 정책상 <strong>`.txt`, `.pdf`, `.docx`, `.pptx`, `.xlsx`, `.csv`, `.html`</strong> 포맷만 허용합니다 (`.md` 확장자는 파일 선택 창에서 비활성화됨). 따라서 프로젝트 Knowledge에는 반드시 <strong>`.txt` 버전(`01_GE_Workflow_lg_weekly_report_template.txt`)을 업로드</strong>하거나, <strong>`Upload ➔ Paste text`(텍스트 직접 붙여넣기)</strong>로 양식을 등록해 주세요!
 
-1. 좌측 사이드바 <strong>`Knowledge`</strong> 메뉴 클릭 ➔ 실습 파일 <strong>[`01_GE_Workflow_lg_weekly_report_template.md`](./files/01_GE_Workflow_lg_weekly_report_template.md)</strong> 업로드
+1. 좌측 사이드바 <strong>`Knowledge`</strong> 메뉴 ➔ 우측 <strong>`Upload` (`Add`)</strong> 클릭 ➔ <strong>`Upload files`</strong>에서 실습 파일 <strong>[`01_GE_Workflow_lg_weekly_report_template.txt`](./files/01_GE_Workflow_lg_weekly_report_template.txt)</strong> 업로드 *(또는 `Paste text`를 눌러 파일 내용 붙여넣기)*
 2. 업로드가 완료되면 <strong>`New chat`</strong>을 눌러 아래 프롬프트를 그대로 복사해 입력합니다:
 
 ```text
-최근 1개월간 LG 전자 프리미엄 시장 트렌드를 조사해서 템플릿 '01_lg_weekly_report_template.md' 양식으로 출력해줘
+최근 1개월간 LG 전자 프리미엄 시장 트렌드를 조사해서 프로젝트 Knowledge에 등록된 주간 트렌드 보고서 템플릿 양식으로 출력해줘
 ```
 
 👉 **실행 결과 화면:** (`01_lg_weekly_report_template.md` 서식이 자동 반영된 보고서)
@@ -84,7 +87,7 @@
 > <strong>⏱️ 빨리 끝낸 분들을 위한 실무 확장 미션 (15분)</strong>  
 > 기본 프롬프트 복붙만으로는 5분 만에 끝날 수 있습니다! 실제 내 현업 업무에 바로 쓸 수 있도록 아래 2가지 미션을 직접 수행해 보세요.
 
-1. <strong>미션 A (`Knowledge` 양식 개조)</strong>: `01_GE_Workflow_lg_weekly_report_template.md` 파일의 2번 표 컬럼에 <strong>`[당사 대응 우선순위 ( 상 / 중 / 하 )]`</strong>와 <strong>`[예상 소요 예산/일정]`</strong> 컬럼을 직접 추가해 재업로드한 뒤 결과가 어떻게 바뀌는지 비교해 보세요.
+1. <strong>미션 A (`Knowledge` 양식 개조)</strong>: `01_GE_Workflow_lg_weekly_report_template.txt` 파일의 2번 표 컬럼에 <strong>`[당사 대응 우선순위 ( 상 / 중 / 하 )]`</strong>와 <strong>`[예상 소요 예산/일정]`</strong> 컬럼을 직접 추가해 재업로드한 뒤 결과가 어떻게 바뀌는지 비교해 보세요.
 2. <strong>미션 B (`Instructions` 페르소나 대결)</strong>: 맞춤 지침(`Custom Instructions`)에 <strong>"CFO(재무 최고책임자) 관점에서 수익성·원가 리스크를 최우선으로 비판적으로 서술할 것"</strong>이라는 조건을 추가했을 때 보고서 논조가 어떻게 달라지는지 옆자리 동료와 비교해 보세요.
 
 ---
