@@ -19,7 +19,7 @@
 
 | 파트 (시간) | 실습 환경 | 내가 직접 만드는 누적 산출물 | 핵심 사용 기능 |
 | :--- | :---: | :--- | :--- |
-| <strong>Part 1 (30분)</strong> | 🌐 크롬 GE Web | <strong>[주간 동향 보고서] LG전자 프리미엄 시장 트렌드 분석 보고서</strong> | `Projects` (`Invite+`) + `Knowledge` (`01_template.txt`) |
+| <strong>Part 1 (30분)</strong> | 🌐 크롬 GE Web | <strong>[주간 동향 보고서] LG전자 프리미엄 시장 트렌드 분석 & `.md` 스킬 브리핑</strong> | `Projects` (`Invite+`) + `Knowledge` (`.txt`) + <strong>`Skills` (`Upload skill` `.md`)</strong> |
 | <strong>Part 2 (30분)</strong> | 🌐 크롬 GE Web | <strong>내 Gmail 임시보관함(`Drafts`)에 저장된 사내 표준 보고 메일</strong> | `Workflow` 에이전트 연결 + <strong>`Approval (HITL 사람 승인)`</strong> |
 | <strong>Part 3 (30분)</strong> | 💻 Antigravity 2.0 | <strong>LG 브랜드 컬러(`#A50034` 레드 + 화이트) 고정 웹 슬라이드(`index.html`)</strong> | 세팅 점검 + `/grill-me` · `Proceed` · `/btw` · `/learn` + `/lg-brand-slides` |
 | <strong>Part 4 (30분)</strong> | 💻 Antigravity 2.0 | <strong>좌측 사이드 탭 업무 포털 (`탭 1: 트렌드 슬라이드` + `탭 2: 실시간 시세·뉴스`)</strong> | <strong>15줄 무인증 파이썬 코드</strong> 스킬 등록 + 우측 상단 `Pull` 버튼 & `/schedule` |
@@ -29,13 +29,14 @@
 
 ## 📦 실습 전 준비: 실습 파일 한 번에 다운로드 (`LG_Workshop_Files.zip`)
 
-> <strong>📥 번거롭게 하나씩 받지 마세요!</strong> 아래 초록색 버튼을 누르면 오늘 실습에 쓰이는 <strong>8개 파일 전체가 압축된 `LG_Workshop_Files.zip` (32KB)</strong>이 내 PC로 즉시 다운로드됩니다. 다운로드 후 압축을 풀어 작업 폴더(예: `lg-work-portal`)에 넣어두세요.
+> <strong>📥 번거롭게 하나씩 받지 마세요!</strong> 아래 초록색 버튼을 누르면 오늘 실습에 쓰이는 <strong>9개 파일 전체가 압축된 `LG_Workshop_Files.zip`</strong>이 내 PC로 즉시 다운로드됩니다. 다운로드 후 압축을 풀어 작업 폴더(예: `lg-work-portal`)에 넣어두세요.
 >
-> 👉 <a href="./LG_Workshop_Files.zip" download="LG_Workshop_Files.zip"><strong>[📥 실습 파일 8종 전체 ZIP 한 번에 다운로드 (LG_Workshop_Files.zip)]</strong></a>
+> 👉 <a href="./LG_Workshop_Files.zip" download="LG_Workshop_Files.zip"><strong>[📥 실습 파일 9종 전체 ZIP 한 번에 다운로드 (LG_Workshop_Files.zip)]</strong></a>
 
 | 번호 | 파일명 (클릭 시 열기) | 사용 파트 | 파일 역할 및 핵심 내용 |
 | :---: | :--- | :---: | :--- |
-| <strong>01</strong> | [`01_GE_Workflow_lg_weekly_report_template.txt`](./files/01_GE_Workflow_lg_weekly_report_template.txt) | <strong>Part 1~2</strong> | 크롬 GE `Project Knowledge`에 업로드할 <strong>사내 주간 트렌드 보고서 표준 서식 (`.txt`)</strong> |
+| <strong>01-A</strong> | [`01_GE_Workflow_lg_weekly_report_template.txt`](./files/01_GE_Workflow_lg_weekly_report_template.txt) | <strong>Part 1~2</strong> | 크롬 GE `Project Knowledge` 및 `Workflow`에 업로드할 <strong>사내 주간 트렌드 보고서 표준 서식 (`.txt`)</strong> |
+| <strong>01-B</strong> | [`01_GE_Skill_lg_executive_briefing_SKILL.md`](./files/01_GE_Skill_lg_executive_briefing_SKILL.md) | <strong>Part 1</strong> | 크롬 GE `Skills` ➔ `Upload skill`에 업로드해 `/lg-executive-briefing`으로 호출하는 <strong>임원 브리핑 스킬 (`.md`)</strong> |
 | <strong>02</strong> | [`02_AG_Webpage_hello_world_slides.html`](./files/02_AG_Webpage_hello_world_slides.html) | <strong>Part 3</strong> | 방향키(`←`/`→`)로 넘기는 <strong>웹 슬라이드 스타터 파일</strong> |
 | <strong>03</strong> | [`02_AG_Webpage_lg_brand_slides_SKILL.md`](./files/02_AG_Webpage_lg_brand_slides_SKILL.md) | <strong>Part 3</strong> | 다크 블루 화면을 <strong>LG 시그니처 레드(`#A50034`) + 화이트 배경</strong>으로 고정하는 스킬 |
 | <strong>04</strong> | [`03_AG_Dashboard_fetch_lg_live_market.py`](./files/03_AG_Dashboard_fetch_lg_live_market.py) | <strong>Part 4</strong> | <strong>API 키·설치 불필요!</strong> 15줄 무인증 LG전자(`066570`) 현재가·환율·구글 뉴스 수집 코드 |
@@ -46,7 +47,7 @@
 
 ---
 
-# 🌐 [1부 · 크롬 브라우저] Part 1. GE - Project & Knowledge (맞춤 지침)
+# 🌐 [1부 · 크롬 브라우저] Part 1. GE - Project · Knowledge & Skill (`.md` 설치)
 ### 🔹 Step 1-1. 새 프로젝트(`Project`) 생성 및 팀원 공유하기 (슬라이드 4)
 
 > <strong>🎯 왜 하나요?</strong>  
@@ -78,13 +79,68 @@
 
 ---
 
-### 🔥 [Part 1 심화 미션] 내 부서 맞춤 보고서 양식으로 커스텀 개조하기
+### 🔹 Step 1-3. [GE Skill 실습] `.md` 파일(또는 `.zip`) 업로드로 나만의 Skill 설치 & `/lg-executive-briefing` 호출하기
+
+> <strong>🎯 왜 하나요? (`Knowledge` vs `Skills` 핵심 차이!)</strong>  
+> * <strong>`Project Knowledge` (Step 1-2)</strong>가 특정 프로젝트 폴더 안에만 귀속되는 참조 문서라면, <strong>`Skills` (Step 1-3)</strong>는 내 계정에 설치해 두고 <strong>어느 채팅창에서든 `/스킬이름` 슬래시 커맨드 하나로 즉시 불러 쓰는 '업무 절차 매뉴얼'</strong>입니다.  
+> * 특히 Gemini Enterprise의 **`Skills` ➔ `Upload skill`**은 단일 마크다운 파일(**`.md`**)과 다중 리소스 압축 파일(**`.zip`**)을 모두 지원하며, 여기서 만든 `.md` 스킬 규격(`YAML 프론트매터 + 지시문`)은 **2부 Antigravity 2.0 데스크톱 앱에서도 100% 똑같이 호환**됩니다!
+
+#### 📄 실습 파일 확인: [`01_GE_Skill_lg_executive_briefing_SKILL.md`](./files/01_GE_Skill_lg_executive_briefing_SKILL.md)
+업로드할 `.md` 스킬 파일은 상단 `---` 블록(`name`: 영문 소문자·숫자·하이픈만 허용, `description`: 스킬 요약)과 하단 마크다운 지시문으로 구성됩니다:
+
+```markdown
+---
+name: lg-executive-briefing
+description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵심 요약, 당사 vs 경쟁사 비교표, 출처 검증 포맷으로 즉시 변환하는 스킬"
+---
+
+# LG전자 임원 보고용 시장 트렌드 브리핑 스킬 (lg-executive-briefing)
+
+사용자가 제품군이나 시장 트렌드 주제를 입력하면, 항상 아래 3단 표준 구조로만 간결하고 명확하게 보고서를 작성하세요.
+
+## 1. 📌 [Executive Summary] 경영진 3줄 핵심 요약
+- 결론부터 두괄식으로 3줄 이내로 핵심 시장 변화와 당사 시사점을 요약합니다.
+- 모든 제품명은 'LG 올레드 에보(LG OLED evo)', 'LG 워시타워(WashTower)'처럼 국문과 영문을 첫 등장 시 병기합니다.
+
+## 2. 📊 당사 vs 주요 경쟁사 핵심 트렌드 비교표
+반드시 아래 마크다운 표 컬럼을 유지하여 작성하세요:
+| 제품군 | 글로벌 시장 핵심 동향 (수치 포함) | 주요 경쟁사 동향 | LG전자 차별화 포인트 및 전략 | 인라인 출처 ([매체명, 날짜]) |
+
+## 3. 💡 실무 액션 아이템 (Next Steps)
+- 현업 부서(상품기획·마케팅·영업)에서 즉시 검토해야 할 후속 조치 2가지를 체크리스트(`- [ ]`) 형태로 제시합니다.
+```
+
+#### 1️⃣ `Skills` ➔ `+ (Add skill)` ➔ `Upload skill`에서 `.md` 파일 업로드하기
+1. 좌측 메뉴에서 <strong>`📄 Skills`</strong>를 클릭합니다.
+2. 상단 <strong>`+` (`Add skill`)</strong> 버튼(또는 초기 화면의 `Upload skill` 버튼)을 누르고 메뉴에서 <strong>`⬆️ Upload skill`</strong>을 선택합니다.
+3. **`Import skill`** 팝업창(`Supports .md and .zip files`)에서 **`Browse files`**를 눌러 실습 파일 <strong>[`01_GE_Skill_lg_executive_briefing_SKILL.md`](./files/01_GE_Skill_lg_executive_briefing_SKILL.md)</strong>를 선택한 뒤 파란색 <strong>`Import`</strong> 버튼을 클릭합니다. *(여러 참조 파일이 포함된 스킬은 `SKILL.md`가 들어있는 `.zip` 파일로도 동일하게 업로드할 수 있습니다.)*
+
+![Step 1-3-1 Gemini Enterprise Skills 메뉴에서 Upload skill 클릭 및 .md 스킬 파일 Import](assets/screenshots/ge_skill_01.png)
+
+#### 2️⃣ 설치된 `lg-executive-briefing` 스킬 확인 & `New chat` 클릭
+* 업로드 즉시 좌측 `Enabled` 목록에 <strong>`📄 lg-executive-briefing`</strong>이 등록되고 트리거 명령어(<strong>`/lg-executive-briefing`</strong>)가 생성됩니다. 우측 상단의 파란색 <strong>`✏️ New chat`</strong> 버튼을 클릭합니다. *(옆의 `Share` 버튼으로 조직 내 동료에게 스킬을 공유할 수도 있습니다.)*
+
+![Step 1-3-2 업로드 완료된 lg-executive-briefing 스킬 상세 프리뷰 및 New chat 버튼 클릭](assets/screenshots/ge_skill_02.png)
+
+#### 3️⃣ 채팅창에서 `/lg-executive-briefing` 스킬 칩으로 1줄 브리핑 실행하기
+* 채팅 입력창에 **`/lg-executive-briefing`** 칩이 자동 삽입된 상태에서(또는 일반 채팅창에서 `/`를 쳐서 스킬 선택 후), 아래 한 줄만 입력해 실행합니다:
+
+```text
+/lg-executive-briefing 북미 프리미엄 OLED TV 및 AI 워시타워 최근 시장 트렌드 브리핑해줘.
+```
+
+👉 **실행 결과 화면:** (긴 양식 설명 없이도 스킬에 정의된 `[1. 경영진 3줄 요약 ➔ 2. 당사 vs 경쟁사 비교표 ➔ 3. 실무 액션 아이템]` 3단 구조로 즉시 출력!)
+![Step 1-3-3 채팅창에서 lg-executive-briefing 스킬 칩을 호출해 3단 임원 보고서 출력](assets/screenshots/ge_skill_03.png)
+
+---
+
+### 🔥 [Part 1 심화 미션] 내 부서 맞춤 보고서 양식 & 나만의 `.md` 스킬 커스텀 개조하기
 
 > <strong>💡 실무 확장 미션 (현업 응용)</strong>  
-> 기본 보고서 생성을 마쳤다면, 실제 내 부서 현업 보고서에 바로 적용할 수 있도록 아래 2가지 커스텀 미션을 직접 수행해 보세요.
+> 기본 보고서와 스킬 설치를 마쳤다면, 실제 내 부서 현업 보고서에 바로 적용할 수 있도록 아래 2가지 커스텀 미션을 직접 수행해 보세요.
 
 1. <strong>미션 A (`Knowledge` 양식 개조)</strong>: `01_GE_Workflow_lg_weekly_report_template.txt` 파일의 2번 표 컬럼에 <strong>`[당사 대응 우선순위 ( 상 / 중 / 하 )]`</strong>와 <strong>`[예상 소요 예산/일정]`</strong> 컬럼을 직접 추가해 재업로드한 뒤 결과가 어떻게 바뀌는지 비교해 보세요.
-2. <strong>미션 B (`Instructions` 페르소나 대결)</strong>: 맞춤 지침(`Custom Instructions`)에 <strong>"CFO(재무 최고책임자) 관점에서 수익성·원가 리스크를 최우선으로 비판적으로 서술할 것"</strong>이라는 조건을 추가했을 때 보고서 논조가 어떻게 달라지는지 옆자리 동료와 비교해 보세요.
+2. <strong>미션 B (나만의 `.md` 스킬 직접 만들어 업로드하기)</strong>: `01_GE_Skill_lg_executive_briefing_SKILL.md` 파일을 메모장으로 열어 `name: lg-cfo-risk-review`로 바꾸고, 지침에 <strong>"CFO(재무 최고책임자) 관점에서 수익성·원가·관세 리스크를 최우선으로 비판적으로 서술할 것"</strong>을 추가해 두 번째 스킬로 업로드(`Upload skill`)한 뒤 `/lg-cfo-risk-review`로 호출해 보세요!
 
 ---
 
