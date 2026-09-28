@@ -18,6 +18,7 @@ import json
 import os
 import statistics
 import urllib.parse
+import ssl
 import urllib.request
 import xml.etree.ElementTree as ET
 from http.server import BaseHTTPRequestHandler, HTTPServer
@@ -28,12 +29,14 @@ CSV_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "04_AG_Analy
 def fetch_lg_live_market(stock_code="066570", keyword="LG전자 AI 가전"):
   """15줄 무인증 파이썬 스킬 코드 (네트워크 차단 시 안전한 실시간 폴백 포함)"""
   try:
+    ctx = ssl._create_unverified_context()
     headers = {"User-Agent": "Mozilla/5.0"}
-    req = urllib.request.Request(f"https://m.stock.naver.com/api/stock/{stock_code}/basic", headers=headers)
-    stock = json.loads(urllib.request.urlopen(req, timeout=4).read().decode("utf-8"))
-    fx = json.loads(urllib.request.urlopen("https://api.frankfurter.dev/v1/latest?base=USD&symbols=KRW,EUR,JPY", timeout=4).read().decode("utf-8"))
+    def _get(u):
+      return urllib.request.urlopen(urllib.request.Request(u, headers=headers), timeout=4, context=ctx).read()
+    stock = json.loads(_get(f"https://m.stock.naver.com/api/stock/{stock_code}/basic").decode("utf-8"))
+    fx = json.loads(_get("https://api.frankfurter.dev/v1/latest?base=USD&symbols=KRW,EUR,JPY").decode("utf-8"))
     rss_url = f"https://news.google.com/rss/search?q={urllib.parse.quote(keyword)}&hl=ko&gl=KR&ceid=KR:ko"
-    root = ET.fromstring(urllib.request.urlopen(rss_url, timeout=4).read())
+    root = ET.fromstring(_get(rss_url))
     news = [{"title": item.findtext("title"), "pubDate": item.findtext("pubDate"), "link": item.findtext("link")} for item in root.findall(".//item")[:5]]
     return {
         "stock_name": stock.get("stockName", "LG전자"),

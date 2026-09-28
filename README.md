@@ -101,7 +101,10 @@
 
 1. 좌측 메뉴 <strong>`New Agent` ➔ `Workflow`</strong> 선택
 2. 아래 화면과 같이 노드를 차례대로 연결합니다:
-   - <strong>`Manual` (또는 Schedule)</strong> ➔ <strong>`Gemini Agent` (트렌드 뉴스 수집)</strong> ➔ <strong>`Gemini Agent 1` (`01_template.md` 양식 포맷팅, `Step Output` 변수 전달)</strong> ➔ <strong>`Approval` (사람의 개입 HITL)</strong> ➔ <strong>`Gemini Agent 2` (Gmail 드래프트 생성)</strong>
+   - <strong>`Manual` (또는 Schedule)</strong> ➔ <strong>`Gemini Agent` (트렌드 뉴스 수집)</strong> ➔ <strong>`Gemini Agent 1` (`01_template.txt` 양식 포맷팅, `Step Output` 변수 전달)</strong> ➔ <strong>`Approval` (사람의 개입 HITL)</strong> ➔ <strong>`Gemini Agent 2` (Gmail 드래프트 생성)</strong>
+3. ⚠️ <strong>[외부 환경 주의 포인트 2가지]</strong>
+   - <strong>포인트 ① (`Workflow` 내 양식 연결)</strong>: `Workflow` 에이전트는 Part 1의 `Project Knowledge`와 저장소가 분리되어 있습니다. 따라서 두 번째 <strong>`Gemini Agent 1` 노드의 우측 설정창 `Knowledge`에 [`01_GE_Workflow_lg_weekly_report_template.txt`](./files/01_GE_Workflow_lg_weekly_report_template.txt) 파일을 직접 업로드</strong>하거나, 파일 내용을 복사해 `Instructions` 칸에 바로 붙여넣어 주세요.
+   - <strong>포인트 ② (외부 계정에서 `Gmail` 연동 권한이 없을 때)</strong>: 만약 실습 계정에 Google Workspace `Gmail` 커넥터(OAuth)가 비활성화되어 있다면, 마지막 `Gemini Agent 2` 노드에서 Gmail 도구 대신 <strong>"승인된 보고서를 이메일 발송용 제목/본문 포맷으로 화면에 바로 출력해줘"</strong>라고 지시한 뒤 출력된 결과를 드래그해 복사(`Ctrl + C`)하시면 Part 3 실습으로 100% 동일하게 이어집니다!
 
 👉 **화면 확인 포인트:** (`Approval` 노드에서 `Approved` / `Rejected` 갈림길이 연결된 워크플로우)
 ![Step 2-1 워크플로우 에이전트 및 Approval 노드 연결 화면](assets/screenshots/slide_07_ui_1.png)
@@ -222,11 +225,12 @@
 > <strong>🎯 왜 하나요?</strong>  
 > 슬라이드를 수정할 때마다 색상이 파란색·보라색으로 제멋대로 바뀌는 것을 막기 위해, 실습 파일 [`02_AG_Webpage_lg_brand_slides_SKILL.md`](./files/02_AG_Webpage_lg_brand_slides_SKILL.md)를 스킬(`lg-brand-slides`)로 등록하고 호출하여 <strong>모든 슬라이드를 LG 시그니처 레드(`#A50034`) 포인트 + 순백색(`#FFFFFF`) 배경 + 라이트그레이(`#F8F9FA`) 카드</strong>로 단번에 고정합니다!
 
-1. 실습 폴더의 <strong>[`02_AG_Webpage_lg_brand_slides_SKILL.md`](./files/02_AG_Webpage_lg_brand_slides_SKILL.md)</strong> 파일을 프로젝트 스킬(`.agents/skills/lg-brand-slides/SKILL.md`)에 넣거나 `/learn`으로 학습시킵니다. *(스킬이 안 보일 때는 `Ctrl + R` 또는 `View ➔ Reload`)*
-2. 채팅창에 아래 프롬프트를 복사해 입력합니다 (슬라이드 15 원문 그대로!):
+1. 윈도우 탐색기에서 숨김 폴더(`.agents/skills/...`)를 직접 만들 필요 없이, 실습 폴더에 받아둔 <strong>[`02_AG_Webpage_lg_brand_slides_SKILL.md`](./files/02_AG_Webpage_lg_brand_slides_SKILL.md)</strong> 파일을 `@멘션`하여 에이전트에게 스킬 등록과 적용을 한 번에 지시합니다. *(스킬 등록 후 슬래시 목록에 안 보일 때는 `Ctrl + R` 또는 `View ➔ Reload`)*
+2. 채팅창에 아래 프롬프트를 복사해 입력합니다:
 
 ```text
-/lg-brand-slides 스킬을 적용해서 지금 웹 프레젠테이션의 색감(Hex)을 LG 브랜드 컬러(#A50034 포인트 & 화이트/그레이 배경)로 고정하여 다시 제작해줘.
+[1] @02_AG_Webpage_lg_brand_slides_SKILL.md 이 파일을 프로젝트 스킬(lg-brand-slides)로 등록해줘.
+[2] /lg-brand-slides 스킬을 적용해서 지금 웹 프레젠테이션의 색감(Hex)을 LG 브랜드 컬러(#A50034 포인트 & 화이트/그레이 배경)로 고정하여 다시 제작해줘.
 ```
 
 👉 **실행 결과 화면:** (다크 블루였던 슬라이드가 화이트 + LG 시그니처 레드 `#A50034`로 100% 변환된 모습!)
@@ -271,18 +275,22 @@
 
 #### 🐍 실습 폴더의 15줄 무인증 파이썬 코드 (`03_AG_Dashboard_fetch_lg_live_market.py`)
 ```python
-import urllib.request, urllib.parse, json, xml.etree.ElementTree as ET
+import urllib.request, urllib.parse, json, ssl, xml.etree.ElementTree as ET
+
+def _get(url):
+    # User-Agent 헤더(403 차단 방지) + 사내 보안망 SSL 인증서 오류 우회 내장
+    ctx = ssl._create_unverified_context()
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    return urllib.request.urlopen(req, timeout=5, context=ctx).read()
 
 def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가전"):
-    headers = {"User-Agent": "Mozilla/5.0"}
     # 1. [No-Key] 네이버 금융 LG전자(066570) 실시간 주가·등락률 JSON
-    req = urllib.request.Request(f"https://m.stock.naver.com/api/stock/{stock_code}/basic", headers=headers)
-    stock = json.loads(urllib.request.urlopen(req, timeout=5).read().decode("utf-8"))
+    stock = json.loads(_get(f"https://m.stock.naver.com/api/stock/{stock_code}/basic").decode("utf-8"))
     # 2. [No-Key] Frankfurter(ECB) 실시간 USD/KRW · EUR 글로벌 환율 JSON
-    fx = json.loads(urllib.request.urlopen("https://api.frankfurter.dev/v1/latest?base=USD&symbols=KRW,EUR,JPY", timeout=5).read().decode("utf-8"))
+    fx = json.loads(_get("https://api.frankfurter.dev/v1/latest?base=USD&symbols=KRW,EUR,JPY").decode("utf-8"))
     # 3. [No-Key] Google News RSS 실시간 'LG전자 AI 가전' 최신 뉴스 5건
     rss_url = f"https://news.google.com/rss/search?q={urllib.parse.quote(keyword)}&hl=ko&gl=KR&ceid=KR:ko"
-    root = ET.fromstring(urllib.request.urlopen(rss_url, timeout=5).read())
+    root = ET.fromstring(_get(rss_url))
     news = [{"title": item.findtext("title"), "pubDate": item.findtext("pubDate"), "link": item.findtext("link")} for item in root.findall(".//item")[:5]]
     return {"stock_name": stock.get("stockName", "LG전자"), "close_price": stock.get("closePrice"), "fluctuation_rate": stock.get("fluctuationsRatio"), "usd_krw": fx["rates"]["KRW"], "latest_news": news}
 ```
@@ -360,7 +368,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 #### 1️⃣ 채팅창에 아래 프롬프트 복사·붙여넣기 (슬라이드 23 원문 그대로!)
 ```text
-[1] 기존 대시보드 탭은 그대로 유지하고, 4번째 사이드 탭으로 @04_AG_Analytics_lg_appliance_data.csv 기반 'LG 가전 제품군 실적·구독 Analytics'를 추가하고 싶어.
+[1] 기존 대시보드 탭은 그대로 유지하고, 4번째 사이드 탭으로 @04_AG_Analytics_lg_appliance_data.csv 기반 'LG 가전 제품군 실적·구독 Analytics'를 추가하고 싶어. (브라우저에서 index.html을 직접 더블클릭해 열어도 CORS 에러가 나지 않도록 CSV 집계 데이터를 HTML 내부 JS에 인라인으로 임베딩해줘.)
 [2] 스탠바이미 시제품(매출 0원, 18건) 분리 처리(포함/제외 토글 필터)와 워시타워 ThinQ 결측치(23건) 스마트 보정 리포트, 제품군별 매출·마진율 차트 및 권역별 HaaS 구독 전환율 차트도 넣어줘.
 ```
 
