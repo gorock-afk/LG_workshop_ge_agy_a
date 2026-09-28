@@ -95,73 +95,55 @@
 > 매주 반복되는 <strong>`트렌드 수집` ➔ `양식 정리(01_template.txt)` ➔ `사람 최종 검토(Approval)` ➔ `Gmail 초안 생성`</strong> 과정을 하나의 정형화된 파이프라인으로 묶어 자동화합니다.
 
 1. 좌측 메뉴 <strong>`New Agent` ➔ `Workflow`</strong> 선택
-2. 아래 화면과 같이 <strong>5개 노드를 차례대로 연결</strong>하고, 앞 단계의 출력을 다음 단계가 흔들림 없이(Deterministic) 참조할 수 있도록 <strong>`Structured output`(정형 스키마 변수)</strong> 기반으로 각 노드의 우측 설정 패널과 프롬프트를 구성합니다:
-   - <strong>`Manual` (또는 Schedule)</strong> ➔ <strong>`Gemini Agent` (트렌드 뉴스 수집 · `Structured output`)</strong> ➔ <strong>`Gemini Agent 1` (`01_template.txt` 양식 포맷팅 · `Structured output`)</strong> ➔ <strong>`Approval` (사람의 개입 HITL)</strong> ➔ <strong>`Gemini Agent 2` (Gmail 드래프트 생성)</strong>
+2. 아래 화면과 같이 <strong>5개 노드를 차례대로 연결</strong>하고, 앞 단계의 출력을 다음 단계가 흔들림 없이(Deterministic) 그대로 받아 쓸 수 있도록 <strong>`Structured output`에 단일 변수 `content` (`Text`) 하나만 지정</strong>하여 심플하게 구성합니다:
+   - <strong>`Manual` (또는 Schedule)</strong> ➔ <strong>`Gemini Agent` (트렌드 뉴스 수집 · `content` 변수 출력)</strong> ➔ <strong>`Gemini Agent 1` (`01_template.txt` 양식 포맷팅 · `content` 변수 출력)</strong> ➔ <strong>`Approval` (사람의 개입 HITL)</strong> ➔ <strong>`Gemini Agent 2` (Gmail 드래프트 생성)</strong>
 
 ---
 
 #### ① `Manual` (또는 `Schedule`) — 시작 트리거 노드
-* **노드 선택**: 첫 번째 루트 노드로 **`Manual`** (수동 실행 테스트용) 또는 **`Schedule`** (매주 월요일 오전 8시 정기 실행)을 선택합니다.
+* **노드 선택**: 첫 번째 루트 노드로 **`Manual`** (수동 실행 테스트용) 또는 **`Schedule`** (정기 자동 실행)을 선택합니다.
 
 ---
 
-#### ② `Gemini Agent` — 1단계: 트렌드 뉴스 수집 & `Structured output` 스키마 추출
+#### ② `Gemini Agent` — 1단계: 트렌드 뉴스 수집 & `content` 변수 출력
 * **노드 추가**: `Manual` 노드 아래 `+` 버튼 클릭 ➔ **`Gemini Agent`** 선택
 * **우측 패널 세팅사항**:
   - **`Connected apps` / `Tools`**: **`Google Search`** (웹 검색 그라운딩) 켜기
-  - **`Output` (`Step output` 포맷 설정 — 핵심!)**:
-    1. 우측 패널 하단 **`Output`** 섹션에서 기본값 `Plain text` 대신 **`Structured output`** (`Define a manual JSON schema`) 선택 ➔ **`[Define output schema]`** 버튼 클릭
-    2. **`Output Format`** 팝업창에서 **`[+ Add Field]`**를 눌러 아래 **3개의 출력 변수(Schema Field)**를 추가한 뒤 **`[Apply Schema]`** 클릭:
-       - **`executive_summary`** (타입: **`Text`**) — *설명: 금주 LG전자 프리미엄 가전·OLED 핵심 트렌드 3줄 요약*
-       - **`product_trends`** (타입: **`Text`** 또는 **`List`**) — *설명: 5대 주력 제품군(OLED evo, 워시타워, 디오스, HVAC, 스탠바이미) 글로벌 동향·수치·경쟁사 비교 및 출처*
-       - **`risk_check`** (타입: **`Text`**) — *설명: 임원 보고 전 확인이 필요한 수치·출처 검증 포인트*
+  - **`Output` (`Structured output` 단일 변수 설정 — 핵심!)**:
+    1. 우측 패널 하단 **`Output`** 섹션에서 `Plain text` 대신 **`Structured output`** 선택 ➔ **`[Define output schema]`** 버튼 클릭
+    2. **`Output Format`** 팝업창에서 아래 **변수 딱 1개만** 입력한 뒤 **`[Apply Schema]`** 클릭:
+       - **필드명**: **`content`** | **타입**: **`Text`** *(설명: 조사된 LG전자 프리미엄 가전·OLED 트렌드 뉴스 및 출처 전체 텍스트)*
 * **`Instructions` 입력 프롬프트** (우측 패널 `Instructions` 칸에 복사·붙여넣기):
 
 ```text
-최근 1개월간 LG전자 프리미엄 AI 가전(OLED evo, 워시타워, 디오스, HVAC, 스탠바이미) 및 글로벌 경쟁사 시장 트렌드 뉴스를 조사해줘.
-조사 결과를 바탕으로:
-1) executive_summary: 경영진 보고용 금주 핵심 트렌드 3줄 요약
-2) product_trends: 제품군별 글로벌 시장 동향, 핵심 수치(점유율·성장률 등), 당사 시사점 및 인라인 출처([매체명, 날짜])
-3) risk_check: 추정치 여부 및 상사 보고 전 사람이 팩트체크해야 할 검수 항목
-위 3가지 Structured output 필드에 맞춰 빠짐없이 추출해줘.
+최근 1개월간 LG전자 프리미엄 AI 가전(OLED evo, 워시타워, 디오스, HVAC, 스탠바이미) 및 글로벌 경쟁사 시장 트렌드 뉴스를 조사해서 핵심 요약, 제품군별 시장 동향·수치, 출처 링크([매체명, 날짜])를 상세히 정리해 content 변수에 담아줘.
 ```
 
 ---
 
-#### ③ `Gemini Agent 1` — 2단계: `01_template.txt` 사내 양식 포맷팅 & 메일 제목/본문 구조화
+#### ③ `Gemini Agent 1` — 2단계: `01_template.txt` 사내 표준 양식 포맷팅 & `content` 변수 출력
 * **노드 추가**: 첫 번째 `Gemini Agent` 아래 `+` 버튼 클릭 ➔ 두 번째 **`Gemini Agent`** (`Gemini Agent 1`) 추가
 * **우측 패널 세팅사항**:
   - **`Files` (`Add file`)**: **`[+ Add file]`** 클릭 ➔ 실습 파일 **[`01_GE_Workflow_lg_weekly_report_template.txt`](./files/01_GE_Workflow_lg_weekly_report_template.txt)** 업로드
-  - **`Output` (`Structured output` 설정)**:
+  - **`Output` (`Structured output` 단일 변수 설정)**:
     1. 우측 패널 **`Output`**에서 **`Structured output`** 선택 ➔ **`[Define output schema]`** 클릭
-    2. 다음 승인(`Approval`) 및 메일 발송 노드가 바로 가져다 쓸 수 있도록 아래 **2개의 출력 변수**를 추가한 뒤 **`[Apply Schema]`** 클릭:
-       - **`email_subject`** (타입: **`Text`**) — *설명: `[사내 표준] 주간 LG 제품 시장 트렌드 보고서` 메일 제목*
-       - **`email_body`** (타입: **`Text`**) — *설명: `01_GE_Workflow_lg_weekly_report_template.txt` 서식(마크다운 표 포함)이 완성된 메일 본문 전체*
-* **`Instructions` 입력 프롬프트** (`@`를 입력하거나 변수 칩에서 이전 `Gemini Agent`의 `Structured output` 변수를 선택해 삽입):
+    2. 마찬가지로 다음 노드가 그대로 받아 쓸 수 있도록 **변수 딱 1개만** 입력 후 **`[Apply Schema]`** 클릭:
+       - **필드명**: **`content`** | **타입**: **`Text`** *(설명: `01_GE_Workflow_lg_weekly_report_template.txt` 양식으로 포맷팅이 완료된 최종 주간 트렌드 보고서 전문)*
+* **`Instructions` 입력 프롬프트** (`@`를 입력해 이전 `Gemini Agent`의 `@content` 변수를 선택하여 삽입):
 
 ```text
-첨부된 01_GE_Workflow_lg_weekly_report_template.txt 사내 표준 보고서 양식을 엄격히 준수하여, 이전 단계(Gemini Agent)에서 전달된 @executive_summary, @product_trends, @risk_check 데이터를 양식의 각 섹션(1. 금주 핵심 요약, 2. 제품군별 비교표, 3. HITL 검수 게이트)에 정확히 매핑해 작성해줘.
-완성된 결과는:
-- email_subject: "[사내 표준] 주간 LG 제품 시장 트렌드 보고서 (AI 가전·OLED evo)"
-- email_body: 양식과 마크다운 표가 완벽히 적용된 보고서 본문 전체
-위 2가지 Structured output 필드로 출력해줘.
+첨부된 01_GE_Workflow_lg_weekly_report_template.txt 사내 표준 보고서 양식에 맞춰, 이전 단계(Gemini Agent)에서 전달된 @content 내용을 바탕으로 주간 LG 제품 시장 트렌드 보고서 전문(1. 금주 핵심 요약, 2. 제품군별 비교표, 3. HITL 검수 게이트)을 작성해 content 변수에 담아줘.
 ```
 
 ---
 
 #### ④ `Approval` — 3단계: `HITL (Human-in-the-Loop)` 사람 검토·승인 게이트
-* **노드 추가**: `Gemini Agent 1` 아래 `+` 버튼 클릭 ➔ **`Approval`** 노드 선택 (자동으로 하단에 초록색 **`Approved`** / 회색 **`Rejected`** 분기가 생성됨)
+* **노드 추가**: `Gemini Agent 1` 아래 `+` 버튼 클릭 ➔ **`Approval`** 노드 선택 (하단에 초록색 **`Approved`** / 회색 **`Rejected`** 분기 자동 생성)
 * **우측 패널 세팅사항 (`Approval` ➔ `Message`)**:
-  - 검토자가 승인 팝업에서 바로 제목과 본문을 확인하고 판단할 수 있도록 **`Message`** (`Review instructions for the human reviewer`) 입력칸에 아래와 같이 `@email_subject`, `@email_body` 변수를 포함해 작성합니다:
+  - 사람이 승인 팝업에서 바로 보고서 전문을 확인하고 판단할 수 있도록 **`Message`** 입력칸에 이전 단계(`Gemini Agent 1`)의 `@content` 변수를 넣어줍니다:
 
 ```text
-다음 주간 트렌드 보고서를 검토한 뒤 승인(Approved) 여부를 선택해 주세요. 승인 시 내 Gmail 임시보관함(Drafts)에 보고 메일이 자동 생성됩니다.
-
-[보고 메일 제목]
-@email_subject
-
-[보고 메일 본문]
-@email_body
+작성된 주간 트렌드 보고서(@content)의 핵심 수치와 인라인 출처를 검토한 뒤 승인(Approved) 여부를 선택해 주세요. 승인 시 내 Gmail 임시보관함(Drafts)에 보고 메일이 생성됩니다.
 ```
 
 ---
@@ -171,13 +153,11 @@
 * **우측 패널 세팅사항**:
   - **`Connected apps` / `Tools`**: **`Gmail`** 앱 켜기 (`Create draft` 도구 활성화)
   - **`Output`**: 최종 단계이므로 기본값 **`Plain text`** 유지
-* **`Instructions` 입력 프롬프트** (`Gemini Agent 1`의 `@email_subject`, `@email_body` 변수 참조):
+* **`Instructions` 입력 프롬프트** (`Gemini Agent 1`의 `@content` 변수 참조):
 
 ```text
 사람의 최종 승인(Approved)이 완료되었습니다.
-Gmail 도구를 사용하여 내 이메일 주소(본인 계정)를 수신자로 하고, 이전 단계(Gemini Agent 1)에서 생성된 아래 제목과 본문으로 Gmail 임시보관함(Draft) 메일을 생성해줘.
-- 메일 제목: @email_subject
-- 메일 본문: @email_body
+Gmail 도구를 사용하여 내 이메일 주소(본인 계정)를 수신자로 하고, 제목은 "[사내 표준] 주간 LG 제품 시장 트렌드 보고서", 본문은 이전 단계(Gemini Agent 1)에서 작성된 @content 전문을 그대로 넣어 Gmail 임시보관함(Draft) 메일을 생성해줘.
 ```
 
 👉 **화면 확인 포인트:** (`Manual` ➔ `Gemini Agent` ➔ `Gemini Agent 1` ➔ `Approval` (`Approved` / `Rejected`) ➔ `Gemini Agent 2` 5단계 연결 화면)
