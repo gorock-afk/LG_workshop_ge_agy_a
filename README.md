@@ -158,14 +158,10 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 
 ---
 
-#### ① `1. Manual` — 시작 트리거 노드 & 입력 필드(`content`) 설정
-1. **루트 트리거 확인**: 캔버스 상단에 기본 생성된 <strong>`1 Manual`</strong> 노드를 클릭하고 우측 패널의 `Trigger type`이 <strong>`Manual`</strong>(수동 실행)로 되어 있는지 확인합니다.
+#### ① `1. Manual` — 시작 트리거 노드 확인
+* **루트 트리거 확인**: 캔버스 상단에 기본 생성된 <strong>`1 Manual`</strong> 노드를 클릭하고 우측 패널의 `Trigger type`이 <strong>`Manual`</strong>(수동 실행)로 되어 있는지 확인합니다. *(별도의 `Input fields`는 추가하지 않습니다.)*
 
 ![Step 2-1-1 Manual 시작 트리거 노드 확인](assets/screenshots/wf_step_02.png)
-
-2. **`Input fields`에 `content` 필드 추가**: 우측 패널 <strong>`Input fields`</strong> 옆의 <strong>`+ Add field`</strong>를 클릭한 뒤, 팝업창에 필드명 <strong>`content`</strong> (타입: <strong>`Text`</strong>)를 입력하고 <strong>`Save`</strong>를 누릅니다.
-
-![Step 2-1-2 Manual 노드 Input fields에 content(Text) 추가 및 Save](assets/screenshots/wf_step_03.png)
 
 ---
 
