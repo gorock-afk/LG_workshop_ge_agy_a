@@ -368,8 +368,8 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 
 > <strong>🎯 핵심 포인트:</strong> 수정할 때마다 슬라이드 색깔이 제멋대로 바뀌지 않도록, <strong>`/lg-brand-slides` 스킬을 등록해 LG 레드(`#A50034`)와 화이트 배경으로 한 번에 고정</strong>합니다.
 
-#### 1️⃣ [1단계: 스킬 등록] `02_AG_Webpage_lg_brand_slides_SKILL.md` 파일을 스킬로 등록하기
-먼저 실습 폴더의 <strong>[`02_AG_Webpage_lg_brand_slides_SKILL.md`](./files/02_AG_Webpage_lg_brand_slides_SKILL.md)</strong> 파일을 프로젝트 스킬로 등록합니다. *(스킬 등록 후 슬래시 목록에 안 보일 때는 `Ctrl + R` 또는 `View ➔ Reload`)*
+#### 1️⃣ [1단계: 스킬 등록] 프로젝트 폴더에 `02_AG_Webpage_lg_brand_slides_SKILL.md` 파일 넣고 스킬로 등록하기
+먼저 다운로드한 <strong>[`02_AG_Webpage_lg_brand_slides_SKILL.md`](./files/02_AG_Webpage_lg_brand_slides_SKILL.md)</strong> 파일을 **현재 열려 있는 Antigravity 프로젝트 폴더(예: `lg-work-portal`) 안에 복사해 넣어야** `@멘션`으로 불러올 수 있습니다(폴더 안에 파일이 없다면 먼저 파일을 넣어주세요). 준비되었다면 아래 프롬프트를 입력해 프로젝트 스킬로 등록합니다. *(스킬 등록 후 슬래시 목록에 안 보일 때는 `Ctrl + R` 또는 `View ➔ Reload`)*
 
 ```text
 @02_AG_Webpage_lg_brand_slides_SKILL.md 이 파일을 프로젝트 스킬(lg-brand-slides)로 등록해줘.
@@ -444,7 +444,9 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 </details>
 
-#### 1️⃣ [1단계: 스킬 등록] 파이썬 수집 코드를 `python-api-trend` 스킬로 등록하기
+#### 1️⃣ [1단계: 스킬 등록] 프로젝트 폴더에 `03_AG_Dashboard_fetch_lg_live_market.py` 파일 넣고 스킬로 등록하기
+먼저 <strong>[`03_AG_Dashboard_fetch_lg_live_market.py`](./files/03_AG_Dashboard_fetch_lg_live_market.py)</strong> 파일이 **현재 프로젝트 폴더(`lg-work-portal`) 안에 들어있는지 확인**(없다면 폴더 안에 파일을 복사해 추가)한 뒤, 아래 프롬프트를 입력해 `python-api-trend` 스킬로 등록합니다:
+
 ```text
 @03_AG_Dashboard_fetch_lg_live_market.py 해당하는 파이썬 코드를 스킬로 등록시켜줘. (python-api-trend)
 ```
