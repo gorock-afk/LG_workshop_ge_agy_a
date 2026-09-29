@@ -312,8 +312,8 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 
 > <strong>🎯 핵심 포인트:</strong> 프롬프트를 길게 고민할 필요 없이 <strong>`/grill-me`</strong> 한 줄만 치면, <strong>AI가 먼저 질문을 던져 기획을 잡아주고 승인 즉시 코딩을 시작</strong>합니다.
 
-#### 1️⃣ 작업 폴더 열기 & `/grill-me` 프롬프트 입력
-로컬 작업 폴더(예: `C:/Users/abcd/lg-work-portal`)를 열고, 채팅창에 아래 한 줄 프롬프트를 복사해 입력합니다:
+#### 1️⃣ 작업 폴더 열기 & `/grill-me` 스킬 칩 선택 후 프롬프트 입력
+로컬 작업 폴더(예: `C:/Users/abcd/lg-work-portal`)를 열고, 채팅 입력창에 먼저 **`/grill-me`를 타이핑한 뒤 `[Tab]` 키를 눌러 스킬 칩을 띄우고**, 이어서 아래 프롬프트 문장을 복사해 붙여넣습니다:
 
 ```text
 /grill-me LG AI 가전 트렌드 보고서를 임원 발표용 Single Webpage 슬라이드로 만들고 싶어.
@@ -350,7 +350,7 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 ### 🔹 Step 3-3. 참여자 자유 구성 추가 & `/btw` · `/learn`으로 내 슬라이드 규칙 저장하기
 
 #### 1️⃣ 원하는 장표 내용 자유롭게 추가하기
-내가 보고서에 더 넣고 싶은 데이터(예: 주요 국가 구매력 지수 GDP 비교, 당사 vs 경쟁사 스펙 비교표 등)를 채팅창에 자연어로 추가 지시합니다(계획서 카드가 뜨면 <strong>`Proceed`</strong>를 누르거나 진행을 승인합니다). 작업 도중 궁금한 점은 하단 <strong>`/btw` (`Side Question`)</strong>로 흐름을 끊지 않고 물어보고, 마음에 드는 규칙은 <strong>`/learn`</strong>으로 저장합니다:
+내가 보고서에 더 넣고 싶은 데이터(예: 주요 국가 구매력 지수 GDP 비교, 당사 vs 경쟁사 스펙 비교표 등)를 채팅창에 자연어로 추가 지시합니다(계획서 카드가 뜨면 <strong>`Proceed`</strong>를 누르거나 진행을 승인합니다). 작업 도중 궁금한 점은 하단 <strong>`/btw` (`Side Question`)</strong>로 흐름을 끊지 않고 물어보고, 마음에 드는 규칙은 채팅창에 **`/learn` 타이핑 후 `[Tab]` 키**를 눌러 저장합니다:
 
 ```text
 추가로 지금 현재 세계 주요 나라의 GDP(구매력지수 PPP 기준) 비교 슬라이드를 추가해줘.
@@ -368,12 +368,16 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 
 > <strong>🎯 핵심 포인트:</strong> 수정할 때마다 슬라이드 색깔이 제멋대로 바뀌지 않도록, <strong>`/lg-brand-slides` 스킬을 등록해 LG 레드(`#A50034`)와 화이트 배경으로 한 번에 고정</strong>합니다.
 
-1. 실습 폴더의 <strong>[`02_AG_Webpage_lg_brand_slides_SKILL.md`](./files/02_AG_Webpage_lg_brand_slides_SKILL.md)</strong> 파일을 `@멘션`하여 스킬 등록과 적용을 한 번에 지시합니다. *(스킬 등록 후 슬래시 목록에 안 보일 때는 `Ctrl + R` 또는 `View ➔ Reload`)*
-2. 채팅창에 아래 프롬프트를 복사해 입력합니다:
+1. **[1단계: 스킬 등록]** 먼저 실습 폴더의 <strong>[`02_AG_Webpage_lg_brand_slides_SKILL.md`](./files/02_AG_Webpage_lg_brand_slides_SKILL.md)</strong> 파일을 프로젝트 스킬로 등록합니다. *(스킬 등록 후 슬래시 목록에 안 보일 때는 `Ctrl + R` 또는 `View ➔ Reload`)*
 
 ```text
-[1] @02_AG_Webpage_lg_brand_slides_SKILL.md 이 파일을 프로젝트 스킬(lg-brand-slides)로 등록해줘.
-[2] /lg-brand-slides 스킬을 적용해서 지금 웹 프레젠테이션의 색감(Hex)을 LG 브랜드 컬러(#A50034 포인트 & 화이트/그레이 배경)로 고정하여 다시 제작해줘.
+@02_AG_Webpage_lg_brand_slides_SKILL.md 이 파일을 프로젝트 스킬(lg-brand-slides)로 등록해줘.
+```
+
+2. **[2단계: `/lg-brand-slides` 스킬 실행]** 채팅창에 **`/lg-brand-slides`를 타이핑한 뒤 `[Tab]` 키로 스킬 칩을 선택**하고, 이어서 아래 프롬프트 문장을 복사해 붙여넣습니다:
+
+```text
+/lg-brand-slides 스킬을 적용해서 지금 웹 프레젠테이션의 색감(Hex)을 LG 브랜드 컬러(#A50034 포인트 & 화이트/그레이 배경)로 고정하여 다시 제작해줘.
 ```
 
 👉 **실행 결과 화면:** (다크 블루였던 슬라이드가 화이트 + LG 시그니처 레드 `#A50034`로 100% 변환된 모습!)
@@ -399,7 +403,7 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 
 > <strong>🎯 핵심 포인트:</strong> 왼쪽에 메뉴바를 만들고, <strong>방금 만든 웹 슬라이드를 `1번 메뉴(LG 시장 트렌드)` 안에 쏙 넣습니다.</strong>
 
-#### 1️⃣ 채팅창에 아래 프롬프트 복사·붙여넣기
+#### 1️⃣ 채팅창에 `/grill-me` + `[Tab]` 선택 후 아래 프롬프트 복사·붙여넣기
 ```text
 /grill-me 평소 자주 쓰는 업무들을 왼쪽 사이드 탭에 차례차례 추가하는 나만의 대시보드를 만들고 싶어. html/js을 사용하는게 좋을것 같아. 사이드바 1번 메뉴를 'LG 시장 트렌드'로 만들고, 방금 만든 웹 슬라이드 페이지를 이 사이드바 메뉴 안에 넣어줘.
 ```
@@ -438,10 +442,14 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 </details>
 
-#### 1️⃣ 채팅창에 아래 프롬프트 복사·붙여넣기
+#### 1️⃣ [1단계: 스킬 등록] 파이썬 수집 코드를 `python-api-trend` 스킬로 등록하기
 ```text
-[1] @03_AG_Dashboard_fetch_lg_live_market.py 해당하는 파이썬 코드를 스킬로 등록시켜줘. (python-api-trend)
-[2] /python-api-trend 스킬을 실행해 사이드바 '실시간 시장·뉴스(LIVE)' 탭에 LG전자(066570) 실시간 주가·환율(USD/KRW, EUR/KRW)과 구글 뉴스 헤드라인 5건(클릭 시 원문 이동)을 연결해줘.
+@03_AG_Dashboard_fetch_lg_live_market.py 해당하는 파이썬 코드를 스킬로 등록시켜줘. (python-api-trend)
+```
+
+#### 2️⃣ [2단계: `/python-api-trend` 실행] 채팅창에 `/python-api-trend` + `[Tab]` 선택 후 아래 프롬프트 복사·붙여넣기
+```text
+/python-api-trend 스킬을 실행해 사이드바 '실시간 시장·뉴스(LIVE)' 탭에 LG전자(066570) 실시간 주가·환율(USD/KRW, EUR/KRW)과 구글 뉴스 헤드라인 5건(클릭 시 원문 이동)을 연결해줘.
 ```
 
 👉 **실행 결과 화면:** (`실시간 시장·뉴스 LIVE` 탭 — LG전자 `214,500원 +5.93%`, 환율 `1,372.18원`, 실시간 뉴스 5건)
@@ -451,16 +459,20 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ### 🔹 Step 4-3. 우측 상단 `[오늘의 LG 트렌드 & 뉴스 Pull]` 버튼 & `/schedule` 매일 아침 9시 자동화
 
-#### 1️⃣ 채팅창에 아래 프롬프트 복사·붙여넣기
+#### 1️⃣ [1단계: 수동 갱신 버튼 추가] 채팅창에 아래 프롬프트 복사·붙여넣기
 ```text
-[1] 대시보드 우측 상단에 '[오늘의 LG 트렌드 & 뉴스 Pull]' 버튼을 만들어서 클릭 시 최신 데이터로 갱신되게 해줘.
-[2] /schedule 매일 오전 9시에 트렌드 데이터 및 뉴스 데이터를 자동 업데이트해줘.
+대시보드 우측 상단에 '[오늘의 LG 트렌드 & 뉴스 Pull]' 버튼을 만들어서 클릭 시 최신 데이터로 갱신되게 해줘.
 ```
 
-#### 2️⃣ 결과 화면 ①: 우측 상단 헤더에 빨간색 `[📥 오늘의 LG 트렌드 & 뉴스 Pull]` 원클릭 갱신 버튼 장착!
+#### 2️⃣ [2단계: `/schedule` 자동화 등록] 채팅창에 `/schedule` + `[Tab]` 선택 후 아래 프롬프트 복사·붙여넣기
+```text
+/schedule 매일 오전 9시에 트렌드 데이터 및 뉴스 데이터를 자동 업데이트해줘.
+```
+
+#### 3️⃣ 결과 화면 ①: 우측 상단 헤더에 빨간색 `[📥 오늘의 LG 트렌드 & 뉴스 Pull]` 원클릭 갱신 버튼 장착!
 ![Step 4-3 대시보드 우측 상단에 오늘의 LG 트렌드 & 뉴스 Pull 버튼이 추가된 화면](assets/screenshots/slide_19_ui_2.png)
 
-#### 3️⃣ 결과 화면 ②: `/schedule` 명령어로 매일 아침 9시(`0 9 * * *`) 자동 갱신 스케줄(`1 task running`) 등록 완료!
+#### 4️⃣ 결과 화면 ②: `/schedule` 명령어로 매일 아침 9시(`0 9 * * *`) 자동 갱신 스케줄(`1 task running`) 등록 완료!
 ![Step 4-3 schedule 매일 아침 9시 데이터 자동 갱신 스케줄 등록 완료 화면](assets/screenshots/slide_19_ui_1.png)
 
 ---
@@ -471,7 +483,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 > 실시간 데이터 수집 스크립트(`03_AG_Dashboard_fetch_lg_live_market.py`)를 확장하여 경쟁사 동시 비교 티커와 토픽 전환 기능을 추가해 보세요.
 
 ```text
-[심화 미션] 방금 등록한 /python-api-trend 스킬 스크립트를 확장해서:
+/python-api-trend 방금 등록한 스킬 스크립트를 확장해서:
 1. LG전자(066570)뿐만 아니라 주요 비교 종목(예: LG이노텍 011070, 삼성전자 005930)의 실시간 등락률을 나란히 비교하는 '경쟁사 주가 멀티 티커'를 상단 헤더에 추가해줘.
 2. 구글 뉴스 검색 키워드를 버튼 클릭 한 번으로 ['LG전자 AI 가전' / 'OLED TV 점유율' / '유럽 HVAC 히트펌프'] 3가지 토픽으로 즉시 전환해서 볼 수 있게 탭 2 화면을 업그레이드해줘.
 ```
@@ -523,7 +535,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 > <strong>🎯 핵심 포인트:</strong> 사람이 일일이 눌러보는 대신, <strong>`/browser` 명령어로 AI가 직접 크롬을 띄워 탭과 필터가 잘 작동하는지 스스로 눌러보게 합니다.</strong>
 
-#### 1️⃣ 채팅창에 아래 프롬프트 복사·붙여넣기
+#### 1️⃣ 채팅창에 `/browser` + `[Tab]` 선택 후 아래 프롬프트 복사·붙여넣기
 ```text
 /browser 로컬 대시보드에 접속해서 사이드 탭 전환과 제품군 필터('OLED evo', 'StanbyME 시제품') 클릭 시 콘솔 에러나 0 나눗셈 오류가 없는지 검증해
 ```
@@ -554,7 +566,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 > 단순 차트 출력을 넘어 실제 임원 회의에서 바로 활용할 수 있는 <strong>'환율·구독 전환율 시뮬레이션 슬라이더 + 원클릭 요약 리포트 추출'</strong> 기능을 구현해 보세요.
 
 ```text
-[최종 보스 미션] 현재 '가전 실적·구독 분석' 탭에 아래 2가지 실무 기능을 추가해줘:
+현재 '가전 실적·구독 분석' 탭에 아래 2가지 실무 기능을 추가해줘:
 1. '환율 & 구독 전환율 What-if 시뮬레이터 슬라이더': 마우스로 USD/KRW 환율(1,300원~1,450원)과 HaaS 구독 전환율(+1%p ~ +10%p) 슬라이더를 움직이면 5대 가전 제품군의 예상 영업이익과 연매출이 실시간으로 재계산되어 차트가 움직이게 해줘.
 2. 우측 상단에 '[📥 임원 보고용 1페이지 요약 리포트 다운로드(.md)]' 버튼을 만들고, 클릭 시 현재 선택된 필터 기준의 핵심 KPI와 이상치(스탠바이미 시제품 18건, 워시타워 결측 23건) 분석 코멘트가 파일로 즉시 다운로드되게 구현해줘.
 ```
