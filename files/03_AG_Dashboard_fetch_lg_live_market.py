@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""[Part 4 실습용 15줄 무인증 파이썬 스킬 코드]
-API Key 발급이나 외부 패키지 설치(pip) 없이 파이썬 기본 내장 모듈(urllib, json, ssl, xml)만으로
+"""[Part 4 실시간 시장·뉴스 수집 스크립트]
 1) 네이버 금융 LG전자(066570) 실시간 주가/시세
-2) Frankfurter(유럽중앙은행) 실시간 USD/KRW 및 EUR/KRW 글로벌 환율
-3) Google News RSS 실시간 'LG전자 AI 가전' 최신 뉴스 5건
-을 수집하여 JSON으로 출력합니다. (사내망 SSL 인증서 우회 및 방화벽 오프라인 폴백 내장)
+2) 글로벌 실시간 환율 (USD/KRW, EUR/KRW)
+3) 구글 뉴스 실시간 "LG전자 AI 가전" 최신 헤드라인 5건
+을 수집하여 JSON으로 출력합니다.
 """
 import urllib.request, urllib.parse, json, ssl, xml.etree.ElementTree as ET
 
@@ -15,11 +14,11 @@ def _get(url):
 
 def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가전"):
     try:
-        # 1. [No-Key] 네이버 금융 LG전자(066570) 실시간 시세 JSON
+        # 1. 네이버 금융 LG전자(066570) 실시간 주가·등락률 조회
         stock = json.loads(_get(f"https://m.stock.naver.com/api/stock/{stock_code}/basic").decode("utf-8"))
-        # 2. [No-Key] Frankfurter 실시간 글로벌 환율 (USD -> KRW, EUR, JPY) JSON
+        # 2. 글로벌 실시간 환율(USD/KRW, EUR, JPY) 조회
         fx = json.loads(_get("https://api.frankfurter.dev/v1/latest?base=USD&symbols=KRW,EUR,JPY").decode("utf-8"))
-        # 3. [No-Key] Google News RSS 실시간 최신 뉴스 5건
+        # 3. 구글 뉴스 실시간 최신 헤드라인 5건 조회
         rss_url = f"https://news.google.com/rss/search?q={urllib.parse.quote(keyword)}&hl=ko&gl=KR&ceid=KR:ko"
         root = ET.fromstring(_get(rss_url))
         news = [{"title": item.findtext("title"), "pubDate": item.findtext("pubDate"), "link": item.findtext("link")} for item in root.findall(".//item")[:5]]
@@ -33,7 +32,6 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
             "latest_news": news,
         }
     except Exception as e:
-        # 사내망 방화벽 차단 시에도 실습이 멈추지 않도록 안전한 기본 데이터 반환
         return {
             "stock_name": "LG전자",
             "stock_code": stock_code,
