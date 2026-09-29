@@ -308,9 +308,9 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 
 ---
 
-### 🔹 Step 3-1. `/grill-me` 역질문 인터뷰 & `Implementation Plan` `[Proceed]` 승인하기
+### 🔹 Step 3-1. `/grill-me` 역질문 인터뷰 & 구현 계획 승인하기
 
-> <strong>🎯 핵심 포인트:</strong> 프롬프트를 길게 고민할 필요 없이 <strong>`/grill-me`</strong> 한 줄만 치면, <strong>AI가 먼저 객관식 질문을 던져 기획을 잡아주고 `[Proceed]` 버튼 하나로 코딩을 시작</strong>합니다.
+> <strong>🎯 핵심 포인트:</strong> 프롬프트를 길게 고민할 필요 없이 <strong>`/grill-me`</strong> 한 줄만 치면, <strong>AI가 먼저 질문을 던져 기획을 잡아주고 승인 즉시 코딩을 시작</strong>합니다.
 
 #### 1️⃣ 작업 폴더 열기 & `/grill-me` 프롬프트 입력
 로컬 작업 폴더(예: `C:/Users/abcd/lg-work-portal`)를 열고, 채팅창에 아래 한 줄 프롬프트를 복사해 입력합니다:
@@ -319,15 +319,17 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 /grill-me LG AI 가전 트렌드 보고서를 임원 발표용 Single Webpage 슬라이드로 만들고 싶어.
 ```
 
-#### 2️⃣ 에이전트가 띄우는 객관식 역질문 카드에 체크 후 `Submit ↵` 클릭
-`/grill-me`를 실행하면 아래 화면처럼 에이전트가 <strong>우선순위 기능</strong>과 <strong>발표자 노트 레이아웃 방식</strong>을 객관식 카드로 물어봅니다. 원하는 항목(예: `1번 Recommended`)을 클릭하고 우측 하단 파란색 <strong>`Submit ↵`</strong> 버튼을 누릅니다.
+#### 2️⃣ 에이전트의 역질문에 답변하기 (객관식 카드 `Submit ↵` 또는 채팅 답변)
+`/grill-me`를 실행하면 에이전트가 <strong>우선순위 기능</strong>과 <strong>발표자 노트 레이아웃 방식</strong> 등을 물어봅니다. 아래 화면처럼 객관식 카드가 뜨면 원하는 항목(예: `1번 Recommended`)을 선택하고 우측 하단 파란색 <strong>`Submit ↵`</strong> 버튼을 누릅니다. *(만약 카드 대신 일반 채팅 문장으로 물어보면 채팅창에 원하는 방향을 짧게 답해주면 됩니다.)*
 
 ![Step 3-1 grill-me 첫 번째 객관식 역질문 선택 화면](assets/screenshots/slide_12_ui_1.png)
 
 ![Step 3-1 grill-me 두 번째 객관식 역질문 선택 화면](assets/screenshots/slide_12_ui_3.png)
 
-#### 3️⃣ 생성된 `Implementation Plan`(구현 계획서)에서 파란색 `[Proceed ⌘↩]` 버튼 클릭!
-질문에 답하고 나면 에이전트가 아래 화면처럼 <strong>구현 계획서(`Implementation Plan`)</strong>를 제시합니다. ⚠️ <strong>반드시 하단의 파란색 `[Proceed ⌘↩]` 버튼을 눌러주셔야 실제 `index.html` 코드 생성이 시작됩니다!</strong>
+#### 3️⃣ 구현 계획(`Implementation Plan`) 확인 및 진행 승인 (`[Proceed ⌘↩]` 또는 채팅 답변)
+질문에 답하고 나면 에이전트가 구현 계획을 정리해 보여줍니다.
+* 아래 화면처럼 **`Implementation Plan` 카드와 파란색 `[Proceed ⌘↩]` 버튼이 뜨면 `[Proceed ⌘↩]` 버튼을 클릭**합니다.
+* 만약 버튼 대신 **채팅 문장으로 진행 여부를 물어보면 `"응, 이대로 만들어줘"`라고 입력**해 실제 `index.html` 코드 생성을 시작합니다.
 
 ![Step 3-1 Implementation Plan 생성 및 Proceed 승인 버튼 화면](assets/screenshots/slide_12_ui_2.png)
 
@@ -347,8 +349,8 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 
 ### 🔹 Step 3-3. 참여자 자유 구성 추가 & `/btw` · `/learn`으로 내 슬라이드 규칙 저장하기
 
-#### 1️⃣ 원하는 장표 내용 자유롭게 추가하고 `[Proceed]` 누르기
-내가 보고서에 더 넣고 싶은 데이터(예: 주요 국가 구매력 지수 GDP 비교, 당사 vs 경쟁사 스펙 비교표 등)를 채팅창에 자연어로 추가 지시하고, 계획서가 뜨면 <strong>`Proceed`</strong>를 누릅니다. 작업 도중 궁금한 점은 하단 <strong>`/btw` (`Side Question`)</strong>로 흐름을 끊지 않고 물어보고, 마음에 드는 규칙은 <strong>`/learn`</strong>으로 저장합니다:
+#### 1️⃣ 원하는 장표 내용 자유롭게 추가하기
+내가 보고서에 더 넣고 싶은 데이터(예: 주요 국가 구매력 지수 GDP 비교, 당사 vs 경쟁사 스펙 비교표 등)를 채팅창에 자연어로 추가 지시합니다(계획서 카드가 뜨면 <strong>`Proceed`</strong>를 누르거나 진행을 승인합니다). 작업 도중 궁금한 점은 하단 <strong>`/btw` (`Side Question`)</strong>로 흐름을 끊지 않고 물어보고, 마음에 드는 규칙은 <strong>`/learn`</strong>으로 저장합니다:
 
 ```text
 추가로 지금 현재 세계 주요 나라의 GDP(구매력지수 PPP 기준) 비교 슬라이드를 추가해줘.
