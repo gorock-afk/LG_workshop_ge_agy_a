@@ -5,7 +5,7 @@
 > 각 단계마다 <strong>① 화면에서 어디를 보는지</strong> ➔ <strong>② 무엇을 복사해 입력하는지</strong> ➔ <strong>③ 어떤 결과 화면이 나오는지</strong> 순서대로 따라오시면 됩니다.
 >
 > * 🌐 <strong>라이브 웹페이지 버전 (좌측 목차 · 원클릭 복사 · 이미지 클릭 확대)</strong>: <a href="https://gorock-afk.github.io/LG_workshop_ge_agy_a/"><strong>https://gorock-afk.github.io/LG_workshop_ge_agy_a/</strong></a>
-> * 📂 <strong>실습 파일 패키지 (Google Drive 폴더)</strong>: <a href="./LG_Workshop_Files.zip"><strong>실습 파일 8종 전체 열기</strong></a>
+> * 📂 <strong>실습 파일 패키지 (Google Drive 폴더)</strong>: <a href="./LG_Workshop_Files.zip"><strong>실습 파일 10종 전체 열기</strong></a>
 > * 📊 <strong>발표 슬라이드 원본 (Google Slides)</strong>: <a href="./LG_Workshop_Slides.pdf"><strong>교안 슬라이드 열기</strong></a>
 
 ---
@@ -20,7 +20,7 @@
 | 파트 (시간) | 실습 환경 | 내가 직접 만드는 누적 산출물 | 핵심 사용 기능 |
 | :--- | :---: | :--- | :--- |
 | <strong>Part 1 (30분)</strong> | 🌐 크롬 GE Web | <strong>[주간 동향 보고서] LG전자 프리미엄 시장 트렌드 분석 & `.md` 스킬 브리핑</strong> | `Projects` (`Invite+`) + `Knowledge` (`.txt`) + <strong>`Skills` (`Upload skill` `.md`)</strong> |
-| <strong>Part 2 (30분)</strong> | 🌐 크롬 GE Web | <strong>내 Gmail 임시보관함(`Drafts`)에 저장된 사내 표준 보고 메일</strong> | `Workflow` 에이전트 연결 + <strong>`Approval (HITL 사람 승인)`</strong> |
+| <strong>Part 2 (30분)</strong> | 🌐 크롬 GE Web | <strong>내 Gmail 임시보관함(`Drafts`)에 저장된 사내 표준 보고 메일</strong> | `Workflow` (`.md` 템플릿 첨부 + `Structured output`) + <strong>`Approval (HITL 사람 승인)`</strong> |
 | <strong>Part 3 (30분)</strong> | 💻 Antigravity 2.0 | <strong>LG 브랜드 컬러(`#A50034` 레드 + 화이트) 고정 웹 슬라이드(`index.html`)</strong> | 세팅 점검 + `/grill-me` · `Proceed` · `/btw` · `/learn` + `/lg-brand-slides` |
 | <strong>Part 4 (30분)</strong> | 💻 Antigravity 2.0 | <strong>좌측 사이드 탭 업무 포털 (`탭 1: 트렌드 슬라이드` + `탭 2: 실시간 시세·뉴스`)</strong> | <strong>15줄 무인증 파이썬 코드</strong> 스킬 등록 + 우측 상단 `Pull` 버튼 & `/schedule` |
 | <strong>Part 5 (1시간)</strong> | 💻 Antigravity 2.0 | <strong>`탭 3/4: 가전 실적·구독 분석` 블렌딩 + `/browser` 검증 + `99점 품질 인증`</strong> | `@04_lg_appliance_data.csv`(920행) 진단 + `/browser` + <strong>`+ New Chat` 감사관 루프</strong> |
@@ -29,14 +29,15 @@
 
 ## 📦 실습 전 준비: 실습 파일 한 번에 다운로드 (`LG_Workshop_Files.zip`)
 
-> <strong>📥 번거롭게 하나씩 받지 마세요!</strong> 아래 초록색 버튼을 누르면 오늘 실습에 쓰이는 <strong>9개 파일 전체가 압축된 `LG_Workshop_Files.zip`</strong>이 내 PC로 즉시 다운로드됩니다. 다운로드 후 압축을 풀어 작업 폴더(예: `lg-work-portal`)에 넣어두세요.
+> <strong>📥 번거롭게 하나씩 받지 마세요!</strong> 아래 초록색 버튼을 누르면 오늘 실습에 쓰이는 <strong>10개 파일 전체가 압축된 `LG_Workshop_Files.zip`</strong>이 내 PC로 즉시 다운로드됩니다. 다운로드 후 압축을 풀어 작업 폴더(예: `lg-work-portal`)에 넣어두세요.
 >
-> 👉 <a href="./LG_Workshop_Files.zip" download="LG_Workshop_Files.zip"><strong>[📥 실습 파일 9종 전체 ZIP 한 번에 다운로드 (LG_Workshop_Files.zip)]</strong></a>
+> 👉 <a href="./LG_Workshop_Files.zip" download="LG_Workshop_Files.zip"><strong>[📥 실습 파일 10종 전체 ZIP 한 번에 다운로드 (LG_Workshop_Files.zip)]</strong></a>
 
 | 번호 | 파일명 (클릭 시 열기) | 사용 파트 | 파일 역할 및 핵심 내용 |
 | :---: | :--- | :---: | :--- |
-| <strong>01-A</strong> | [`01_GE_Workflow_lg_weekly_report_template.txt`](./files/01_GE_Workflow_lg_weekly_report_template.txt) | <strong>Part 1~2</strong> | 크롬 GE `Project Knowledge` 및 `Workflow`에 업로드할 <strong>사내 주간 트렌드 보고서 표준 서식 (`.txt`)</strong> |
+| <strong>01-A</strong> | [`01_GE_Workflow_lg_weekly_report_template.txt`](./files/01_GE_Workflow_lg_weekly_report_template.txt) | <strong>Part 1</strong> | 크롬 GE `Project Knowledge`에 업로드할 <strong>사내 주간 트렌드 보고서 표준 서식 (`.txt`)</strong> |
 | <strong>01-B</strong> | [`01_GE_Skill_lg_executive_briefing_SKILL.md`](./files/01_GE_Skill_lg_executive_briefing_SKILL.md) | <strong>Part 1</strong> | 크롬 GE `Skills` ➔ `Upload skill`에 업로드해 `/lg-executive-briefing`으로 호출하는 <strong>임원 브리핑 스킬 (`.md`)</strong> |
+| <strong>01-C</strong> | [`01_GE_Workflow_lg_weekly_report_template.md`](./files/01_GE_Workflow_lg_weekly_report_template.md) | <strong>Part 2</strong> | 크롬 GE `Workflow` 노드의 `Files`에 첨부파일로 넣을 <strong>사내 주간 트렌드 보고서 마크다운 템플릿 (`.md`)</strong> |
 | <strong>02</strong> | [`02_AG_Webpage_hello_world_slides.html`](./files/02_AG_Webpage_hello_world_slides.html) | <strong>Part 3</strong> | 방향키(`←`/`→`)로 넘기는 <strong>웹 슬라이드 스타터 파일</strong> |
 | <strong>03</strong> | [`02_AG_Webpage_lg_brand_slides_SKILL.md`](./files/02_AG_Webpage_lg_brand_slides_SKILL.md) | <strong>Part 3</strong> | 다크 블루 화면을 <strong>LG 시그니처 레드(`#A50034`) + 화이트 배경</strong>으로 고정하는 스킬 |
 | <strong>04</strong> | [`03_AG_Dashboard_fetch_lg_live_market.py`](./files/03_AG_Dashboard_fetch_lg_live_market.py) | <strong>Part 4</strong> | <strong>API 키·설치 불필요!</strong> 15줄 무인증 LG전자(`066570`) 현재가·환율·구글 뉴스 수집 코드 |
@@ -145,13 +146,13 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 ---
 
 # ⚡ [1부 · 크롬 브라우저] Part 2. GE Workflow & HITL 사람 승인 자동화
-### 🔹 Step 2-1. 트렌드 조사 + 양식 포맷팅 + 사람 승인(`Approval`)을 Workflow로 연결하기 (슬라이드 7)
+### 🔹 Step 2-1. 트렌드 조사 + 양식 포맷팅(`.md` 첨부) + 사람 승인(`Approval`)을 Workflow로 연결하기 (슬라이드 7)
 
 > <strong>🎯 왜 하나요?</strong>  
-> 매주 반복되는 <strong>`트렌드 수집` ➔ `양식 정리(01_template.txt)` ➔ `사람 최종 검토(Approval)` ➔ `Gmail 초안 생성`</strong> 과정을 하나의 정형화된 파이프라인으로 묶어 자동화합니다. 특히 앞 단계의 결과물을 다음 단계가 요약·누락 없이 그대로 이어받도록 <strong>`Structured output`에 단일 변수 `content` (`Text`) 하나만 지정</strong>하여 가장 직관적으로 연결합니다.
+> 매주 반복되는 <strong>`트렌드 수집` ➔ `양식 정리(01_template.md 첨부)` ➔ `사람 최종 검토(Approval)` ➔ `Gmail 초안 생성`</strong> 과정을 하나의 정형화된 파이프라인으로 묶어 자동화합니다. 특히 앞 단계의 결과물을 다음 단계가 요약·누락 없이 그대로 이어받도록 <strong>`Structured output`에 단일 변수 `content` (`Text`) 하나만 지정</strong>하여 가장 직관적으로 연결합니다.
 
 * **전체 연결 흐름 (5단계 노드)**:
-  - <strong>`Manual` (시작 트리거)</strong> ➔ <strong>`Gemini Agent` (트렌드 뉴스 수집 · `content` 출력)</strong> ➔ <strong>`Gemini Agent 1` (`01_template.txt` 양식 포맷팅 · `content` 출력)</strong> ➔ <strong>`Approval` (사람의 개입 HITL)</strong> ➔ <strong>`Gemini Agent 2` (Gmail 드래프트 생성)</strong>
+  - <strong>`Manual` (시작 트리거)</strong> ➔ <strong>`Gemini Agent` (트렌드 뉴스 수집 · `content` 출력)</strong> ➔ <strong>`Gemini Agent 1` (`01_GE_Workflow_lg_weekly_report_template.md` 첨부 양식 포맷팅 · `content` 출력)</strong> ➔ <strong>`Approval` (사람의 개입 HITL)</strong> ➔ <strong>`Gemini Agent 2` (Gmail 드래프트 생성)</strong>
 
 ---
 
@@ -193,25 +194,25 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 
 ---
 
-#### ③ `3. Gemini Agent 1` — 2단계: `01_template.txt` 사내 표준 양식 포맷팅 & `content` 변수 전달
+#### ③ `3. Gemini Agent 1` — 2단계: `01_GE_Workflow_lg_weekly_report_template.md` 양식 첨부 & `content` 변수 전달
 1. **이전 단계 `content` 변수 불러오기 (`+` ➔ `{} Variables`)**: 첫 번째 `Gemini Agent` 아래 <strong>`+ Add step`</strong>을 눌러 두 번째 에이전트(<strong>`Gemini Agent 1`</strong>)를 추가합니다. 우측 <strong>`Instructions`</strong> 입력창 우측 하단의 <strong>`+` 아이콘</strong>을 클릭하고 <strong>`{} Variables`</strong>를 선택합니다.
 
 ![Step 2-1-6 Gemini Agent 1 Instructions 입력창 하단 + 버튼 클릭 후 Variables 선택](assets/screenshots/wf_step_07.png)
 
-2. **`2 ✨ Gemini Agent: content` 클릭 및 지시문 작성**: 변수 목록에서 앞 단계의 출력 변수인 <strong>`2 ✨ Gemini Agent: content` (`Text`)</strong>를 클릭해 삽입하고, 아래와 같이 양식 변환 프롬프트를 작성합니다:
+2. **`2 ✨ Gemini Agent: content` 클릭 및 지시문 작성**: 변수 목록에서 앞 단계의 출력 변수인 <strong>`2 ✨ Gemini Agent: content` (`Text`)</strong>를 클릭해 삽입하고, 아래와 같이 첨부된 `.md` 템플릿 파일로 변환하는 프롬프트를 작성합니다:
 
 ```text
 [= Gemini Agent: content]
-첨부된 사내 표준 보고서 양식(01_GE_Workflow_lg_weekly_report_template.txt)에 맞춰 위 트렌드 조사 내용을 주간 LG 제품 시장 트렌드 보고서 전문으로 포맷팅해줘.
+첨부된 사내 표준 보고서 양식(01_GE_Workflow_lg_weekly_report_template.md)에 맞춰 위 트렌드 조사 내용을 주간 LG 제품 시장 트렌드 보고서 전문으로 포맷팅해줘.
 ```
 
 ![Step 2-1-7 Variables 목록에서 2 Gemini Agent: content 선택하여 프롬프트에 삽입](assets/screenshots/wf_step_08.png)
 
-3. **`Files`에 사내 표준 양식(`.txt`) 업로드**: 우측 패널 중앙의 <strong>`Files 0`</strong> 옆 <strong>`+` 버튼 (`Ground the agent in your data`)</strong>을 클릭하여 실습 파일 **[`01_GE_Workflow_lg_weekly_report_template.txt`](./files/01_GE_Workflow_lg_weekly_report_template.txt)**를 업로드합니다.
+3. **`Files`에 사내 표준 양식 마크다운 파일(`.md`) 첨부**: 우측 패널 중앙의 <strong>`Files 0`</strong> 옆 <strong>`+` 버튼 (`Ground the agent in your data`)</strong>을 클릭하여 실습 폴더의 마크다운 템플릿 파일 **[`01_GE_Workflow_lg_weekly_report_template.md`](./files/01_GE_Workflow_lg_weekly_report_template.md)**를 첨부파일로 넣습니다. *(Workflow 에이전트 노드의 `Files` 첨부 기능은 `.md` 마크다운 파일을 바로 업로드할 수 있습니다!)*
 
-![Step 2-1-8 Gemini Agent 1 우측 패널 Files + 버튼을 눌러 01_template.txt 양식 업로드](assets/screenshots/wf_step_09.png)
+![Step 2-1-8 Gemini Agent 1 우측 패널 Files + 버튼을 눌러 01_GE_Workflow_lg_weekly_report_template.md 첨부](assets/screenshots/wf_step_09.png)
 
-4. **`Files 1` 업로드 확인 & `Structured output` (`= content`) 설정**: 파일이 업로드되어 <strong>`Files 1`</strong>로 바뀐 것을 확인하고, 1단계와 동일하게 하단 <strong>`More` ➔ `Output` ➔ `Structured output`</strong>을 선택해 <strong>`content` (`Text`)</strong> 단일 변수를 등록합니다.
+4. **`Files 1` 첨부 확인 & `Structured output` (`= content`) 설정**: 템플릿 `.md` 파일이 첨부되어 <strong>`Files 1`</strong>로 바뀐 것을 확인하고, 1단계와 동일하게 하단 <strong>`More` ➔ `Output` ➔ `Structured output`</strong>을 선택해 <strong>`content` (`Text`)</strong> 단일 변수를 등록합니다.
 
 ![Step 2-1-9 Files 1 업로드 완료 및 More > Output에 Structured output(= content) 설정 완료 화면](assets/screenshots/wf_step_10.png)
 
@@ -575,7 +576,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ## 🎉 수고하셨습니다! 오늘 완성한 모든 산출물 요약
 
-1. <strong>1부 (크롬 GE Web)</strong>: 팀 공유 `Project` + 사내 보고서 양식(`01_template.txt`) 고정 ➔ `Workflow` + `Approval (HITL 사람 승인)` ➔ <strong>내 Gmail 임시보관함(`Drafts`) 주간 트렌드 보고서 자동 생성</strong>
+1. <strong>1부 (크롬 GE Web)</strong>: 팀 공유 `Project` + 사내 보고서 양식(`01_template.txt`) + `.md` 스킬(`Upload skill`) ➔ `Workflow` (`01_template.md` 첨부) + `Approval (HITL 사람 승인)` ➔ <strong>내 Gmail 임시보관함(`Drafts`) 주간 트렌드 보고서 자동 생성</strong>
 2. <strong>2부 (Antigravity 2.0)</strong>:
    - <strong>탭 1 (`📈 LG 시장 트렌드`)</strong>: `/grill-me` ➔ `Proceed` ➔ `/lg-brand-slides`로 <strong>LG 시그니처 레드(`#A50034`) + 화이트 테마 웹 슬라이드</strong> 탑재
    - <strong>탭 2 (`💓 실시간 시장·뉴스 LIVE`)</strong>: <strong>15줄 무인증 파이썬 코드</strong> 스킬 연동으로 <strong>LG전자(`066570`) 실시간 시세·환율·구글 뉴스</strong> + 우측 상단 <strong>`Pull` 버튼 & `/schedule` 매일 9시 자동화</strong>
