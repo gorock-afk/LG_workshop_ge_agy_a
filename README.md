@@ -23,7 +23,7 @@
 | <strong>Part 2 (30분)</strong> | 🌐 크롬 GE Web | <strong>내 Gmail 임시보관함(`Drafts`)에 저장된 사내 표준 보고 메일</strong> | `Workflow` (`.md` 템플릿 첨부 + `Structured output`) + <strong>`Approval (HITL 사람 승인)`</strong> |
 | <strong>Part 3 (30분)</strong> | 💻 Antigravity 2.0 | <strong>LG 브랜드 컬러(`#A50034` 레드 + 화이트) 고정 웹 슬라이드(`index.html`)</strong> | 세팅 점검 + `/grill-me` · `Proceed` · `/btw` · `/learn` + `/lg-brand-slides` |
 | <strong>Part 4 (30분)</strong> | 💻 Antigravity 2.0 | <strong>좌측 사이드 탭 업무 포털 (`탭 1: 트렌드 슬라이드` + `탭 2: 실시간 시세·뉴스`)</strong> | <strong>실시간 시장·뉴스 수집</strong> 스킬 등록 + 우측 상단 `Pull` 버튼 & `/schedule` |
-| <strong>Part 5 (1시간)</strong> | 💻 Antigravity 2.0 | <strong>`탭 3/4: 가전 실적·구독 분석` 블렌딩 + `/browser` 검증 + `99점 품질 인증`</strong> | `@04_lg_appliance_data.csv`(920행) 진단 + `/browser` + <strong>`+ New Chat` 감사관 루프</strong> |
+| <strong>Part 5 (1시간)</strong> | 💻 Antigravity 2.0 | <strong>`탭 3/4: 가전 실적·구독 분석` 블렌딩 + `/browser` 검증 + `90점 품질 게이트`</strong> | `@04_lg_appliance_data.csv`(920행) 진단 + `/browser` + <strong>`+ New Chat` 감사관 루프</strong> |
 
 ---
 
@@ -492,7 +492,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ---
 
-# 📈 [2부 · 데스크톱 앱] Part 5. LG 5대 가전 920행 데이터 Analytics & 95점 품질 게이트
+# 📈 [2부 · 데스크톱 앱] Part 5. LG 5대 가전 920행 데이터 Analytics & 90점 품질 게이트
 ### 🔹 Step 5-0. 데이터셋(`04_AG_Analytics_lg_appliance_data.csv`, 920행) 로딩 및 컬럼 확인 (슬라이드 21)
 
 #### 1️⃣ 로컬 폴더에 `04_AG_Analytics_lg_appliance_data.csv` 넣고 `@멘션`으로 읽어오기
@@ -550,23 +550,24 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ---
 
-### 🔹 Step 5-4. [Step 4: Handoff] 새 세션(`+ New Conversation`) 품질 감사관 채점 & 90점/95점 게이트 돌파 후 `/learn` 저장! (슬라이드 25)
+### 🔹 Step 5-4. [Step 4: Handoff] 새 세션(`+ New Conversation`) 품질 감사관 채점 & `90점` 게이트 돌파 후 `/learn` 저장! (슬라이드 25)
 
 > <strong>💡 오늘 워크샵의 하이라이트 (`자기 확증 편향` 제거 루프)!</strong>  
 > 코드를 작성한 기존 세션에게 "잘 만들었니?"라고 물으면 자기 코드를 칭찬합니다.  
-> 따라서 좌측 상단 <strong>`+ New Conversation` 버튼으로 완전히 새로운 세션을 열어 '품질 감사관(QA Evaluator)' 역할을 부여</strong>하고, <strong>목표 점수(90점/95점)를 넘길 때까지 스스로 감점 요인을 고치고 재채점하는 루프</strong>를 돌린 뒤 최종 통과 규칙을 <strong>`/learn`</strong>으로 영구 자산화합니다!
+> 따라서 좌측 상단 <strong>`+ New Conversation` 버튼으로 완전히 새로운 세션을 열어 '품질 감사관(QA Evaluator)' 역할을 부여</strong>하고, <strong>목표 점수(`90점`)를 넘길 때까지 스스로 감점 요인을 고치고 재채점하는 루프</strong>를 돌린 뒤 최종 통과 규칙을 <strong>`/learn`</strong>으로 영구 자산화합니다!  
+> *(💬 **참고:** 목표 점수를 `99점`처럼 극단적으로 높게 설정할 경우 에이전트가 사소한 트집을 잡으며 수정·재채점 루프를 무한히 반복해 불필요한 시간과 토큰이 낭비될 수 있으므로, 실습 교육 목적으로 **`90점`**을 게이트 기준으로 설정했습니다.)*
 
 #### 1️⃣ 좌측 상단 `+ New Conversation` 클릭 후 <strong>새 세션</strong>에 아래 프롬프트 복사·붙여넣기 (슬라이드 25 원문 그대로!)
 ```text
 너는 품질 감사관이야. @index.html 을 100점 만점 채점해. 90점 미만이면 감점 요인을 직접 고쳐서 90점을 넘길 때까지 재채점 루프를 반복하고, 통과 후 /learn으로 저장해줘.
 ```
 
-👉 **실행 결과 화면:** (`1차 점수 82점` ➔ 자동 패치 후 `2차 점수 99점 🏆 [품질 인증 기준 통과]` 및 `/learn` 영구 저장 안내!)
-![Step 5-4 새 세션 품질 감사관 1차 82점 ➔ 2차 99점 통과 및 learn 저장 안내 화면](assets/screenshots/slide_25_ui_1.png)
+👉 **실행 결과 화면:** (`1차 점수 82점` ➔ 자동 패치 후 `90점 품질 게이트 통과 🏆` 및 `/learn` 영구 저장 안내!)
+![Step 5-4 새 세션 품질 감사관 1차 82점 ➔ 패치 후 90점 품질 게이트 통과 및 learn 저장 안내 화면](assets/screenshots/slide_25_ui_1.png)
 
 ---
 
-### 🔥 [Part 5 최종 보스 미션] 98점 돌파 아키텍처 리팩터링 & 본부장 보고용 PDF/MD 원클릭 추출기 구현
+### 🔥 [Part 5 최종 보스 미션] What-if 시뮬레이터 슬라이더 & 본부장 보고용 PDF/MD 원클릭 추출기 구현
 
 > <strong>💡 실무 확장 미션 (What-if 시뮬레이터 & 원클릭 리포트 추출)</strong>  
 > 단순 차트 출력을 넘어 실제 임원 회의에서 바로 활용할 수 있는 <strong>'환율·구독 전환율 시뮬레이션 슬라이더 + 원클릭 요약 리포트 추출'</strong> 기능을 구현해 보세요.
@@ -585,4 +586,4 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 2. <strong>2부 (Antigravity 2.0)</strong>:
    - <strong>탭 1 (`📈 LG 시장 트렌드`)</strong>: `/grill-me` ➔ `Proceed` ➔ `/lg-brand-slides`로 <strong>LG 시그니처 레드(`#A50034`) + 화이트 테마 웹 슬라이드</strong> 탑재
    - <strong>탭 2 (`💓 실시간 시장·뉴스 LIVE`)</strong>: <strong>실시간 데이터 수집 스킬</strong> 연동으로 <strong>LG전자(`066570`) 실시간 시세·환율·구글 뉴스</strong> + 우측 상단 <strong>`Pull` 버튼 & `/schedule` 매일 9시 자동화</strong>
-   - <strong>탭 3/4 (`📊 가전 실적·구독 분석 NEW`)</strong>: <strong>`@04_AG_Analytics_lg_appliance_data.csv` (920행)</strong> 결측치(23건)·시제품(0원 18건) 정제 차트 + <strong>`/browser` 검증</strong> + <strong>새 세션 감사관 `82점 ➔ 99점 PASS` & `/learn` 영구 자산화</strong>
+   - <strong>탭 3/4 (`📊 가전 실적·구독 분석 NEW`)</strong>: <strong>`@04_AG_Analytics_lg_appliance_data.csv` (920행)</strong> 결측치(23건)·시제품(0원 18건) 정제 차트 + <strong>`/browser` 검증</strong> + <strong>새 세션 감사관 `90점 품질 게이트 PASS` & `/learn` 영구 자산화</strong>
