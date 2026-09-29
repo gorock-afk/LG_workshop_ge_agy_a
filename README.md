@@ -351,7 +351,7 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 
 ### 🔹 Step 3-2. 생성된 발표용 웹 슬라이드(`index.html`) 브라우저 시연 & 방향키(`←`/`→`) 확인 (슬라이드 13)
 
-1. 에이전트가 생성한 `index.html` (또는 스타터 파일 [`02_AG_Webpage_hello_world_slides.html`](./files/02_AG_Webpage_hello_world_slides.html))을 브라우저에서 엽니다.
+1. 에이전트가 생성한 `index.html`을 브라우저에서 엽니다.
 2. 키보드 <strong>좌우 방향키(`←` / `→`)</strong> 또는 `Space` 키로 슬라이드를 넘겨보고, `N` 키(발표자 노트)와 `F` 키(전체화면)를 눌러봅니다.
 3. *(확인 포인트: 아래 두 화면처럼 슬라이드 구조와 차트는 멋지게 나왔지만, <strong>아직 LG 브랜드 컬러 스킬을 입히기 전이라 기본 다크 블루(`#1a73e8`) 색감</strong>으로 만들어진 상태입니다!)*
 
