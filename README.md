@@ -11,13 +11,13 @@
 
 ![5단계 누적 빌드업 로드맵 다이어그램](assets/screenshots/slide_02_ui_1.png)
 
-| 파트 (시간) | 실습 환경 | 내가 직접 만드는 누적 산출물 | 핵심 사용 기능 |
-| :--- | :---: | :--- | :--- |
-| <strong>Part 1 (30분)</strong> | 🌐 크롬 GE Web | <strong>[주간 동향 보고서] LG전자 프리미엄 시장 트렌드 분석 & `.md` 스킬 브리핑</strong> | `Projects` (`Invite+`) + `Knowledge` (`.txt`) + <strong>`Skills` (`Upload skill` `.md`)</strong> |
-| <strong>Part 2 (30분)</strong> | 🌐 크롬 GE Web | <strong>내 Gmail 임시보관함(`Drafts`)에 저장된 사내 표준 보고 메일</strong> | `Workflow` (`.md` 템플릿 첨부 + `Structured output`) + <strong>`Approval (HITL 사람 승인)`</strong> |
-| <strong>Part 3 (30분)</strong> | 💻 Antigravity 2.0 | <strong>LG 브랜드 컬러(`#A50034` 레드 + 화이트) 고정 웹 슬라이드(`index.html`)</strong> | 세팅 점검 + `/grill-me` · `Proceed` · `/btw` · `/learn` + `/lg-brand-slides` |
-| <strong>Part 4 (30분)</strong> | 💻 Antigravity 2.0 | <strong>좌측 사이드 탭 업무 포털 (`탭 1: 트렌드 슬라이드` + `탭 2: 실시간 시세·뉴스`)</strong> | <strong>실시간 시장·뉴스 수집</strong> 스킬 등록 + 우측 상단 `Pull` 버튼 & `/schedule` |
-| <strong>Part 5 (1시간)</strong> | 💻 Antigravity 2.0 | <strong>`탭 3: 가전 실적·구독 분석` 블렌딩 + `/browser` 검증 + `90점 품질 게이트`</strong> | `@04_AG_Analytics_lg_appliance_data.csv`(920행) 진단 + `/browser` + <strong>`+ New Chat` 감사관 루프</strong> |
+| 파트 (시간) | 실습 환경 | 내가 직접 만드는 누적 산출물 |
+| :--- | :---: | :--- |
+| <strong>Part 1 (30분)</strong> | 🌐 크롬 GE Web | <strong>[주간 동향 보고서] LG전자 프리미엄 시장 트렌드 분석 & `.md` 스킬 브리핑</strong> |
+| <strong>Part 2 (30분)</strong> | 🌐 크롬 GE Web | <strong>내 Gmail 임시보관함(`Drafts`)에 저장된 사내 표준 보고 메일</strong> |
+| <strong>Part 3 (30분)</strong> | 💻 Antigravity 2.0 | <strong>LG 브랜드 컬러(`#A50034` 레드 + 화이트) 고정 웹 슬라이드(`index.html`)</strong> |
+| <strong>Part 4 (30분)</strong> | 💻 Antigravity 2.0 | <strong>좌측 사이드 탭 업무 포털 (`탭 1: 트렌드 슬라이드` + `탭 2: 실시간 시세·뉴스`)</strong> |
+| <strong>Part 5 (1시간)</strong> | 💻 Antigravity 2.0 | <strong>`탭 3: 가전 실적·구독 분석` 블렌딩 + `/browser` 검증 + `90점 품질 게이트`</strong> |
 
 ---
 
