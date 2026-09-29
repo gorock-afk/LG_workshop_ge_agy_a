@@ -233,7 +233,8 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 
 ![Step 2-1-13 Approved 분기 아래 Gemini Agent 2 추가 후 Instructions에 3 Gemini Agent 1: content 삽입](assets/screenshots/wf_step_14.png)
 
-2. **`Connected apps`에서 `Mail` (Gmail) 연동 켜기**: 우측 패널의 <strong>`Connected apps`</strong>를 클릭해 펼친 뒤, <strong>`Mail` (Gmail 아이콘)</strong> 우측 토글 스위치를 <strong>ON (파란색)</strong>으로 켭니다.
+2. **`Connected apps`에서 `Mail` (Gmail) 권한 연결(Auth) 및 토글 켜기**: 우측 패널의 <strong>`Connected apps`</strong>를 클릭해 펼친 뒤, <strong>`Mail` (Gmail 아이콘)</strong> 우측 토글 스위치를 <strong>ON (파란색)</strong>으로 켭니다.
+   * 💡 **최초 1회 연동 시 (`Mail`이 목록에 안 보이거나 `Connect` 버튼이 뜨는 경우)**: 아직 Gmail 권한(OAuth)을 연결하지 않은 계정은 기본 요약 목록에서 숨겨져 있습니다. 우측 상단의 <strong>`View all`</strong>을 클릭 ➔ `Mail` 우측의 <strong>`[Connect]`</strong>(또는 `Authorize`) 버튼 클릭 ➔ 구글 계정 권한 승인 팝업창에서 내 계정 선택 후 <strong>`Allow`(허용)</strong>를 누르면 버튼이 **토글 스위치**로 바뀌며, 이때 스위치를 **ON**으로 켜주면 됩니다.
 
 ![Step 2-1-14 Gemini Agent 2의 Connected apps에서 Mail(Gmail) 토글 활성화](assets/screenshots/wf_step_15.png)
 
