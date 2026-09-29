@@ -29,9 +29,12 @@
 
 ## 📦 실습 전 준비: 실습 파일 한 번에 다운로드 (`LG_Workshop_Files.zip`)
 
-> <strong>📥 번거롭게 하나씩 받지 마세요!</strong> 아래 초록색 버튼을 누르면 오늘 실습에 쓰이는 <strong>10개 파일 전체가 압축된 `LG_Workshop_Files.zip`</strong>이 내 PC로 즉시 다운로드됩니다. 다운로드 후 압축을 풀어 작업 폴더(예: `lg-work-portal`)에 넣어두세요.
+> <strong>📥 번거롭게 하나씩 받지 마세요!</strong> 아래 버튼을 누르면 오늘 실습에 쓰이는 <strong>10개 파일 전체가 압축된 `LG_Workshop_Files.zip`</strong>이 내 PC로 즉시 다운로드됩니다. 다운로드 후 압축을 풀어 작업 폴더(예: `lg-work-portal`)에 넣어두세요.
 >
 > 👉 <a href="./LG_Workshop_Files.zip" download="LG_Workshop_Files.zip"><strong>[📥 실습 파일 10종 전체 ZIP 한 번에 다운로드 (LG_Workshop_Files.zip)]</strong></a>
+
+<details class="file-list-details">
+<summary><strong>📂 개별 실습 파일 10종 상세 설명 및 개별 다운로드 보기 (클릭하여 펼치기)</strong></summary>
 
 | 번호 | 파일명 (클릭 시 열기) | 사용 파트 | 파일 역할 및 핵심 내용 |
 | :---: | :--- | :---: | :--- |
@@ -45,6 +48,8 @@
 | <strong>06</strong> | [`04_AG_Analytics_lg_appliance_data.csv`](./files/04_AG_Analytics_lg_appliance_data.csv) | <strong>Part 5</strong> | 5대 가전(`OLED evo`·`워시타워`·`디오스`·`HVAC`·`스탠바이미`) <strong>920행 실적·구독·ThinQ 데이터</strong> |
 | <strong>07</strong> | [`04_AG_Analytics_design_guidelines.md`](./files/04_AG_Analytics_design_guidelines.md) | <strong>Part 5</strong> | 대시보드 컬러 및 결측치(23건)·시제품(0원 18건) 처리 가이드라인 |
 | <strong>08</strong> | [`05_Instructor_Solution_app.py`](./files/05_Instructor_Solution_app.py) | <strong>참조용</strong> | 전체 대시보드 기능을 한 번에 실행해 볼 수 있는 강사용 통합 레퍼런스 코드 |
+
+</details>
 
 ---
 
