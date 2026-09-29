@@ -7,7 +7,6 @@
 
 ## 🗺️ 0. 오늘 함께 완성할 5단계 누적 빌드업 로드맵 (총 3시간)
 
-오늘 실습은 단발성 예제를 여러 개 만드는 과정이 아닙니다.  
 <strong>1부(크롬 GE Web, 1시간)</strong>에서는 팀 공유 <strong>`Project Knowledge`</strong>와 <strong>`HITL 승인 워크플로우`</strong>로 주간 트렌드 보고서 이메일 자동화를 완성하고, <strong>2부(Antigravity 2.0, 2시간)</strong>에서는 한 줄 프롬프트로 만든 <strong>LG 가전 트렌드 발표용 웹 슬라이드(`index.html`)</strong>에 <strong>왼쪽 사이드바 포털(`1. LG 시장 트렌드` ➔ `2. 실시간 시장·뉴스 LIVE` ➔ `3. 가전 실적·구독 분석 NEW`)</strong>을 단계별로 누적 빌드업하여 완성합니다.
 
 ![5단계 누적 빌드업 로드맵 다이어그램](assets/screenshots/slide_02_ui_1.png)
