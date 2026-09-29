@@ -1,12 +1,7 @@
 # 🚀 LG Electronics · Gemini Enterprise & Antigravity 2.0 실무 핸즈온 가이드
 
-> <strong>화면과 100% 일치하는 Step-by-Step 실습 매뉴얼</strong>  
-> 슬라이드 원본에 수록된 <strong>27장의 실제 라이브 화면 캡처</strong>와 <strong>실제 입력 프롬프트</strong>를 1:1로 매칭했습니다.  
+> <strong>Step-by-Step 실습 가이드</strong>  
 > 각 단계마다 <strong>① 화면에서 어디를 보는지</strong> ➔ <strong>② 무엇을 복사해 입력하는지</strong> ➔ <strong>③ 어떤 결과 화면이 나오는지</strong> 순서대로 따라오시면 됩니다.
->
-> * 🌐 <strong>라이브 웹페이지 버전 (좌측 목차 · 원클릭 복사 · 이미지 클릭 확대)</strong>: <a href="https://gorock-afk.github.io/LG_workshop_ge_agy_a/"><strong>https://gorock-afk.github.io/LG_workshop_ge_agy_a/</strong></a>
-> * 📂 <strong>실습 파일 패키지 (Google Drive 폴더)</strong>: <a href="./LG_Workshop_Files.zip"><strong>실습 파일 10종 전체 열기</strong></a>
-> * 📊 <strong>발표 슬라이드 원본 (Google Slides)</strong>: <a href="./LG_Workshop_Slides.pdf"><strong>교안 슬라이드 열기</strong></a>
 
 ---
 
@@ -54,7 +49,7 @@
 ---
 
 # 🌐 [1부 · 크롬 브라우저] Part 1. GE - Project · Knowledge & Skill (`.md` 설치)
-### 🔹 Step 1-1. 새 프로젝트(`Project`) 생성 및 팀원 공유하기 (슬라이드 4)
+### 🔹 Step 1-1. 새 프로젝트(`Project`) 생성 및 팀원 공유하기
 
 > <strong>🎯 왜 하나요?</strong>  
 > 개인 채팅창이 아니라 팀 전용 <strong>`Project`</strong>를 만들고 우측 상단 <strong>`Invite+`</strong>로 팀원을 초대(`Editor` 권한)하면, 프로젝트에 등록한 사내 보고서 양식(`Knowledge`)을 팀원 모두가 똑같이 공유받게 됩니다.
@@ -68,7 +63,7 @@
 
 ---
 
-### 🔹 Step 1-2. 프로젝트 `Knowledge`(양식 파일) 등록 & 주간 트렌드 보고서 생성 (슬라이드 5)
+### 🔹 Step 1-2. 프로젝트 `Knowledge`(양식 파일) 등록 & 주간 트렌드 보고서 생성
 
 > <strong>🎯 왜 하나요?</strong>  
 > 매번 프롬프트에 긴 보고서 서식을 붙여넣지 않아도, <strong>`Knowledge`</strong>에 [`01_GE_Workflow_lg_weekly_report_template.txt`](./files/01_GE_Workflow_lg_weekly_report_template.txt) 파일을 한 번만 올려두면 언제든 사내 표준 보고서 포맷(`Executive Summary` + `비교표` + `인라인 출처`)으로 출력됩니다.
@@ -87,9 +82,9 @@
 
 ### 🔹 Step 1-3. [GE Skill 실습] `.md` 파일(또는 `.zip`) 업로드로 나만의 Skill 설치 & `/lg-executive-briefing` 호출하기
 
-> <strong>🎯 왜 하나요? (`Knowledge` vs `Skills` 핵심 차이!)</strong>  
-> * <strong>`Project Knowledge` (Step 1-2)</strong>가 특정 프로젝트 폴더 안에만 귀속되는 참조 문서라면, <strong>`Skills` (Step 1-3)</strong>는 내 계정에 설치해 두고 <strong>어느 채팅창에서든 `/스킬이름` 슬래시 커맨드 하나로 즉시 불러 쓰는 '업무 절차 매뉴얼'</strong>입니다.  
-> * 특히 Gemini Enterprise의 **`Skills` ➔ `Upload skill`**은 단일 마크다운 파일(**`.md`**)과 다중 리소스 압축 파일(**`.zip`**)을 모두 지원하며, 여기서 만든 `.md` 스킬 규격(`YAML 프론트매터 + 지시문`)은 **2부 Antigravity 2.0 데스크톱 앱에서도 100% 똑같이 호환**됩니다!
+> <strong>🎯 왜 하나요? (`Knowledge` vs `Skills` 핵심 차이)</strong>  
+> * <strong>`Project Knowledge` (Step 1-2)</strong>: 특정 프로젝트 안에서 참고할 배경 문서나 양식 데이터  
+> * <strong>`Skills` (Step 1-3)</strong>: 내 계정에 등록해 두고 <strong>어느 채팅창에서든 `/스킬이름` 명령어로 즉시 불러 쓰는 '업무 절차 매뉴얼'</strong> (`.md` 단일 파일 또는 `.zip` 패키지로 업로드 지원)
 
 #### 📄 실습 파일 확인: [`01_GE_Skill_lg_executive_briefing_SKILL.md`](./files/01_GE_Skill_lg_executive_briefing_SKILL.md)
 업로드할 `.md` 스킬 파일은 상단 `---` 블록(`name`: 영문 소문자·숫자·하이픈만 허용, `description`: 스킬 요약)과 하단 마크다운 지시문으로 구성됩니다:
@@ -151,7 +146,7 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 ---
 
 # ⚡ [1부 · 크롬 브라우저] Part 2. GE Workflow & HITL 사람 승인 자동화
-### 🔹 Step 2-1. 트렌드 조사 + 양식 포맷팅(`.md` 첨부) + 사람 승인(`Approval`)을 Workflow로 연결하기 (슬라이드 7)
+### 🔹 Step 2-1. 트렌드 조사 + 양식 포맷팅(`.md` 첨부) + 사람 승인(`Approval`)을 Workflow로 연결하기
 
 > <strong>🎯 왜 하나요?</strong>  
 > 매주 반복되는 <strong>`트렌드 수집` ➔ `양식 정리(01_template.md 첨부)` ➔ `사람 최종 검토(Approval)` ➔ `Gmail 초안 생성`</strong> 과정을 하나의 정형화된 파이프라인으로 묶어 자동화합니다. 특히 앞 단계의 결과물을 다음 단계가 요약·누락 없이 그대로 이어받도록 <strong>`Structured output`에 단일 변수 `content` (`Text`) 하나만 지정</strong>하여 가장 직관적으로 연결합니다.
@@ -213,7 +208,7 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 
 ![Step 2-1-7 Variables 목록에서 2 Gemini Agent: content 선택하여 프롬프트에 삽입](assets/screenshots/wf_step_08.png)
 
-3. **`Files`에 사내 표준 양식 마크다운 파일(`.md`) 첨부**: 우측 패널 중앙의 <strong>`Files 0`</strong> 옆 <strong>`+` 버튼 (`Ground the agent in your data`)</strong>을 클릭하여 실습 폴더의 마크다운 템플릿 파일 **[`01_GE_Workflow_lg_weekly_report_template.md`](./files/01_GE_Workflow_lg_weekly_report_template.md)**를 첨부파일로 넣습니다. *(Workflow 에이전트 노드의 `Files` 첨부 기능은 `.md` 마크다운 파일을 바로 업로드할 수 있습니다!)*
+3. **`Files`에 사내 표준 양식 마크다운 파일(`.md`) 첨부**: 우측 패널 중앙의 <strong>`Files 0`</strong> 옆 <strong>`+` 버튼 (`Ground the agent in your data`)</strong>을 클릭하여 실습 폴더의 마크다운 템플릿 파일 **[`01_GE_Workflow_lg_weekly_report_template.md`](./files/01_GE_Workflow_lg_weekly_report_template.md)**를 첨부파일로 넣습니다.
 
 ![Step 2-1-8 Gemini Agent 1 우측 패널 Files + 버튼을 눌러 01_GE_Workflow_lg_weekly_report_template.md 첨부](assets/screenshots/wf_step_09.png)
 
@@ -270,7 +265,7 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 
 ---
 
-### 🔹 Step 2-2. `HITL (Human-in-the-Loop)` — 상사 메일 포워딩 전 사람이 검토·승인하기 (슬라이드 8)
+### 🔹 Step 2-2. `HITL (Human-in-the-Loop)` — 상사 메일 포워딩 전 사람이 검토·승인하기
 
 > <strong>🎯 왜 하나요?</strong>  
 > AI가 검증되지 않은 수치를 상사에게 바로 발송하는 사고를 막기 위해, <strong>`Approval` 노드에서 실행이 일시 정지</strong>되고 사람이 내용을 검토한 뒤 <strong>`[Approved]`를 눌렀을 때만</strong> Gmail 임시보관함 생성 단계로 넘어갑니다.
@@ -284,7 +279,7 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 
 ---
 
-### 🔹 Step 2-3. 내 Gmail `[임시보관함(Drafts)]`에 생성된 사내 표준 보고 메일 최종 확인하기 (슬라이드 9)
+### 🔹 Step 2-3. 내 Gmail `[임시보관함(Drafts)]`에 생성된 사내 표준 보고 메일 최종 확인하기
 
 1. 내 <strong>Gmail</strong>을 열고 좌측 <strong>`임시보관함(Drafts)`</strong> 탭을 클릭합니다.
 2. 방금 워크플로우가 만들어 놓은 <strong>`[사내 표준] 주간 LG 제품 시장 트렌드 보고서`</strong> 메일을 엽니다.
@@ -306,7 +301,7 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 ---
 
 # 💻 [2부 · 데스크톱 앱] Part 3. Antigravity 입문 — 4대 루프 & LG 브랜드 웹 슬라이드
-### 🔹 Step 3-0. [필수] 실습 시작 전 `Settings (⚙️)` 권한 점검하기 (슬라이드 11)
+### 🔹 Step 3-0. [필수] 실습 시작 전 `Settings (⚙️)` 권한 점검하기
 
 > <strong>⚠️ Antigravity 첫 실행 시 가장 먼저 확인하세요!</strong>  
 > 에이전트가 파일을 생성하고 `/browser`로 크롬 화면을 제어하려면, 좌측 하단 <strong>`⚙️ Settings` ➔ `General`</strong>의 권한들이 <strong>`Disabled`(꺼짐)로 되어 있지 않은지</strong> 반드시 확인해야 합니다.
@@ -323,7 +318,7 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 
 ---
 
-### 🔹 Step 3-1. `/grill-me` 역질문 인터뷰 & `Implementation Plan` `[Proceed]` 승인하기 (슬라이드 12)
+### 🔹 Step 3-1. `/grill-me` 역질문 인터뷰 & `Implementation Plan` `[Proceed]` 승인하기
 
 > <strong>🎯 왜 하나요?</strong>  
 > 처음부터 완벽한 프롬프트를 길게 쓰려고 애쓸 필요가 없습니다. <strong>`/grill-me`</strong> 한 줄만 치면 에이전트가 먼저 <strong>객관식 역질문 카드</strong>를 띄워 기획을 구체화해 주고, 깔끔한 <strong>`Implementation Plan`(구현 계획서)</strong>을 만들어 <strong>`[Proceed]`</strong> 버튼 하나로 코딩을 시작합니다.
@@ -349,7 +344,7 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 
 ---
 
-### 🔹 Step 3-2. 생성된 발표용 웹 슬라이드(`index.html`) 브라우저 시연 & 방향키(`←`/`→`) 확인 (슬라이드 13)
+### 🔹 Step 3-2. 생성된 발표용 웹 슬라이드(`index.html`) 브라우저 시연 & 방향키(`←`/`→`) 확인
 
 1. 에이전트가 생성한 `index.html`을 브라우저에서 엽니다.
 2. 키보드 <strong>좌우 방향키(`←` / `→`)</strong> 또는 `Space` 키로 슬라이드를 넘겨보고, `N` 키(발표자 노트)와 `F` 키(전체화면)를 눌러봅니다.
@@ -361,7 +356,7 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 
 ---
 
-### 🔹 Step 3-3. 참여자 자유 구성 추가 & `/btw` · `/learn`으로 내 슬라이드 규칙 저장하기 (슬라이드 14)
+### 🔹 Step 3-3. 참여자 자유 구성 추가 & `/btw` · `/learn`으로 내 슬라이드 규칙 저장하기
 
 #### 1️⃣ 원하는 장표 내용 자유롭게 추가하고 `[Proceed]` 누르기
 내가 보고서에 더 넣고 싶은 데이터(예: 주요 국가 구매력 지수 GDP 비교, 당사 vs 경쟁사 스펙 비교표 등)를 채팅창에 자연어로 추가 지시하고, 계획서가 뜨면 <strong>`Proceed`</strong>를 누릅니다. 작업 도중 궁금한 점은 하단 <strong>`/btw` (`Side Question`)</strong>로 흐름을 끊지 않고 물어보고, 마음에 드는 규칙은 <strong>`/learn`</strong>으로 저장합니다:
@@ -378,12 +373,12 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 
 ---
 
-### 🔹 Step 3-4. `/lg-brand-slides` 스킬 적용 — LG 브랜드 색감(`Hex #A50034` 레드 & 화이트) 영구 고정! (슬라이드 15)
+### 🔹 Step 3-4. `/lg-brand-slides` 스킬 적용 — LG 브랜드 색감(`Hex #A50034` 레드 & 화이트) 영구 고정!
 
 > <strong>🎯 왜 하나요?</strong>  
 > 슬라이드를 수정할 때마다 색상이 파란색·보라색으로 제멋대로 바뀌는 것을 막기 위해, 실습 파일 [`02_AG_Webpage_lg_brand_slides_SKILL.md`](./files/02_AG_Webpage_lg_brand_slides_SKILL.md)를 스킬(`lg-brand-slides`)로 등록하고 호출하여 <strong>모든 슬라이드를 LG 시그니처 레드(`#A50034`) 포인트 + 순백색(`#FFFFFF`) 배경 + 라이트그레이(`#F8F9FA`) 카드</strong>로 단번에 고정합니다!
 
-1. 윈도우 탐색기에서 숨김 폴더(`.agents/skills/...`)를 직접 만들 필요 없이, 실습 폴더에 받아둔 <strong>[`02_AG_Webpage_lg_brand_slides_SKILL.md`](./files/02_AG_Webpage_lg_brand_slides_SKILL.md)</strong> 파일을 `@멘션`하여 에이전트에게 스킬 등록과 적용을 한 번에 지시합니다. *(스킬 등록 후 슬래시 목록에 안 보일 때는 `Ctrl + R` 또는 `View ➔ Reload`)*
+1. 실습 폴더의 <strong>[`02_AG_Webpage_lg_brand_slides_SKILL.md`](./files/02_AG_Webpage_lg_brand_slides_SKILL.md)</strong> 파일을 `@멘션`하여 스킬 등록과 적용을 한 번에 지시합니다. *(스킬 등록 후 슬래시 목록에 안 보일 때는 `Ctrl + R` 또는 `View ➔ Reload`)*
 2. 채팅창에 아래 프롬프트를 복사해 입력합니다:
 
 ```text
@@ -410,12 +405,12 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 ---
 
 # 📊 [2부 · 데스크톱 앱] Part 4. 나만의 사이드 탭 Dashboard & 실시간 시세·뉴스 스킬 연동
-### 🔹 Step 4-1. `/grill-me`로 왼쪽 사이드 탭 업무 포털 설계 & `1번 메뉴(LG 시장 트렌드)`에 슬라이드 탑재 (슬라이드 17)
+### 🔹 Step 4-1. `/grill-me`로 왼쪽 사이드 탭 업무 포털 설계 & `1번 메뉴(LG 시장 트렌드)`에 슬라이드 탑재
 
 > <strong>🎯 왜 하나요?</strong>  
 > Part 3에서 공들여 만든 LG 트렌드 웹 슬라이드를 버리지 않고, <strong>왼쪽 사이드바(`업무 메뉴`)가 있는 통합 업무 포털(`LG 스마트 워크스페이스 대시보드`)의 `1번 메뉴(LG 시장 트렌드)`</strong> 안에 그대로 탑재합니다.
 
-#### 1️⃣ 채팅창에 아래 프롬프트 복사·붙여넣기 (슬라이드 17 원문 그대로!)
+#### 1️⃣ 채팅창에 아래 프롬프트 복사·붙여넣기
 ```text
 /grill-me 평소 자주 쓰는 업무들을 왼쪽 사이드 탭에 차례차례 추가하는 나만의 대시보드를 만들고 싶어. html/js을 사용하는게 좋을것 같아. 사이드바 1번 메뉴를 'LG 시장 트렌드'로 만들고, 방금 만든 웹 슬라이드 페이지를 이 사이드바 메뉴 안에 넣어줘.
 ```
@@ -425,7 +420,7 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 
 ---
 
-### 🔹 Step 4-2. 실시간 데이터 수집 스킬 등록 & `실시간 시장·뉴스 LIVE` 탭 연동 (슬라이드 18)
+### 🔹 Step 4-2. 실시간 데이터 수집 스킬 등록 & `실시간 시장·뉴스 LIVE` 탭 연동
 
 > <strong>🎯 왜 하나요?</strong>  
 > 실습 폴더에 준비된 코드([`03_AG_Dashboard_fetch_lg_live_market.py`](./files/03_AG_Dashboard_fetch_lg_live_market.py))를 스킬로 등록해 <strong>① 네이버 금융 LG전자(`066570`) 현재가·등락률</strong>, <strong>② 글로벌 환율(`USD/KRW`, `EUR/KRW`)</strong>, <strong>③ 구글 뉴스 실시간 헤드라인 5건</strong>을 사이드바 <strong>2번 탭(`실시간 시장·뉴스 LIVE`)</strong>에 즉시 연결합니다!
@@ -452,7 +447,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
     return {"stock_name": stock.get("stockName", "LG전자"), "close_price": stock.get("closePrice"), "fluctuation_rate": stock.get("fluctuationsRatio"), "usd_krw": fx["rates"]["KRW"], "latest_news": news}
 ```
 
-#### 1️⃣ 채팅창에 아래 프롬프트 복사·붙여넣기 (슬라이드 18 원문 그대로!)
+#### 1️⃣ 채팅창에 아래 프롬프트 복사·붙여넣기
 ```text
 [1] @03_AG_Dashboard_fetch_lg_live_market.py 해당하는 파이썬 코드를 스킬로 등록시켜줘. (python-api-trend)
 [2] /python-api-trend 스킬을 실행해 사이드바 '실시간 시장·뉴스(LIVE)' 탭에 LG전자(066570) 실시간 주가·환율(USD/KRW, EUR/KRW)과 구글 뉴스 헤드라인 5건(클릭 시 원문 이동)을 연결해줘.
@@ -463,9 +458,9 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ---
 
-### 🔹 Step 4-3. 우측 상단 `[오늘의 LG 트렌드 & 뉴스 Pull]` 버튼 & `/schedule` 매일 아침 9시 자동화 (슬라이드 19)
+### 🔹 Step 4-3. 우측 상단 `[오늘의 LG 트렌드 & 뉴스 Pull]` 버튼 & `/schedule` 매일 아침 9시 자동화
 
-#### 1️⃣ 채팅창에 아래 프롬프트 복사·붙여넣기 (슬라이드 19 원문 그대로!)
+#### 1️⃣ 채팅창에 아래 프롬프트 복사·붙여넣기
 ```text
 [1] 대시보드 우측 상단에 '[오늘의 LG 트렌드 & 뉴스 Pull]' 버튼을 만들어서 클릭 시 최신 데이터로 갱신되게 해줘.
 [2] /schedule 매일 오전 9시에 트렌드 데이터 및 뉴스 데이터를 자동 업데이트해줘.
@@ -493,7 +488,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 ---
 
 # 📈 [2부 · 데스크톱 앱] Part 5. LG 5대 가전 920행 데이터 Analytics & 90점 품질 게이트
-### 🔹 Step 5-0. 데이터셋(`04_AG_Analytics_lg_appliance_data.csv`, 920행) 로딩 및 컬럼 확인 (슬라이드 21)
+### 🔹 Step 5-0. 데이터셋(`04_AG_Analytics_lg_appliance_data.csv`, 920행) 로딩 및 컬럼 확인
 
 #### 1️⃣ 로컬 폴더에 `04_AG_Analytics_lg_appliance_data.csv` 넣고 `@멘션`으로 읽어오기
 채팅창에 `@04_AG_Analytics_lg_appliance_data.csv 이 데이터 몇개를 읽어봐봐` 라고 입력해 5대 주력 가전(`OLED evo`, `DIOS & Objet`, `WashTower & Tromm`, `Whisen & HVAC`, `StanbyME & Care`) 920행 데이터 구조가 정상 인식되는지 확인합니다.
@@ -502,12 +497,12 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ---
 
-### 🔹 Step 5-1. [Step 1: Explore] 코딩 전 `ThinQ 점수 결측치(23건)` & `스탠바이미 시제품 매출 0원(18건)` 먼저 진단하기 (슬라이드 22)
+### 🔹 Step 5-1. [Step 1: Explore] 코딩 전 `ThinQ 점수 결측치(23건)` & `스탠바이미 시제품 매출 0원(18건)` 먼저 진단하기
 
 > <strong>🎯 왜 코딩 전에 `Explore`부터 하나요?</strong>  
 > 실무 CSV 데이터를 바로 차트로 그리면 <strong>빈 값(`NaN` 결측치 23건)</strong> 때문에 평균이 깨지거나, <strong>시제품 매출 `0원`(18건, 원가는 존재)</strong> 레코드 때문에 마진율 계산 시 `0 나눗셈(ZeroDivision)` 및 마진 왜곡이 발생합니다. 먼저 <strong>데이터 품질 진단만 지시</strong>합니다!
 
-#### 1️⃣ 채팅창에 아래 프롬프트 복사·붙여넣기 (슬라이드 22 원문 그대로!)
+#### 1️⃣ 채팅창에 아래 프롬프트 복사·붙여넣기
 ```text
 @04_AG_Analytics_lg_appliance_data.csv 이 LG 가전·TV 데이터의 제품군별(OLED evo, 워시타워, 디오스, HVAC, 스탠바이미) 결측치(ThinQ 점수 빈 값)와 마진 계산 시 주의할 이상치(스탠바이미 시제품 매출 0원)를 먼저 진단해줘. 아직 코드는 짜지 마.
 ```
@@ -517,12 +512,12 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ---
 
-### 🔹 Step 5-2. [Step 2: Plan & Execute] 기존 대시보드에 4번째 탭 `[가전 실적·구독 분석 NEW]` 블렌딩하기 (슬라이드 23 & 26)
+### 🔹 Step 5-2. [Step 2: Plan & Execute] 기존 대시보드에 4번째 탭 `[가전 실적·구독 분석 NEW]` 블렌딩하기
 
 > <strong>🎯 왜 하나요?</strong>  
 > 기존 1~3번 탭(`LG 시장 트렌드`, `실시간 시장·뉴스 LIVE`, `오늘의 할 일`)을 덮어쓰지 않고 <strong>그대로 유지한 채</strong>, 좌측 사이드바에 <strong>4번째 탭(`📊 가전 실적·구독 분석 NEW`)</strong>을 추가하고 <strong>시제품(18건) 포함/제외 토글 필터</strong>와 <strong>ThinQ 결측치(23건) 보정 리포트</strong>를 함께 구현합니다.
 
-#### 1️⃣ 채팅창에 아래 프롬프트 복사·붙여넣기 (슬라이드 23 원문 그대로!)
+#### 1️⃣ 채팅창에 아래 프롬프트 복사·붙여넣기
 ```text
 [1] 기존 대시보드 탭은 그대로 유지하고, 4번째 사이드 탭으로 @04_AG_Analytics_lg_appliance_data.csv 기반 'LG 가전 제품군 실적·구독 Analytics'를 추가하고 싶어. (브라우저에서 index.html을 직접 더블클릭해 열어도 CORS 에러가 나지 않도록 CSV 집계 데이터를 HTML 내부 JS에 인라인으로 임베딩해줘.)
 [2] 스탠바이미 시제품(매출 0원, 18건) 분리 처리(포함/제외 토글 필터)와 워시타워 ThinQ 결측치(23건) 스마트 보정 리포트, 제품군별 매출·마진율 차트 및 권역별 HaaS 구독 전환율 차트도 넣어줘.
@@ -535,12 +530,12 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ---
 
-### 🔹 Step 5-3. [Step 3: Verify] `/browser`로 에이전트가 직접 크롬을 띄워 탭 전환·필터 검증하기 (슬라이드 24)
+### 🔹 Step 5-3. [Step 3: Verify] `/browser`로 에이전트가 직접 크롬을 띄워 탭 전환·필터 검증하기
 
 > <strong>🎯 왜 하나요?</strong>  
 > 사람이 일일이 탭과 필터를 눌러보는 대신, <strong>`/browser`</strong> 커맨드(또는 직접 실행 지시)로 에이전트가 스스로 브라우저를 띄워 <strong>Tab 1 ~ Tab 4 화면 렌더링 상태와 시제품 `0원` 필터 클릭 시 에러 여부를 자율 점검</strong>하게 합니다.
 
-#### 1️⃣ 채팅창에 아래 프롬프트 복사·붙여넣기 (슬라이드 24 원문 그대로!)
+#### 1️⃣ 채팅창에 아래 프롬프트 복사·붙여넣기
 ```text
 /browser 로컬 대시보드에 접속해서 사이드 탭 전환과 제품군 필터('OLED evo', 'StanbyME 시제품') 클릭 시 콘솔 에러나 0 나눗셈 오류가 없는지 검증해
 ```
@@ -550,14 +545,14 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ---
 
-### 🔹 Step 5-4. [Step 4: Handoff] 새 세션(`+ New Conversation`) 품질 감사관 채점 & `90점` 게이트 돌파 후 `/learn` 저장! (슬라이드 25)
+### 🔹 Step 5-4. [Step 4: Handoff] 새 세션(`+ New Conversation`) 품질 감사관 채점 & `90점` 게이트 돌파 후 `/learn` 저장!
 
 > <strong>💡 오늘 워크샵의 하이라이트 (`자기 확증 편향` 제거 루프)!</strong>  
 > 코드를 작성한 기존 세션에게 "잘 만들었니?"라고 물으면 자기 코드를 칭찬합니다.  
 > 따라서 좌측 상단 <strong>`+ New Conversation` 버튼으로 완전히 새로운 세션을 열어 '품질 감사관(QA Evaluator)' 역할을 부여</strong>하고, <strong>목표 점수(`90점`)를 넘길 때까지 스스로 감점 요인을 고치고 재채점하는 루프</strong>를 돌린 뒤 최종 통과 규칙을 <strong>`/learn`</strong>으로 영구 자산화합니다!  
 > *(💬 **참고:** 목표 점수를 `99점`처럼 극단적으로 높게 설정할 경우 에이전트가 사소한 트집을 잡으며 수정·재채점 루프를 무한히 반복해 불필요한 시간과 토큰이 낭비될 수 있으므로, 실습 교육 목적으로 **`90점`**을 게이트 기준으로 설정했습니다.)*
 
-#### 1️⃣ 좌측 상단 `+ New Conversation` 클릭 후 <strong>새 세션</strong>에 아래 프롬프트 복사·붙여넣기 (슬라이드 25 원문 그대로!)
+#### 1️⃣ 좌측 상단 `+ New Conversation` 클릭 후 <strong>새 세션</strong>에 아래 프롬프트 복사·붙여넣기
 ```text
 너는 품질 감사관이야. @index.html 을 100점 만점 채점해. 90점 미만이면 감점 요인을 직접 고쳐서 90점을 넘길 때까지 재채점 루프를 반복하고, 통과 후 /learn으로 저장해줘.
 ```
