@@ -182,11 +182,11 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 
 ![Step 2-1-3 첫 번째 Gemini Agent 프롬프트 입력 및 Google Search 활성화 확인](assets/screenshots/wf_step_04.png)
 
-2. **`More` ➔ `Output`을 `Structured output`으로 변경**: 우측 패널 맨 아래 <strong>`More`</strong>를 클릭해 펼친 뒤, <strong>`Output`</strong> 드롭다운(`Plain text`)을 눌러 <strong>`Structured output` (`Define a manual JSON schema`)</strong>을 선택합니다.
+2. **`More` ➔ `Output`을 `Structured output`으로 변경**: 우측 패널 맨 아래 <strong>`More`</strong>를 클릭해 펼친 뒤, <strong>`Output`</strong> 드롭다운(`Plain text`)을 눌러 <strong>`Structured output` (정형화된 서식 출력)</strong>을 선택합니다.
 
 ![Step 2-1-4 우측 패널 하단 More 펼치기 및 Output에서 Structured output 선택](assets/screenshots/wf_step_05.png)
 
-3. **`Output Format`에 `content` (`Text`) 단일 변수 등록**: <strong>`+ Define output schema`</strong>를 클릭해 팝업창을 열고, 필드명 <strong>`content`</strong> (타입: <strong>`Text`</strong>)를 입력한 뒤 우측 하단 <strong>`Apply Schema`</strong>를 클릭합니다. (설정이 완료되면 우측 패널 Output 아래에 `= content` 칩이 표시됩니다.)
+3. **`Output Format`에 `content` (`Text`) 단일 변수 등록**: <strong>`+ Define output schema` (출력 변수 정의)</strong>를 클릭해 팝업창을 열고, 필드명 <strong>`content`</strong> (타입: <strong>`Text`</strong>)를 입력한 뒤 우측 하단 <strong>`Apply Schema`</strong>를 클릭합니다. (설정이 완료되면 우측 패널 Output 아래에 `= content` 칩이 표시됩니다.)
 
 ![Step 2-1-5 Output Format 팝업에서 content(Text) 단일 변수 정의 및 Apply Schema 클릭](assets/screenshots/wf_step_06.png)
 
@@ -406,7 +406,7 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 ### 🔹 Step 4-1. `/grill-me`로 왼쪽 사이드 탭 업무 포털 설계 & `1번 메뉴(LG 시장 트렌드)`에 슬라이드 탑재
 
 > <strong>🎯 왜 하나요?</strong>  
-> Part 3에서 공들여 만든 LG 트렌드 웹 슬라이드를 버리지 않고, <strong>왼쪽 사이드바(`업무 메뉴`)가 있는 통합 업무 포털(`LG 스마트 워크스페이스 대시보드`)의 `1번 메뉴(LG 시장 트렌드)`</strong> 안에 그대로 탑재합니다.
+> Part 3에서 제작한 LG 트렌드 웹 슬라이드를 단독 페이지에 두지 않고, <strong>통합 업무 포털(`LG 스마트 워크스페이스 대시보드`)의 `1번 메뉴(LG 시장 트렌드)`</strong>로 자연스럽게 흡수·탑재합니다.
 
 #### 1️⃣ 채팅창에 아래 프롬프트 복사·붙여넣기
 ```text
@@ -501,7 +501,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 ### 🔹 Step 5-1. [Step 1: Explore] 코딩 전 `ThinQ 점수 결측치(23건)` & `스탠바이미 시제품 매출 0원(18건)` 먼저 진단하기
 
 > <strong>🎯 왜 코딩 전에 `Explore`부터 하나요?</strong>  
-> 실무 CSV 데이터를 바로 차트로 그리면 <strong>빈 값(`NaN` 결측치 23건)</strong> 때문에 평균이 깨지거나, <strong>시제품 매출 `0원`(18건, 원가는 존재)</strong> 레코드 때문에 마진율 계산 시 `0 나눗셈(ZeroDivision)` 및 마진 왜곡이 발생합니다. 먼저 <strong>데이터 품질 진단만 지시</strong>합니다!
+> 실무 CSV 데이터를 바로 차트로 그리면 <strong>빈 값(결측치 23건)</strong> 때문에 평균 지표가 깨지거나, <strong>테스트용 시제품(매출 0원 18건)</strong>이 분모에 들어가 평균 마진율 통계가 심각하게 왜곡됩니다. 따라서 차트를 그리기 전에 <strong>데이터 이상치부터 먼저 진단</strong>합니다!
 
 #### 1️⃣ 채팅창에 아래 프롬프트 복사·붙여넣기
 ```text
@@ -551,7 +551,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 > <strong>💡 오늘 워크샵의 하이라이트 (`자기 확증 편향` 제거 루프)!</strong>  
 > 코드를 작성한 기존 세션에게 "잘 만들었니?"라고 물으면 자기 코드를 칭찬합니다.  
 > 따라서 좌측 상단 <strong>`+ New Conversation` 버튼으로 완전히 새로운 세션을 열어 '품질 감사관(QA Evaluator)' 역할을 부여</strong>하고, <strong>목표 점수(`90점`)를 넘길 때까지 스스로 감점 요인을 고치고 재채점하는 루프</strong>를 돌린 뒤 최종 통과 규칙을 <strong>`/learn`</strong>으로 영구 자산화합니다!  
-> *(💬 **참고:** 목표 점수를 `99점`처럼 극단적으로 높게 설정할 경우 에이전트가 사소한 트집을 잡으며 수정·재채점 루프를 무한히 반복해 불필요한 시간과 토큰이 낭비될 수 있으므로, 실습 교육 목적으로 **`90점`**을 게이트 기준으로 설정했습니다.)*
+> *(💡 **실무 팁:** 실제 현업 프로젝트에서도 99점 만점을 목표로 잡으면 사소한 자구 수정 루프에 빠져 작업이 지연되기 쉽습니다. 실무 환경에서는 핵심 결함을 완벽히 해결하고 빠르게 업무에 배포할 수 있는 **`90점`**을 '품질 통과 기준선'으로 잡는 것이 가장 효율적인 모범 사례입니다.)*
 
 #### 1️⃣ 좌측 상단 `+ New Conversation` 클릭 후 <strong>새 세션</strong>에 아래 프롬프트 복사·붙여넣기
 ```text
