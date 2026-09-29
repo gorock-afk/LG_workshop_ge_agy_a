@@ -35,7 +35,7 @@
 | <strong>01-A</strong> | [`01_GE_Workflow_lg_weekly_report_template.txt`](./files/01_GE_Workflow_lg_weekly_report_template.txt) | <strong>Part 1</strong> | 크롬 GE `Project Knowledge`에 업로드할 <strong>사내 주간 트렌드 보고서 표준 서식 (`.txt`)</strong> |
 | <strong>01-B</strong> | [`01_GE_Skill_lg_executive_briefing_SKILL.md`](./files/01_GE_Skill_lg_executive_briefing_SKILL.md) | <strong>Part 1</strong> | 크롬 GE `Skills` ➔ `Upload skill`에 업로드해 `/lg-executive-briefing`으로 호출하는 <strong>임원 브리핑 스킬 (`.md`)</strong> |
 | <strong>01-C</strong> | [`01_GE_Workflow_lg_weekly_report_template.md`](./files/01_GE_Workflow_lg_weekly_report_template.md) | <strong>Part 2</strong> | 크롬 GE `Workflow` 노드의 `Files`에 첨부파일로 넣을 <strong>사내 주간 트렌드 보고서 마크다운 템플릿 (`.md`)</strong> |
-| <strong>02</strong> | [`02_AG_Webpage_lg_brand_slides_SKILL.md`](./files/02_AG_Webpage_lg_brand_slides_SKILL.md) | <strong>Part 3</strong> | 다크 블루 화면을 <strong>LG 시그니처 레드(`#A50034`) + 화이트 배경</strong>으로 고정하는 스킬 |
+| <strong>02</strong> | [`02_AG_Webpage_lg_brand_slides_SKILL.md`](./files/02_AG_Webpage_lg_brand_slides_SKILL.md) | <strong>Part 3</strong> | 매번 랜덤으로 나오는 슬라이드 색감을 <strong>LG 시그니처 레드(`#A50034`) + 화이트 배경</strong>으로 고정하는 스킬 |
 | <strong>03</strong> | [`03_AG_Dashboard_fetch_lg_live_market.py`](./files/03_AG_Dashboard_fetch_lg_live_market.py) | <strong>Part 4</strong> | LG전자(`066570`) 현재가·환율·구글 뉴스 실시간 수집 코드 |
 | <strong>04</strong> | [`04_AG_Analytics_lg_appliance_data.csv`](./files/04_AG_Analytics_lg_appliance_data.csv) | <strong>Part 5</strong> | 5대 가전(`OLED evo`·`워시타워`·`디오스`·`HVAC`·`스탠바이미`) <strong>920행 실적·구독·ThinQ 데이터</strong> |
 
@@ -339,11 +339,11 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 
 1. 에이전트가 생성한 `index.html`을 브라우저에서 엽니다.
 2. 키보드 <strong>좌우 방향키(`←` / `→`)</strong> 또는 `Space` 키로 슬라이드를 넘겨보고, `N` 키(발표자 노트)와 `F` 키(전체화면)를 눌러봅니다.
-3. *(확인 포인트: 아래 두 화면처럼 슬라이드 구조와 차트는 멋지게 나왔지만, <strong>아직 LG 브랜드 컬러 스킬을 입히기 전이라 기본 다크 블루(`#1a73e8`) 색감</strong>으로 만들어진 상태입니다!)*
+3. *(확인 포인트: 아래 두 화면처럼 슬라이드 구조와 차트는 멋지게 나왔지만, <strong>아직 LG 브랜드 컬러 스킬을 입히기 전이라 색감이 매번 랜덤으로 생성</strong>됩니다. 아래 예시 스크린샷에서는 다크 블루(`#1a73e8`)로 나왔지만, 직접 실행해 보시면 다크 모드·블루·퍼플 등 여러 색상이 랜덤하게 나올 수 있습니다!)*
 
-![Step 3-2 기본 다크 블루 테마로 생성된 웹 슬라이드 화면 (Slide 2)](assets/screenshots/slide_13_ui_2.png)
+![Step 3-2 스킬 적용 전 랜덤 색감(예시 스샷: 다크 블루)으로 생성된 웹 슬라이드 화면 (Slide 2)](assets/screenshots/slide_13_ui_2.png)
 
-![Step 3-2 기본 다크 블루 테마로 생성된 웹 슬라이드 화면 (Slide 3)](assets/screenshots/slide_13_ui_1.png)
+![Step 3-2 스킬 적용 전 랜덤 색감(예시 스샷: 다크 블루)으로 생성된 웹 슬라이드 화면 (Slide 3)](assets/screenshots/slide_13_ui_1.png)
 
 ---
 
@@ -380,7 +380,7 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 /lg-brand-slides 스킬을 적용해서 지금 웹 프레젠테이션의 색감(Hex)을 LG 브랜드 컬러(#A50034 포인트 & 화이트/그레이 배경)로 고정하여 다시 제작해줘.
 ```
 
-👉 **실행 결과 화면:** (다크 블루였던 슬라이드가 화이트 + LG 시그니처 레드 `#A50034`로 100% 변환된 모습!)
+👉 **실행 결과 화면:** (랜덤 색감(예시 스샷: 다크 블루)이었던 슬라이드가 화이트 + LG 시그니처 레드 `#A50034`로 100% 변환된 모습!)
 ![Step 3-4 LG 브랜드 컬러(#A50034) 스킬이 적용된 Slide 1 화면](assets/screenshots/slide_15_ui_1.png)
 
 ![Step 3-4 LG 브랜드 컬러(#A50034) 스킬이 적용된 Slide 2 차트 화면](assets/screenshots/slide_15_ui_2.png)
