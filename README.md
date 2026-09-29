@@ -22,7 +22,7 @@
 | <strong>Part 1 (30분)</strong> | 🌐 크롬 GE Web | <strong>[주간 동향 보고서] LG전자 프리미엄 시장 트렌드 분석 & `.md` 스킬 브리핑</strong> | `Projects` (`Invite+`) + `Knowledge` (`.txt`) + <strong>`Skills` (`Upload skill` `.md`)</strong> |
 | <strong>Part 2 (30분)</strong> | 🌐 크롬 GE Web | <strong>내 Gmail 임시보관함(`Drafts`)에 저장된 사내 표준 보고 메일</strong> | `Workflow` (`.md` 템플릿 첨부 + `Structured output`) + <strong>`Approval (HITL 사람 승인)`</strong> |
 | <strong>Part 3 (30분)</strong> | 💻 Antigravity 2.0 | <strong>LG 브랜드 컬러(`#A50034` 레드 + 화이트) 고정 웹 슬라이드(`index.html`)</strong> | 세팅 점검 + `/grill-me` · `Proceed` · `/btw` · `/learn` + `/lg-brand-slides` |
-| <strong>Part 4 (30분)</strong> | 💻 Antigravity 2.0 | <strong>좌측 사이드 탭 업무 포털 (`탭 1: 트렌드 슬라이드` + `탭 2: 실시간 시세·뉴스`)</strong> | <strong>15줄 무인증 파이썬 코드</strong> 스킬 등록 + 우측 상단 `Pull` 버튼 & `/schedule` |
+| <strong>Part 4 (30분)</strong> | 💻 Antigravity 2.0 | <strong>좌측 사이드 탭 업무 포털 (`탭 1: 트렌드 슬라이드` + `탭 2: 실시간 시세·뉴스`)</strong> | <strong>실시간 시장·뉴스 수집</strong> 스킬 등록 + 우측 상단 `Pull` 버튼 & `/schedule` |
 | <strong>Part 5 (1시간)</strong> | 💻 Antigravity 2.0 | <strong>`탭 3/4: 가전 실적·구독 분석` 블렌딩 + `/browser` 검증 + `99점 품질 인증`</strong> | `@04_lg_appliance_data.csv`(920행) 진단 + `/browser` + <strong>`+ New Chat` 감사관 루프</strong> |
 
 ---
@@ -43,8 +43,8 @@
 | <strong>01-C</strong> | [`01_GE_Workflow_lg_weekly_report_template.md`](./files/01_GE_Workflow_lg_weekly_report_template.md) | <strong>Part 2</strong> | 크롬 GE `Workflow` 노드의 `Files`에 첨부파일로 넣을 <strong>사내 주간 트렌드 보고서 마크다운 템플릿 (`.md`)</strong> |
 | <strong>02</strong> | [`02_AG_Webpage_hello_world_slides.html`](./files/02_AG_Webpage_hello_world_slides.html) | <strong>Part 3</strong> | 방향키(`←`/`→`)로 넘기는 <strong>웹 슬라이드 스타터 파일</strong> |
 | <strong>03</strong> | [`02_AG_Webpage_lg_brand_slides_SKILL.md`](./files/02_AG_Webpage_lg_brand_slides_SKILL.md) | <strong>Part 3</strong> | 다크 블루 화면을 <strong>LG 시그니처 레드(`#A50034`) + 화이트 배경</strong>으로 고정하는 스킬 |
-| <strong>04</strong> | [`03_AG_Dashboard_fetch_lg_live_market.py`](./files/03_AG_Dashboard_fetch_lg_live_market.py) | <strong>Part 4</strong> | <strong>API 키·설치 불필요!</strong> 15줄 무인증 LG전자(`066570`) 현재가·환율·구글 뉴스 수집 코드 |
-| <strong>05</strong> | [`03_AG_Dashboard_lg_live_market_SKILL.md`](./files/03_AG_Dashboard_lg_live_market_SKILL.md) | <strong>Part 4</strong> | 15줄 파이썬 코드를 Antigravity 스킬로 등록하는 정의서 |
+| <strong>04</strong> | [`03_AG_Dashboard_fetch_lg_live_market.py`](./files/03_AG_Dashboard_fetch_lg_live_market.py) | <strong>Part 4</strong> | LG전자(`066570`) 현재가·환율·구글 뉴스 실시간 수집 코드 |
+| <strong>05</strong> | [`03_AG_Dashboard_lg_live_market_SKILL.md`](./files/03_AG_Dashboard_lg_live_market_SKILL.md) | <strong>Part 4</strong> | 실시간 시장·뉴스 수집 코드를 Antigravity 스킬로 등록하는 정의서 |
 | <strong>06</strong> | [`04_AG_Analytics_lg_appliance_data.csv`](./files/04_AG_Analytics_lg_appliance_data.csv) | <strong>Part 5</strong> | 5대 가전(`OLED evo`·`워시타워`·`디오스`·`HVAC`·`스탠바이미`) <strong>920행 실적·구독·ThinQ 데이터</strong> |
 | <strong>07</strong> | [`04_AG_Analytics_design_guidelines.md`](./files/04_AG_Analytics_design_guidelines.md) | <strong>Part 5</strong> | 대시보드 컬러 및 결측치(23건)·시제품(0원 18건) 처리 가이드라인 |
 | <strong>08</strong> | [`05_Instructor_Solution_app.py`](./files/05_Instructor_Solution_app.py) | <strong>참조용</strong> | 전체 대시보드 기능을 한 번에 실행해 볼 수 있는 강사용 통합 레퍼런스 코드 |
@@ -409,11 +409,11 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 
 ---
 
-# 📊 [2부 · 데스크톱 앱] Part 4. 나만의 사이드 탭 Dashboard & 15줄 무인증 파이썬 스킬
+# 📊 [2부 · 데스크톱 앱] Part 4. 나만의 사이드 탭 Dashboard & 실시간 시세·뉴스 스킬 연동
 ### 🔹 Step 4-1. `/grill-me`로 왼쪽 사이드 탭 업무 포털 설계 & `1번 메뉴(LG 시장 트렌드)`에 슬라이드 탑재 (슬라이드 17)
 
 > <strong>🎯 왜 하나요?</strong>  
-> Part 3에서 공들여 만든 LG 트렌드 웹 슬라이드를 버리지 않고, <strong>왼쪽 사이드바(`업무 메뉴`)가 있는 통합 업무 포털(`LG 스마트 워크스페이스 대시보드`)의 `1번 메뉴(LG 시장 트렌드)`</strong> 안에 그대로 쏙 집어넣습니다! (외부 프레임워크 설치 없이 `HTML/JS` 단일 구조로 만들어 사내망 어디서나 즉시 열리게 합니다.)
+> Part 3에서 공들여 만든 LG 트렌드 웹 슬라이드를 버리지 않고, <strong>왼쪽 사이드바(`업무 메뉴`)가 있는 통합 업무 포털(`LG 스마트 워크스페이스 대시보드`)의 `1번 메뉴(LG 시장 트렌드)`</strong> 안에 그대로 탑재합니다.
 
 #### 1️⃣ 채팅창에 아래 프롬프트 복사·붙여넣기 (슬라이드 17 원문 그대로!)
 ```text
@@ -425,12 +425,12 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 
 ---
 
-### 🔹 Step 4-2. 15줄 무인증 파이썬 코드 ➔ 스킬 등록 & `실시간 시장·뉴스 LIVE` 탭 연동 (슬라이드 18)
+### 🔹 Step 4-2. 실시간 데이터 수집 스킬 등록 & `실시간 시장·뉴스 LIVE` 탭 연동 (슬라이드 18)
 
 > <strong>🎯 왜 하나요?</strong>  
-> 복잡한 DART API 키 발급이나 외부 라이브러리(`pip install`) 없이도, 파이썬 기본 내장 `urllib`만 쓰는 <strong>15줄 코드([`03_AG_Dashboard_fetch_lg_live_market.py`](./files/03_AG_Dashboard_fetch_lg_live_market.py))</strong>를 스킬로 등록해 <strong>① 네이버 금융 LG전자(`066570`) 현재가·등락률</strong>, <strong>② 글로벌 환율(`USD/KRW`, `EUR/KRW`)</strong>, <strong>③ 구글 뉴스 RSS 실시간 헤드라인 5건</strong>을 사이드바 <strong>2번 탭(`실시간 시장·뉴스 LIVE`)</strong>에 즉시 꽂아 넣습니다!
+> 실습 폴더에 준비된 코드([`03_AG_Dashboard_fetch_lg_live_market.py`](./files/03_AG_Dashboard_fetch_lg_live_market.py))를 스킬로 등록해 <strong>① 네이버 금융 LG전자(`066570`) 현재가·등락률</strong>, <strong>② 글로벌 환율(`USD/KRW`, `EUR/KRW`)</strong>, <strong>③ 구글 뉴스 실시간 헤드라인 5건</strong>을 사이드바 <strong>2번 탭(`실시간 시장·뉴스 LIVE`)</strong>에 즉시 연결합니다!
 
-#### 🐍 실습 폴더의 15줄 무인증 파이썬 코드 (`03_AG_Dashboard_fetch_lg_live_market.py`)
+#### 🐍 실습 폴더의 실시간 시장·뉴스 수집 코드 (`03_AG_Dashboard_fetch_lg_live_market.py`)
 ```python
 import urllib.request, urllib.parse, json, ssl, xml.etree.ElementTree as ET
 
@@ -482,7 +482,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 ### 🔥 [Part 4 심화 미션] 경쟁사(삼성·글로벌 가전) 동시 비교 티커 & 나만의 3번째 업무 탭 추가하기
 
 > <strong>💡 실무 확장 미션 (멀티 종목 & 키워드 전환 심화)</strong>  
-> 15줄 무인증 파이썬 스크립트(`03_AG_Dashboard_fetch_lg_live_market.py`)의 파라미터를 확장하여 경쟁사 동시 비교 티커와 토픽 전환 기능을 추가해 보세요.
+> 실시간 데이터 수집 스크립트(`03_AG_Dashboard_fetch_lg_live_market.py`)를 확장하여 경쟁사 동시 비교 티커와 토픽 전환 기능을 추가해 보세요.
 
 ```text
 [심화 미션] 방금 등록한 /python-api-trend 스킬 스크립트를 확장해서:
@@ -584,5 +584,5 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 1. <strong>1부 (크롬 GE Web)</strong>: 팀 공유 `Project` + 사내 보고서 양식(`01_template.txt`) + `.md` 스킬(`Upload skill`) ➔ `Workflow` (`01_template.md` 첨부) + `Approval (HITL 사람 승인)` ➔ <strong>내 Gmail 임시보관함(`Drafts`) 주간 트렌드 보고서 자동 생성</strong>
 2. <strong>2부 (Antigravity 2.0)</strong>:
    - <strong>탭 1 (`📈 LG 시장 트렌드`)</strong>: `/grill-me` ➔ `Proceed` ➔ `/lg-brand-slides`로 <strong>LG 시그니처 레드(`#A50034`) + 화이트 테마 웹 슬라이드</strong> 탑재
-   - <strong>탭 2 (`💓 실시간 시장·뉴스 LIVE`)</strong>: <strong>15줄 무인증 파이썬 코드</strong> 스킬 연동으로 <strong>LG전자(`066570`) 실시간 시세·환율·구글 뉴스</strong> + 우측 상단 <strong>`Pull` 버튼 & `/schedule` 매일 9시 자동화</strong>
+   - <strong>탭 2 (`💓 실시간 시장·뉴스 LIVE`)</strong>: <strong>실시간 데이터 수집 스킬</strong> 연동으로 <strong>LG전자(`066570`) 실시간 시세·환율·구글 뉴스</strong> + 우측 상단 <strong>`Pull` 버튼 & `/schedule` 매일 9시 자동화</strong>
    - <strong>탭 3/4 (`📊 가전 실적·구독 분석 NEW`)</strong>: <strong>`@04_AG_Analytics_lg_appliance_data.csv` (920행)</strong> 결측치(23건)·시제품(0원 18건) 정제 차트 + <strong>`/browser` 검증</strong> + <strong>새 세션 감사관 `82점 ➔ 99점 PASS` & `/learn` 영구 자산화</strong>
