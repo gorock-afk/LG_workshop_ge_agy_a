@@ -459,7 +459,7 @@
           const isChallenge = rawText.includes('미션');
           if (isChallenge) h.classList.add('challenge-heading');
           const match = rawText.match(/(Step\s+[0-9\-]+)/i);
-          const pillText = isChallenge ? '🔥 CHALLENGE · OPTIONAL' : (match ? match[1].toUpperCase() : 'STEP');
+          const pillText = isChallenge ? '🔥 CHALLENGE' : (match ? match[1].toUpperCase() : 'STEP');
           const cleanTitle = rawText.replace(/^🔹\s*Step\s+[0-9\-]+\.\s*/i, '').replace(/^🔥\s*/, '');
           h.innerHTML = `
             <span class="step-pill ${isChallenge ? 'challenge-pill' : ''}">${pillText}</span>
