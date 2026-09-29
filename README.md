@@ -292,16 +292,16 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 # 💻 [2부 · 데스크톱 앱] Part 3. Antigravity 입문 — 4대 루프 & LG 브랜드 웹 슬라이드
 ### 🔹 Step 3-0. [필수] 실습 시작 전 `Settings (⚙️)` 권한 점검하기
 
-> <strong>⚠️ Antigravity 첫 실행 시 가장 먼저 확인하세요!</strong>  
-> 에이전트가 파일을 생성하고 `/browser`로 크롬 화면을 제어하려면, 좌측 하단 <strong>`⚙️ Settings` ➔ `General`</strong>의 권한들이 <strong>`Disabled`(꺼짐)로 되어 있지 않은지</strong> 반드시 확인해야 합니다.
+> <strong>⚠️ Antigravity 첫 실행 시 기본 권한 설정을 먼저 확인하세요!</strong>  
+> 에이전트가 작업 폴더에 파일을 생성하고, 구현 계획서(`Implementation Plan`) 승인 후 코딩하며, `/browser`로 크롬 화면을 제어할 수 있도록 좌측 하단 <strong>`⚙️ Settings` ➔ `General`</strong>의 3가지 설정값을 확인합니다.
 
-#### 1️⃣ `Settings ➔ General` 상단 확인: `Global Permissions` & `Artifact Review Policy`
-* 좌측 하단 <strong>`⚙️ Settings`</strong> 클릭 ➔ <strong>`General`</strong> 탭에서 <strong>`Permission Preset: Default`</strong>, <strong>`Tool Permissions: Open`</strong>, <strong>`Artifact Review Policy: Always Ask`</strong> 상태를 확인합니다.
+#### 1️⃣ `Settings ➔ General` 상단 확인: `Permission Preset` & `Artifact Review Policy`
+* 좌측 하단 <strong>`⚙️ Settings`</strong> 클릭 ➔ <strong>`General`</strong> 탭에서 <strong>`Permission Preset: Default`</strong> (또는 `Turbo`), <strong>`Artifact Review Policy: Always Ask`</strong> 상태를 확인합니다. *(참고: `Tool Permissions`와 `Network Access Rules` 우측의 `Open`은 세부 규칙 편집 창을 여는 버튼입니다.)*
 
 ![Step 3-0 세팅 점검 1 - Settings General 상단 권한 확인](assets/screenshots/slide_11_ui_1.png)
 
 #### 2️⃣ `Settings ➔ General` 아래로 스크롤: `Browser Javascript Execution Policy` 확인
-* 같은 창에서 아래로 스크롤하여 <strong>`Browser`</strong> 항목의 <strong>`Browser Javascript Execution Policy`</strong>가 `Disabled`가 아닌 <strong>`Request Review`</strong>로 설정되어 있는지 확인합니다.
+* 같은 창에서 아래로 스크롤하여 <strong>`Browser`</strong> 항목의 <strong>`Browser Javascript Execution Policy`</strong>가 `Disabled`(차단)가 아닌 <strong>`Request Review`</strong>(또는 `Always Proceed`)로 설정되어 있는지 확인합니다.
 
 ![Step 3-0 세팅 점검 2 - Settings General 하단 Browser 권한 확인](assets/screenshots/slide_11_ui_2.png)
 
