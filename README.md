@@ -147,11 +147,13 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 > 이번 파트에서는 워크플로우 마지막 단계에서 사람이 최종 승인한 보고서를 <strong>내 Gmail 임시보관함(`Drafts`)에 자동으로 생성</strong>합니다.  
 > 노드를 다 만든 후 `Test` 실행 중에 권한 팝업 차단이나 연동 오류가 발생하지 않도록, <strong>본격적인 워크플로우 조립 전 Gmail 앱 권한(OAuth)을 미리 1회 연동(Authorize)</strong>해 둡니다.
 
-1. 크롬에서 **Gemini Enterprise** 좌측 메뉴 **`New Agent` ➔ `Workflow`** 진입 후 우측 상단 **`⚙️ Settings` (또는 노드 우측 패널의 `Connected apps`)** 확인
-2. 목록에서 **`Mail` (Gmail 아이콘)** 확인:
-   * 이미 **토글 스위치가 ON (파란색)** 상태라면 바로 다음 단계로 진행합니다.
-   * `[Connect]` (또는 `Authorize`) 버튼이 보이거나 요약 목록에 숨겨져 있다면: 우측 상단 **`View all`** 클릭 ➔ `Mail` 우측 **`[Connect]`** 버튼 클릭 ➔ 구글 계정 권한 승인 팝업에서 내 계정 선택 후 **`Allow`(허용)** 클릭 ➔ 토글을 **ON (파란색)**으로 켭니다.
-3. 사전 연동이 완료되었다면 아래 **Step 2-1**로 이동하여 5단계 자동화 파이프라인을 본격적으로 조립합니다!
+1. 크롬에서 **Gemini Enterprise** 좌측 메뉴 **`New Agent` ➔ `Workflow`** 진입 후 우측 패널의 **`연결된 앱` (Connected apps)** 확인
+2. 목록에서 **`Gmail`** 우측의 **`작업 사용 설정` (또는 `[Connect]`)** 링크를 클릭합니다.
+3. 화면에 뜨는 **`로그인 - Google 계정 (계정을 선택하세요. Gemini Enterprise(으)로 이동)`** 팝업창에서 내 계정을 선택하고 **`Allow`(허용)**를 눌러 권한을 1회 승인합니다.
+4. 사전 연동이 완료되었다면 아래 **Step 2-1**로 이동하여 5단계 자동화 파이프라인을 본격적으로 조립합니다!
+
+👉 **사전 권한 승인 화면:** (`우측 연결된 앱 > Gmail [작업 사용 설정] 클릭 ➔ Google 계정 로그인 팝업 Allow 승인`)
+![Step 2-0 실습 시작 전 연결된 앱에서 Gmail 작업 사용 설정 클릭 및 Google 계정 로그인 권한 승인 화면](assets/screenshots/wf_step_00_auth.png)
 
 ---
 
@@ -247,9 +249,10 @@ Gemini Agent 1: content
 
 ![Step 2-1-13 Approved 분기 아래 Gemini Agent 2 추가 후 Instructions에 3 Gemini Agent 1: content 삽입](assets/screenshots/wf_step_14.png)
 
-2. **`Connected apps`에서 `Mail` (Gmail) 토글 켜기**: 우측 패널의 <strong>`Connected apps`</strong>를 클릭해 펼친 뒤, <strong>`Mail` (Gmail 아이콘)</strong> 우측 토글 스위치를 <strong>ON (파란색)</strong>으로 켭니다. *(Step 2-0에서 이미 사전에 `[Connect]` ➔ `Allow` 승인을 마쳤다면 바로 파란색 스위치가 켜집니다. 혹시 아직 안 하셨다면 우측 상단 `View all` ➔ `[Connect]` ➔ `Allow` 승인을 진행해 주세요.)*
+2. **`Connected apps`에서 `Gmail` 세부 권한 토글 확인**: 우측 패널의 **`연결된 앱`**에서 `Gmail`을 클릭해 펼친 뒤, 메일 초안 생성을 위해 **`데이터 추가 또는 업데이트하기`** 스위치가 **ON (파란색)**으로 켜져 있는지 확인합니다. *(Step 2-0에서 이미 사전에 `작업 사용 설정` ➔ `Allow` 승인을 마쳤으므로 바로 스위치를 켤 수 있습니다.)*
 
-![Step 2-1-14 Gemini Agent 2의 Connected apps에서 Mail(Gmail) 토글 활성화](assets/screenshots/wf_step_15.png)
+👉 **화면 확인 포인트:** (`연결된 앱 ➔ Gmail 펼치기 ➔ '데이터 추가 또는 업데이트하기' 토글 ON 확인`)
+![Step 2-1-14 Gemini Agent 2의 연결된 앱에서 Gmail 데이터 추가 또는 업데이트하기 토글 활성화](assets/screenshots/wf_step_15.png)
 
 3. **Gmail 드래프트 생성 프롬프트 완성**: `Instructions`의 <strong>`Gemini Agent 1: content`</strong> 변수 뒤에 아래 지시문을 입력합니다 (최종 단계이므로 `Output`은 기본 `Plain text` 그대로 둡니다):
 
