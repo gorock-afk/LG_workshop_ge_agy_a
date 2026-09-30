@@ -141,6 +141,20 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 ---
 
 # ⚡ [1부 · 크롬 브라우저] Part 2. GE Workflow & HITL 사람 승인 자동화
+### 🔹 Step 2-0. [필수] 실습 시작 전 Gmail 연동(Authorize) 1회 사전 승인하기
+
+> <strong>⚠️ Workflow 실행 전 필수 점검:</strong>  
+> 이번 파트에서는 워크플로우 마지막 단계에서 사람이 최종 승인한 보고서를 <strong>내 Gmail 임시보관함(`Drafts`)에 자동으로 생성</strong>합니다.  
+> 노드를 다 만든 후 `Test` 실행 중에 권한 팝업 차단이나 연동 오류가 발생하지 않도록, <strong>본격적인 워크플로우 조립 전 Gmail 앱 권한(OAuth)을 미리 1회 연동(Authorize)</strong>해 둡니다.
+
+1. 크롬에서 **Gemini Enterprise** 좌측 메뉴 **`New Agent` ➔ `Workflow`** 진입 후 우측 상단 **`⚙️ Settings` (또는 노드 우측 패널의 `Connected apps`)** 확인
+2. 목록에서 **`Mail` (Gmail 아이콘)** 확인:
+   * 이미 **토글 스위치가 ON (파란색)** 상태라면 바로 다음 단계로 진행합니다.
+   * `[Connect]` (또는 `Authorize`) 버튼이 보이거나 요약 목록에 숨겨져 있다면: 우측 상단 **`View all`** 클릭 ➔ `Mail` 우측 **`[Connect]`** 버튼 클릭 ➔ 구글 계정 권한 승인 팝업에서 내 계정 선택 후 **`Allow`(허용)** 클릭 ➔ 토글을 **ON (파란색)**으로 켭니다.
+3. 사전 연동이 완료되었다면 아래 **Step 2-1**로 이동하여 5단계 자동화 파이프라인을 본격적으로 조립합니다!
+
+---
+
 ### 🔹 Step 2-1. 트렌드 조사 + 양식 포맷팅(`.md` 첨부) + 사람 승인(`Approval`)을 Workflow로 연결하기
 
 > <strong>🎯 핵심 포인트:</strong> <strong>[뉴스 검색 ➔ 보고서 양식 변환 ➔ 사람 승인 ➔ 지메일 저장]</strong>을 한 번에 이어주는 자동화 파이프라인입니다. 앞 단계 결과를 빠짐없이 넘겨주기 위해 출력 변수(`content`) 하나로 연결합니다.
@@ -233,8 +247,7 @@ Gemini Agent 1: content
 
 ![Step 2-1-13 Approved 분기 아래 Gemini Agent 2 추가 후 Instructions에 3 Gemini Agent 1: content 삽입](assets/screenshots/wf_step_14.png)
 
-2. **`Connected apps`에서 `Mail` (Gmail) 권한 연결(Auth) 및 토글 켜기**: 우측 패널의 <strong>`Connected apps`</strong>를 클릭해 펼친 뒤, <strong>`Mail` (Gmail 아이콘)</strong> 우측 토글 스위치를 <strong>ON (파란색)</strong>으로 켭니다.
-   * 💡 **최초 1회 연동 시 (`Mail`이 목록에 안 보이거나 `Connect` 버튼이 뜨는 경우)**: 아직 Gmail 권한(OAuth)을 연결하지 않은 계정은 기본 요약 목록에서 숨겨져 있습니다. 우측 상단의 <strong>`View all`</strong>을 클릭 ➔ `Mail` 우측의 <strong>`[Connect]`</strong>(또는 `Authorize`) 버튼 클릭 ➔ 구글 계정 권한 승인 팝업창에서 내 계정 선택 후 <strong>`Allow`(허용)</strong>를 누르면 버튼이 **토글 스위치**로 바뀌며, 이때 스위치를 **ON**으로 켜주면 됩니다.
+2. **`Connected apps`에서 `Mail` (Gmail) 토글 켜기**: 우측 패널의 <strong>`Connected apps`</strong>를 클릭해 펼친 뒤, <strong>`Mail` (Gmail 아이콘)</strong> 우측 토글 스위치를 <strong>ON (파란색)</strong>으로 켭니다. *(Step 2-0에서 이미 사전에 `[Connect]` ➔ `Allow` 승인을 마쳤다면 바로 파란색 스위치가 켜집니다. 혹시 아직 안 하셨다면 우측 상단 `View all` ➔ `[Connect]` ➔ `Allow` 승인을 진행해 주세요.)*
 
 ![Step 2-1-14 Gemini Agent 2의 Connected apps에서 Mail(Gmail) 토글 활성화](assets/screenshots/wf_step_15.png)
 
