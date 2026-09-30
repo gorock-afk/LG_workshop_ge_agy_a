@@ -192,7 +192,7 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 2. **`2 ✨ Gemini Agent: content` 클릭 및 지시문 작성**: 변수 목록에서 앞 단계의 출력 변수인 <strong>`2 ✨ Gemini Agent: content` (`Text`)</strong>를 클릭해 삽입하고, 아래와 같이 첨부된 `.md` 템플릿 파일로 변환하는 프롬프트를 작성합니다:
 
 ```text
-[= Gemini Agent: content]
+Gemini Agent: content
 첨부된 사내 표준 보고서 양식(01_GE_Workflow_lg_weekly_report_template.md)에 맞춰 위 트렌드 조사 내용을 주간 LG 제품 시장 트렌드 보고서 전문으로 포맷팅해줘.
 ```
 
@@ -217,10 +217,10 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 
 ![Step 2-1-11 Approval 노드의 Message 칸에서 + > Variables > 3 Gemini Agent 1: content 선택](assets/screenshots/wf_step_12.png)
 
-3. **결재 요청 문구 작성**: 삽입된 <strong>`= Gemini Agent 1: content`</strong> 칩 아래에 아래와 같이 결재 확인 문구를 입력합니다:
+3. **결재 요청 문구 작성**: 삽입된 <strong>`Gemini Agent 1: content`</strong> 변수 아래에 아래와 같이 결재 확인 문구를 입력합니다:
 
 ```text
-[= Gemini Agent 1: content]
+Gemini Agent 1: content
 결재하시겠습니까?
 ```
 
@@ -238,10 +238,10 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 
 ![Step 2-1-14 Gemini Agent 2의 Connected apps에서 Mail(Gmail) 토글 활성화](assets/screenshots/wf_step_15.png)
 
-3. **Gmail 드래프트 생성 프롬프트 완성**: `Instructions`의 <strong>`= Gemini Agent 1: content`</strong> 칩 뒤에 아래 지시문을 입력합니다 (최종 단계이므로 `Output`은 기본 `Plain text` 그대로 둡니다):
+3. **Gmail 드래프트 생성 프롬프트 완성**: `Instructions`의 <strong>`Gemini Agent 1: content`</strong> 변수 뒤에 아래 지시문을 입력합니다 (최종 단계이므로 `Output`은 기본 `Plain text` 그대로 둡니다):
 
 ```text
-[= Gemini Agent 1: content]
+Gemini Agent 1: content
 해당 내용으로 메일 드래프트를 써놔
 ```
 

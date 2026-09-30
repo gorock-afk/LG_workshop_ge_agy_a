@@ -521,7 +521,7 @@
         if (!isScript && !isMdFile && code) {
           const rawPrompt = code.textContent.trim();
           const tokenMatch = rawPrompt.match(/^([\/@][a-zA-Z0-9_.\-]+)\s+([\s\S]+)$/);
-          const varMatch = rawPrompt.match(/^(\[=\s*[^\]]+\])\s+([\s\S]+)$/);
+          const varMatch = rawPrompt.match(/^(?:\[=\s*)?(Gemini Agent(?: \d+)?: content)(?:\])?\s*\n+([\s\S]+)$/) || rawPrompt.match(/^(\[?=\s*[^\]\n]+\]?)\s*\n+([\s\S]+)$/);
 
           if (tokenMatch) {
             const tokenName = tokenMatch[1];
@@ -542,14 +542,15 @@
             labelHtml = `⌨️ 먼저 입력창에 <span class="ag-header-chip">${tokenName}</span> 타이핑 후 <span class="ag-header-kbd">Tab ⇥</span> 선택 ➔ 이어서 뒷문장 복붙`;
             btnTxt = '뒷문장만 복사';
           } else if (varMatch) {
-            const varName = varMatch[1];
+            const rawVar = varMatch[1];
+            const cleanVarName = rawVar.replace(/[\[\]=]/g, '').trim();
             const promptBody = varMatch[2].trim();
             pre.setAttribute('data-copy-text', promptBody);
 
             code.textContent = '';
             const chipSpan = document.createElement('span');
             chipSpan.className = 'ag-skill-chip';
-            chipSpan.setAttribute('data-cmd', varName);
+            chipSpan.setAttribute('data-cmd', cleanVarName);
             chipSpan.setAttribute('data-kbd', '+ Variables');
             chipSpan.setAttribute('title', '복사되지 않는 변수 칩입니다. + > Variables에서 선택해 주세요.');
             const bodySpan = document.createElement('span');
@@ -557,7 +558,7 @@
             code.appendChild(chipSpan);
             code.appendChild(bodySpan);
 
-            labelHtml = `🧩 입력창 하단 <span class="ag-header-chip">+ ➔ {} Variables</span>로 <span class="ag-header-kbd">${varName}</span> 삽입 ➔ 이어서 뒷문장 복붙`;
+            labelHtml = `🧩 입력창 하단 <span class="ag-header-chip">+ ➔ {} Variables</span>로 <span class="ag-header-kbd">${cleanVarName}</span> 삽입 ➔ 이어서 뒷문장 복붙`;
             btnTxt = '뒷문장만 복사';
           }
         }
