@@ -524,15 +524,13 @@
           const tokenMatch = rawPrompt.match(/^([\/@][a-zA-Z0-9_.\-]+)\s+([\s\S]+)$/);
           if (tokenMatch) {
             const tokenName = tokenMatch[1];
-            const isSlash = tokenName.startsWith('/');
-            const iconPrefix = isSlash ? '</> ' : '📄 ';
             const promptBody = tokenMatch[2].trim();
             pre.setAttribute('data-copy-text', promptBody);
 
             code.textContent = '';
             const chipSpan = document.createElement('span');
             chipSpan.className = 'ag-skill-chip';
-            chipSpan.setAttribute('data-cmd', iconPrefix + tokenName);
+            chipSpan.setAttribute('data-cmd', tokenName);
             chipSpan.setAttribute('data-kbd', 'Tab ⇥');
             chipSpan.setAttribute('title', '복사되지 않는 칩입니다. 채팅창에 ' + tokenName + ' 타이핑 후 Tab 키를 눌러주세요.');
             const bodySpan = document.createElement('span');
@@ -540,8 +538,7 @@
             code.appendChild(chipSpan);
             code.appendChild(bodySpan);
 
-            const headerIcon = isSlash ? '&lt;/&gt;' : '📄';
-            labelHtml = `⌨️ 먼저 입력창에 <span class="ag-header-chip">${headerIcon} ${tokenName}</span> 타이핑 후 <span class="ag-header-kbd">Tab ⇥</span> 선택 ➔ 이어서 뒷문장 복붙`;
+            labelHtml = `⌨️ 먼저 입력창에 <span class="ag-header-chip">${tokenName}</span> 타이핑 후 <span class="ag-header-kbd">Tab ⇥</span> 선택 ➔ 이어서 뒷문장 복붙`;
             btnTxt = '뒷문장만 복사';
           }
         }
