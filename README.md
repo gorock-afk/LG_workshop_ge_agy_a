@@ -302,7 +302,7 @@ Gemini Agent 1: content
 > 기본 승인(`Approved`) 흐름을 확인했다면, 실제 현업 자동화에서 자주 쓰이는 반려(`Rejected`) 루프와 다중 수신자 분기를 직접 구성해 보세요.
 
 1. <strong>미션 A (`Rejected` 반려 루프 테스트)</strong>: `Test` 실행 시 일부러 <strong>`[Rejected]`(반려)</strong> 버튼을 눌러보고, 반려 시 <strong>"출처가 불명확한 수치를 제외하고 재작성해 다시 승인을 요청하라"</strong>는 피드백 노드를 `Rejected` 갈림길 아래에 추가해 보세요.
-2. <strong>미션 B (임원용 3줄 요약 vs 실무진용 상세본 동시 생성)</strong>: `Approval` 통과 후 노드를 2개로 분기하여, 하나는 <strong>팀장님용 핵심 3줄 요약 메일 초안</strong>, 다른 하나는 <strong>팀원 공유용 전체 비교표 메일 초안</strong>으로 각각 Gmail 임시보관함에 생성되도록 확장해 보세요.
+2. <strong>미션 B (`If / else` 조건 분기: 임원용 3줄 요약 vs 실무진용 상세본 생성)</strong>: `Approval` 통과(`Approved`) 후 `+` 버튼을 눌러 <strong>`Flow control ➔ If / else`</strong> 노드를 추가하고 특정 조건(예: 보고서 본문에 `"긴급"`·`"리스크"` 등 특정 키워드 포함 여부 또는 분량 조건)을 걸어 분기해 보세요. 조건 충족(`If`) 시에는 <strong>팀장님용 핵심 3줄 요약 메일 초안</strong>, 그 외(`Else`)에는 <strong>팀원 공유용 전체 비교표 메일 초안</strong>이 각각 Gmail 임시보관함에 생성되도록 확장해 봅니다.
 
 ---
 
