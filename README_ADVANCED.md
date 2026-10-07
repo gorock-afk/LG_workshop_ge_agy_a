@@ -1,7 +1,7 @@
 # 🚀 [심화 풀코스] LG Electronics · Gemini Enterprise & Antigravity 2.0 실무 마스터 가이드 (Advanced 3H Edition)
 
-> <strong>Step-by-Step 심화 실습 가이드 (3시간 풀코스 · 신기능 & 히든 명령어 총망라)</strong>  
-> 기본 기능 습득을 넘어, <strong>AI 이미지·배너 직접 생성(`generate_image`) · 캡처 화면 1분 복제(`Vision-to-Code`) · 오디오 팟캐스트 브리핑 · 채팅창 인라인 위젯(`Generative UI`) · 멀티 에이전트 병렬 팀플레이(`/teamwork-preview`, `/owl`, `/review-agent`) · 4대 계열사 라이브 멀티 티커 · 920행 파이썬 정제 · 수익성 히트맵 · 3축 What-if 시뮬레이터 · 원클릭 임원 보고서 추출기</strong>까지 현업 최신 기능을 모두 경험합니다.
+> <strong>Step-by-Step 심화 실습 가이드 (3시간 풀코스 · B2C Antigravity 2.0 신기능 & 히든 명령어 총망라)</strong>  
+> 기본 기능 습득을 넘어, <strong>AI 이미지·배너 직접 생성(`generate_image`) · 캡처 화면 1분 복제(`Vision-to-Code`) · 오디오 팟캐스트 브리핑 · 채팅창 인라인 위젯(`Generative UI`) · 멀티 에이전트 병렬 오케스트레이션(`/boost`, `/teamwork-preview`, `/goal`) · 4대 계열사 라이브 멀티 티커 · 920행 파이썬 정제 · 수익성 히트맵 · 3축 What-if 시뮬레이터 · 원클릭 임원 보고서 추출기</strong>까지 현업 최신 기능을 모두 경험합니다.
 
 ---
 
@@ -18,7 +18,7 @@
 | <strong>Part 3 (30분)</strong> | 💻 Antigravity 2.0 | <strong>LG 브랜드(`#A50034`) 슬라이드 + 전력 시뮬레이터 & Q&A 드로어 + 🎨 내장 `AI 이미지 생성 & 다크 홀로그램 편집`</strong> |
 | <strong>Part 4 (35분)</strong> | 💻 Antigravity 2.0 | <strong>4대 계열사 멀티 주가 티커 + 신호등 AI 뉴스 + `KRW⇄USD` 환산 바 + 📸 `화면 캡처 복제(Vision)` & 💬 `인라인 위젯`</strong> |
 | <strong>Part 5 (40분)</strong> | 💻 Antigravity 2.0 | <strong>파이썬 데이터 정제(`920행`) + 수익성 히트맵·이상탐지 + 3축 What-if 슬라이더 + `탭 4: 보고서 추출기(.md/.csv)` + `90점 감사`</strong> |
-| <strong>Part 6 (20분)</strong> | 💻 Antigravity 2.0 | <strong>🎁 [히든 치트키 6선] `/teamwork-preview` 멀티 에이전트 팀플레이 · `/owl` 심층 추론 · `/review-agent` · `/goal` · `/btw` · `/compact`</strong> |
+| <strong>Part 6 (20분)</strong> | 💻 Antigravity 2.0 | <strong>🎁 [히든 치트키 6선] `/boost` 심층 오케스트레이터 · `/teamwork-preview` 팀플레이 · `/goal` · `/deepagent` · `/btw` · `/compact`</strong> |
 
 ---
 
@@ -791,25 +791,25 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ---
 
-# 🎁 [스페셜 히든 트랙] Part 6. Antigravity 2.0 히든 슬래시(/) 명령어 6선 & 멀티 에이전트 총동원
+# 🎁 [스페셜 히든 트랙] Part 6. B2C Antigravity 2.0 히든 슬래시(/) 명령어 & 멀티 에이전트 총동원
 
-> <strong>🔥 실무 생산성을 10배 끌어올리는 숨겨진 치트키 6선!</strong>  
-> 앞서 배운 `/grill-me`, `/plan`, `/browser`, `/schedule`, `/learn` 외에도 Antigravity 2.0에는 **서브에이전트 여러 명을 동시에 소환해 병렬로 일을 시키거나, 다각도 심층 추론·전담 코드 감사를 수행하는 히든 슬래시(`/`) 명령어들**이 내장되어 있습니다. 하나씩 직접 타이핑해 위력을 체감해 보세요!
+> <strong>🔥 실무 생산성을 10배 끌어올리는 외부(B2C) Antigravity 2.0 내장 히든 치트키!</strong>  
+> 앞서 배운 `/grill-me`, `/plan`, `/browser`, `/schedule`, `/learn` 외에도 B2C Antigravity 2.0에는 **서브에이전트 여러 명을 동시에 소환해 병렬로 일을 시키거나(`/teamwork-preview`), 심층 멀티 에이전트 오케스트레이터(`/boost`, `/deepagent`), 끝장 자율 완주(`/goal`)**를 수행하는 히든 슬래시(`/`) 명령어들이 내장되어 있습니다. 하나씩 직접 타이핑해 위력을 체감해 보세요!
 
-| 히든 명령어 | 어떤 기능인가요? (현업 핵심 포인트) | 언제 쓰면 가장 좋나요? |
+| 히든 명령어 / 기능 | 어떤 기능인가요? (B2C Antigravity 2.0 핵심 포인트) | 언제 쓰면 가장 좋나요? |
 | :--- | :--- | :--- |
-| **`/teamwork-preview`** | 기획자·디자이너·데이터 분석가·QA 등 **여러 명의 서브에이전트를 동시에 소환해 역할을 나눠 병렬로 협업**시킵니다. | 대시보드 디자인 개선·데이터 검증·전략 요약 등 여러 작업을 한꺼번에 처리할 때 |
-| **`/owl`** / **`/deepagent`** | 바로 답을 내는 대신 **찬성/반대/리스크 등 다각도에서 깊이 있게 추론·검증**한 뒤 최고 수준의 기획·코드를 내놓습니다. | 2027년 신사업 전략, 해외 구독(HaaS) 수익 모델 설계 등 깊이 있는 기획이 필요할 때 |
-| **`/review-agent`** | **전담 감사 에이전트**가 내가 만든 코드·대시보드의 숨은 버그, 수식 오류, 모바일 레이아웃 깨짐을 샅샅이 찾아냅니다. | 임원 보고나 팀 공유 직전에 결함이나 계산 실수가 없는지 최종 점검할 때 |
+| **`/boost`** | `DeepInvestigator`(심층 조사) + `DeepCoder`(심층 구현) **멀티 에이전트 오케스트레이터(`Boost`)**를 가동해 다각도 추론·검증 후 최고 품질 결과물을 만듭니다. | 2027년 신사업 전략, 해외 구독(HaaS) 수익 모델 설계 등 고난도 기획·구현이 필요할 때 |
+| **`/teamwork-preview`** | 기획자·디자이너·데이터 분석가·QA 등 **여러 명의 자율 서브에이전트(Swarm)를 동시에 소환해 역할을 나눠 병렬로 협업**시킵니다. | 대시보드 디자인 개선·데이터 검증·전략 요약 등 여러 작업을 한꺼번에 처리할 때 |
+| **`/deepagent`** | 복잡한 설계·코딩·검증 과제를 심층 추론 파이프라인으로 해결하는 실험적 하이엔드 에이전트입니다. | 대규모 기능 확장이나 정교한 데이터 파이프라인 설계를 맡길 때 |
 | **`/goal`** | 복합 과제를 던져주면 **중간에 멈추지 않고 [코딩 ➔ 검증 ➔ 에러 수정]을 목표 달성 때까지 스스로 반복 완주**합니다. | 여러 탭 수정과 테스트를 사람이 일일이 확인하지 않고 한 번에 끝내고 싶을 때 |
 | **`/btw`** | 에이전트가 한창 코딩 중일 때 **작업을 멈추지 않고 옆구리 창(`Side Question`)으로 딴 질문을 던져** 즉시 답을 듣습니다. | 코드가 돌아가는 동안 용어 뜻이나 오프라인 작동 여부를 물어보고 싶을 때 |
 | **`/compact`** | 2~3시간 작업해 대화가 길어졌을 때 **핵심 기억만 남기고 대화창 용량을 1초 만에 압축**해 속도를 높입니다. | 긴 실습 후반부에 대화창이 무거워졌을 때 |
 
 ---
 
-### 🔹 Step 6-1. `/teamwork-preview` — 멀티 에이전트 병렬 팀플레이 소환하기
+### 🔹 Step 6-1. `/teamwork-preview` — 멀티 에이전트 병렬 팀플레이(Swarm) 소환하기
 
-> <strong>🎯 핵심 포인트:</strong> 에이전트 혼자 순차적으로 일하는 대신, **디자인 담당 · 데이터 검증 담당 · 경영 전략 담당 서브에이전트 3명을 동시에 소환**해 병렬로 작업하게 만듭니다. 화면에 여러 에이전트가 동시에 돌아가며 협업하는 모습을 직접 확인해 보세요!
+> <strong>🎯 핵심 포인트:</strong> 에이전트 혼자 순차적으로 일하는 대신, **디자인 담당 · 데이터 검증 담당 · 경영 전략 담당 서브에이전트 여러 명을 동시에 소환**해 병렬로 작업하게 만듭니다. 우측 `Subagents` 패널에서 여러 에이전트가 동시에 돌아가며 협업하는 모습을 직접 확인해 보세요!
 
 #### 1️⃣ 채팅창에 `/teamwork-preview` + `[Tab]` 선택 후 멀티 에이전트 팀 가동하기
 
@@ -819,14 +819,14 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ---
 
-### 🔹 Step 6-2. `/owl` & `/deepagent` — 다각도 심층 추론 에이전트로 2027 가전 구독(HaaS) 전략 수립하기
+### 🔹 Step 6-2. `/boost` & `/deepagent` — 심층 멀티 에이전트 오케스트레이터로 2027 가전 구독(HaaS) 전략 수립하기
 
-> <strong>🎯 핵심 포인트:</strong> 단순 요약이 아니라 **여러 관점(시장 기회 vs 수익성 리스크 vs 경쟁사 반격)에서 다각도로 시뮬레이션하고 검증**하는 심층 추론 모드입니다.
+> <strong>🎯 핵심 포인트:</strong> B2C Antigravity 2.0의 **`/boost`** 명령어는 심층 조사(`DeepInvestigator`)와 심층 구현(`DeepCoder`) 파이프라인을 동시에 가동하여, 여러 관점(시장 기회 vs 수익성 리스크 vs 경쟁사 반격)에서 다각도로 검증한 최고 수준의 결과물을 내놓습니다.
 
-#### 1️⃣ [옵션 A: `/owl` 심층 추론 실행] 채팅창에 `/owl` + `[Tab]` 선택 후 입력
+#### 1️⃣ [옵션 A: `/boost` 멀티 에이전트 오케스트레이터 실행] 채팅창에 `/boost` + `[Tab]` 선택 후 입력
 
 ```text
-/owl 2027년 LG 가전 구독(HaaS) 유럽·북미 확장을 위한 수익 모델과 리스크 방어 시나리오를 다각도로 추론해서 4번 임원 보고서 탭에 추가해줘.
+/boost 2027년 LG 가전 구독(HaaS) 유럽·북미 확장을 위한 수익 모델과 리스크 방어 시나리오를 다각도로 추론해서 4번 임원 보고서 탭에 추가해줘.
 ```
 
 #### 2️⃣ [옵션 B: `/deepagent` 심층 설계 실행] 채팅창에 `/deepagent` + `[Tab]` 선택 후 입력
@@ -837,14 +837,20 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ---
 
-### 🔹 Step 6-3. `/review-agent` — 전담 감사 에이전트로 숨은 버그·수식 오류 정밀 진단하기
+### 🔹 Step 6-3. 나만의 커스텀 감사 서브에이전트 즉석 생성(`define_subagent`) & 엑셀(`.xlsx`)·주피터 노트북(`.ipynb`) 자동 추출하기
 
-> <strong>🎯 핵심 포인트:</strong> 코드 리뷰 전용 에이전트를 호출해 `index.html`과 파이썬 정제 스크립트의 **숨은 버그, 0 나눗셈 위험, 반응형 화면 깨짐 여부**를 샅샅이 점검받습니다.
+> <strong>🎯 핵심 포인트:</strong> B2C Antigravity 2.0에서는 내가 원하는 역할의 **전담 서브에이전트(예: `코드·수식 감사관`, `까칠한 CFO 면접관`)를 즉석에서 정의(`define_subagent`)해 호출**하거나, 분석 결과를 **주피터 노트북(`.ipynb`)과 실제 엑셀 파일(`.xlsx`)**로 바로 생성할 수 있습니다.
 
-#### 1️⃣ 채팅창에 `/review-agent` + `[Tab]` 선택 후 정밀 코드·수식 감사 실행하기
+#### 1️⃣ [전담 감사 서브에이전트 즉석 생성 & 호출] 아래 프롬프트를 입력해 정밀 코드·수식 감사 실행하기
 
 ```text
-/review-agent 현재 만들어진 index.html과 파이썬 스크립트에 숨은 버그, 레이아웃 깨짐, 수식 계산 오류가 없는지 정밀 감사해줘.
+전담 코드·수식 감사관 서브에이전트(code-auditor)를 새로 정의해서 호출해줘. 현재 만들어진 index.html과 파이썬 스크립트에 숨은 버그, 레이아웃 깨짐, 0 나눗셈이나 수식 계산 오류가 없는지 샅샅이 감사한 뒤 리포트해줘.
+```
+
+#### 2️⃣ [실제 엑셀(`.xlsx`) & 주피터 노트북(`.ipynb`) 파일로 뽑아내기]
+
+```text
+방금 정제한 920행 LG 가전 실적 요약표(시제품 보정 전/후 비교 및 권역×제품군 마진율 표)를 실제 엑셀 파일(LG_Appliance_Executive_Report.xlsx)과 주피터 분석 노트북(LG_Appliance_Analysis.ipynb) 파일로도 현재 폴더에 각각 생성해줘.
 ```
 
 ---
@@ -888,4 +894,4 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
    - <strong>탭 1 (`📈 LG 시장 트렌드`)</strong>: `/grill-me` ➔ `/lg-brand-slides`(`#A50034`) + <strong>모드별 전력 절감 시뮬레이터 위젯 & 키보드 `N` 발표자 Q&A 드로어 + 🎨 내장 `AI 이미지 생성 & 다크 홀로그램 편집` 배너</strong>
    - <strong>탭 2 (`💓 실시간 시장·뉴스 LIVE`)</strong>: `/python-api-trend` 개조 ➔ <strong>LG 4대 계열사 멀티 주가 티커 + 4대 토픽 신호등(`🟢/🟡/🔴`) 뉴스 보드 + 상단 `KRW⇄USD` 실시간 환산 바 + 📸 `화면 캡처 1분 복제(Vision-to-Code)` & 💬 `채팅창 인라인 계산기 위젯(Generative UI)`</strong>
    - <strong>탭 3 (`📊 가전 실적·구독 분석`)</strong>: `@04_AG_Analytics_lg_appliance_data.csv` 파이썬 정제 파이프라인(`build_analytics_json.py`) ➔ <strong>시제품(0원 18건) 실시간 토글 + 권역×제품군 수익성 히트맵 & 이상징후(`⚠️ Anomaly`) 테이블 + 3축 What-if 손익 시뮬레이터</strong>
-   - <strong>탭 4 (`📝 임원 보고서 빌더`) & 히든 명령어</strong>: <strong>탭 1~3 데이터 종합 브리핑 & 원클릭 `.md` / `.csv` 다운로드 + `/browser` 자율 검증 + `90점 품질 게이트 PASS` + `/teamwork-preview` · `/owl` · `/review-agent` · `/goal` · `/btw` · `/compact` 마스터!</strong>
+   - <strong>탭 4 (`📝 임원 보고서 빌더`) & 히든 명령어</strong>: <strong>탭 1~3 데이터 종합 브리핑 & 원클릭 `.md` / `.csv` / `.xlsx` / `.ipynb` 다운로드 + `/browser` 자율 검증 + `90점 품질 게이트 PASS` + `/boost` · `/teamwork-preview` · `/deepagent` · `/goal` · `/btw` · `/compact` 마스터!</strong>
