@@ -18,7 +18,7 @@
 | <strong>Part 3 (30분)</strong> | 💻 Antigravity 2.0 | <strong>LG 브랜드(`#A50034`) 슬라이드 + 전력 시뮬레이터 & Q&A 드로어 + 🎨 내장 `AI 이미지 생성 & 다크 홀로그램 편집`</strong> |
 | <strong>Part 4 (35분)</strong> | 💻 Antigravity 2.0 | <strong>4대 계열사 멀티 주가 티커 + 신호등 AI 뉴스 + `KRW⇄USD` 환산 바 + 📸 `화면 캡처 복제(Vision)` & 💬 `인라인 위젯`</strong> |
 | <strong>Part 5 (40분)</strong> | 💻 Antigravity 2.0 | <strong>파이썬 데이터 정제(`920행`) + 수익성 히트맵·이상탐지 + 3축 What-if 슬라이더 + `탭 4: 보고서 추출기(.md/.csv)` + `90점 감사`</strong> |
-| <strong>Part 6 (20분)</strong> | 💻 Antigravity 2.0 | <strong>🎁 [파워 팁 리뷰 & 미니 실습] `/` 명령어 · `@conversation` · `@rule` 총정리 + 💱 `generative_ui` 환율 계산기 앱 + 🧩 `/plugin` 실습 + `/goal` · `/btw` · `/compact`</strong> |
+| <strong>Part 6 (20분)</strong> | 💻 Antigravity 2.0 | <strong>🎁 [파워 팁 리뷰 & 미니 실습] `/` 명령어 · `@conversation` · `@rule` 총정리 + 💱 `generative_ui` 환율 계산기 앱 + 🧩 `Customizations` Google Workspace 연동 & `/plugin` + `/goal` · `/btw`</strong> |
 
 ---
 
@@ -821,7 +821,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 | **자동화·자산화** | **`/learn`** | 방금 대화에서 성공한 방식이나 디자인 기준을 영구 규칙/스킬로 저장 | 매번 같은 지시(컬러 코드, 페이지 번호 등)를 반복하기 싫을 때 |
 | **확장·패키징** | **`/plugin`** | 스킬·규칙·서브에이전트·MCP 설정을 하나의 플러그인 단위로 관리 및 생성 | 내가 만든 스킬과 규칙 세트를 팀원에게 통째로 배포·공유할 때 |
 | **자율 완주** | **`/goal`** | 목표 달성 완료 때까지 에이전트가 멈추지 않고 [구현➔검증➔수정] 무한 반복 | 사람이 중간에 일일이 확인하지 않고 끝까지 완성시키고 싶을 때 |
-| **실무 단축키** | **`/btw`** & **`/compact`** | • `/btw`: 코딩 도중 작업을 멈추지 않고 옆구리 창으로 딴 질문 던지기<br>• `/compact`: 길어진 대화창 맥락을 1초 만에 핵심 요약해 메모리 확보 | • 코드가 돌아가는 동안 용어나 원리를 물어볼 때 (`/btw`)<br>• 2~3시간 작업 후 대화창이 느려졌을 때 (`/compact`) |
+| **실무 단축키** | **`/btw`** | 코딩 도중 에이전트 작업을 멈추지 않고 옆구리 창(`Side Question`)으로 딴 질문 던지기 | 코드가 돌아가는 동안 용어나 작동 원리를 바로 물어볼 때 |
 
 #### 3️⃣ [`@conversation` & `@rule` 직접 체험해보기]
 채팅 입력창에 **`@conversation`** 또는 **`@rule`**을 타이핑해 목록이 뜨는지 확인하고 아래 프롬프트로 직접 호출해 봅니다:
@@ -885,7 +885,7 @@ Google Workspace 플러그인 설치가 끝났다면, 크롬 브라우저로 왔
 
 ---
 
-### 🔹 Step 6-4. 🎯 `/goal` (끝장 자율 완주 루프) & 돌아가는 도중 `/btw` 옆구리 질문 · `/compact` 실습
+### 🔹 Step 6-4. 🎯 `/goal` (끝장 자율 완주 루프) & 돌아가는 도중 `/btw` 옆구리 질문 실습
 
 > <strong>🎯 핵심 포인트 (왜 일반 프롬프트 대신 `/goal`을 쓰나요?):</strong>  
 > * 일반 프롬프트는 에이전트가 한 번 코딩하고 나면 멈추지만, **`/goal`**을 붙이면 **복합 미션의 모든 조건이 100% 통과될 때까지 에이전트가 멈추지 않고 스스로 `[구현 ➔ 데이터·에러 자체 검증 ➔ 실패 시 재수정 ➔ 완주]` 루프**를 돕니다!  
@@ -920,13 +920,6 @@ Google Workspace 플러그인 설치가 끝났다면, 크롬 브라우저로 왔
 /btw 지금 네가 만들고 있는 엑셀 파일(LG_Global_Executive_Report.xlsx)은 어떤 파이썬 라이브러리로 생성하는 거야? 그리고 우리 대시보드는 인터넷이 안 되는 회의실 PC에서도 그대로 열려?
 ```
 
-#### 3️⃣ [실습 마무리 `/compact` 1초 압축] 채팅창에 `/compact` + `[Tab]` 선택 후 입력
-모든 작업이 끝난 뒤, 길어진 대화창의 핵심 맥락만 남기고 메모리를 1초 만에 가볍게 압축합니다:
-
-```text
-/compact 지금까지 완성한 대시보드 구조, 환율 계산기 앱, Google Workspace 연동, 그리고 핵심 데이터 정제 규칙만 남기고 대화창 컨텍스트를 가볍게 압축해줘.
-```
-
 ---
 
 ## 🎉 수고하셨습니다! 오늘 3시간 심화 풀코스로 완성한 모든 산출물 & 신기능 요약
@@ -936,4 +929,4 @@ Google Workspace 플러그인 설치가 끝났다면, 크롬 브라우저로 왔
    - <strong>탭 1 (`📈 LG 시장 트렌드`)</strong>: `/grill-me` ➔ `/lg-brand-slides`(`#A50034`) + <strong>모드별 전력 절감 시뮬레이터 위젯 & 키보드 `N` 발표자 Q&A 드로어 + 🎨 내장 `AI 이미지 생성 & 다크 홀로그램 편집` 배너</strong>
    - <strong>탭 2 (`💓 실시간 시장·뉴스 LIVE`)</strong>: `/python-api-trend` 개조 ➔ <strong>LG 4대 계열사 멀티 주가 티커 + 4대 토픽 신호등(`🟢/🟡/🔴`) 뉴스 보드 + 상단 `KRW⇄USD` 실시간 환산 바 + 📸 `화면 캡처 1분 복제(Vision-to-Code)` & 💬 `채팅창 인라인 계산기 위젯(Generative UI)`</strong>
    - <strong>탭 3 (`📊 가전 실적·구독 분석`)</strong>: `@04_AG_Analytics_lg_appliance_data.csv` 파이썬 정제 파이프라인(`build_analytics_json.py`) ➔ <strong>시제품(0원 18건) 실시간 토글 + 권역×제품군 수익성 히트맵 & 이상징후(`⚠️ Anomaly`) 테이블 + 3축 What-if 손익 시뮬레이터</strong>
-   - <strong>탭 4 (`📝 임원 보고서 빌더`) & Part 6 파워 팁·미니 실습</strong>: <strong>탭 1~3 데이터 종합 브리핑 & 원클릭 `.md` / `.csv` / `.xlsx` 다운로드 + 💡 `@conversation` · `@rule` · `/` 명령어 총정리 리뷰 + 💱 `generative_ui` 실시간 환율 계산기 미니 앱 + 🧩 `Customizations` Google Workspace(`Docs`·`Drive`·`Sheets`·`Calendar`) 연동 & `/plugin` 실습 + `/goal` · `/btw` · `/compact` 마스터!</strong>
+   - <strong>탭 4 (`📝 임원 보고서 빌더`) & Part 6 파워 팁·미니 실습</strong>: <strong>탭 1~3 데이터 종합 브리핑 & 원클릭 `.md` / `.csv` / `.xlsx` 다운로드 + 💡 `@conversation` · `@rule` · `/` 명령어 총정리 리뷰 + 💱 `generative_ui` 실시간 환율 계산기 미니 앱 + 🧩 `Customizations` Google Workspace(`Docs`·`Drive`·`Sheets`·`Calendar`) 연동 & `/plugin` 실습 + `/goal` · `/btw` 마스터!</strong>
