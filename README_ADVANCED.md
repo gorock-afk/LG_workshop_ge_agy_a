@@ -1,13 +1,13 @@
 # 🚀 [심화 풀코스] LG Electronics · Gemini Enterprise & Antigravity 2.0 실무 마스터 가이드 (Advanced 3H Edition)
 
-> <strong>Step-by-Step 심화 실습 가이드 (3시간 풀코스 · B2C Antigravity 2.0 신기능 & 히든 명령어 총망라)</strong>  
-> 기본 기능 습득을 넘어, <strong>AI 이미지·배너 직접 생성(`generate_image`) · 캡처 화면 1분 복제(`Vision-to-Code`) · 오디오 팟캐스트 브리핑 · 채팅창 인라인 위젯(`Generative UI`) · 멀티 에이전트 병렬 오케스트레이션(`/boost`, `/teamwork-preview`, `/goal`) · 4대 계열사 라이브 멀티 티커 · 920행 파이썬 정제 · 수익성 히트맵 · 3축 What-if 시뮬레이터 · 원클릭 임원 보고서 추출기</strong>까지 현업 최신 기능을 모두 경험합니다.
+> <strong>Step-by-Step 심화 실습 가이드 (3시간 풀코스 · Antigravity 2.0 신기능 & 파워 팁 총망라)</strong>  
+> 기본 기능 습득을 넘어, <strong>AI 이미지·배너 직접 생성(`generate_image`) · 캡처 화면 1분 복제(`Vision-to-Code`) · 오디오 팟캐스트 브리핑 · 채팅창 인라인 환율 계산기 앱(`Generative UI`) · `/plugin` 통합 패키징 · 자율 완주(`/goal`) · 4대 계열사 라이브 멀티 티커 · 920행 파이썬 정제 · 수익성 히트맵 · 3축 What-if 시뮬레이터 · 원클릭 임원 보고서 추출기</strong>까지 현업 최신 기능을 모두 경험합니다.
 
 ---
 
 ## 🗺️ 0. 오늘 함께 완성할 6단계 심화 누적 빌드업 & 신기능 로드맵 (총 3시간 풀코스)
 
-<strong>1부(크롬 웹, 1시간)</strong>에서는 주간 트렌드 브리핑과 CFO 리스크 반론 스킬을 교차 실행하고, <strong>Imagen 광고 시안 생성 · Deep Research · Audio Overview(음성 팟캐스트)</strong>까지 체험한 뒤 조건부 승인 워크플로우로 지메일 임시보관함에 자동 저장합니다. <strong>2부(Antigravity 앱, 2시간)</strong>에서는 단일 웹페이지(`index.html`)에 <strong>[탭 1: AI 생성 화보 배너 & 웹 슬라이드] ➔ [탭 2: 4대 계열사 주가·신호등 뉴스·캡처 복제] ➔ [탭 3: 920행 정제 차트·히트맵·What-if 시뮬레이터] ➔ [탭 4: 원클릭 임원 보고서 추출기]</strong>를 차례대로 누적 탑재하고, <strong>히든 슬래시(`/`) 치트키 6선</strong>으로 마무리합니다.
+<strong>1부(크롬 웹, 1시간)</strong>에서는 주간 트렌드 브리핑과 CFO 리스크 반론 스킬을 교차 실행하고, <strong>Imagen 광고 시안 생성 · Deep Research · Audio Overview(음성 팟캐스트)</strong>까지 체험한 뒤 조건부 승인 워크플로우로 지메일 임시보관함에 자동 저장합니다. <strong>2부(Antigravity 앱, 2시간)</strong>에서는 단일 웹페이지(`index.html`)에 <strong>[탭 1: AI 생성 화보 배너 & 웹 슬라이드] ➔ [탭 2: 4대 계열사 주가·신호등 뉴스·캡처 복제] ➔ [탭 3: 920행 정제 차트·히트맵·What-if 시뮬레이터] ➔ [탭 4: 원클릭 임원 보고서 추출기]</strong>를 차례대로 누적 탑재하고, <strong>파워 팁 총정리 리뷰 & 환율 계산기 앱 · `/plugin` 실습</strong>으로 마무리합니다.
 
 ![5단계 누적 빌드업 로드맵 다이어그램](assets/screenshots/slide_02_ui_1.png)
 
@@ -18,7 +18,7 @@
 | <strong>Part 3 (30분)</strong> | 💻 Antigravity 2.0 | <strong>LG 브랜드(`#A50034`) 슬라이드 + 전력 시뮬레이터 & Q&A 드로어 + 🎨 내장 `AI 이미지 생성 & 다크 홀로그램 편집`</strong> |
 | <strong>Part 4 (35분)</strong> | 💻 Antigravity 2.0 | <strong>4대 계열사 멀티 주가 티커 + 신호등 AI 뉴스 + `KRW⇄USD` 환산 바 + 📸 `화면 캡처 복제(Vision)` & 💬 `인라인 위젯`</strong> |
 | <strong>Part 5 (40분)</strong> | 💻 Antigravity 2.0 | <strong>파이썬 데이터 정제(`920행`) + 수익성 히트맵·이상탐지 + 3축 What-if 슬라이더 + `탭 4: 보고서 추출기(.md/.csv)` + `90점 감사`</strong> |
-| <strong>Part 6 (20분)</strong> | 💻 Antigravity 2.0 | <strong>🎁 [파워 팁 리뷰 & 미니 실습] `/` 명령어 · `@conversation` · `@rule` 총정리 + 💱 `generative_ui` 환율 계산기 앱 + 🧩 `/plugin` 실습 + 멀티 에이전트(`/teamwork-preview`, `/boost`, `/goal`)</strong> |
+| <strong>Part 6 (20분)</strong> | 💻 Antigravity 2.0 | <strong>🎁 [파워 팁 리뷰 & 미니 실습] `/` 명령어 · `@conversation` · `@rule` 총정리 + 💱 `generative_ui` 환율 계산기 앱 + 🧩 `/plugin` 실습 + `/goal` · `/btw` · `/compact`</strong> |
 
 ---
 
@@ -820,9 +820,6 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 | **자동화·자산화** | **`/schedule`** | 좌측 `Scheduled Tasks`에 매일/매주 정기 자동 실행(Cron) 및 타이머 등록 | 매일 아침 9시 주가·환율·뉴스 데이터를 자동 갱신할 때 |
 | **자동화·자산화** | **`/learn`** | 방금 대화에서 성공한 방식이나 디자인 기준을 영구 규칙/스킬로 저장 | 매번 같은 지시(컬러 코드, 페이지 번호 등)를 반복하기 싫을 때 |
 | **확장·패키징** | **`/plugin`** | 스킬·규칙·서브에이전트·MCP 설정을 하나의 플러그인 단위로 관리 및 생성 | 내가 만든 스킬과 규칙 세트를 팀원에게 통째로 배포·공유할 때 |
-| **멀티 에이전트** | **`/teamwork-preview`** | 기획·디자인·데이터·QA 등 여러 서브에이전트(Swarm)를 동시에 소환해 병렬 작업 | 여러 작업(UI 개선 + 데이터 검증 + 요약)을 동시에 시킬 때 |
-| **멀티 에이전트** | **`/boost`** *(또는 `/owl`)* | 다각도 심층 조사·구현 오케스트레이터를 가동해 최고 수준의 전략/코드 도출 | 2027 신사업 전략이나 복잡한 수익 모델 시뮬레이션을 맡길 때 |
-| **멀티 에이전트** | **`/deepagent`** | 계획 ➔ 구현 ➔ 자체 검증까지 한 번에 수행하는 심층 코딩 에이전트 | 고난도 데이터 파이프라인이나 대규모 기능 확장을 맡길 때 |
 | **자율 완주** | **`/goal`** | 목표 달성 완료 때까지 에이전트가 멈추지 않고 [구현➔검증➔수정] 무한 반복 | 사람이 중간에 일일이 확인하지 않고 끝까지 완성시키고 싶을 때 |
 | **실무 단축키** | **`/btw`** & **`/compact`** | • `/btw`: 코딩 도중 작업을 멈추지 않고 옆구리 창으로 딴 질문 던지기<br>• `/compact`: 길어진 대화창 맥락을 1초 만에 핵심 요약해 메모리 확보 | • 코드가 돌아가는 동안 용어나 원리를 물어볼 때 (`/btw`)<br>• 2~3시간 작업 후 대화창이 느려졌을 때 (`/compact`) |
 
@@ -848,7 +845,7 @@ generative_ui 스킬을 사용해서 채팅창 안에서 바로 조작할 수 �
 ```
 
 #### 2️⃣ [2단계: 방금 만든 환율 계산기 앱을 우리 포털(`index.html`) 우측 상단 팝업 버튼으로도 탑재하기]
-채팅창에서 테스트해 본 환율 계산기 미니 앱이 마음에 든다면, 우리 통합 대시보드(`index.html`) 상단 헤더에도 **`[💱 환율 계산기]`** 버튼을 만들어 언제든 클릭해 쓸 수 있게 연결합니다:
+채팅창에서 테스트해 본 환율 계산기 미니 앱이 마음에 든다면, 우리 통합 대시보드(`index.html`) 상단 헤더에도 **`[💱 실시간 환율 계산기]`** 버튼을 만들어 언제든 클릭해 쓸 수 있게 연결합니다:
 
 ```text
 방금 만든 실시간 환율 계산기 미니 앱을 우리 대시보드(index.html) 상단 헤더의 '[💱 실시간 환율 계산기]' 버튼으로도 추가해줘. 버튼을 클릭하면 깔끔한 모달 팝업으로 환율 계산기가 열려서 어느 탭을 보다가도 바로 KRW/USD/EUR/JPY 환산과 수출 단가 계산을 할 수 있게 해줘.
@@ -877,25 +874,7 @@ generative_ui 스킬을 사용해서 채팅창 안에서 바로 조작할 수 �
 
 ---
 
-### 🔹 Step 6-4. 🤝 `/teamwork-preview` (멀티 에이전트 팀플레이) & `/boost` · `/deepagent` (심층 추론) 가동하기
-
-> <strong>🎯 핵심 포인트:</strong> 에이전트 혼자 순차적으로 일하는 대신, **여러 명의 전문 서브에이전트를 동시에 소환해 병렬로 협업(`/teamwork-preview`)**시키거나, **다각도 심층 추론 오케스트레이터(`/boost`, `/deepagent`)**를 가동해 기획과 코드를 한 단계 끌어올립니다.
-
-#### 1️⃣ [`/teamwork-preview` 실행] 채팅창에 `/teamwork-preview` + `[Tab]` 선택 후 멀티 에이전트 팀 가동하기
-
-```text
-/teamwork-preview 디자인 담당, 데이터 검증 담당, 경영 전략 담당 에이전트로 팀을 꾸려서 현재 대시보드의 UI 완성도와 경영 인사이트 요약을 병렬로 업그레이드해줘.
-```
-
-#### 2️⃣ [`/boost` 실행] 채팅창에 `/boost` + `[Tab]` 선택 후 2027 가전 구독(HaaS) 전략 다각도 추론하기
-
-```text
-/boost 2027년 LG 가전 구독(HaaS) 유럽·북미 확장을 위한 수익 모델과 리스크 방어 시나리오를 다각도로 추론해서 4번 임원 보고서 탭에 추가해줘.
-```
-
----
-
-### 🔹 Step 6-5. 🎯 `/goal` (자율 목표 완주) · 엑셀(`.xlsx`) 추출 & `/btw` · `/compact` 실무 단축키
+### 🔹 Step 6-4. 🎯 `/goal` (자율 목표 완주) · 엑셀(`.xlsx`) 추출 & `/btw` · `/compact` 실무 단축키
 
 > <strong>🎯 핵심 포인트:</strong>  
 > * **`/goal`**: 목표가 100% 달성될 때까지 에이전트가 멈추지 않고 스스로 **[코딩 ➔ 검증 ➔ 수정]**을 반복합니다.  
@@ -905,7 +884,7 @@ generative_ui 스킬을 사용해서 채팅창 안에서 바로 조작할 수 �
 #### 1️⃣ [`/goal` 자율 완주 실행] 채팅창에 `/goal` + `[Tab]` 선택 후 인쇄용 레이아웃 & 엑셀 파일까지 한 번에 완성하기
 
 ```text
-/goal 우리 대시보드의 모든 탭(1~4번 탭)에 임원 출력용 깔끔한 인쇄 스타일(@media print)을 적용하고, 정제된 920행 LG 가전 실적 요약표를 실제 엑셀 파일(LG_Appliance_Executive_Report.xlsx)로도 생성한 뒤 에러가 없을 때까지 스스로 검증해 완성해줘.
+/goal 우리 대시보드의 모든 탭에 임원 출력용 깔끔한 인쇄 스타일(@media print)을 적용하고, 정제된 920행 LG 가전 실적 요약표를 실제 엑셀 파일(LG_Appliance_Executive_Report.xlsx)로도 생성한 뒤 에러가 없을 때까지 스스로 검증해 완성해줘.
 ```
 
 #### 2️⃣ [실무 꿀팁: `/btw` 옆구리 질문 & `/compact` 대화창 1초 압축]
@@ -916,7 +895,7 @@ generative_ui 스킬을 사용해서 채팅창 안에서 바로 조작할 수 �
 ```
 
 ```text
-/compact 지금까지 완성한 4개 탭 대시보드 구조, 환율 계산기 앱, 그리고 핵심 데이터 정제 규칙만 남기고 대화창 컨텍스트를 가볍게 압축해줘.
+/compact 지금까지 완성한 대시보드 구조, 환율 계산기 앱, 그리고 핵심 데이터 정제 규칙만 남기고 대화창 컨텍스트를 가볍게 압축해줘.
 ```
 
 ---
@@ -928,4 +907,4 @@ generative_ui 스킬을 사용해서 채팅창 안에서 바로 조작할 수 �
    - <strong>탭 1 (`📈 LG 시장 트렌드`)</strong>: `/grill-me` ➔ `/lg-brand-slides`(`#A50034`) + <strong>모드별 전력 절감 시뮬레이터 위젯 & 키보드 `N` 발표자 Q&A 드로어 + 🎨 내장 `AI 이미지 생성 & 다크 홀로그램 편집` 배너</strong>
    - <strong>탭 2 (`💓 실시간 시장·뉴스 LIVE`)</strong>: `/python-api-trend` 개조 ➔ <strong>LG 4대 계열사 멀티 주가 티커 + 4대 토픽 신호등(`🟢/🟡/🔴`) 뉴스 보드 + 상단 `KRW⇄USD` 실시간 환산 바 + 📸 `화면 캡처 1분 복제(Vision-to-Code)` & 💬 `채팅창 인라인 계산기 위젯(Generative UI)`</strong>
    - <strong>탭 3 (`📊 가전 실적·구독 분석`)</strong>: `@04_AG_Analytics_lg_appliance_data.csv` 파이썬 정제 파이프라인(`build_analytics_json.py`) ➔ <strong>시제품(0원 18건) 실시간 토글 + 권역×제품군 수익성 히트맵 & 이상징후(`⚠️ Anomaly`) 테이블 + 3축 What-if 손익 시뮬레이터</strong>
-   - <strong>탭 4 (`📝 임원 보고서 빌더`) & Part 6 파워 팁·미니 실습</strong>: <strong>탭 1~3 데이터 종합 브리핑 & 원클릭 `.md` / `.csv` / `.xlsx` 다운로드 + 💡 `@conversation` · `@rule` · `/` 명령어 총정리 리뷰 + 💱 `generative_ui` 실시간 환율 계산기 미니 앱 + 🧩 `/plugin` 통합 패키징 + `/teamwork-preview` · `/boost` · `/goal` · `/btw` · `/compact` 마스터!</strong>
+   - <strong>탭 4 (`📝 임원 보고서 빌더`) & Part 6 파워 팁·미니 실습</strong>: <strong>탭 1~3 데이터 종합 브리핑 & 원클릭 `.md` / `.csv` / `.xlsx` 다운로드 + 💡 `@conversation` · `@rule` · `/` 명령어 총정리 리뷰 + 💱 `generative_ui` 실시간 환율 계산기 미니 앱 + 🧩 `/plugin` 통합 패키징 + `/goal` · `/btw` · `/compact` 마스터!</strong>
