@@ -853,23 +853,34 @@ generative_ui 스킬을 사용해서 채팅창 안에서 바로 조작할 수 �
 
 ---
 
-### 🔹 Step 6-3. 🧩 [미니 실습 2] `/plugin` 명령어 실행하여 플러그인 확인 & 나만의 통합 플러그인 패키지 만들기
+### 🔹 Step 6-3. 🧩 [미니 실습 2] `Customizations` 마켓플레이스에서 Google Workspace 연동(Docs·Drive·Sheets·Slides·Calendar) & `/plugin` 실습
 
-> <strong>🎯 핵심 포인트 (`/plugin` 통합 관리):</strong>  
-> 오늘 우리가 만든 **스킬(`SKILL.md`)**, **규칙(`GEMINI.md`)**, **파이썬 수집 스크립트**를 내 PC에서만 쓰는 게 아니라 팀원이나 타 부서에 한 번에 넘겨주려면 어떻게 해야 할까요? **`/plugin`** 명령어를 사용하면 여러 커스터마이징 요소들을 **하나의 플러그인 패키지(`plugin.json`)로 깔끔하게 묶거나 설치·활성화**할 수 있습니다!
+> <strong>🎯 핵심 포인트 (`Customizations` 마켓플레이스 & `/plugin` 통합 관리):</strong>  
+> Antigravity 2.0의 **`Customizations` (`Marketplace` / `Installed`)** 화면에서는 클릭 한 번(`+`)으로 **Google Workspace (`Google Docs`, `Google Sheets`, `Google Slides`, `Google Drive`, `Google Calendar`)** 및 **`Build with Google` (`Gemini API`, `Chrome DevTools`, `Firebase`, `Google Antigravity SDK`)** 공식 플러그인을 즉시 설치해 내 구글 계정의 문서·시트·일정을 Antigravity 대화창으로 바로 불러올 수 있습니다! 또한 **`/plugin`** 명령어로 직접 플러그인을 관리하고 패키징할 수도 있습니다.
 
-#### 1️⃣ [1단계: `/plugin` 명령어 실행해 현재 플러그인 환경 확인하기]
-채팅 입력창에 먼저 **`/plugin`을 타이핑한 뒤 `[Tab]` 키**를 눌러 스킬 칩을 띄우고, 이어서 아래 뒷문장을 복사해 붙여넣습니다:
+#### 1️⃣ `Customizations ➔ Marketplace`에서 `Google Workspace` 플러그인(`Docs` · `Drive` · `Sheets` · `Slides` · `Calendar`) 추가하기
+1. 좌측 사이드바 하단의 **`Customizations`** 메뉴를 클릭하고 우측 상단 탭이 **`Marketplace`**로 선택되어 있는지 확인합니다.
+2. 상단 **`Google Workspace`** 섹션에서 **`Google Docs`**, **`Google Sheets`**, **`Google Slides`**, **`Google Drive`**, **`Google Calendar`** 우측의 **`+` 버튼**을 눌러 설치하고 Google 계정을 연결합니다. *(설치가 완료된 항목은 `Installed` 탭에서도 확인할 수 있습니다.)*
+
+👉 **화면 확인 포인트:** (`Customizations ➔ Marketplace ➔ Google Workspace 섹션에서 우측 [+] 버튼 클릭`)
+![Step 6-3 Customizations Marketplace에서 Google Workspace (Docs, Sheets, Slides, Drive, Calendar) 플러그인 추가 화면](assets/screenshots/customizations_marketplace.png)
+
+#### 2️⃣ [구글 내부 문서·일정 불러오기 실습] 내 `Google Drive` · `Google Docs` 문서를 Antigravity로 불러와 대시보드에 연동하기
+Google Workspace 플러그인 설치가 끝났다면, 크롬 브라우저로 왔다 갔다 할 필요 없이 **Antigravity 채팅창에서 바로 내 Google Drive / Docs 문서를 검색해 읽어오거나 새 Google Docs 보고서·Calendar 일정을 생성**해 봅니다:
 
 ```text
-/plugin 현재 워크스페이스의 플러그인 상태를 확인하고, 오늘 우리가 만든 스킬과 규칙들을 하나의 플러그인으로 묶어 관리하는 방법을 알려줘.
+내 Google Drive와 Google Docs에서 최근 작성된 'LG' 또는 '주간 트렌드 보고서' 문서를 검색해서 핵심 내용을 불러오고, 그 요약 본문을 우리 대시보드(index.html)의 1번 트렌드 탭 하단 브리핑 박스에 바로 반영해줘.
 ```
 
-#### 2️⃣ [2단계: `/plugin`으로 오늘 만든 LG 스킬·규칙을 `lg-executive-suite` 플러그인으로 패키징하기]
-다시 채팅창에 **`/plugin` + `[Tab]`**을 선택한 뒤, 오늘 만든 **① LG 브랜드 슬라이드 스킬(`lg-brand-slides`)**, **② 실시간 시장·뉴스 수집 스킬(`python-api-trend`)**, **③ 대시보드 품질 규칙**을 하나의 플러그인 패키지로 묶어 달라고 지시합니다:
+```text
+오늘 대시보드에서 분석한 LG 5대 가전 실적 요약과 환율 시뮬레이션 결과를 내 Google Docs에 '[임원보고] LG AI 가전 주간 실적 요약'이라는 새 문서로 바로 생성해주고, 내일 오전 10시 Google Calendar에 'LG 가전 주간 트렌드 리뷰 회의' 일정도 등록해줘.
+```
+
+#### 3️⃣ [`/plugin` 명령어 실행] 채팅창에서 `/plugin`으로 플러그인 상태 확인 & 나만의 통합 패키지 만들기
+채팅 입력창에 먼저 **`/plugin`을 타이핑한 뒤 `[Tab]` 키**를 눌러 스킬 칩을 띄우고, 현재 설치된 플러그인을 확인하거나 오늘 우리가 만든 스킬·규칙들을 하나의 패키지(`lg-executive-suite`)로 묶어 봅니다:
 
 ```text
-/plugin 오늘 우리가 만든 lg-brand-slides 스킬, python-api-trend 실시간 시세·뉴스 스킬, 그리고 대시보드 디자인 규칙을 하나로 묶어서 팀원들에게 바로 공유할 수 있는 'lg-executive-suite' 플러그인 패키지(plugin.json 매니페스트 포함)로 생성해줘.
+/plugin 현재 설치 및 활성화된 Google Workspace 플러그인 상태를 확인하고, 오늘 우리가 만든 lg-brand-slides 스킬과 python-api-trend 실시간 시세·뉴스 스킬을 팀원에게 한 번에 공유할 수 있는 'lg-executive-suite' 플러그인 패키지로 묶는 방법을 안내해줘.
 ```
 
 ---
@@ -907,4 +918,4 @@ generative_ui 스킬을 사용해서 채팅창 안에서 바로 조작할 수 �
    - <strong>탭 1 (`📈 LG 시장 트렌드`)</strong>: `/grill-me` ➔ `/lg-brand-slides`(`#A50034`) + <strong>모드별 전력 절감 시뮬레이터 위젯 & 키보드 `N` 발표자 Q&A 드로어 + 🎨 내장 `AI 이미지 생성 & 다크 홀로그램 편집` 배너</strong>
    - <strong>탭 2 (`💓 실시간 시장·뉴스 LIVE`)</strong>: `/python-api-trend` 개조 ➔ <strong>LG 4대 계열사 멀티 주가 티커 + 4대 토픽 신호등(`🟢/🟡/🔴`) 뉴스 보드 + 상단 `KRW⇄USD` 실시간 환산 바 + 📸 `화면 캡처 1분 복제(Vision-to-Code)` & 💬 `채팅창 인라인 계산기 위젯(Generative UI)`</strong>
    - <strong>탭 3 (`📊 가전 실적·구독 분석`)</strong>: `@04_AG_Analytics_lg_appliance_data.csv` 파이썬 정제 파이프라인(`build_analytics_json.py`) ➔ <strong>시제품(0원 18건) 실시간 토글 + 권역×제품군 수익성 히트맵 & 이상징후(`⚠️ Anomaly`) 테이블 + 3축 What-if 손익 시뮬레이터</strong>
-   - <strong>탭 4 (`📝 임원 보고서 빌더`) & Part 6 파워 팁·미니 실습</strong>: <strong>탭 1~3 데이터 종합 브리핑 & 원클릭 `.md` / `.csv` / `.xlsx` 다운로드 + 💡 `@conversation` · `@rule` · `/` 명령어 총정리 리뷰 + 💱 `generative_ui` 실시간 환율 계산기 미니 앱 + 🧩 `/plugin` 통합 패키징 + `/goal` · `/btw` · `/compact` 마스터!</strong>
+   - <strong>탭 4 (`📝 임원 보고서 빌더`) & Part 6 파워 팁·미니 실습</strong>: <strong>탭 1~3 데이터 종합 브리핑 & 원클릭 `.md` / `.csv` / `.xlsx` 다운로드 + 💡 `@conversation` · `@rule` · `/` 명령어 총정리 리뷰 + 💱 `generative_ui` 실시간 환율 계산기 미니 앱 + 🧩 `Customizations` Google Workspace(`Docs`·`Drive`·`Sheets`·`Calendar`) 연동 & `/plugin` 실습 + `/goal` · `/btw` · `/compact` 마스터!</strong>
