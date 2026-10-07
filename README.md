@@ -332,7 +332,7 @@ Gemini Agent 1: content
 로컬 작업 폴더(예: `C:/Users/abcd/lg-work-portal`)를 열고, 채팅 입력창에 먼저 **`/grill-me`를 타이핑한 뒤 `[Tab]` 키를 눌러 스킬 칩을 띄우고**, 이어서 아래 프롬프트 문장을 복사해 붙여넣습니다:
 
 ```text
-/grill-me LG AI 가전 트렌드 보고서를 3장 분량의 Single Webpage 슬라이드로 간결하게 만들고 싶어.
+/grill-me LG AI 가전 트렌드 보고서를 3장 분량의 슬라이드로 구성해서 현재 폴더에 단일 웹페이지(index.html) 파일 형태로 간결하게 만들어줘.
 ```
 
 #### 2️⃣ 에이전트의 역질문에 답변하기 (객관식 카드 `Submit ↵` 또는 채팅 답변)
@@ -345,7 +345,7 @@ Gemini Agent 1: content
 #### 3️⃣ 구현 계획(`Implementation Plan`) 확인 및 진행 승인 (`[Proceed ⌘↩]` 또는 채팅 답변)
 질문에 답하고 나면 에이전트가 구현 계획을 정리해 보여줍니다.
 * 아래 화면처럼 **`Implementation Plan` 카드와 파란색 `[Proceed ⌘↩]` 버튼이 뜨면 `[Proceed ⌘↩]` 버튼을 클릭**합니다.
-* 만약 버튼 대신 **채팅 문장으로 진행 여부를 물어보면 `"응, 이대로 만들어줘"`라고 입력**해 실제 `index.html` 코드 생성을 시작합니다.
+* 만약 버튼 대신 **채팅 문장으로 진행 여부를 물어보면 `"응, 이대로 index.html 파일로 만들어줘"`라고 입력**해 실제 `index.html` 코드 생성을 시작합니다.
 
 ![Step 3-1 Implementation Plan 생성 및 Proceed 승인 버튼 화면](assets/screenshots/slide_12_ui_2.png)
 
