@@ -1,23 +1,24 @@
 # 🚀 [심화 풀코스] LG Electronics · Gemini Enterprise & Antigravity 2.0 실무 마스터 가이드 (Advanced 3H Edition)
 
-> <strong>Step-by-Step 심화 실습 가이드 (3시간 풀코스 버전)</strong>  
-> 기본 기능 습득을 넘어, <strong>멀티 스킬 교차 검증 · 조건부 워크플로우 분기 · 4대 계열사 라이브 멀티 티커 · 920행 파이썬 정제 파이프라인 · 수익성 히트맵 · 3축 What-if 손익 시뮬레이터 · 원클릭 임원 보고서 빌더(4번째 탭)</strong>까지 현업 수준의 인텔리전스 포털을 완성합니다.
+> <strong>Step-by-Step 심화 실습 가이드 (3시간 풀코스 · 신기능 & 히든 명령어 총망라)</strong>  
+> 기본 기능 습득을 넘어, <strong>AI 이미지·배너 직접 생성(`generate_image`) · 캡처 화면 1분 복제(`Vision-to-Code`) · 오디오 팟캐스트 브리핑 · 채팅창 인라인 위젯(`Generative UI`) · 멀티 에이전트 병렬 팀플레이(`/teamwork-preview`, `/owl`, `/review-agent`) · 4대 계열사 라이브 멀티 티커 · 920행 파이썬 정제 · 수익성 히트맵 · 3축 What-if 시뮬레이터 · 원클릭 임원 보고서 추출기</strong>까지 현업 최신 기능을 모두 경험합니다.
 
 ---
 
-## 🗺️ 0. 오늘 함께 완성할 5단계 심화 누적 빌드업 로드맵 (총 3시간 풀코스)
+## 🗺️ 0. 오늘 함께 완성할 6단계 심화 누적 빌드업 & 신기능 로드맵 (총 3시간 풀코스)
 
-<strong>1부(크롬 웹, 1시간)</strong>에서는 주간 트렌드 브리핑과 CFO 리스크 반론 스킬을 교차 실행하고 조건부 승인 워크플로우로 지메일 임시보관함에 자동 저장합니다. <strong>2부(Antigravity 앱, 2시간)</strong>에서는 단일 웹페이지(`index.html`)에 <strong>[탭 1: 인터랙티브 웹 슬라이드] ➔ [탭 2: 4대 계열사 주가·토픽별 AI 뉴스] ➔ [탭 3: 920행 정제 차트·히트맵·What-if 시뮬레이터] ➔ [탭 4: 원클릭 임원 보고서 추출기]</strong>를 차례대로 누적 탑재합니다.
+<strong>1부(크롬 웹, 1시간)</strong>에서는 주간 트렌드 브리핑과 CFO 리스크 반론 스킬을 교차 실행하고, <strong>Imagen 광고 시안 생성 · Deep Research · Audio Overview(음성 팟캐스트)</strong>까지 체험한 뒤 조건부 승인 워크플로우로 지메일 임시보관함에 자동 저장합니다. <strong>2부(Antigravity 앱, 2시간)</strong>에서는 단일 웹페이지(`index.html`)에 <strong>[탭 1: AI 생성 화보 배너 & 웹 슬라이드] ➔ [탭 2: 4대 계열사 주가·신호등 뉴스·캡처 복제] ➔ [탭 3: 920행 정제 차트·히트맵·What-if 시뮬레이터] ➔ [탭 4: 원클릭 임원 보고서 추출기]</strong>를 차례대로 누적 탑재하고, <strong>히든 슬래시(`/`) 치트키 6선</strong>으로 마무리합니다.
 
 ![5단계 누적 빌드업 로드맵 다이어그램](assets/screenshots/slide_02_ui_1.png)
 
-| 파트 (시간) | 실습 환경 | 내가 직접 만드는 심화 누적 산출물 |
+| 파트 (시간) | 실습 환경 | 내가 직접 만드는 심화 누적 산출물 & 핵심 신기능 |
 | :--- | :---: | :--- |
-| <strong>Part 1 (30분)</strong> | 🌐 크롬 GE Web | <strong>[주간 동향 & CFO 리스크 교차 검증] `Knowledge` 양식 보고서 + `/lg-executive-briefing` & `/lg-cfo-risk-review` 멀티 스킬</strong> |
-| <strong>Part 2 (30분)</strong> | 🌐 크롬 GE Web | <strong>`HITL Approval` + `Flow control (If/else)` 조건부 라우팅 + `Rejected` 반려 루프 기반 Gmail 자동 초안</strong> |
-| <strong>Part 3 (30분)</strong> | 💻 Antigravity 2.0 | <strong>LG 브랜드(`#A50034`) 웹 슬라이드 + 모드별 전력 절감 시뮬레이터 위젯 + 키보드 `N` 발표자 Q&A 드로어</strong> |
-| <strong>Part 4 (40분)</strong> | 💻 Antigravity 2.0 | <strong>사이드 탭 포털 + LG 4대 계열사 멀티 주가 티커 + 4대 토픽 신호등 뉴스 + `KRW⇄USD` 실시간 환산 바 + `/schedule`</strong> |
-| <strong>Part 5 (50분)</strong> | 💻 Antigravity 2.0 | <strong>파이썬 데이터 정제(`920행`) + 수익성 히트맵·이상탐지 + 3축 What-if 슬라이더 + `탭 4: 보고서 추출기(.md/.csv)` + `90점 감사`</strong> |
+| <strong>Part 1 (30분)</strong> | 🌐 크롬 GE Web | <strong>`Knowledge` 보고서 + `/lg-executive-briefing` & `/lg-cfo-risk-review` 연쇄 호출 + `Imagen` 화보 & `Audio Overview` 팟캐스트</strong> |
+| <strong>Part 2 (25분)</strong> | 🌐 크롬 GE Web | <strong>`HITL Approval` + `Flow control (If/else)` 조건부 라우팅 + `Rejected` 반려 루프 기반 Gmail 자동 초안</strong> |
+| <strong>Part 3 (30분)</strong> | 💻 Antigravity 2.0 | <strong>LG 브랜드(`#A50034`) 슬라이드 + 전력 시뮬레이터 & Q&A 드로어 + 🎨 내장 `AI 이미지 생성 & 다크 홀로그램 편집`</strong> |
+| <strong>Part 4 (35분)</strong> | 💻 Antigravity 2.0 | <strong>4대 계열사 멀티 주가 티커 + 신호등 AI 뉴스 + `KRW⇄USD` 환산 바 + 📸 `화면 캡처 복제(Vision)` & 💬 `인라인 위젯`</strong> |
+| <strong>Part 5 (40분)</strong> | 💻 Antigravity 2.0 | <strong>파이썬 데이터 정제(`920행`) + 수익성 히트맵·이상탐지 + 3축 What-if 슬라이더 + `탭 4: 보고서 추출기(.md/.csv)` + `90점 감사`</strong> |
+| <strong>Part 6 (20분)</strong> | 💻 Antigravity 2.0 | <strong>🎁 [히든 치트키 6선] `/teamwork-preview` 멀티 에이전트 팀플레이 · `/owl` 심층 추론 · `/review-agent` · `/goal` · `/btw` · `/compact`</strong> |
 
 ---
 
@@ -43,7 +44,7 @@
 
 ---
 
-# 🌐 [1부 · 크롬 브라우저] Part 1. GE - Project · Knowledge & 멀티 Skill 체이닝
+# 🌐 [1부 · 크롬 브라우저] Part 1. GE - Project · 멀티 Skill 체이닝 & Imagen·오디오 브리핑
 ### 🔹 Step 1-1. 새 프로젝트(`Project`) 생성 및 팀원 공유하기
 
 > <strong>🎯 핵심 포인트:</strong> 팀 전용 <strong>`Project`</strong>를 만들고 팀원을 초대하면, 내가 올린 보고서 양식을 팀원 모두가 똑같이 쓸 수 있습니다.
@@ -150,6 +151,23 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 ```text
 /lg-cfo-risk-review 위 북미 OLED TV 및 AI 워시타워 보고서에 대해 CFO 관점에서 관세·물류·수익성 리스크와 방어 대책을 냉정하게 점검해줘.
 ```
+
+---
+
+### 🔹 Step 1-5. [GE 신기능 체험] 크롬 GE에서 `Imagen 광고 화보 생성` · `Deep Research` & `Audio Overview(음성 팟캐스트)` 체험하기
+
+> <strong>🎯 핵심 포인트 (현장 호응도 1위 신기능!):</strong> 크롬 Gemini Enterprise에서는 텍스트 보고서뿐 아니라 <strong>① 마케팅 프로모션 화보 이미지(Imagen) 즉시 생성</strong>, <strong>② 수십 개 글로벌 사이트를 자동 탐색하는 심층 리서치(`Deep Research`)</strong>, <strong>③ 보고서를 2명의 AI 진행자가 대화하는 라디오 방송으로 바꿔주는 음성 브리핑(`Audio Overview`)</strong>을 바로 쓸 수 있습니다.
+
+#### 1️⃣ [Imagen 마케팅 시안 생성] 채팅창에서 LG 가전 프로모션 화보 시안 즉시 그리기
+크롬 GE 채팅창에 아래 프롬프트를 입력해 마케팅/기획안 첨부용 고화질 컨셉 이미지를 바로 생성해 봅니다:
+
+```text
+유럽 밀라노 스타일의 모던한 거실과 주방에 놓인 차세대 LG OLED evo TV와 AI 워시타워 프리미엄 프로모션 화보 이미지를 16:9 비율로 그려줘.
+```
+
+#### 2️⃣ [Deep Research & Audio Overview] 심층 리서치 가동 & 2인 진행자 라디오 팟캐스트 들어보기
+1. **Deep Research (심층 리서치)**: 채팅 입력창 하단 도구에서 **`Deep Research`**를 선택(또는 리서치 에이전트 호출)하면, 에이전트가 스스로 조사 계획(`Research Plan`)을 세우고 수십 개의 글로벌 가전 매체·리포트를 교차 탐색해 심층 보고서를 작성합니다.
+2. **Audio Overview (음성 팟캐스트 변환)**: 생성된 보고서나 문서 상단/하단의 **`🎧 Audio Overview` (음성 개요 생성)** 버튼을 누르면, 2명의 AI 호스트가 출연해 오늘 작성한 LG 가전 트렌드 보고서의 핵심 포인트를 라디오 토크쇼처럼 생생하게 브리핑해 줍니다!
 
 ---
 
@@ -336,7 +354,7 @@ Gemini Agent 1: content
 
 ---
 
-# 💻 [2부 · 데스크톱 앱] Part 3. Antigravity 웹 슬라이드 & 인터랙티브 시뮬레이터·발표자 모드
+# 💻 [2부 · 데스크톱 앱] Part 3. Antigravity 웹 슬라이드 & AI 이미지 직접 생성·편집
 ### 🔹 Step 3-0. [필수] 실습 시작 전 `Settings (⚙️)` 권한 점검하기
 
 > <strong>⚠️ Antigravity 첫 실행 시 기본 권한 설정을 먼저 확인하세요!</strong>  
@@ -460,7 +478,27 @@ Gemini Agent 1: content
 
 ---
 
-# 📊 [2부 · 데스크톱 앱] Part 4. 멀티 탭 인텔리전스 포털 & 4대 계열사 라이브 시세·AI 뉴스 고도화
+### 🔹 Step 3-6. [AG 신기능 체험] 내장 AI 이미지 직접 생성(`Image Generation`) & 연속 편집(`Image-to-Image`)으로 히어로 배너 장착!
+
+> <strong>🎯 핵심 포인트 (시간 순삭 신기능!):</strong> Antigravity 에이전트는 **자체 이미지 생성 도구(`generate_image`)**를 내장하고 있습니다. 외부 이미지 사이트에 갈 필요 없이 **제품 컨셉 화보·배너·아이콘을 직접 그려서 로컬 폴더에 저장하고 `index.html` 슬라이드에 바로 끼워 넣는 과정**을 체험합니다!
+
+#### 1️⃣ [1단계: AI 화보 직접 생성 & 1페이지 자동 삽입]
+채팅창에 아래 프롬프트를 입력해 AI가 직접 16:9 화보를 그리고 웹 슬라이드 1페이지에 넣게 시켜봅니다:
+
+```text
+유럽 모던 거실에 놓인 차세대 LG OLED evo와 AI 워시타워 컨셉 화보 이미지를 16:9 비율로 직접 생성해서, 우리 웹 슬라이드 1페이지 우측 히어로 배너에 바로 넣어줘.
+```
+
+#### 2️⃣ [2단계: `Image-to-Image` 연속 이미지 편집]
+방금 생성된 이미지를 바탕으로, 프롬프트 한 줄로 톤앤매너와 홀로그램 UI 연출까지 연속 수정(`Image-to-Image`)해 봅니다:
+
+```text
+방금 생성한 히어로 배너 이미지를 세련된 다크모드 톤으로 바꾸고 미래지향적인 ThinQ AI 홀로그램 UI 연출을 추가해서 1페이지 배너에 다시 반영해줘.
+```
+
+---
+
+# 📊 [2부 · 데스크톱 앱] Part 4. 멀티 탭 포털 · 4대 계열사 시세·신호등 뉴스 & Vision 복제·인라인 위젯
 ### 🔹 Step 4-1. 왼쪽 사이드 탭 업무 포털 전환 & `1번 메뉴(LG 시장 트렌드)`에 슬라이드 탑재
 
 > <strong>🎯 핵심 포인트:</strong> 왼쪽에 메뉴바를 만들고, <strong>방금 만든 웹 슬라이드를 `1번 메뉴(LG 시장 트렌드)` 안에 쏙 넣습니다.</strong>
@@ -588,6 +626,28 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ```text
 포털 우측 상단 헤더에 [🇰🇷 KRW 원화 ⇄ 🇺🇸 USD 달러] 통화 전환 스위치와 [☀️ 라이트 ⇄ 🌙 다크] 테마 토글 버튼을 추가해줘. 통화 스위치를 누르면 수집된 실시간 USD/KRW 환율을 기준으로 화면 내 주가와 매출 금액 단위가 원화/달러로 즉시 환산되게 하고, 선택한 통화와 테마 설정은 localStorage에 자동 저장되게 해줘.
+```
+
+---
+
+### 🔹 Step 4-7. [AG 신기능 체험] 손그림·화면 캡처 1분 복제(`Vision-to-Code`) & 채팅창 인라인 위젯(`Generative UI`)
+
+> <strong>🎯 핵심 포인트 (신기한 비전 & 인라인 UI 기능!):</strong>  
+> 1. **`Vision-to-Code`**: 메모장에 대충 그린 표나 마음에 드는 웹사이트(예: 애플·다이슨 제품 비교표) 화면을 **`Win + Shift + S`**로 캡처해 채팅창에 **`Ctrl + V`**로 붙여넣으면 1분 만에 똑같이 작동하는 웹 카드로 복제해 줍니다.  
+> 2. **`Generative UI`**: `index.html` 브라우저를 열지 않아도 **Antigravity 채팅 답변 영역 안에 바로 마우스로 움직일 수 있는 인터랙티브 계산기 위젯**을 즉시 띄워줍니다!
+
+#### 1️⃣ [`Vision-to-Code` 실습] 화면 일부를 `Win + Shift + S`로 캡처 후 채팅창에 `Ctrl + V`로 붙여넣고 복제하기
+아무 웹사이트나 슬라이드 표 영역을 **`Win + Shift + S`**로 캡처해 Antigravity 채팅 입력창에 **`Ctrl + V`**로 붙여넣은 뒤, 아래 문장을 입력해 봅니다:
+
+```text
+방금 붙여넣은 이미지의 레이아웃과 카드 구성을 그대로 참고해서, 우리 대시보드 2번 탭 하단에 'LG 주요 AI 가전 경쟁력 한눈에 비교하기' 섹션으로 똑같이 동작하게 만들어줘.
+```
+
+#### 2️⃣ [`Generative UI` 실습] 채팅창 답변 영역 안에 바로 작동하는 '가전 구독 TCO 계산기 위젯' 띄우기
+이번에는 파일을 수정하는 대신, **채팅창 대화 화면 안에 바로 마우스로 슬라이더를 조작할 수 있는 인라인 위젯**을 띄워봅니다:
+
+```text
+채팅창 안에서 바로 마우스 슬라이더를 움직여 테스트해볼 수 있는 'LG 가전 구독(HaaS) 3년 vs 5년 총소유비용(TCO) 및 케어십 혜택 비교 계산기' 인터랙티브 위젯을 바로 띄워줘.
 ```
 
 ---
@@ -731,11 +791,101 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ---
 
-## 🎉 수고하셨습니다! 오늘 심화 풀코스로 완성한 모든 산출물 요약
+# 🎁 [스페셜 히든 트랙] Part 6. Antigravity 2.0 히든 슬래시(/) 명령어 6선 & 멀티 에이전트 총동원
 
-1. <strong>1부 (크롬 GE Web)</strong>: 팀 공유 `Project` + 사내 보고서 양식(`.txt`) + `/lg-executive-briefing` & `/lg-cfo-risk-review` 멀티 스킬 교차 검증 ➔ `Workflow` + `HITL Approval` + `Flow control (If/else)` 조건 분기 & `Rejected` 반려 루프 ➔ <strong>내 Gmail 임시보관함(`Drafts`) 맞춤형 보고 메일 자동 생성</strong>
-2. <strong>2부 (Antigravity 2.0 — 4개 사이드 탭 통합 업무 포털 `index.html`)</strong>:
-   - <strong>탭 1 (`📈 LG 시장 트렌드`)</strong>: `/grill-me` ➔ `/lg-brand-slides`(`#A50034`) + <strong>모드별 전력 절감 시뮬레이터 위젯 & 키보드 `N` 발표자 Q&A 슬라이딩 드로어</strong>
-   - <strong>탭 2 (`💓 실시간 시장·뉴스 LIVE`)</strong>: `/python-api-trend` 개조 ➔ <strong>LG 4대 계열사(전자·이노텍·디스플레이·엔솔) 멀티 주가 티커 + 4대 토픽 신호등(`🟢/🟡/🔴`) 뉴스 보드 + 상단 `KRW⇄USD` 실시간 환산 바 + `Pull` & `/schedule`</strong>
+> <strong>🔥 실무 생산성을 10배 끌어올리는 숨겨진 치트키 6선!</strong>  
+> 앞서 배운 `/grill-me`, `/plan`, `/browser`, `/schedule`, `/learn` 외에도 Antigravity 2.0에는 **서브에이전트 여러 명을 동시에 소환해 병렬로 일을 시키거나, 다각도 심층 추론·전담 코드 감사를 수행하는 히든 슬래시(`/`) 명령어들**이 내장되어 있습니다. 하나씩 직접 타이핑해 위력을 체감해 보세요!
+
+| 히든 명령어 | 어떤 기능인가요? (현업 핵심 포인트) | 언제 쓰면 가장 좋나요? |
+| :--- | :--- | :--- |
+| **`/teamwork-preview`** | 기획자·디자이너·데이터 분석가·QA 등 **여러 명의 서브에이전트를 동시에 소환해 역할을 나눠 병렬로 협업**시킵니다. | 대시보드 디자인 개선·데이터 검증·전략 요약 등 여러 작업을 한꺼번에 처리할 때 |
+| **`/owl`** / **`/deepagent`** | 바로 답을 내는 대신 **찬성/반대/리스크 등 다각도에서 깊이 있게 추론·검증**한 뒤 최고 수준의 기획·코드를 내놓습니다. | 2027년 신사업 전략, 해외 구독(HaaS) 수익 모델 설계 등 깊이 있는 기획이 필요할 때 |
+| **`/review-agent`** | **전담 감사 에이전트**가 내가 만든 코드·대시보드의 숨은 버그, 수식 오류, 모바일 레이아웃 깨짐을 샅샅이 찾아냅니다. | 임원 보고나 팀 공유 직전에 결함이나 계산 실수가 없는지 최종 점검할 때 |
+| **`/goal`** | 복합 과제를 던져주면 **중간에 멈추지 않고 [코딩 ➔ 검증 ➔ 에러 수정]을 목표 달성 때까지 스스로 반복 완주**합니다. | 여러 탭 수정과 테스트를 사람이 일일이 확인하지 않고 한 번에 끝내고 싶을 때 |
+| **`/btw`** | 에이전트가 한창 코딩 중일 때 **작업을 멈추지 않고 옆구리 창(`Side Question`)으로 딴 질문을 던져** 즉시 답을 듣습니다. | 코드가 돌아가는 동안 용어 뜻이나 오프라인 작동 여부를 물어보고 싶을 때 |
+| **`/compact`** | 2~3시간 작업해 대화가 길어졌을 때 **핵심 기억만 남기고 대화창 용량을 1초 만에 압축**해 속도를 높입니다. | 긴 실습 후반부에 대화창이 무거워졌을 때 |
+
+---
+
+### 🔹 Step 6-1. `/teamwork-preview` — 멀티 에이전트 병렬 팀플레이 소환하기
+
+> <strong>🎯 핵심 포인트:</strong> 에이전트 혼자 순차적으로 일하는 대신, **디자인 담당 · 데이터 검증 담당 · 경영 전략 담당 서브에이전트 3명을 동시에 소환**해 병렬로 작업하게 만듭니다. 화면에 여러 에이전트가 동시에 돌아가며 협업하는 모습을 직접 확인해 보세요!
+
+#### 1️⃣ 채팅창에 `/teamwork-preview` + `[Tab]` 선택 후 멀티 에이전트 팀 가동하기
+
+```text
+/teamwork-preview 디자인 담당, 데이터 검증 담당, 경영 전략 담당 에이전트로 팀을 꾸려서 현재 대시보드의 UI 완성도와 경영 인사이트 요약을 병렬로 업그레이드해줘.
+```
+
+---
+
+### 🔹 Step 6-2. `/owl` & `/deepagent` — 다각도 심층 추론 에이전트로 2027 가전 구독(HaaS) 전략 수립하기
+
+> <strong>🎯 핵심 포인트:</strong> 단순 요약이 아니라 **여러 관점(시장 기회 vs 수익성 리스크 vs 경쟁사 반격)에서 다각도로 시뮬레이션하고 검증**하는 심층 추론 모드입니다.
+
+#### 1️⃣ [옵션 A: `/owl` 심층 추론 실행] 채팅창에 `/owl` + `[Tab]` 선택 후 입력
+
+```text
+/owl 2027년 LG 가전 구독(HaaS) 유럽·북미 확장을 위한 수익 모델과 리스크 방어 시나리오를 다각도로 추론해서 4번 임원 보고서 탭에 추가해줘.
+```
+
+#### 2️⃣ [옵션 B: `/deepagent` 심층 설계 실행] 채팅창에 `/deepagent` + `[Tab]` 선택 후 입력
+
+```text
+/deepagent 경쟁사 대비 LG AI 가전(OLED evo·워시타워·HVAC)의 향후 3년 기술 초격차 로드맵을 심층 설계해서 1번 탭 웹 슬라이드 마지막 장표로 추가해줘.
+```
+
+---
+
+### 🔹 Step 6-3. `/review-agent` — 전담 감사 에이전트로 숨은 버그·수식 오류 정밀 진단하기
+
+> <strong>🎯 핵심 포인트:</strong> 코드 리뷰 전용 에이전트를 호출해 `index.html`과 파이썬 정제 스크립트의 **숨은 버그, 0 나눗셈 위험, 반응형 화면 깨짐 여부**를 샅샅이 점검받습니다.
+
+#### 1️⃣ 채팅창에 `/review-agent` + `[Tab]` 선택 후 정밀 코드·수식 감사 실행하기
+
+```text
+/review-agent 현재 만들어진 index.html과 파이썬 스크립트에 숨은 버그, 레이아웃 깨짐, 수식 계산 오류가 없는지 정밀 감사해줘.
+```
+
+---
+
+### 🔹 Step 6-4. `/goal` — 완료될 때까지 스스로 코딩·검증을 반복하는 자율 목표 달성 모드
+
+> <strong>🎯 핵심 포인트:</strong> 여러 단계가 섞인 복합 지시를 내릴 때 `/goal`을 붙이면, 에이전트가 중간에 멈추지 않고 **스스로 구현 ➔ 검증 ➔ 수정 루프를 돌며 목표를 100% 완수**합니다.
+
+#### 1️⃣ 채팅창에 `/goal` + `[Tab]` 선택 후 인쇄용 PDF 레이아웃 & 단축키 도움말 자율 완성하기
+
+```text
+/goal 우리 대시보드의 모든 탭(1~4번 탭)에 임원 출력용 깔끔한 인쇄 스타일(@media print)과 키보드 단축키 도움말 팝업(?)을 추가하고 에러가 없을 때까지 스스로 검증해 완성해줘.
+```
+
+---
+
+### 🔹 Step 6-5. `/btw` (작업 중 옆구리 질문) & `/compact` (긴 대화창 1초 메모리 압축) 실무 꿀팁
+
+> <strong>🎯 핵심 포인트:</strong> 실무에서 매일 쓰는 두 가지 단축키입니다.  
+> * **`/btw`**: 에이전트가 코딩하느라 바쁠 때 흐름을 끊지 않고 궁금한 점을 물어보는 옆구리 질문창  
+> * **`/compact`**: 대화가 길어졌을 때 핵심 맥락만 남기고 대화창 메모리를 1초 만에 가볍게 압축
+
+#### 1️⃣ [코딩 도중 `/btw`로 질문 던지기] 채팅창에 `/btw` + `[Tab]` 선택 후 입력
+
+```text
+/btw 방금 네가 대시보드에 사용한 차트 방식이 뭐야? 인터넷이 안 되는 폐쇄망 회의실 PC에서도 그대로 열려?
+```
+
+#### 2️⃣ [대화가 길어졌을 때 `/compact`로 1초 압축하기] 채팅창에 `/compact` + `[Tab]` 선택 후 입력
+
+```text
+/compact 지금까지 완성한 4개 탭 대시보드 구조와 핵심 데이터 정제 규칙만 남기고 대화창 컨텍스트를 가볍게 압축해줘.
+```
+
+---
+
+## 🎉 수고하셨습니다! 오늘 3시간 심화 풀코스로 완성한 모든 산출물 & 신기능 요약
+
+1. <strong>1부 (크롬 GE Web)</strong>: 팀 공유 `Project` + 사내 보고서 양식(`.txt`) + `/lg-executive-briefing` & `/lg-cfo-risk-review` 멀티 스킬 교차 검증 + <strong>`Imagen` 광고 시안 생성 · `Deep Research` · `Audio Overview(라디오 팟캐스트)`</strong> ➔ `Workflow` + `HITL Approval` + `Flow control (If/else)` 조건 분기 & `Rejected` 반려 루프 ➔ <strong>내 Gmail 임시보관함(`Drafts`) 맞춤형 보고 메일 자동 생성</strong>
+2. <strong>2부 (Antigravity 2.0 — 4개 사이드 탭 통합 업무 포털 `index.html` & 히든 치트키)</strong>:
+   - <strong>탭 1 (`📈 LG 시장 트렌드`)</strong>: `/grill-me` ➔ `/lg-brand-slides`(`#A50034`) + <strong>모드별 전력 절감 시뮬레이터 위젯 & 키보드 `N` 발표자 Q&A 드로어 + 🎨 내장 `AI 이미지 생성 & 다크 홀로그램 편집` 배너</strong>
+   - <strong>탭 2 (`💓 실시간 시장·뉴스 LIVE`)</strong>: `/python-api-trend` 개조 ➔ <strong>LG 4대 계열사 멀티 주가 티커 + 4대 토픽 신호등(`🟢/🟡/🔴`) 뉴스 보드 + 상단 `KRW⇄USD` 실시간 환산 바 + 📸 `화면 캡처 1분 복제(Vision-to-Code)` & 💬 `채팅창 인라인 계산기 위젯(Generative UI)`</strong>
    - <strong>탭 3 (`📊 가전 실적·구독 분석`)</strong>: `@04_AG_Analytics_lg_appliance_data.csv` 파이썬 정제 파이프라인(`build_analytics_json.py`) ➔ <strong>시제품(0원 18건) 실시간 토글 + 권역×제품군 수익성 히트맵 & 이상징후(`⚠️ Anomaly`) 테이블 + 3축 What-if 손익 시뮬레이터</strong>
-   - <strong>탭 4 (`📝 임원 보고서 빌더`)</strong>: <strong>탭 1~3 데이터 실시간 종합 브리핑 & 원클릭 `.md` / `.csv` 파일 다운로드 + `/browser` 자율 검증 + 새 세션 감사관 `90점 품질 게이트 PASS` & `/learn` 영구 자산화</strong>
+   - <strong>탭 4 (`📝 임원 보고서 빌더`) & 히든 명령어</strong>: <strong>탭 1~3 데이터 종합 브리핑 & 원클릭 `.md` / `.csv` 다운로드 + `/browser` 자율 검증 + `90점 품질 게이트 PASS` + `/teamwork-preview` · `/owl` · `/review-agent` · `/goal` · `/btw` · `/compact` 마스터!</strong>
