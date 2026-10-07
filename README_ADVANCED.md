@@ -841,9 +841,6 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ### 🔹 Bonus 2. 💱 [미니 실습 1] `generative_ui`를 통한 인터랙티브 계산기 & '글로벌 가전 실시간 환율 계산기 앱' 만들기
 
-> <strong>🎯 핵심 포인트 (`generative_ui` 인라인 앱 제작):</strong>  
-> Antigravity 2.0의 내장 **`generative_ui`** 기능을 활용하면, 별도의 웹서버를 띄우지 않아도 **채팅창 답변 영역 안에 마우스 클릭·키보드 입력(`Enter`, `Backspace`, 사칙연산)까지 바로 작동하는 인터랙티브 계산기 및 환율 계산기 미니 앱**을 즉석에서 만들어 써볼 수 있고, 원하면 우리 포털(`index.html`) 우측 상단에도 쏙 끼워 넣을 수 있습니다!
-
 #### 1️⃣ [1단계: 워밍업] 채팅창에 `/generative_ui` + `[Tab]` 선택 후 `계산기 만들어` 입력해 인라인 계산기 위젯 바로 띄워보기
 먼저 채팅 입력창에 **`/generative_ui`를 타이핑 후 `[Tab]` 키**로 스킬 칩을 띄우고 **`계산기 만들어`**를 입력해, **채팅 답변 영역 안에 마우스 클릭과 키보드(`Enter`, `Backspace`, `Escape`, 사칙연산 기호)로 바로 작동하는 계산기 위젯**이 생성되는 것을 체험해 봅니다:
 
@@ -872,9 +869,6 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ### 🔹 Bonus 3. 🧩 [미니 실습 2] `Customizations` 마켓플레이스에서 Google Workspace 연동(Docs·Drive·Sheets·Slides·Calendar) & `/plugin` 실습
 
-> <strong>🎯 핵심 포인트 (`Customizations` 마켓플레이스 & `/plugin` 통합 관리):</strong>  
-> Antigravity 2.0의 **`Customizations` (`Marketplace` / `Installed`)** 화면에서는 클릭 한 번(`+`)으로 **Google Workspace (`Google Docs`, `Google Sheets`, `Google Slides`, `Google Drive`, `Google Calendar`)** 및 **`Build with Google` (`Gemini API`, `Chrome DevTools`, `Firebase`, `Google Antigravity SDK`)** 공식 플러그인을 즉시 설치해 내 구글 계정의 문서·시트·일정을 Antigravity 대화창으로 바로 불러올 수 있습니다! 또한 **`/plugin`** 명령어로 직접 플러그인을 관리하고 패키징할 수도 있습니다.
-
 #### 1️⃣ `Customizations ➔ Marketplace`에서 `Google Workspace` 플러그인(`Docs` · `Drive` · `Sheets` · `Slides` · `Calendar`) 추가하기
 1. 좌측 사이드바 하단의 **`Customizations`** 메뉴를 클릭하고 우측 상단 탭이 **`Marketplace`**로 선택되어 있는지 확인합니다.
 2. 상단 **`Google Workspace`** 섹션에서 **`Google Docs`**, **`Google Sheets`**, **`Google Slides`**, **`Google Drive`**, **`Google Calendar`** 우측의 **`+` 버튼**을 눌러 설치하고 Google 계정을 연결합니다. *(설치가 완료된 항목은 `Installed` 탭에서도 확인할 수 있습니다.)*
@@ -899,10 +893,6 @@ Google Workspace 플러그인 설치가 끝났다면, 크롬 브라우저로 왔
 ---
 
 ### 🔹 Bonus 4. 🎯 `/goal` (5가지 목표 끝장 자율 완주 루프) & 돌아가는 도중 `/btw` 옆구리 질문 실습
-
-> <strong>🎯 핵심 포인트 (왜 5가지 목표를 한꺼번에 던질 때 `/goal`의 진가가 나오나요?):</strong>  
-> * 할 일이 5가지나 섞인 프롬프트를 그냥 던지면 AI가 3~4개만 하고 *"다 했습니다!"*라며 멈추기 쉽습니다. 반면 **`/goal`**을 붙이면 에이전트가 멈추려 할 때 **시스템이 강제로 가로막고 다시 깨워서(`Continuation #1, #2...`) ①~⑤번 체크리스트가 모두 실제 파일과 테스트로 완성되었는지 끝까지 자체 감사(Audit)**를 돌립니다!  
-> * **🔥 `/goal` + `/btw` 찰떡 콤보**: `/goal`로 5가지 연속 미션을 던져 에이전트가 바쁘게 일하는 도중에, **`/btw` (`Side Question`)**로 작업을 멈추지 않고 옆구리 질문을 던져보세요!
 
 #### 1️⃣ [`/goal` 5대 미션 실행] 채팅창에 `/goal` + `[Tab]` 선택 후 5가지 목표(`①~⑤`) 논스톱 완주하기
 채팅창에 **`/goal`을 타이핑 후 `[Tab]` 키**를 누르고, 에이전트가 중간에 하나도 빠뜨리지 않고 5가지를 모두 완주·검증하도록 아래 프롬프트를 붙여넣습니다:
