@@ -18,7 +18,7 @@
 | <strong>Part 3 (30분)</strong> | 💻 Antigravity 2.0 | <strong>LG 브랜드 컬러(`#A50034` 레드 + 화이트) 고정 웹 슬라이드(`index.html`)</strong> |
 | <strong>Part 4 (30분)</strong> | 💻 Antigravity 2.0 | <strong>좌측 사이드 탭 업무 포털 (`탭 1: 트렌드 슬라이드` + `탭 2: 실시간 시세·뉴스`)</strong> |
 | <strong>Part 5 (40분)</strong> | 💻 Antigravity 2.0 | <strong>`탭 3: 가전 실적·구독 분석` 블렌딩 + `/browser` 검증 + `90점 품질 게이트`</strong> |
-| <strong>Part 6 (20분)</strong> | 💻 Antigravity 2.0 | <strong>🎁 [파워 팁 리뷰 & 미니 실습] `/` 명령어 · `@conversation` · `@rule` 총정리 + 💱 `generative_ui` 환율 계산기 앱 + 🧩 `Customizations` Google Workspace 연동 & `/plugin` + `/goal` · `/btw`</strong> |
+| <strong>🎁 Bonus (20분)</strong> | 💻 Antigravity 2.0 | <strong>[파워 팁 리뷰 & 미니 실습] `/` 명령어 · `@conversation` · `@rule` 총정리 + 💱 `generative_ui` 환율 계산기 앱 + 🧩 `Customizations` Google Workspace 연동 & `/plugin` + `/goal` · `/btw`</strong> |
 
 ---
 
@@ -655,14 +655,14 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ---
 
-# 🎁 [마무리 파워 팁 & 미니 실습] Part 6. Antigravity 2.0 명령어·멘션 총정리 리뷰 & 환율 계산기 앱 · `/plugin` 실습
+# 🎁 [마무리 파워 팁 & 미니 실습] Bonus. Antigravity 2.0 명령어·멘션 총정리 리뷰 & 환율 계산기 앱 · `/plugin` 실습
 
-> <strong>🔥 오늘 배운 기능과 숨겨진 고급 치트키를 한눈에 정리하고, 직접 미니 앱(`환율 계산기`)과 `/plugin`까지 실행해 보는 마무리 세션입니다!</strong>  
+> <strong>🔥 오늘 배운 기능과 숨겨진 고급 치트키를 한눈에 정리하고, 직접 미니 앱(`환율 계산기`)과 `/plugin`까지 실행해 보는 보너스 세션입니다!</strong>  
 > 실무 복귀 후 바로 꺼내 쓸 수 있도록 **① 슬래시(`/`) 명령어 전체 요약**, **② 골뱅이(`@`) 멘션 핵심 3종(`@파일`, `@conversation`, `@rule`)**, **③ `generative_ui` 기반 실시간 환율 계산기 미니 앱 제작**, **④ `/plugin` 명령어 실습**까지 차례대로 진행합니다.
 
 ---
 
-### 🔹 Step 6-1. 💡 [파워 팁 총정리 리뷰] 슬래시(`/`) 명령어 & 골뱅이(`@`) 멘션 (`@conversation`, `@rule`) 치트시트
+### 🔹 Bonus 1. 💡 [파워 팁 총정리 리뷰] 슬래시(`/`) 명령어 & 골뱅이(`@`) 멘션 (`@conversation`, `@rule`) 치트시트
 
 #### 1️⃣ 골뱅이(`@`) 멘션 실무 활용 팁 3선 (`@파일` · `@conversation` · `@rule`)
 채팅 입력창에 **`@`**를 타이핑하면 단순 파일 첨부 외에도 아래 **3가지 핵심 컨텍스트**를 직접 불러올 수 있습니다:
@@ -691,7 +691,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 채팅 입력창에 **`@conversation:`**을 타이핑하면 아래 화면처럼 **이전에 진행했던 대화방 목록(`Starting Local Web Server`, `GEMINI.md Instruction Compliance` 등)이 자동으로 팝업**됩니다. 원하는 이전 대화방을 선택하거나 **`@rule`**을 골라 아래 프롬프트로 직접 호출해 봅니다:
 
 👉 **화면 확인 포인트:** (채팅창에 `@conversation:` 타이핑 시 이전 대화방 목록이 자동 완성으로 뜨는 화면)
-![Step 6-1 채팅 입력창에 @conversation: 타이핑 시 이전 대화방 목록이 팝업되는 화면](assets/screenshots/mention_conversation.png)
+![Bonus 1 채팅 입력창에 @conversation: 타이핑 시 이전 대화방 목록이 팝업되는 화면](assets/screenshots/mention_conversation.png)
 
 ```text
 @conversation: 이전 대화방에서 진행한 작업 핵심 내용을 3줄로 요약해줘.
@@ -703,7 +703,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ---
 
-### 🔹 Step 6-2. 💱 [미니 실습 1] `generative_ui`를 통한 인터랙티브 계산기 & '글로벌 가전 실시간 환율 계산기 앱' 만들기
+### 🔹 Bonus 2. 💱 [미니 실습 1] `generative_ui`를 통한 인터랙티브 계산기 & '글로벌 가전 실시간 환율 계산기 앱' 만들기
 
 > <strong>🎯 핵심 포인트 (`generative_ui` 인라인 앱 제작):</strong>  
 > Antigravity 2.0의 내장 **`generative_ui`** 기능을 활용하면, 별도의 웹서버를 띄우지 않아도 **채팅창 답변 영역 안에 마우스 클릭·키보드 입력(`Enter`, `Backspace`, 사칙연산)까지 바로 작동하는 인터랙티브 계산기 및 환율 계산기 미니 앱**을 즉석에서 만들어 써볼 수 있고, 원하면 우리 포털(`index.html`) 우측 상단에도 쏙 끼워 넣을 수 있습니다!
@@ -716,7 +716,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 ```
 
 👉 **실행 결과 화면:** (채팅창 안에 마우스 클릭 및 키보드 사칙연산 입력이 바로 작동하는 인라인 계산기 위젯 생성 화면)
-![Step 6-2 채팅창 안에 바로 생성된 인터랙티브 계산기 위젯 화면](assets/screenshots/generative_ui_calculator.png)
+![Bonus 2 채팅창 안에 바로 생성된 인터랙티브 계산기 위젯 화면](assets/screenshots/generative_ui_calculator.png)
 
 #### 2️⃣ [2단계: 실무 응용] `/generative_ui`로 '실시간 환율 계산기' 미니 앱 만들기
 이번에는 일반 계산기를 넘어, 채팅창에 **`/generative_ui`를 타이핑 후 `[Tab]` 키**를 누르고 **원화·달러·유로·엔화를 바로 환산해 주는 실시간 환율 계산기**를 띄워봅니다:
@@ -734,7 +734,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ---
 
-### 🔹 Step 6-3. 🧩 [미니 실습 2] `Customizations` 마켓플레이스에서 Google Workspace 연동(Docs·Drive·Sheets·Slides·Calendar) & `/plugin` 실습
+### 🔹 Bonus 3. 🧩 [미니 실습 2] `Customizations` 마켓플레이스에서 Google Workspace 연동(Docs·Drive·Sheets·Slides·Calendar) & `/plugin` 실습
 
 > <strong>🎯 핵심 포인트 (`Customizations` 마켓플레이스 & `/plugin` 통합 관리):</strong>  
 > Antigravity 2.0의 **`Customizations` (`Marketplace` / `Installed`)** 화면에서는 클릭 한 번(`+`)으로 **Google Workspace (`Google Docs`, `Google Sheets`, `Google Slides`, `Google Drive`, `Google Calendar`)** 및 **`Build with Google` (`Gemini API`, `Chrome DevTools`, `Firebase`, `Google Antigravity SDK`)** 공식 플러그인을 즉시 설치해 내 구글 계정의 문서·시트·일정을 Antigravity 대화창으로 바로 불러올 수 있습니다! 또한 **`/plugin`** 명령어로 직접 플러그인을 관리하고 패키징할 수도 있습니다.
@@ -744,7 +744,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 2. 상단 **`Google Workspace`** 섹션에서 **`Google Docs`**, **`Google Sheets`**, **`Google Slides`**, **`Google Drive`**, **`Google Calendar`** 우측의 **`+` 버튼**을 눌러 설치하고 Google 계정을 연결합니다. *(설치가 완료된 항목은 `Installed` 탭에서도 확인할 수 있습니다.)*
 
 👉 **화면 확인 포인트:** (`Customizations ➔ Marketplace ➔ Google Workspace 섹션에서 우측 [+] 버튼 클릭`)
-![Step 6-3 Customizations Marketplace에서 Google Workspace (Docs, Sheets, Slides, Drive, Calendar) 플러그인 추가 화면](assets/screenshots/customizations_marketplace.png)
+![Bonus 3 Customizations Marketplace에서 Google Workspace (Docs, Sheets, Slides, Drive, Calendar) 플러그인 추가 화면](assets/screenshots/customizations_marketplace.png)
 
 #### 2️⃣ [구글 내부 문서·일정 불러오기 실습] 내 `Google Drive` · `Google Docs` 문서를 Antigravity로 불러와 대시보드에 연동하기
 Google Workspace 플러그인 설치가 끝났다면, 크롬 브라우저로 왔다 갔다 할 필요 없이 **Antigravity 채팅창에서 바로 내 Google Drive / Docs 문서를 검색해 읽어오거나 새 Google Docs 보고서·Calendar 일정을 생성**해 봅니다:
@@ -766,7 +766,7 @@ Google Workspace 플러그인 설치가 끝났다면, 크롬 브라우저로 왔
 
 ---
 
-### 🔹 Step 6-4. 🎯 `/goal` (끝장 자율 완주 루프) & 돌아가는 도중 `/btw` 옆구리 질문 실습
+### 🔹 Bonus 4. 🎯 `/goal` (끝장 자율 완주 루프) & 돌아가는 도중 `/btw` 옆구리 질문 실습
 
 > <strong>🎯 핵심 포인트 (왜 일반 프롬프트 대신 `/goal`을 쓰나요?):</strong>  
 > * 일반 프롬프트는 에이전트가 한 번 코딩하고 나면 멈추지만, **`/goal`**을 붙이면 **복합 미션의 모든 조건이 100% 통과될 때까지 에이전트가 멈추지 않고 스스로 `[구현 ➔ 데이터·에러 자체 검증 ➔ 실패 시 재수정 ➔ 완주]` 루프**를 돕니다!  
@@ -810,4 +810,4 @@ Google Workspace 플러그인 설치가 끝났다면, 크롬 브라우저로 왔
    - <strong>탭 1 (`📈 LG 시장 트렌드`)</strong>: `/grill-me` ➔ `Proceed` ➔ `/lg-brand-slides`로 <strong>LG 시그니처 레드(`#A50034`) + 화이트 테마 웹 슬라이드</strong> 탑재
    - <strong>탭 2 (`💓 실시간 시장·뉴스 LIVE`)</strong>: <strong>실시간 데이터 수집 스킬</strong> 연동으로 <strong>LG전자(`066570`) 실시간 시세·환율·구글 뉴스</strong> + 우측 상단 <strong>`Pull` 버튼 & `/schedule` 매일 9시 자동화</strong>
    - <strong>탭 3 (`📊 가전 실적·구독 분석 NEW`)</strong>: <strong>`@04_AG_Analytics_lg_appliance_data.csv` (920행)</strong> 결측치(23건)·시제품(0원 18건) 정제 차트 + <strong>`/browser` 검증</strong> + <strong>새 세션 감사관 `90점 품질 게이트 PASS` & `/learn` 영구 자산화</strong>
-   - <strong>Part 6 (`🎁 파워 팁 & 미니 실습`)</strong>: <strong>💡 `@conversation` · `@rule` · `/` 명령어 총정리 리뷰 + 💱 `generative_ui` 실시간 환율 계산기 미니 앱 + 🧩 `Customizations` Google Workspace(`Docs`·`Drive`·`Sheets`·`Calendar`) 연동 & `/plugin` 실습 + `/goal` · `/btw` 마스터!</strong>
+   - <strong>🎁 Bonus (`파워 팁 & 미니 실습`)</strong>: <strong>💡 `@conversation` · `@rule` · `/` 명령어 총정리 리뷰 + 💱 `generative_ui` 실시간 환율 계산기 미니 앱 + 🧩 `Customizations` Google Workspace(`Docs`·`Drive`·`Sheets`·`Calendar`) 연동 & `/plugin` 실습 + `/goal` · `/btw` 마스터!</strong>
