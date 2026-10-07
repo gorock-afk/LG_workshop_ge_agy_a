@@ -882,12 +882,8 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 👉 **화면 확인 포인트:** (`Customizations ➔ Marketplace ➔ Google Workspace 섹션에서 우측 [+] 버튼 클릭`)
 ![Bonus 3 Customizations Marketplace에서 Google Workspace (Docs, Sheets, Slides, Drive, Calendar) 플러그인 추가 화면](assets/screenshots/customizations_marketplace.png)
 
-#### 2️⃣ [구글 내부 문서·일정 불러오기 실습] 내 `Google Drive` · `Google Docs` 문서를 Antigravity로 불러와 대시보드에 연동하기
-Google Workspace 플러그인 설치가 끝났다면, 크롬 브라우저로 왔다 갔다 할 필요 없이 **Antigravity 채팅창에서 바로 내 Google Drive / Docs 문서를 검색해 읽어오거나 새 Google Docs 보고서·Calendar 일정을 생성**해 봅니다:
-
-```text
-내 Google Drive와 Google Docs에서 최근 'LG' 관련 문서를 찾아 핵심 내용을 대시보드 1번 탭에 반영해줘.
-```
+#### 2️⃣ [구글 워크스페이스 연동 실습] 내 `Google Docs` 문서 생성 & `Google Calendar` 일정 바로 등록하기
+Google Workspace 플러그인 설치가 끝났다면, 크롬 브라우저로 왔다 갔다 할 필요 없이 **Antigravity 채팅창에서 바로 내 Google Docs 보고서와 Google Calendar 일정을 생성**해 봅니다:
 
 ```text
 오늘 대시보드 분석 요약을 내 Google Docs에 새 문서로 만들고, 내일 오전 10시 Google Calendar에 리뷰 회의 일정도 잡아줘.
