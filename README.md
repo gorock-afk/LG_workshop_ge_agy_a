@@ -18,7 +18,7 @@
 | <strong>Part 3 (30분)</strong> | 💻 Antigravity 2.0 | <strong>LG 브랜드 컬러(`#A50034` 레드 + 화이트) 고정 웹 슬라이드(`index.html`)</strong> |
 | <strong>Part 4 (30분)</strong> | 💻 Antigravity 2.0 | <strong>좌측 사이드 탭 업무 포털 (`탭 1: 트렌드 슬라이드` + `탭 2: 실시간 시세·뉴스`)</strong> |
 | <strong>Part 5 (40분)</strong> | 💻 Antigravity 2.0 | <strong>`탭 3: 가전 실적·구독 분석` 블렌딩 + `/browser` 검증 + `90점 품질 게이트`</strong> |
-| <strong>🎁 Bonus (20분)</strong> | 💻 Antigravity 2.0 | <strong>[파워 팁 리뷰 & 미니 실습] `/` 명령어 · `@conversation` · `@rule` 총정리 + 💱 `generative_ui` 환율 계산기 앱 + 🧩 `Customizations` Google Workspace 연동 & `/plugin` + `/goal` · `/btw`</strong> |
+| <strong>🎁 Bonus (20분)</strong> | 💻 Antigravity 2.0 | <strong>[파워 팁 리뷰 & 미니 실습] `/` 명령어 · `@conversation` · `@rule` 총정리 + 💱 `generative_ui` 환율 계산기 앱 + 🧩 `/plugin` 패키징 + `/goal` · `/btw`</strong> |
 
 ---
 
@@ -731,23 +731,9 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ---
 
-### 🔹 Bonus 3. 🧩 [미니 실습 2] `Customizations` 마켓플레이스에서 Google Workspace 연동(Docs·Drive·Sheets·Slides·Calendar) & `/plugin` 실습
+### 🔹 Bonus 3. 🧩 [미니 실습 2] `/plugin` 명령어로 스킬·규칙 통합 패키지 만들기
 
-#### 1️⃣ `Customizations ➔ Marketplace`에서 `Google Workspace` 플러그인(`Docs` · `Drive` · `Sheets` · `Slides` · `Calendar`) 추가하기
-1. 좌측 사이드바 하단의 **`Customizations`** 메뉴를 클릭하고 우측 상단 탭이 **`Marketplace`**로 선택되어 있는지 확인합니다.
-2. 상단 **`Google Workspace`** 섹션에서 **`Google Docs`**, **`Google Sheets`**, **`Google Slides`**, **`Google Drive`**, **`Google Calendar`** 우측의 **`+` 버튼**을 눌러 설치하고 Google 계정을 연결합니다. *(설치가 완료된 항목은 `Installed` 탭에서도 확인할 수 있습니다.)*
-
-👉 **화면 확인 포인트:** (`Customizations ➔ Marketplace ➔ Google Workspace 섹션에서 우측 [+] 버튼 클릭`)
-![Bonus 3 Customizations Marketplace에서 Google Workspace (Docs, Sheets, Slides, Drive, Calendar) 플러그인 추가 화면](assets/screenshots/customizations_marketplace.png)
-
-#### 2️⃣ [구글 워크스페이스 연동 실습] 내 `Google Docs` 문서 생성 & `Google Calendar` 일정 바로 등록하기
-Google Workspace 플러그인 설치가 끝났다면, 크롬 브라우저로 왔다 갔다 할 필요 없이 **Antigravity 채팅창에서 바로 내 Google Docs 보고서와 Google Calendar 일정을 생성**해 봅니다:
-
-```text
-오늘 대시보드 분석 요약을 내 Google Docs에 새 문서로 만들고, 내일 오전 10시 Google Calendar에 리뷰 회의 일정도 잡아줘.
-```
-
-#### 3️⃣ [`/plugin` 명령어 실행] 채팅창에서 `/plugin`으로 플러그인 상태 확인 & 나만의 통합 패키지 만들기
+#### 1️⃣ [`/plugin` 명령어 실행] 채팅창에서 `/plugin`으로 플러그인 상태 확인 & 나만의 통합 패키지 만들기
 채팅 입력창에 먼저 **`/plugin`을 타이핑한 뒤 `[Tab]` 키**를 눌러 스킬 칩을 띄우고, 현재 설치된 플러그인을 확인하거나 오늘 우리가 만든 스킬·규칙들을 하나의 패키지로 묶어 봅니다:
 
 ```text
@@ -796,4 +782,4 @@ Google Workspace 플러그인 설치가 끝났다면, 크롬 브라우저로 왔
    - <strong>탭 1 (`📈 LG 시장 트렌드`)</strong>: `/grill-me` ➔ `Proceed` ➔ `/lg-brand-slides`로 <strong>LG 시그니처 레드(`#A50034`) + 화이트 테마 웹 슬라이드</strong> 탑재
    - <strong>탭 2 (`💓 실시간 시장·뉴스 LIVE`)</strong>: <strong>실시간 데이터 수집 스킬</strong> 연동으로 <strong>LG전자(`066570`) 실시간 시세·환율·구글 뉴스</strong> + 우측 상단 <strong>`Pull` 버튼 & `/schedule` 매일 9시 자동화</strong>
    - <strong>탭 3 (`📊 가전 실적·구독 분석 NEW`)</strong>: <strong>`@04_AG_Analytics_lg_appliance_data.csv` (920행)</strong> 결측치(23건)·시제품(0원 18건) 정제 차트 + <strong>`/browser` 검증</strong> + <strong>새 세션 감사관 `90점 품질 게이트 PASS` & `/learn` 영구 자산화</strong>
-   - <strong>🎁 Bonus (`파워 팁 & 미니 실습`)</strong>: <strong>💡 `@conversation` · `@rule` · `/` 명령어 총정리 리뷰 + 💱 `generative_ui` 실시간 환율 계산기 미니 앱 + 🧩 `Customizations` Google Workspace(`Docs`·`Drive`·`Sheets`·`Calendar`) 연동 & `/plugin` 실습 + `/goal` · `/btw` 마스터!</strong>
+   - <strong>🎁 Bonus (`파워 팁 & 미니 실습`)</strong>: <strong>💡 `@conversation` · `@rule` · `/` 명령어 총정리 리뷰 + 💱 `generative_ui` 실시간 환율 계산기 미니 앱 + 🧩 `/plugin` 실습 + `/goal` · `/btw` 마스터!</strong>
