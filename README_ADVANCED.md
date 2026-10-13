@@ -355,10 +355,17 @@ Gemini Agent 1: content
 ---
 
 # 💻 [2부 · 데스크톱 앱] Part 3. Antigravity 웹 슬라이드 & AI 이미지 직접 생성·편집
-### 🔹 Step 3-0. [필수] 실습 시작 전 `Settings (⚙️)` 권한 점검하기
+### 🔹 Step 3-0. [필수] 실습 시작 전 `Use Business Account` 로그인 & `Settings (⚙️)` 권한 점검하기
 
-> <strong>⚠️ Antigravity 첫 실행 시 기본 권한 설정을 먼저 확인하세요!</strong>  
-> 에이전트가 작업 폴더에 파일을 생성하고, 구현 계획서(`Implementation Plan`) 승인 후 코딩하며, `/browser`로 크롬 화면을 제어할 수 있도록 좌측 하단 <strong>`⚙️ Settings` ➔ `General`</strong>의 3가지 설정값을 확인합니다.
+> <strong>⚠️ Antigravity 첫 실행 시 로그인 방식과 기본 권한 설정을 먼저 확인하세요!</strong>  
+> 처음 로그인할 때는 반드시 **`Use Business Account` ➔ `Continue with Google Cloud`** 순서로 진입하고, 이어서 좌측 하단 <strong>`⚙️ Settings` ➔ `General`</strong>의 설정값을 확인합니다.
+
+#### 0️⃣ [최초 로그인 시] 회색 버튼 `Use Business Account` ➔ 파란색 `Continue with Google Cloud` 클릭!
+1. Antigravity 첫 로그인 화면에서 파란색 일반 버튼이 아닌 **아래쪽 회색 버튼 `Use Business Account`**를 클릭합니다.
+![Step 3-0 Antigravity 로그인 1단계 - 회색 Use Business Account 버튼 클릭](assets/screenshots/agy_login_step1_business.png)
+
+2. 다음 화면에서 하단 SSO(`Use Advanced SSO Config`)를 누르지 말고, **파란색 `☁️ Continue with Google Cloud` 버튼**을 클릭해 실습 계정으로 로그인합니다.
+![Step 3-0 Antigravity 로그인 2단계 - 파란색 Continue with Google Cloud 버튼 클릭](assets/screenshots/agy_login_step2_gcloud.png)
 
 #### 1️⃣ `Settings ➔ General` 상단 확인: `Permission Preset` & `Artifact Review Policy`
 * 좌측 하단 <strong>`⚙️ Settings`</strong> 클릭 ➔ <strong>`General`</strong> 탭에서 <strong>`Permission Preset: Default`</strong> (또는 `Turbo`), <strong>`Artifact Review Policy: Always Ask`</strong> 상태를 확인합니다.
