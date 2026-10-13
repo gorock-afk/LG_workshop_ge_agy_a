@@ -909,6 +909,12 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 /btw 오늘 서울 날씨 어때? 퇴근길에 우산 챙겨야 해?
 ```
 
+#### 3️⃣ [⚡ `Turbo` 모드 팁] 채팅창 우측 하단에서 `Turbo`를 선택하면 거의 물어보지 않고 알아서 끝까지 실행!
+채팅 입력창 우측 하단 방패 아이콘을 눌러 **`Turbo` (`Run all commands without restrictions`)** 모드를 선택해 두면, 중간에 터미널 실행이나 파일 접근 승인을 일일이 물어보지 않고 에이전트가 알아서 끝까지 실행합니다:
+
+👉 **화면 확인 포인트:** (채팅 입력창 우측 하단 방패 아이콘 클릭 ➔ `Turbo` 선택)
+![채팅 입력창 우측 하단에서 Turbo 모드를 선택하는 화면](assets/screenshots/turbo_mode_selector.png)
+
 ---
 
 ## 🎉 수고하셨습니다! 오늘 3시간 심화 풀코스로 완성한 모든 산출물 & 신기능 요약
