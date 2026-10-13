@@ -17,7 +17,7 @@
 | <strong>Part 2 (25분)</strong> | 🌐 크롬 GE Web | <strong>`HITL Approval` + `Flow control (If/else)` 조건부 라우팅 + `Rejected` 반려 루프 기반 Gmail 자동 초안</strong> |
 | <strong>Part 3 (30분)</strong> | 💻 Antigravity 2.0 | <strong>LG 브랜드(`#A50034`) 슬라이드 + 전력 시뮬레이터 & Q&A 드로어 + 🎨 내장 `AI 이미지 생성 & 다크 홀로그램 편집`</strong> |
 | <strong>Part 4 (35분)</strong> | 💻 Antigravity 2.0 | <strong>4대 계열사 멀티 주가 티커 + 신호등 AI 뉴스 + `KRW⇄USD` 환산 바 + 📸 `화면 캡처 복제(Vision)` & 💬 `인라인 위젯`</strong> |
-| <strong>Part 5 (40분)</strong> | 💻 Antigravity 2.0 | <strong>파이썬 데이터 정제(`920행`) + 수익성 히트맵·이상탐지 + 3축 What-if 슬라이더 + `탭 4: 보고서 추출기(.md/.csv)` + `90점 감사`</strong> |
+| <strong>Part 5 (40분)</strong> | 💻 Antigravity 2.0 | <strong>파이썬 데이터 정제(`920행`) + 수익성 히트맵·이상탐지 + 3축 What-if 슬라이더 + `탭 4: 보고서 추출기(.md/.csv)` + `마지막 탭: 🧠 AI 그로스·ML 분석(군집·디시전트리·회귀예측)` + `90점 감사`</strong> |
 | <strong>🎁 Bonus (20분)</strong> | 💻 Antigravity 2.0 | <strong>[파워 팁 리뷰 & 미니 실습] `/` 명령어 · `@conversation` · `@rule` 총정리 + 💱 `generative_ui` 환율 계산기 앱 + 🧩 `/plugin` 패키징 + `/goal` · `/btw`</strong> |
 
 ---
@@ -759,23 +759,44 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ---
 
-### 🔹 Step 5-7. [Step 3: Verify] `/browser`로 에이전트가 직접 크롬을 띄워 4개 탭·토글·슬라이더 자율 검증하기
+### 🔹 Step 5-7. 🧠 [Step 2F: 노코드 머신러닝 & 그로스 예측] 마지막 사이드 탭에 `'AI 그로스·ML 분석'` 스튜디오 추가하기
 
-> <strong>🎯 핵심 포인트:</strong> 사람이 일일이 눌러보는 대신, <strong>`/browser` 명령어로 AI가 직접 크롬을 띄워 4개 사이드 탭 전환, 시제품 토글, What-if 슬라이더 동작과 콘솔 에러 여부를 스스로 눌러보며 검증</strong>하게 합니다.
+> <strong>🎯 핵심 포인트 (사무직·그로스 매니저를 위한 직관적 머신러닝 4종):</strong>  
+> CSV 파일을 단순히 표와 막대그래프로 여는 데서 그치지 않고, 코딩이나 복잡한 통계 수식을 전혀 몰라도 **마지막 사이드 탭(`🧠 AI 그로스·ML 분석 NEW`)**에 아래 **4가지 핵심 머신러닝 시각 분석 도구**를 한 번에 만들어 넣습니다.
+> 1. **🔧 결측치 AI 회귀 보간 (Regression Imputation)**: 워시타워 ThinQ 만족도 빈칸(`23건`)을 단순 평균이나 0점이 아니라, **해당 행의 구독 전환율·반품률·지역 회귀 공식(`74.2 + 0.36×구독률 - 1.15×반품률`)으로 정밀 복원(`평균 89.4점`)**하고 전후 비교표를 보여줍니다.
+> 2. **🎯 K-Means 군집분석 스캐터 차트 (4대 고객·제품 세그먼트)**: 920행 데이터를 **`X축(HaaS 구독 전환율 %)` × `Y축(영업이익률 %)` 산점도(Scatter Chart)**로 찍어 **🟢 Star 구독 충성군 · 🔵 프리미엄 하드웨어군 · 🟡 대중 볼륨 확산군 · 🔴 이탈·저수익 위험군** 4개 군집으로 자동 분류합니다.
+> 3. **🌳 디시전 트리 (Decision Tree 수익성·이탈 예측 다이어그램)**: 복잡한 블랙박스 대신 **2단계 의사결정 나무(`1단계: ThinQ 점수 ≥ 88.5점?` ➔ `2단계: 구독 전환율 ≥ 35%?`)**로 고수익/이탈 위험 분기 기준을 한눈에 보여주고, 슬라이더로 신제품 예상 등급을 즉시 판정합니다.
+> 4. **📈 4분기(10~12월) 매출 다중회귀 예측 & '어떻게 예측했나요?' 설명 가능한 AI(XAI)**: 1~9월 실적 추세선 위에 **10~12월 예측 매출(`4분기 1,458억`)과 95% 신뢰구간**을 그리고, 하단에 **예측 공식 · 모델 설명력($R^2 = 94.2\%$) · 변수별 기여도(`구독 전환율 46%` · `ThinQ 점수 31%` · `마케팅/환율 15%` · `반품 방어율 8%`)**를 직관적인 바 차트로 투명하게 공개합니다.
 
-#### 1️⃣ 채팅창에 `/browser` + `[Tab]` 선택 후 아래 프롬프트 복사·붙여넣기
-채팅창에 **`/browser`를 타이핑 후 `[Tab]` 키**로 브라우저 에이전트 칩을 띄우고, 로컬 대시보드의 4개 탭과 인터랙티브 컨트롤들을 자율 검증하게 합니다:
+#### 1️⃣ 채팅창에 `@04_AG_Analytics_lg_appliance_data.csv` + `[Tab]` 선택 후 아래 프롬프트 복사·붙여넣기
+채팅창에 **`@04_AG_Analytics_lg_appliance_data.csv`를 타이핑 후 `[Tab]` 키**로 선택하고 아래 프롬프트를 복사해 붙여넣습니다:
 
 ```text
-/browser 로컬 대시보드(index.html)에 접속해서 1~4번 사이드 탭 전환, '스탠바이미 시제품 포함/제외' 토글, '3축 What-if 시뮬레이터 슬라이더' 조작 시 화면이 정상 갱신되고 콘솔 에러나 0 나눗셈 오류가 없는지 검증해줘.
+@04_AG_Analytics_lg_appliance_data.csv 대시보드 마지막 사이드 탭으로 '🧠 AI 그로스·ML 분석'을 추가해줘. 파이썬으로 이 CSV를 분석해서 비개발자 사무직도 한눈에 이해할 수 있게 ① 워시타워 ThinQ 결측치(23건) 다중회귀 보간(구독률·반품률 기반 추정치 복원 전후 비교), ② K-Means 4대 군집 스캐터 차트(X축: 구독 전환율 %, Y축: 영업이익률 %, 4개 군집 색상 구분), ③ 디시전 트리(Depth 2) 수익성·이탈 예측 분기 다이어그램과 시뮬레이터, ④ 4분기(10~12월) 매출 회귀 예측 차트와 '어떻게 예측했는가(예측 공식·결정계수 R²·변수별 기여도 % 바 차트)'를 화려하고 직관적인 2x2 카드 UI로 만들어줘.
 ```
 
-👉 **화면 확인 포인트:** (에이전트가 스스로 Chrome을 실행해 각 사이드 탭을 캡처·분석하는 과정)
-![Step 5-7 에이전트가 브라우저를 직접 실행해 각 탭을 캡처 및 검증하는 화면](assets/screenshots/slide_24_ui_1.png)
+👉 **실행 결과 화면:** (마지막 사이드 탭 `🧠 AI 그로스·ML 분석 NEW` 클릭 시 나타나는 **① 결측치 회귀 보간 · ② K-Means 4대 군집 스캐터 차트 · ③ 디시전 트리 예측 다이어그램 · ④ 4분기 매출 예측 및 변수 기여도 XAI 스튜디오** 완성 화면!)
+![Step 5-7 마지막 사이드 탭 AI 그로스·ML 분석 스튜디오 완성 화면](assets/screenshots/ml_growth_studio_tab.png)
 
 ---
 
-### 🔹 Step 5-8. [Step 4: Handoff & Assetize] 새 세션(`+ New Conversation`) 품질 감사관 `90점 게이트` 돌파 & `/learn` 영구 자산화!
+### 🔹 Step 5-8. [Step 3: Verify] `/browser`로 에이전트가 직접 크롬을 띄워 전체 사이드 탭·토글·슬라이더 자율 검증하기
+
+> <strong>🎯 핵심 포인트:</strong> 사람이 일일이 눌러보는 대신, <strong>`/browser` 명령어로 AI가 직접 크롬을 띄워 전체 사이드 탭 전환, 시제품 토글, What-if 슬라이더 동작과 콘솔 에러 여부를 스스로 눌러보며 검증</strong>하게 합니다.
+
+#### 1️⃣ 채팅창에 `/browser` + `[Tab]` 선택 후 아래 프롬프트 복사·붙여넣기
+채팅창에 **`/browser`를 타이핑 후 `[Tab]` 키**로 브라우저 에이전트 칩을 띄우고, 로컬 대시보드의 모든 사이드 탭과 인터랙티브 컨트롤들을 자율 검증하게 합니다:
+
+```text
+/browser 로컬 대시보드(index.html)에 접속해서 전체 사이드 탭(실적 분석·임원 보고서 빌더·AI 그로스·ML 분석 탭) 전환, '스탠바이미 시제품 포함/제외' 토글, '3축 What-if 시뮬레이터 슬라이더' 조작 시 화면이 정상 갱신되고 콘솔 에러나 0 나눗셈 오류가 없는지 검증해줘.
+```
+
+👉 **화면 확인 포인트:** (에이전트가 스스로 Chrome을 실행해 각 사이드 탭을 캡처·분석하는 과정)
+![Step 5-8 에이전트가 브라우저를 직접 실행해 각 탭을 캡처 및 검증하는 화면](assets/screenshots/slide_24_ui_1.png)
+
+---
+
+### 🔹 Step 5-9. [Step 4: Handoff & Assetize] 새 세션(`+ New Conversation`) 품질 감사관 `90점 게이트` 돌파 & `/learn` 영구 자산화!
 
 > <strong>🎯 핵심 포인트:</strong> 코드를 짠 AI에게 "잘했니?"라고 물으면 무조건 잘했다고 답합니다. 그래서 <strong>`+ New Conversation`으로 새 채팅창을 열어 깐깐한 '품질 감사관'을 시키고, `90점`을 넘길 때까지 패치한 뒤 `/learn`으로 영구 자산화</strong>합니다.
 
@@ -783,11 +804,11 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 이전 대화 맥락 없이 냉정하게 채점하기 위해 좌측 상단의 **`+ New Conversation`** 아이콘을 눌러 **새 채팅창**을 엽니다. 그다음 **`@index.html`을 타이핑 후 `[Tab]` 키**로 완성된 대시보드 파일을 불러오고 아래 감사관 프롬프트를 붙여넣습니다:
 
 ```text
-@index.html 너는 품질 감사관이야. 이 파일을 ① LG 브랜드 디자인(#A50034) 일관성, ② 4대 계열사 시세·뉴스 연동, ③ 920행 이상치(시제품 18건)·결측치(23건) 보정 정합성, ④ 히트맵·What-if 시뮬레이터 반응성, ⑤ 임원 보고서(.md/.csv) 추출 기능 5개 항목(각 20점, 총 100점 만점)으로 채점하고, 90점 미만이면 감점 요인을 1회 즉시 패치해서 90점 이상으로 완성해줘.
+@index.html 너는 품질 감사관이야. 이 파일을 ① LG 브랜드 디자인(#A50034) 일관성, ② 4대 계열사 시세·뉴스 연동, ③ 920행 이상치(시제품 18건)·결측치(23건) 회귀 보간 정합성, ④ 군집 스캐터·디시전 트리·4분기 매출 예측 및 What-if 시뮬레이터 반응성, ⑤ 임원 보고서(.md/.csv) 추출 기능 5개 항목(각 20점, 총 100점 만점)으로 채점하고, 90점 미만이면 감점 요인을 1회 즉시 패치해서 90점 이상으로 완성해줘.
 ```
 
 👉 **1단계 실행 결과 화면:** (`1차 점수 82점` ➔ 감점 요인 자동 패치 후 `90점 품질 게이트 통과 🏆` 및 하단 `/learn` 저장 안내!)
-![Step 5-8 새 세션 품질 감사관 1차 82점 ➔ 패치 후 90점 품질 게이트 통과 및 learn 저장 안내 화면](assets/screenshots/slide_25_ui_1.png)
+![Step 5-9 새 세션 품질 감사관 1차 82점 ➔ 패치 후 90점 품질 게이트 통과 및 learn 저장 안내 화면](assets/screenshots/slide_25_ui_1.png)
 
 #### 2️⃣ [2단계: `/learn`으로 품질 기준 저장] 90점 통과 후 채팅창에 `/learn` + `[Tab]` 선택 및 아래 프롬프트 입력
 위 화면처럼 90점 품질 게이트를 통과했다면, 마지막으로 채팅창에 **`/learn`을 타이핑 후 `[Tab]` 키**를 눌러 방금 진행한 90점 품질 감사 기준을 워크스페이스 기본 규칙으로 영구 저장합니다:
@@ -927,8 +948,9 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 ## 🎉 수고하셨습니다! 오늘 3시간 심화 풀코스로 완성한 모든 산출물 & 신기능 요약
 
 1. <strong>1부 (크롬 GE Web)</strong>: 팀 공유 `Project` + 사내 보고서 양식(`.txt`) + `/lg-executive-briefing` & `/lg-cfo-risk-review` 멀티 스킬 교차 검증 + <strong>`Imagen` 광고 시안 생성 · `Deep Research` · `Audio Overview(라디오 팟캐스트)`</strong> ➔ `Workflow` + `HITL Approval` + `Flow control (If/else)` 조건 분기 & `Rejected` 반려 루프 ➔ <strong>내 Gmail 임시보관함(`Drafts`) 맞춤형 보고 메일 자동 생성</strong>
-2. <strong>2부 (Antigravity 2.0 — 4개 사이드 탭 통합 업무 포털 `index.html` & 파워 팁 마스터)</strong>:
+2. <strong>2부 (Antigravity 2.0 — 5개 사이드 탭 통합 업무 포털 `index.html` & 파워 팁 마스터)</strong>:
    - <strong>탭 1 (`📈 LG 시장 트렌드`)</strong>: `/grill-me` ➔ `/lg-brand-slides`(`#A50034`) + <strong>모드별 전력 절감 시뮬레이터 위젯 & 키보드 `N` 발표자 Q&A 드로어 + 🎨 내장 `AI 이미지 생성 & 다크 홀로그램 편집` 배너</strong>
    - <strong>탭 2 (`💓 실시간 시장·뉴스 LIVE`)</strong>: `/python-api-trend` 개조 ➔ <strong>LG 4대 계열사 멀티 주가 티커 + 4대 토픽 신호등(`🟢/🟡/🔴`) 뉴스 보드 + 상단 `KRW⇄USD` 실시간 환산 바 + 📸 `화면 캡처 1분 복제(Vision-to-Code)` & 💬 `채팅창 인라인 계산기 위젯(Generative UI)`</strong>
    - <strong>탭 3 (`📊 가전 실적·구독 분석`)</strong>: `@04_AG_Analytics_lg_appliance_data.csv` 파이썬 정제 파이프라인(`build_analytics_json.py`) ➔ <strong>시제품(0원 18건) 실시간 토글 + 권역×제품군 수익성 히트맵 & 이상징후(`⚠️ Anomaly`) 테이블 + 3축 What-if 손익 시뮬레이터</strong>
-   - <strong>탭 4 (`📝 임원 보고서 빌더`) & 🎁 Bonus 파워 팁·미니 실습</strong>: <strong>탭 1~3 데이터 종합 브리핑 & 원클릭 `.md` / `.csv` / `.xlsx` 다운로드 + 💡 `@conversation` · `@rule` · `/` 명령어 총정리 리뷰 + 💱 `generative_ui` 실시간 환율 계산기 미니 앱 + 🧩 `/plugin` 실습 + `/goal` · `/btw` 마스터!</strong>
+   - <strong>탭 4 (`📝 임원 보고서 빌더`) & 마지막 탭 (`🧠 AI 그로스·ML 분석 NEW`)</strong>: <strong>탭 1~3 데이터 종합 브리핑 & 원클릭 `.md` / `.csv` 다운로드 + 결측치 회귀 보간(23건)·K-Means 4대 군집 스캐터 차트·디시전 트리 예측·4분기 매출 회귀 예측 & 변수 기여도(XAI) 스튜디오</strong>
+   - <strong>🎁 Bonus 파워 팁·미니 실습</strong>: <strong>💡 `@conversation` · `@rule` · `/` 명령어 총정리 리뷰 + 💱 `generative_ui` 실시간 환율 계산기 미니 앱 + 🧩 `/plugin` 실습 + `/goal` · `/btw` · `Turbo` 모드 마스터!</strong>

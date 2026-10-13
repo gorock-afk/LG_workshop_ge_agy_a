@@ -7,7 +7,7 @@
 
 ## 🗺️ 0. 오늘 함께 완성할 5단계 누적 빌드업 로드맵 (총 3시간)
 
-<strong>1부(크롬 웹, 1시간)</strong>에서는 주간 보고서를 자동 작성해 지메일 임시보관함에 넣고, <strong>2부(Antigravity 앱, 2시간)</strong>에서는 웹페이지(`index.html`) 하나에 <strong>[탭 1: 발표 슬라이드] ➔ [탭 2: 실시간 주가·뉴스] ➔ [탭 3: 가전 실적 차트]</strong>를 차례대로 붙여 나만의 업무 포털을 완성합니다.
+<strong>1부(크롬 웹, 1시간)</strong>에서는 주간 보고서를 자동 작성해 지메일 임시보관함에 넣고, <strong>2부(Antigravity 앱, 2시간)</strong>에서는 웹페이지(`index.html`) 하나에 <strong>[탭 1: 발표 슬라이드] ➔ [탭 2: 실시간 주가·뉴스] ➔ [탭 3: 가전 실적 차트] ➔ [마지막 탭: 🧠 AI 군집·디시전트리·회귀예측]</strong>을 차례대로 붙여 나만의 업무 포털을 완성합니다.
 
 ![5단계 누적 빌드업 로드맵 다이어그램](assets/screenshots/slide_02_ui_1.png)
 
@@ -17,7 +17,7 @@
 | <strong>Part 2 (30분)</strong> | 🌐 크롬 GE Web | <strong>내 Gmail 임시보관함(`Drafts`)에 저장된 사내 표준 보고 메일</strong> |
 | <strong>Part 3 (30분)</strong> | 💻 Antigravity 2.0 | <strong>LG 브랜드 컬러(`#A50034` 레드 + 화이트) 고정 웹 슬라이드(`index.html`)</strong> |
 | <strong>Part 4 (30분)</strong> | 💻 Antigravity 2.0 | <strong>좌측 사이드 탭 업무 포털 (`탭 1: 트렌드 슬라이드` + `탭 2: 실시간 시세·뉴스`)</strong> |
-| <strong>Part 5 (40분)</strong> | 💻 Antigravity 2.0 | <strong>`탭 3: 가전 실적·구독 분석` 블렌딩 + `/browser` 검증 + `90점 품질 게이트`</strong> |
+| <strong>Part 5 (40분)</strong> | 💻 Antigravity 2.0 | <strong>`탭 3: 가전 실적·구독 분석` + `마지막 탭: 🧠 AI 그로스·ML 분석(군집·디시전트리·회귀예측)` + `/browser` 검증 + `90점 품질 게이트`</strong> |
 | <strong>🎁 Bonus (20분)</strong> | 💻 Antigravity 2.0 | <strong>[파워 팁 리뷰 & 미니 실습] `/` 명령어 · `@conversation` · `@rule` 총정리 + 💱 `generative_ui` 환율 계산기 앱 + 🧩 `/plugin` 패키징 + `/goal` · `/btw`</strong> |
 
 ---
@@ -553,7 +553,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ---
 
-# 📈 [2부 · 데스크톱 앱] Part 5. LG 5대 가전 920행 데이터 Analytics & 90점 품질 게이트
+# 📈 [2부 · 데스크톱 앱] Part 5. LG 5대 가전 920행 데이터 Analytics · 노코드 ML 예측 & 90점 품질 게이트
 ### 🔹 Step 5-0. 데이터셋(`04_AG_Analytics_lg_appliance_data.csv`, 920행) 로딩 및 컬럼 확인
 
 #### 1️⃣ 로컬 폴더에 `04_AG_Analytics_lg_appliance_data.csv` 넣고 `@멘션`으로 읽어오기
@@ -601,7 +601,28 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ---
 
-### 🔹 Step 5-3. [Step 3: Verify] `/browser`로 에이전트가 직접 크롬을 띄워 탭 전환·필터 검증하기
+### 🔹 Step 5-3. 🧠 [Step 2B: 노코드 머신러닝 & 그로스 예측] 마지막 사이드 탭에 `'AI 그로스·ML 분석'` 스튜디오 추가하기
+
+> <strong>🎯 핵심 포인트 (사무직·그로스 매니저를 위한 직관적 머신러닝 4종):</strong>  
+> CSV 파일을 단순히 표와 막대그래프로 여는 데서 그치지 않고, 코딩이나 복잡한 통계 수식을 전혀 몰라도 **마지막 사이드 탭(`🧠 AI 그로스·ML 분석 NEW`)**에 아래 **4가지 핵심 머신러닝 시각 분석 도구**를 한 번에 만들어 넣습니다.
+> 1. **🔧 결측치 AI 회귀 보간 (Regression Imputation)**: 워시타워 ThinQ 만족도 빈칸(`23건`)을 단순 평균이나 0점이 아니라, **해당 행의 구독 전환율·반품률·지역 회귀 공식(`74.2 + 0.36×구독률 - 1.15×반품률`)으로 정밀 복원(`평균 89.4점`)**하고 전후 비교표를 보여줍니다.
+> 2. **🎯 K-Means 군집분석 스캐터 차트 (4대 고객·제품 세그먼트)**: 920행 데이터를 **`X축(HaaS 구독 전환율 %)` × `Y축(영업이익률 %)` 산점도(Scatter Chart)**로 찍어 **🟢 Star 구독 충성군 · 🔵 프리미엄 하드웨어군 · 🟡 대중 볼륨 확산군 · 🔴 이탈·저수익 위험군** 4개 군집으로 자동 분류합니다.
+> 3. **🌳 디시전 트리 (Decision Tree 수익성·이탈 예측 다이어그램)**: 복잡한 블랙박스 대신 **2단계 의사결정 나무(`1단계: ThinQ 점수 ≥ 88.5점?` ➔ `2단계: 구독 전환율 ≥ 35%?`)**로 고수익/이탈 위험 분기 기준을 한눈에 보여주고, 슬라이더로 신제품 예상 등급을 즉시 판정합니다.
+> 4. **📈 4분기(10~12월) 매출 다중회귀 예측 & '어떻게 예측했나요?' 설명 가능한 AI(XAI)**: 1~9월 실적 추세선 위에 **10~12월 예측 매출(`4분기 1,458억`)과 95% 신뢰구간**을 그리고, 하단에 **예측 공식 · 모델 설명력($R^2 = 94.2\%$) · 변수별 기여도(`구독 전환율 46%` · `ThinQ 점수 31%` · `마케팅/환율 15%` · `반품 방어율 8%`)**를 직관적인 바 차트로 투명하게 공개합니다.
+
+#### 1️⃣ 채팅창에 `@04_AG_Analytics_lg_appliance_data.csv` + `[Tab]` 선택 후 아래 프롬프트 복사·붙여넣기
+채팅창에 **`@04_AG_Analytics_lg_appliance_data.csv`를 타이핑 후 `[Tab]` 키**로 선택하고 아래 프롬프트를 복사해 붙여넣습니다:
+
+```text
+@04_AG_Analytics_lg_appliance_data.csv 대시보드 마지막 사이드 탭으로 '🧠 AI 그로스·ML 분석'을 추가해줘. 파이썬으로 이 CSV를 분석해서 비개발자 사무직도 한눈에 이해할 수 있게 ① 워시타워 ThinQ 결측치(23건) 다중회귀 보간(구독률·반품률 기반 추정치 복원 전후 비교), ② K-Means 4대 군집 스캐터 차트(X축: 구독 전환율 %, Y축: 영업이익률 %, 4개 군집 색상 구분), ③ 디시전 트리(Depth 2) 수익성·이탈 예측 분기 다이어그램과 시뮬레이터, ④ 4분기(10~12월) 매출 회귀 예측 차트와 '어떻게 예측했는가(예측 공식·결정계수 R²·변수별 기여도 % 바 차트)'를 화려하고 직관적인 2x2 카드 UI로 만들어줘.
+```
+
+👉 **실행 결과 화면:** (마지막 사이드 탭 `🧠 AI 그로스·ML 분석 NEW` 클릭 시 나타나는 **① 결측치 회귀 보간 · ② K-Means 4대 군집 스캐터 차트 · ③ 디시전 트리 예측 다이어그램 · ④ 4분기 매출 예측 및 변수 기여도 XAI 스튜디오** 완성 화면!)
+![Step 5-3 마지막 사이드 탭 AI 그로스·ML 분석 스튜디오 완성 화면](assets/screenshots/ml_growth_studio_tab.png)
+
+---
+
+### 🔹 Step 5-4. [Step 3: Verify] `/browser`로 에이전트가 직접 크롬을 띄워 탭 전환·필터 검증하기
 
 > <strong>🎯 핵심 포인트:</strong> 사람이 일일이 눌러보는 대신, <strong>`/browser` 명령어로 AI가 직접 크롬을 띄워 탭과 필터가 잘 작동하는지 스스로 눌러보게 합니다.</strong>
 
@@ -609,15 +630,15 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 채팅창에 **`/browser`를 타이핑 후 `[Tab]` 키**로 브라우저 에이전트 칩을 띄우고, 방금 만든 로컬 대시보드에 직접 접속해 사이드 탭 전환과 제품군 필터 클릭 시 콘솔 에러나 0 나눗셈 오류가 없는지 스스로 검증하게 합니다:
 
 ```text
-/browser 로컬 대시보드에 접속해서 사이드 탭 전환과 제품군 필터('OLED evo', 'StanbyME 시제품') 클릭 시 콘솔 에러나 0 나눗셈 오류가 없는지 검증해
+/browser 로컬 대시보드에 접속해서 사이드 탭 전환(가전 실적 분석 탭 & AI 그로스·ML 분석 탭)과 제품군 필터 클릭 시 콘솔 에러나 0 나눗셈 오류가 없는지 검증해
 ```
 
 👉 **화면 확인 포인트:** (에이전트가 스스로 Chrome을 실행해 각 사이드 탭을 캡처·분석하는 과정)
-![Step 5-3 에이전트가 브라우저를 직접 실행해 각 탭을 캡처 및 검증하는 화면](assets/screenshots/slide_24_ui_1.png)
+![Step 5-4 에이전트가 브라우저를 직접 실행해 각 탭을 캡처 및 검증하는 화면](assets/screenshots/slide_24_ui_1.png)
 
 ---
 
-### 🔹 Step 5-4. [Step 4: Handoff] 새 세션(`+ New Conversation`) 품질 감사관 채점 & `90점` 게이트 돌파 후 `/learn` 저장!
+### 🔹 Step 5-5. [Step 4: Handoff] 새 세션(`+ New Conversation`) 품질 감사관 채점 & `90점` 게이트 돌파 후 `/learn` 저장!
 
 > <strong>🎯 핵심 포인트:</strong> 코드를 짠 AI에게 "잘했니?"라고 물으면 무조건 잘했다고 답합니다. 그래서 <strong>`+ New Conversation`으로 새 채팅창을 열어 깐깐한 '품질 감사관'을 시키고, `90점`을 넘길 때까지 스스로 고치게 한 뒤 `/learn`으로 저장</strong>합니다.  
 > *(💡 99점을 목표로 하면 사소한 수정만 무한 반복하느라 시간이 다 가기 때문에, 실무에서는 **90점**을 통과 기준선으로 잡는 것이 가장 좋습니다.)*
@@ -630,7 +651,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 ```
 
 👉 **1단계 실행 결과 화면:** (`1차 점수 82점` ➔ 감점 요인 자동 패치 후 `90점 품질 게이트 통과 🏆` 및 하단 `/learn` 저장 안내!)
-![Step 5-4 새 세션 품질 감사관 1차 82점 ➔ 패치 후 90점 품질 게이트 통과 및 learn 저장 안내 화면](assets/screenshots/slide_25_ui_1.png)
+![Step 5-5 새 세션 품질 감사관 1차 82점 ➔ 패치 후 90점 품질 게이트 통과 및 learn 저장 안내 화면](assets/screenshots/slide_25_ui_1.png)
 
 #### 2️⃣ [2단계: `/learn`으로 품질 기준 저장] 90점 통과 후 채팅창에 `/learn` + `[Tab]` 선택 및 아래 프롬프트 입력
 위 화면처럼 90점 품질 게이트를 통과했다면, 마지막으로 채팅창에 **`/learn`을 타이핑 후 `[Tab]` 키**를 눌러 방금 진행한 90점 품질 감사 기준을 워크스페이스 기본 규칙으로 영구 저장합니다:
@@ -794,5 +815,5 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 2. <strong>2부 (Antigravity 2.0)</strong>:
    - <strong>탭 1 (`📈 LG 시장 트렌드`)</strong>: `/grill-me` ➔ `Proceed` ➔ `/lg-brand-slides`로 <strong>LG 시그니처 레드(`#A50034`) + 화이트 테마 웹 슬라이드</strong> 탑재
    - <strong>탭 2 (`💓 실시간 시장·뉴스 LIVE`)</strong>: <strong>실시간 데이터 수집 스킬</strong> 연동으로 <strong>LG전자(`066570`) 실시간 시세·환율·구글 뉴스</strong> + 우측 상단 <strong>`Pull` 버튼 & `/schedule` 매일 9시 자동화</strong>
-   - <strong>탭 3 (`📊 가전 실적·구독 분석 NEW`)</strong>: <strong>`@04_AG_Analytics_lg_appliance_data.csv` (920행)</strong> 결측치(23건)·시제품(0원 18건) 정제 차트 + <strong>`/browser` 검증</strong> + <strong>새 세션 감사관 `90점 품질 게이트 PASS` & `/learn` 영구 자산화</strong>
-   - <strong>🎁 Bonus (`파워 팁 & 미니 실습`)</strong>: <strong>💡 `@conversation` · `@rule` · `/` 명령어 총정리 리뷰 + 💱 `generative_ui` 실시간 환율 계산기 미니 앱 + 🧩 `/plugin` 실습 + `/goal` · `/btw` 마스터!</strong>
+   - <strong>탭 3 (`📊 가전 실적·구독 분석`) & 마지막 탭 (`🧠 AI 그로스·ML 분석 NEW`)</strong>: <strong>`@04_AG_Analytics_lg_appliance_data.csv` (920행)</strong> 결측치(23건)·시제품(0원 18건) 정제 차트 + <strong>결측치 회귀 보간·K-Means 4대 군집 스캐터·디시전 트리·4분기 매출 회귀 예측(XAI)</strong> + <strong>`/browser` 검증</strong> + <strong>새 세션 감사관 `90점 품질 게이트 PASS` & `/learn` 영구 자산화</strong>
+   - <strong>🎁 Bonus (`파워 팁 & 미니 실습`)</strong>: <strong>💡 `@conversation` · `@rule` · `/` 명령어 총정리 리뷰 + 💱 `generative_ui` 실시간 환율 계산기 미니 앱 + 🧩 `/plugin` 실습 + `/goal` · `/btw` · `Turbo` 모드 마스터!</strong>
