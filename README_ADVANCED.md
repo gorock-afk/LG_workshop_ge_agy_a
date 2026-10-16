@@ -825,23 +825,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ---
 
-### 🔹 Step 5-11. [Step 3: Verify] `/browser`로 에이전트가 직접 크롬을 띄워 전체 사이드 탭·토글·슬라이더 자율 검증하기
-
-> <strong>🎯 핵심 포인트:</strong> 사람이 일일이 눌러보는 대신, <strong>`/browser` 명령어로 AI가 직접 크롬을 띄워 전체 사이드 탭 전환, 시제품 토글, What-if·ML 슬라이더 동작과 콘솔 에러 여부를 스스로 눌러보며 검증</strong>하게 합니다.
-
-#### 1️⃣ 채팅창에 `/browser` + `[Tab]` 선택 후 아래 프롬프트 복사·붙여넣기
-채팅창에 **`/browser`를 타이핑 후 `[Tab]` 키**로 브라우저 에이전트 칩을 띄우고, 로컬 대시보드의 모든 사이드 탭과 인터랙티브 컨트롤들을 자율 검증하게 합니다:
-
-```text
-/browser 로컬 대시보드(index.html)에 접속해서 전체 사이드 탭(실적 분석·임원 보고서 빌더·AI 그로스·ML 분석 탭의 1~4단계 서브탭) 전환, '스탠바이미 시제품 포함/제외' 토글, 'What-if 및 ML 시뮬레이터 슬라이더' 조작 시 화면이 정상 갱신되고 콘솔 에러나 0 나눗셈 오류가 없는지 검증해줘.
-```
-
-👉 **화면 확인 포인트:** (에이전트가 스스로 Chrome을 실행해 각 사이드 탭을 캡처·분석하는 과정)
-![Step 5-11 에이전트가 브라우저를 직접 실행해 각 탭을 캡처 및 검증하는 화면](assets/screenshots/slide_24_ui_1.png)
-
----
-
-### 🔹 Step 5-12. [Step 4: Handoff & Assetize] 새 세션(`+ New Conversation`) 품질 감사관 `90점 게이트` 돌파 & `/learn` 영구 자산화!
+### 🔹 Step 5-11. [Step 3: Handoff & Assetize] 새 세션(`+ New Conversation`) 품질 감사관 `90점 게이트` 돌파 & `/learn` 영구 자산화!
 
 > <strong>🎯 핵심 포인트:</strong> 코드를 짠 AI에게 "잘했니?"라고 물으면 무조건 잘했다고 답합니다. 그래서 <strong>`+ New Conversation`으로 새 채팅창을 열어 깐깐한 '품질 감사관'을 시키고, `90점`을 넘길 때까지 패치한 뒤 `/learn`으로 영구 자산화</strong>합니다.
 
@@ -853,7 +837,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 ```
 
 👉 **1단계 실행 결과 화면:** (`1차 점수 82점` ➔ 감점 요인 자동 패치 후 `90점 품질 게이트 통과 🏆` 및 하단 `/learn` 저장 안내!)
-![Step 5-12 새 세션 품질 감사관 1차 82점 ➔ 패치 후 90점 품질 게이트 통과 및 learn 저장 안내 화면](assets/screenshots/slide_25_ui_1.png)
+![Step 5-11 새 세션 품질 감사관 1차 82점 ➔ 패치 후 90점 품질 게이트 통과 및 learn 저장 안내 화면](assets/screenshots/slide_25_ui_1.png)
 
 #### 2️⃣ [2단계: `/learn`으로 품질 기준 저장] 90점 통과 후 채팅창에 `/learn` + `[Tab]` 선택 및 아래 프롬프트 입력
 위 화면처럼 90점 품질 게이트를 통과했다면, 마지막으로 채팅창에 **`/learn`을 타이핑 후 `[Tab]` 키**를 눌러 방금 진행한 90점 품질 감사 기준을 워크스페이스 기본 규칙으로 영구 저장합니다:

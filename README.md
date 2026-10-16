@@ -17,7 +17,7 @@
 | <strong>Part 2 (30분)</strong> | 🌐 크롬 GE Web | <strong>내 Gmail 임시보관함(`Drafts`)에 저장된 사내 표준 보고 메일</strong> |
 | <strong>Part 3 (30분)</strong> | 💻 Antigravity 2.0 | <strong>LG 브랜드 컬러(`#A50034` 레드 + 화이트) 고정 웹 슬라이드(`index.html`)</strong> |
 | <strong>Part 4 (30분)</strong> | 💻 Antigravity 2.0 | <strong>좌측 사이드 탭 업무 포털 (`탭 1: 트렌드 슬라이드` + `탭 2: 실시간 시세·뉴스`)</strong> |
-| <strong>Part 5 (40분)</strong> | 💻 Antigravity 2.0 | <strong>`탭 3: 가전 실적·구독 분석` + `마지막 탭: 🧠 AI 그로스·ML 분석(군집·디시전트리·회귀예측)` + `/browser` 검증 + `90점 품질 게이트`</strong> |
+| <strong>Part 5 (40분)</strong> | 💻 Antigravity 2.0 | <strong>`탭 3: 가전 실적·구독 분석` + `마지막 탭: 🧠 AI 그로스·ML 분석(군집·디시전트리·회귀예측)` + `90점 품질 게이트`</strong> |
 | <strong>🎁 Bonus (20분)</strong> | 💻 Antigravity 2.0 | <strong>[파워 팁 리뷰 & 미니 실습] `/` 명령어 · `@conversation` · `@rule` 총정리 + 💱 `generative_ui` 환율 계산기 앱 + 🧩 `/plugin` 패키징 + `/goal` · `/btw`</strong> |
 
 ---
@@ -667,23 +667,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ---
 
-### 🔹 Step 5-7. [Step 3: Verify] `/browser`로 에이전트가 직접 크롬을 띄워 탭 전환·슬라이더 검증하기
-
-> <strong>🎯 핵심 포인트:</strong> 사람이 일일이 눌러보는 대신, <strong>`/browser` 명령어로 AI가 직접 크롬을 띄워 탭과 필터·슬라이더가 잘 작동하는지 스스로 눌러보게 합니다.</strong>
-
-#### 1️⃣ 채팅창에 `/browser` + `[Tab]` 선택 후 아래 프롬프트 복사·붙여넣기
-채팅창에 **`/browser`를 타이핑 후 `[Tab]` 키**로 브라우저 에이전트 칩을 띄우고, 방금 만든 로컬 대시보드에 직접 접속해 사이드 탭 전환과 ML 서브탭·슬라이더 클릭 시 콘솔 에러나 0 나눗셈 오류가 없는지 스스로 검증하게 합니다:
-
-```text
-/browser 로컬 대시보드에 접속해서 사이드 탭 전환(가전 실적 분석 탭 & AI 그로스·ML 분석 탭의 1~4단계 서브탭)과 슬라이더·필터 조작 시 콘솔 에러나 0 나눗셈 오류가 없는지 검증해
-```
-
-👉 **화면 확인 포인트:** (에이전트가 스스로 Chrome을 실행해 각 사이드 탭을 캡처·분석하는 과정)
-![Step 5-7 에이전트가 브라우저를 직접 실행해 각 탭을 캡처 및 검증하는 화면](assets/screenshots/slide_24_ui_1.png)
-
----
-
-### 🔹 Step 5-8. [Step 4: Handoff] 새 세션(`+ New Conversation`) 품질 감사관 채점 & `90점` 게이트 돌파 후 `/learn` 저장!
+### 🔹 Step 5-7. [Step 3: Handoff] 새 세션(`+ New Conversation`) 품질 감사관 채점 & `90점` 게이트 돌파 후 `/learn` 저장!
 
 > <strong>🎯 핵심 포인트:</strong> 코드를 짠 AI에게 "잘했니?"라고 물으면 무조건 잘했다고 답합니다. 그래서 <strong>`+ New Conversation`으로 새 채팅창을 열어 깐깐한 '품질 감사관'을 시키고, `90점`을 넘길 때까지 스스로 고치게 한 뒤 `/learn`으로 저장</strong>합니다.  
 > *(💡 99점을 목표로 하면 사소한 수정만 무한 반복하느라 시간이 다 가기 때문에, 실무에서는 **90점**을 통과 기준선으로 잡는 것이 가장 좋습니다.)*
@@ -696,7 +680,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 ```
 
 👉 **1단계 실행 결과 화면:** (`1차 점수 82점` ➔ 감점 요인 자동 패치 후 `90점 품질 게이트 통과 🏆` 및 하단 `/learn` 저장 안내!)
-![Step 5-8 새 세션 품질 감사관 1차 82점 ➔ 패치 후 90점 품질 게이트 통과 및 learn 저장 안내 화면](assets/screenshots/slide_25_ui_1.png)
+![Step 5-7 새 세션 품질 감사관 1차 82점 ➔ 패치 후 90점 품질 게이트 통과 및 learn 저장 안내 화면](assets/screenshots/slide_25_ui_1.png)
 
 #### 2️⃣ [2단계: `/learn`으로 품질 기준 저장] 90점 통과 후 채팅창에 `/learn` + `[Tab]` 선택 및 아래 프롬프트 입력
 위 화면처럼 90점 품질 게이트를 통과했다면, 마지막으로 채팅창에 **`/learn`을 타이핑 후 `[Tab]` 키**를 눌러 방금 진행한 90점 품질 감사 기준을 워크스페이스 기본 규칙으로 영구 저장합니다:
@@ -860,5 +844,5 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 2. <strong>2부 (Antigravity 2.0)</strong>:
    - <strong>탭 1 (`📈 LG 시장 트렌드`)</strong>: `/grill-me` ➔ `Proceed` ➔ `/lg-brand-slides`로 <strong>LG 시그니처 레드(`#A50034`) + 화이트 테마 웹 슬라이드</strong> 탑재
    - <strong>탭 2 (`💓 실시간 시장·뉴스 LIVE`)</strong>: <strong>실시간 데이터 수집 스킬</strong> 연동으로 <strong>LG전자(`066570`) 실시간 시세·환율·구글 뉴스</strong> + 우측 상단 <strong>`Pull` 버튼 & `/schedule` 매일 9시 자동화</strong>
-   - <strong>탭 3 (`📊 가전 실적·구독 분석`) & 마지막 탭 (`🧠 AI 그로스·ML 분석 NEW`)</strong>: <strong>`@04_AG_Analytics_lg_appliance_data.csv` (920행)</strong> 결측치(23건)·시제품(0원 18건) 정제 차트 + <strong>결측치 회귀 보간·K-Means 4대 군집 스캐터·디시전 트리·4분기 매출 회귀 예측(XAI)</strong> + <strong>`/browser` 검증</strong> + <strong>새 세션 감사관 `90점 품질 게이트 PASS` & `/learn` 영구 자산화</strong>
+   - <strong>탭 3 (`📊 가전 실적·구독 분석`) & 마지막 탭 (`🧠 AI 그로스·ML 분석 NEW`)</strong>: <strong>`@04_AG_Analytics_lg_appliance_data.csv` (920행)</strong> 결측치(23건)·시제품(0원 18건) 정제 차트 + <strong>결측치 회귀 보간·K-Means 4대 군집 스캐터·디시전 트리·4분기 매출 회귀 예측(XAI)</strong> + <strong>새 세션 감사관 `90점 품질 게이트 PASS` & `/learn` 영구 자산화</strong>
    - <strong>🎁 Bonus (`파워 팁 & 미니 실습`)</strong>: <strong>💡 `@conversation` · `@rule` · `/` 명령어 총정리 리뷰 + 💱 `generative_ui` 실시간 환율 계산기 미니 앱 + 🧩 `/plugin` 실습 + `/goal` · `/btw` · `Turbo` 모드 마스터!</strong>
