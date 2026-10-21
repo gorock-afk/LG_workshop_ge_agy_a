@@ -18,7 +18,7 @@
 | <strong>Part 3 (30분)</strong> | 💻 Antigravity 2.0 | <strong>LG 브랜드(`#A50034`) 슬라이드 + 전력 시뮬레이터 & Q&A 드로어 + 🎨 내장 `AI 이미지 생성 & 다크 홀로그램 편집`</strong> |
 | <strong>Part 4 (35분)</strong> | 💻 Antigravity 2.0 | <strong>4대 계열사 멀티 주가 티커 + 신호등 AI 뉴스 + `KRW⇄USD` 환산 바 + 📸 `화면 캡처 복제(Vision)` & 💬 `인라인 위젯`</strong> |
 | <strong>Part 5 (40분)</strong> | 💻 Antigravity 2.0 | <strong>파이썬 데이터 정제(`920행`) + 수익성 히트맵·이상탐지 + 3축 What-if 슬라이더 + `탭 4: 보고서 추출기(.md/.csv)` + `마지막 탭: 🧠 AI 그로스·ML 분석(군집·디시전트리·회귀예측)` + `90점 감사`</strong> |
-| <strong>🎁 Bonus (20분)</strong> | 💻 Antigravity 2.0 | <strong>[파워 팁 리뷰 & 미니 실습] `/` 명령어 · `@conversation` · `@rule` 총정리 + 💱 `generative_ui` 환율 계산기 앱 + 🧩 `/plugin` 패키징 + `/goal` · `/btw`</strong> |
+| <strong>🎁 Bonus (20분)</strong> | 💻 Antigravity 2.0 | <strong>[파워 팁 리뷰 & 미니 실습] `/` 명령어 · `@conversation` · `@rule` 총정리 + 💱 `generative_ui` 환율 계산기 앱 + 🧩 `/plugin` 패키징 + `/goal` · `/btw` + 🤝 `/boost` · `/teamwork-preview` 멀티 에이전트</strong> |
 
 ---
 
@@ -948,6 +948,8 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 | **확장·패키징** | **`/plugin`** | 스킬·규칙·서브에이전트·MCP 설정을 하나의 플러그인 단위로 관리 및 생성 | 내가 만든 스킬과 규칙 세트를 팀원에게 통째로 배포·공유할 때 |
 | **자율 완주** | **`/goal`** | 목표 달성 완료 때까지 에이전트가 멈추지 않고 [구현➔검증➔수정] 무한 반복 | 사람이 중간에 일일이 확인하지 않고 끝까지 완성시키고 싶을 때 |
 | **실무 단축키** | **`/btw`** | 코딩 도중 에이전트 작업을 멈추지 않고 옆구리 창(`Side Question`)으로 딴 질문 던지기 | 코드가 돌아가는 동안 용어나 작동 원리를 바로 물어볼 때 |
+| **멀티 에이전트** | **`/boost`** | 리더 에이전트가 `DeepInvestigator`(심층 조사) + `DeepCoder`(고난도 구현)를 분업 호출해 교차 검증 | 까다로운 데이터 정합성 검증이나 복합 수식·시뮬레이터 버그를 잡을 때 |
+| **멀티 에이전트** | **`/teamwork-preview`** | `Explorer` ➔ `Worker(복수)` ➔ `Challenger` ➔ `Victory Auditor(최종 감사관)` 자율 에이전트 팀 가동 | 데이터 파이프라인·UI 개편·임원 보고서 추출 등 큰 프로젝트를 팀 분업으로 끝낼 때 |
 
 #### 3️⃣ [`@conversation` & `@rule` 직접 체험해보기]
 채팅 입력창에 **`@conversation:`**을 타이핑하면 아래 화면처럼 **이전에 진행했던 대화방 목록(`Starting Local Web Server`, `GEMINI.md Instruction Compliance` 등)이 자동으로 팝업**됩니다. 원하는 이전 대화방을 선택하거나 **`@rule`**을 골라 아래 프롬프트로 직접 호출해 봅니다:
@@ -1043,6 +1045,44 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ---
 
+### 🔹 Bonus 5. 🤝 [부록 · 멀티 에이전트 분업 & 자율 팀 협업] `/boost` (심층 추론 분업) & `/teamwork-preview` (자율 에이전트 팀 프로젝트) 실습
+
+> <strong>🎯 핵심 포인트 (에이전트 1명이 혼자 다 하던 시대를 넘어, 전문 서브에이전트 팀에게 분업시키세요!):</strong>  
+> Antigravity 2.0에서는 채팅창에 **`/boost`** 또는 **`/teamwork-preview`** 슬래시 명령어를 입력해 **여러 명의 전문 서브에이전트(조사관·개발자·반론가·최종 감사관)를 병렬로 소집**할 수 있습니다.
+
+#### 📊 한눈에 비교하는 싱글 에이전트 vs `/boost` vs `/teamwork-preview`
+
+| 구분 | 기본 채팅 (Single Agent) | ⚡ `/boost` (심층 추론 2인조 분업) | 🤝 `/teamwork-preview` (자율 에이전트 팀 프로젝트) |
+| :---: | :--- | :--- | :--- |
+| **작동 방식** | 에이전트 1명이 기획·조사·코딩·검증을 순차적으로 혼자 수행 | 리더 에이전트가 전략을 세우고 **`🔍 DeepInvestigator`(데이터·원인 심층 조사)**와 **`💻 DeepCoder`(고난도 구현)** 서브에이전트를 분업 호출해 교차 검증 | 요구사항 브리프 합의 후 **`🧭 Explorer`(탐색) ➔ `⚙️ Worker`(병렬 구현) ➔ `🛡️ Challenger`(반론·리뷰) ➔ `🏆 Victory Auditor`(독립 최종 감사관)** 팀이 자율 협업 |
+| **우측 패널** | 단일 작업 로그 표시 | 우측 `Subagents` 탭에 `DeepInvestigator` · `DeepCoder` 카드 표시 | 우측 `Subagents` 탭에 팀 로스터 전체 실시간 상태(`WORKING`/`DONE`) 및 **서브에이전트별 직접 지시(Direct Steering)** 지원 |
+| **언제 쓰나요?** | 단일 차트 추가, 문구 수정, 빠른 프로토타이핑 | **복잡한 수치 오차 검증**, 920행 CSV vs 대시보드 수식 불일치 추적, 고난도 시뮬레이터 구현 | **여러 파일·탭을 동시에 고치는 대형 미션** (데이터 정제 파이프라인 + UI 개편 + 임원 보고서 추출 동시 진행) |
+
+👉 **화면 확인 포인트:** (채팅창 `/` 슬래시 팝업에서 `① /boost` · `② /teamwork-preview` 선택 및 `③ 우측 Subagents 패널` 실시간 분업 모니터링 화면)
+![Bonus 5 Antigravity 2.0 멀티 에이전트 /boost 및 /teamwork-preview 실행 화면](assets/screenshots/multiagent_boost_teamwork.png)
+
+#### 1️⃣ [`/boost` 실습 — 심층 추론 2인조 분업] 채팅창에 `/boost` + `[Tab]` 선택 후 복합 데이터·수식 교차 검증하기
+채팅 입력창에 먼저 **`/boost`를 타이핑한 뒤 `[Tab]` 키**로 칩을 띄우고, 아래 문장을 붙여넣어 **`DeepInvestigator`(데이터 조사관)**와 **`DeepCoder`(구현 스페셜리스트)**가 어떻게 역할을 나누어 검증·패치하는지 확인해 봅니다:
+
+```text
+/boost 워시타워 ThinQ 결측치(23건) 회귀 보간 수식과 스탠바이미 시제품(매출 0원, 18건) 제외 로직이 현재 대시보드(index.html)의 모든 탭과 요약 카드에서 오차 없이 일치하는지 심층 조사하고, 불일치하거나 빠진 엣지케이스가 있다면 완벽하게 패치해줘.
+```
+
+#### 2️⃣ [`/teamwork-preview` 실습 — 자율 에이전트 팀 프로젝트] 채팅창에 `/teamwork-preview` + `[Tab]` 선택 후 다중 역할 팀 가동하기
+이번에는 여러 탭과 산출물을 동시에 손봐야 하는 복합 프로젝트를 에이전트 팀에게 맡겨 봅니다. 채팅창에 **`/teamwork-preview`를 타이핑한 뒤 `[Tab]` 키**로 선택하고 아래 프롬프트를 입력합니다:
+* *(참고: `/teamwork-preview`는 실행 직후 리더가 **핵심 목표와 완료 기준(Victory Criteria)을 먼저 정리해 사용자에게 승인**을 받은 뒤, `Explorer` ➔ `Worker` ➔ `Challenger` ➔ `Victory Auditor` 팀을 본격 가동합니다!)*
+
+```text
+/teamwork-preview 우리 LG 통합 업무 포털(index.html)의 완성도를 높이기 위해 에이전트 팀을 꾸려 다음 3가지를 병렬 분업으로 완수해줘: 1) 920행 가전 CSV 원본과 대시보드 내 모든 차트 수치의 정합성 감사 스크립트 작성, 2) 탭 3 수익성 히트맵에 권역별 Top/Bottom 하이라이트 배지 추가, 3) CFO 보고용 주간 경영 브리핑 마크다운(Executive_Briefing.md) 최종본 생성 및 감사관(Victory Auditor) 전 항목 검증.
+```
+
+#### 3️⃣ [우측 `Subagents` 패널 꿀팁] 실시간 분업 현황 확인 & 일하는 서브에이전트에 직접 지시(`Direct Steering`) 보내기
+1. `/boost`나 `/teamwork-preview`가 돌아가는 동안 우측 보조 패널 상단의 **`🤖 Subagents`** 탭을 클릭합니다.
+2. 현재 가동 중인 서브에이전트 카드(`Explorer`, `Worker-1`, `Victory Auditor` 등)를 클릭하면 각 에이전트가 어떤 파일을 읽고 무슨 코드를 짜고 있는지 실시간으로 볼 수 있습니다.
+3. 특히 특정 서브에이전트 카드 안의 입력창에 **`"환율 기준일도 함께 표기해줘"`**처럼 메시지를 보내면, **전체 팀 작업을 멈추지 않고 해당 작업자에게만 실시간으로 방향을 추가 지시(`Direct Steering`)**할 수 있습니다!
+
+---
+
 ## 🎉 수고하셨습니다! 오늘 3시간 심화 풀코스로 완성한 모든 산출물 & 신기능 요약
 
 1. <strong>1부 (크롬 GE Web)</strong>: 팀 공유 `Project` + 사내 보고서 양식(`.txt`) + `/lg-executive-briefing` & `/lg-cfo-risk-review` 멀티 스킬 교차 검증 + <strong>`Imagen` 광고 시안 생성 · `Deep Research` · `Audio Overview(라디오 팟캐스트)`</strong> ➔ `Workflow` + `HITL Approval` + `Flow control (If/else)` 조건 분기 & `Rejected` 반려 루프 ➔ <strong>내 Gmail 임시보관함(`Drafts`) 맞춤형 보고 메일 자동 생성</strong>
@@ -1051,4 +1091,4 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
    - <strong>탭 2 (`💓 실시간 시장·뉴스 LIVE`)</strong>: `/python-api-trend` 개조 ➔ <strong>LG 4대 계열사 멀티 주가 티커 + 4대 토픽 신호등(`🟢/🟡/🔴`) 뉴스 보드 + 상단 `KRW⇄USD` 실시간 환산 바 + 📸 `화면 캡처 1분 복제(Vision-to-Code)` & 💬 `채팅창 인라인 계산기 위젯(Generative UI)`</strong>
    - <strong>탭 3 (`📊 가전 실적·구독 분석`)</strong>: `@04_AG_Analytics_lg_appliance_data.csv` 파이썬 정제 파이프라인(`build_analytics_json.py`) ➔ <strong>시제품(0원 18건) 실시간 토글 + 권역×제품군 수익성 히트맵 & 이상징후(`⚠️ Anomaly`) 테이블 + 3축 What-if 손익 시뮬레이터</strong>
    - <strong>탭 4 (`📝 임원 보고서 빌더`) & 마지막 탭 (`🧠 AI 그로스·ML 분석 NEW`)</strong>: <strong>탭 1~3 데이터 종합 브리핑 & 원클릭 `.md` / `.csv` 다운로드 + 결측치 회귀 보간(23건)·K-Means 4대 군집 스캐터 차트·디시전 트리 예측·4분기 매출 회귀 예측 & 변수 기여도(XAI) 스튜디오</strong>
-   - <strong>🎁 Bonus 파워 팁·미니 실습</strong>: <strong>💡 `@conversation` · `@rule` · `/` 명령어 총정리 리뷰 + 💱 `generative_ui` 실시간 환율 계산기 미니 앱 + 🧩 `/plugin` 실습 + `/goal` · `/btw` · `Turbo` 모드 마스터!</strong>
+   - <strong>🎁 Bonus 파워 팁·미니 실습 & 멀티 에이전트 부록</strong>: <strong>💡 `@conversation` · `@rule` · `/` 명령어 총정리 리뷰 + 💱 `generative_ui` 실시간 환율 계산기 미니 앱 + 🧩 `/plugin` 실습 + `/goal` · `/btw` · `Turbo` 모드 + 🤝 `/boost` · `/teamwork-preview` 멀티 에이전트 분업 마스터!</strong>
