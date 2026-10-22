@@ -17,7 +17,7 @@
 | <strong>Part 2 (30분)</strong> | 🌐 크롬 GE Web | <strong>내 Gmail 임시보관함(`Drafts`)에 저장된 사내 표준 보고 메일</strong> |
 | <strong>Part 3 (30분)</strong> | 💻 Antigravity 2.0 | <strong>LG 브랜드 컬러(`#A50034` 레드 + 화이트) 고정 웹 슬라이드(`index.html`)</strong> |
 | <strong>Part 4 (30분)</strong> | 💻 Antigravity 2.0 | <strong>좌측 사이드 탭 업무 포털 (`탭 1: 트렌드 슬라이드` + `탭 2: 실시간 시세·뉴스`)</strong> |
-| <strong>Part 5 (40분)</strong> | 💻 Antigravity 2.0 | <strong>`탭 3: 가전 실적·구독 분석` + `마지막 탭: 🧠 AI 그로스·ML 분석(군집·디시전트리·회귀예측)` + `90점 품질 게이트`</strong> |
+| <strong>Part 5 (40분)</strong> | 💻 Antigravity 2.0 | <strong>`탭 3: 가전 실적·구독 분석` + `마지막 탭: 🧠 AI 그로스·ML 분석(군집·디시전트리·회귀예측)` + `임원 보고용 엑셀(.xlsx)·PPTX(.pptx) 추출` + `90점 품질 게이트`</strong> |
 | <strong>🎁 Bonus (20분)</strong> | 💻 Antigravity 2.0 | <strong>[파워 팁 리뷰 & 미니 실습] `/` 명령어 · `@conversation` · `@rule` 총정리 + 💱 `generative_ui` 환율 계산기 앱 + 🧩 `/plugin` 패키징 + `/goal` · `/btw` + 🤝 `/boost` · `/teamwork-preview` 멀티 에이전트</strong> |
 
 ---
@@ -736,7 +736,35 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ---
 
-### 🔹 Step 5-7. [Step 3: Handoff] 새 세션(`+ New Conversation`) 품질 감사관 채점 & `90점` 게이트 돌파 후 `/learn` 저장!
+### 🔹 Step 5-7. 📥 [ML 5단계: 오피스(`.xlsx` · `.pptx`) 리포트 추출] 머신러닝 분석·예측 결과를 임원 보고용 엑셀 & 파워포인트 파일로 즉시 뽑아내기
+
+> <strong>🎯 핵심 포인트:</strong> 1~4단계로 완성한 머신러닝 분석(워시타워 결측 회귀복원 · K-Means 4대 군집 · 디시전 트리 · 4분기 매출 예측) 결과를 실제 임원 보고 자리에 바로 들고 갈 수 있도록 **멀티 시트 엑셀(`.xlsx`)**과 **파워포인트 슬라이드(`.pptx`)** 파일로 뽑아냅니다.  
+> Antigravity에서는 **① 대시보드 화면에 원클릭 다운로드 버튼(`SheetJS` · `PptxGenJS`)을 달아 브라우저에서 바로 받는 방식**과 **② 채팅창에서 에이전트가 파이썬(`openpyxl` · `python-pptx`)으로 작업 폴더에 직접 생성하는 방식** 두 가지를 모두 지원합니다!
+
+#### 1️⃣ [방식 A — 대시보드 원클릭 추출 버튼 장착] 5번째 서브탭 & 우측 상단 `.xlsx` · `.pptx` 다운로드 버튼 추가하기
+별도 프로그램 설치 없이 크롬 브라우저에서 버튼만 누르면 현재 슬라이더 시뮬레이션 수치가 반영된 엑셀(`.xlsx`)과 파워포인트(`.pptx`)가 즉시 다운로드되도록 아래 프롬프트를 입력합니다:
+
+```text
+'🧠 AI 그로스·ML 분석' 탭 안에 다섯 번째 서브탭 '⑤ 📥 오피스(.xlsx / .pptx) 리포트 추출' 프리뷰 화면과 우측 상단 '[📊 ML 분석 엑셀 다운로드(.xlsx)]' · '[📽️ 임원 보고용 PPTX 다운로드(.pptx)]' 버튼 2개를 추가해줘. 별도 설치 없이 브라우저에서 즉시 파일이 생성되도록 SheetJS(xlsx.full.min.js)와 PptxGenJS(pptxgen.bundle.js) CDN을 연결해서:
+1) 엑셀(.xlsx) 버튼 클릭 시: Sheet 1(K-Means 4대 군집 & 4분기 예측 요약), Sheet 2(워시타워 결측 23건 회귀복원 내역), Sheet 3(5대 가전 정제 실적 902건) 3개 시트로 구성된 'LG_AI_Growth_ML_Report.xlsx' 파일이 즉시 다운로드되게 하고,
+2) 파워포인트(.pptx) 버튼 클릭 시: LG 시그니처 레드(#A50034) 헤더 디자인이 적용된 4장짜리 브리핑 슬라이드(Slide 1 경영진 3줄 요약 ➔ Slide 2 K-Means 4대 군집 전략 ➔ Slide 3 디시전 트리 등급 기준 ➔ Slide 4 4분기 매출 예측 1,584억 및 XAI 기여도)가 'LG_Executive_ML_Briefing.pptx'로 즉시 다운로드되게 구현해줘.
+```
+
+👉 **실행 결과 화면 & 다운로드 실습 포인트:** (우측 상단 초록색 `[📊 ML 분석 엑셀 다운로드(.xlsx)]` 버튼과 빨간색 `[📽️ 임원 보고용 PPTX 다운로드(.pptx)]` 버튼을 각각 클릭해 내 PC로 실제 엑셀·파워포인트 파일이 내려받아지는지 확인!)
+![Step 5-7 ML 5단계 오피스 엑셀(.xlsx) 및 파워포인트(.pptx) 원클릭 리포트 추출 화면](assets/screenshots/ml_step5_office_export.png)
+
+#### 2️⃣ [방식 B — 채팅창에서 파이썬으로 로컬 폴더에 고품질 `.xlsx` · `.pptx` 직접 생성하기 (선택)]
+브라우저 다운로드 버튼 외에도, Antigravity 채팅창에 직접 지시하면 에이전트가 파이썬 스크립트를 실행해 내 작업 폴더(`lg-work-portal/`) 안에 **엑셀 수식(`=SUM`, `=AVERAGE`)이 살아있는 `.xlsx` 파일**과 **네이티브 표·도형이 들어간 `.pptx` 발표자료**를 직접 만들어 줍니다:
+
+```text
+@04_AG_Analytics_lg_appliance_data.csv 파이썬을 실행해서 현재 작업 폴더 안에 방금 진행한 가전 데이터 정제 및 ML 분석 결과를 담은 오피스 파일 2종을 직접 생성해줘:
+1) 'LG_Appliance_Master_Analysis.xlsx': 시트별로 ① 권역·제품군별 정제 실적(시제품 18건 분리), ② 워시타워 결측 23건 회귀 복원표, ③ K-Means 4대 군집 및 4분기 매출 예측표를 담고 합계·평균 수식(=SUM, =AVERAGE)과 헤더 서식을 적용해줘.
+2) 'LG_Executive_Briefing_Deck.pptx': 파워포인트에서 바로 열어서 표와 텍스트를 편집할 수 있도록 LG 브랜드 컬러(#A50034)가 적용된 4장짜리 임원 보고용 슬라이드 파일로 만들어줘.
+```
+
+---
+
+### 🔹 Step 5-8. [Step 3: Handoff] 새 세션(`+ New Conversation`) 품질 감사관 채점 & `90점` 게이트 돌파 후 `/learn` 저장!
 
 > <strong>🎯 핵심 포인트:</strong> 코드를 짠 AI에게 "잘했니?"라고 물으면 무조건 잘했다고 답합니다. 그래서 <strong>`+ New Conversation`으로 새 채팅창을 열어 깐깐한 '품질 감사관'을 시키고, `90점`을 넘길 때까지 스스로 고치게 한 뒤 `/learn`으로 저장</strong>합니다.  
 > *(💡 99점을 목표로 하면 사소한 수정만 무한 반복하느라 시간이 다 가기 때문에, 실무에서는 **90점**을 통과 기준선으로 잡는 것이 가장 좋습니다.)*
@@ -749,7 +777,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 ```
 
 👉 **1단계 실행 결과 화면:** (`1차 점수 82점` ➔ 감점 요인 자동 패치 후 `90점 품질 게이트 통과 🏆` 및 하단 `/learn` 저장 안내!)
-![Step 5-7 새 세션 품질 감사관 1차 82점 ➔ 패치 후 90점 품질 게이트 통과 및 learn 저장 안내 화면](assets/screenshots/slide_25_ui_1.png)
+![Step 5-8 새 세션 품질 감사관 1차 82점 ➔ 패치 후 90점 품질 게이트 통과 및 learn 저장 안내 화면](assets/screenshots/slide_25_ui_1.png)
 
 #### 2️⃣ [2단계: `/learn`으로 품질 기준 저장] 90점 통과 후 채팅창에 `/learn` + `[Tab]` 선택 및 아래 프롬프트 입력
 위 화면처럼 90점 품질 게이트를 통과했다면, 마지막으로 채팅창에 **`/learn`을 타이핑 후 `[Tab]` 키**를 눌러 방금 진행한 90점 품질 감사 기준을 워크스페이스 기본 규칙으로 영구 저장합니다:
@@ -953,5 +981,5 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 2. <strong>2부 (Antigravity 2.0)</strong>:
    - <strong>탭 1 (`📈 LG 시장 트렌드`)</strong>: `/grill-me` ➔ `Proceed` ➔ `/lg-brand-slides`로 <strong>LG 시그니처 레드(`#A50034`) + 화이트 테마 웹 슬라이드</strong> 탑재
    - <strong>탭 2 (`💓 실시간 시장·뉴스 LIVE`)</strong>: <strong>실시간 데이터 수집 스킬</strong> 연동으로 <strong>LG전자(`066570`) 실시간 시세·환율·구글 뉴스</strong> + 우측 상단 <strong>`Pull` 버튼 & `/schedule` 매일 9시 자동화</strong>
-   - <strong>탭 3 (`📊 가전 실적·구독 분석`) & 마지막 탭 (`🧠 AI 그로스·ML 분석 NEW`)</strong>: <strong>`@04_AG_Analytics_lg_appliance_data.csv` (920행)</strong> 결측치(23건)·시제품(0원 18건) 정제 차트 + <strong>결측치 회귀 보간·K-Means 4대 군집 스캐터·디시전 트리·4분기 매출 회귀 예측(XAI)</strong> + <strong>새 세션 감사관 `90점 품질 게이트 PASS` & `/learn` 영구 자산화</strong>
+   - <strong>탭 3 (`📊 가전 실적·구독 분석`) & 마지막 탭 (`🧠 AI 그로스·ML 분석 NEW`)</strong>: <strong>`@04_AG_Analytics_lg_appliance_data.csv` (920행)</strong> 결측치(23건)·시제품(0원 18건) 정제 차트 + <strong>결측치 회귀 보간·K-Means 4대 군집 스캐터·디시전 트리·4분기 매출 회귀 예측(XAI) + 임원 보고용 엑셀(`.xlsx`)·파워포인트(`.pptx`) 추출</strong> + <strong>새 세션 감사관 `90점 품질 게이트 PASS` & `/learn` 영구 자산화</strong>
    - <strong>🎁 Bonus (`파워 팁 & 미니 실습 · 멀티 에이전트 부록`)</strong>: <strong>💡 `@conversation` · `@rule` · `/` 명령어 총정리 리뷰 + 💱 `generative_ui` 실시간 환율 계산기 미니 앱 + 🧩 `/plugin` 실습 + `/goal` · `/btw` · `Turbo` 모드 + 🤝 `/boost` · `/teamwork-preview` 멀티 에이전트 분업 마스터!</strong>
