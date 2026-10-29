@@ -131,17 +131,17 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 
 ---
 
-### 🔹 Step 1-4. 🧠 [멀티 모델 비교 실습] `Gemini 3.8 Flash` vs `Gemini 4 Argon` vs `Claude Opus 5.5` 직접 비교해보기
+### 🔹 Step 1-4. 🧠 [멀티 모델 비교 실습] `Gemini 3.8 Flash` vs `Gemini 4 Carbon` vs `Claude Opus 5.5` 직접 비교해보기
 
-> <strong>🎯 핵심 포인트:</strong> Gemini Enterprise 채팅창 우측 하단의 모델 선택기(<strong>`Auto ⌄`</strong>)를 열면 <strong>`Gemini 4 Argon`</strong>, <strong>`Gemini 3.8 Flash`</strong>, <strong>`Claude Opus 5.5`</strong> 등 여러 최신 모델을 자유롭게 골라 쓸 수 있습니다.  
+> <strong>🎯 핵심 포인트:</strong> Gemini Enterprise 채팅창 우측 하단의 모델 선택기(<strong>`Auto ⌄`</strong>)를 열면 <strong>`Gemini 4 Carbon`</strong>, <strong>`Gemini 3.8 Flash`</strong>, <strong>`Claude Opus 5.5`</strong> 등 여러 최신 모델을 자유롭게 골라 쓸 수 있습니다.  
 > 아래 직무별 샘플 프롬프트 중 원하는 주제를 골라 모델을 바꿔가며 실행해 보고, <strong>① 응답 속도, ② 표·목차 구조화 스타일, ③ 논리·수치 전개 방식, ④ 한국어 문장 톤앤매너</strong> 중 내 업무에 가장 잘 맞는 모델이 무엇인지 직접 비교해 보세요!
 
 #### 1️⃣ 채팅창 우측 하단 모델 선택기(`Auto ⌄`)를 열어 모델 전환하기
 1. 채팅 입력창 우측 하단의 <strong>`Auto ⌄`</strong> 버튼을 클릭해 모델 선택 메뉴를 엽니다.
-2. 목록에서 <strong>`Gemini 4 Argon`</strong>, <strong>`Gemini 3.8 Flash`</strong>, <strong>`Claude Opus 5.5`</strong> 등을 번갈아 선택하며 아래 샘플 프롬프트를 입력해 봅니다.
+2. 목록에서 <strong>`Gemini 4 Carbon`</strong>, <strong>`Gemini 3.8 Flash`</strong>, <strong>`Claude Opus 5.5`</strong> 등을 번갈아 선택하며 아래 샘플 프롬프트를 입력해 봅니다.
 
-👉 **화면 확인 포인트:** (우측 하단 `Auto ⌄` 클릭 ➔ `Gemini 4 Argon` · `Gemini 3.8 Flash` · `Claude Opus 5.5` 전환)
-![Step 1-4-1 Gemini Enterprise 우측 하단 모델 선택기에서 Gemini 4 Argon, Gemini 3.8 Flash, Claude Opus 5.5 선택 화면](assets/screenshots/ge_model_compare_selector.png)
+👉 **화면 확인 포인트:** (우측 하단 `Auto ⌄` 클릭 ➔ `Gemini 4 Carbon` · `Gemini 3.8 Flash` · `Claude Opus 5.5` 전환)
+![Step 1-4-1 Gemini Enterprise 우측 하단 모델 선택기에서 Gemini 4 Carbon, Gemini 3.8 Flash, Claude Opus 5.5 선택 화면](assets/screenshots/ge_model_compare_selector.png)
 
 #### 2️⃣ [기본 비교 프롬프트 1~2] 신사업 기획안 타당성 점검 & 가격·패키지 딜레마 해결
 
