@@ -18,7 +18,7 @@
 | <strong>Part 3 (30분)</strong> | 💻 Antigravity 2.0 | <strong>LG 브랜드(`#A50034`) 슬라이드 + 전력 시뮬레이터 & Q&A 드로어 + 🎨 내장 `AI 이미지 생성 & 다크 홀로그램 편집`</strong> |
 | <strong>Part 4 (35분)</strong> | 💻 Antigravity 2.0 | <strong>4대 계열사 멀티 주가 티커 + 신호등 AI 뉴스 + `KRW⇄USD` 환산 바 + 📸 `화면 캡처 복제(Vision)` & 💬 `인라인 위젯`</strong> |
 | <strong>Part 5 (40분)</strong> | 💻 Antigravity 2.0 | <strong>파이썬 데이터 정제(`920행`) + 수익성 히트맵·이상탐지 + 3축 What-if 슬라이더 + `탭 4: 보고서 추출기(.md/.csv)` + `마지막 탭: 🧠 AI 그로스·ML 분석(군집·디시전트리·회귀예측)` + `엑셀(.xlsx)·PPTX(.pptx) 추출` + `90점 감사`</strong> |
-| <strong>🎁 Bonus (20분)</strong> | 💻 Antigravity 2.0 | <strong>[파워 팁 리뷰 & 미니 실습] `/` 명령어 · `@conversation` · `@rule` 총정리 + 💱 `generative_ui` 환율 계산기 앱 + 🧩 `/plugin` 패키징 + `/goal` · `/btw` + 🤝 `/boost` · `/teamwork-preview` 멀티 에이전트</strong> |
+| <strong>🎁 Bonus (20분)</strong> | 💻 Antigravity 2.0 | <strong>[파워 팁 리뷰 & 미니 실습] `/` 명령어 · `@conversation` · `@rule` 총정리 + 💱 `generative_ui` 환율 계산기 앱 + 🧩 `/plugin` 패키징 + `/goal` · `/btw` + 🤝 `/boost` · `/teamwork` 멀티 에이전트</strong> |
 
 ---
 
@@ -1001,7 +1001,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 | **자율 완주** | **`/goal`** | 목표 달성 완료 때까지 에이전트가 멈추지 않고 [구현➔검증➔수정] 무한 반복 | 사람이 중간에 일일이 확인하지 않고 끝까지 완성시키고 싶을 때 |
 | **실무 단축키** | **`/btw`** | 코딩 도중 에이전트 작업을 멈추지 않고 옆구리 창(`Side Question`)으로 딴 질문 던지기 | 코드가 돌아가는 동안 용어나 작동 원리를 바로 물어볼 때 |
 | **멀티 에이전트** | **`/boost`** | 코디네이터(`DeepCoder`/`DeepInvestigator`) 지휘 아래 `Worker 1`(초안) ➔ `Worker 2`(추론 과정 배제·새 컨텍스트 독립 검증) **순차 집중 타격** | 여러 파일로 쪼갤 수 없는 **강결합(Tightly-coupled) 버그·복잡한 수식·루트코즈 추적**을 수 분~수 시간 안에 끝낼 때 |
-| **멀티 에이전트** | **`/teamwork-preview`** | `Phase 1`(5분 인터뷰) 후 `Explorer(x3)` ➔ `Worker(파일 독점 병렬)` ➔ `Critic/Challenger/Auditor` **3중 감사 자율 캠페인** | 모듈 단위로 쪼갤 수 있는 **대규모 프로젝트·리팩토링·문서/논문 검증·수리 증명**을 수 시간~수 일간 자율 주행시킬 때 |
+| **멀티 에이전트** | **`/teamwork`** | `Phase 1`(5분 인터뷰) 후 `Explorer(x3)` ➔ `Worker(파일 독점 병렬)` ➔ `Critic/Challenger/Auditor` **3중 감사 자율 캠페인** | 모듈 단위로 쪼갤 수 있는 **대규모 프로젝트·리팩토링·문서/논문 검증·수리 증명**을 수 시간~수 일간 자율 주행시킬 때 |
 
 #### 3️⃣ [`@conversation` & `@rule` 직접 체험해보기]
 채팅 입력창에 **`@conversation:`**을 타이핑하면 아래 화면처럼 **이전에 진행했던 대화방 목록(`Starting Local Web Server`, `GEMINI.md Instruction Compliance` 등)이 자동으로 팝업**됩니다. 원하는 이전 대화방을 선택하거나 **`@rule`**을 골라 아래 프롬프트로 직접 호출해 봅니다:
@@ -1097,20 +1097,20 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ---
 
-### 🔹 Bonus 5. 🤝 [부록 · 멀티 에이전트 아키텍처 & 실습] `/boost` (순차적 집중 타격) vs `/teamwork-preview` (대규모 병렬 분업 + 3중 독립 감사)
+### 🔹 Bonus 5. 🤝 [부록 · 멀티 에이전트 아키텍처 & 실습] `/boost` (순차적 집중 타격) vs `/teamwork` (대규모 병렬 분업 + 3중 독립 감사)
 
 > <strong>🎯 결론부터 말하면 `코드 결합도(Coupling)`와 `작업 시간(Horizon)`의 차이입니다:</strong>  
 > * **⚡ `/boost` — 순차적 집중 타격 (`Iterative Coding`)**: 여러 파일로 쪼갤 수 없는 **하나의 빡센 버그, 까다로운 수식·알고리즘, 복잡한 루트코즈 추적**을 **수 분 ~ 수 시간** 안에 끝낼 때 씁니다. 여러 에이전트가 동시에 한 파일을 건드리면 충돌이 나므로, **`Worker 1 (초안 구현)` ➔ `Worker 2 (작성자의 추론 과정·변명은 버리고 코드 + 검증 리포트만 받아 새 컨텍스트에서 독립 검증·수정)`**가 **순차적(`Sequential`)으로 바통을 이어받으며 한 놈만 집중 타격**하는 구조입니다.
-> * **🤝 `/teamwork-preview` (`/teamwork`) — 대규모 병렬 분업 + 3중 독립 감사 (`Distributed Campaign`)**: 모듈 단위로 쪼갤 수 있는 **대규모 프로젝트, 멀티 파일 리팩토링, 대시보드+엑셀+보고서 동시 구축, 논문/설계서 리뷰, 수리 증명**을 **수 시간 ~ 수 일** 동안 자율 주행시킬 때 씁니다. 탐색(`Explorer`)·구현(`Worker`)·비평(`Critic`)·공격(`Challenger`)·감사(`Auditor`)를 맡은 **수십~최대 128개의 서브에이전트가 병렬(`Parallel`)로 가동**되며, 파일 기반 인수인계(`.agents/teamwork/` 하위 `PROJECT.md`, `BRIEFING.md`)와 치팅 방지 포렌식 감사(`Victory Auditor`)까지 수행합니다.
+> * **🤝 `/teamwork` — 대규모 병렬 분업 + 3중 독립 감사 (`Distributed Campaign`)**: 모듈 단위로 쪼갤 수 있는 **대규모 프로젝트, 멀티 파일 리팩토링, 대시보드+엑셀+보고서 동시 구축, 논문/설계서 리뷰, 수리 증명**을 **수 시간 ~ 수 일** 동안 자율 주행시킬 때 씁니다. 탐색(`Explorer`)·구현(`Worker`)·비평(`Critic`)·공격(`Challenger`)·감사(`Auditor`)를 맡은 **수십~최대 128개의 서브에이전트가 병렬(`Parallel`)로 가동**되며, 파일 기반 인수인계(`.agents/teamwork/` 하위 `PROJECT.md`, `BRIEFING.md`)와 치팅 방지 포렌식 감사(`Victory Auditor`)까지 수행합니다.
 
 👉 **아키텍처 & 선택 기준 한눈에 보기:** (`코드 결합도 × 작업 시간 매트릭스` + `단일 에이전트 3대 한계 돌파` + `/boost 순차 바통 터치` vs `/teamwork 대규모 병렬 & 3중 감사 파이프라인`)
 ![Antigravity 2.0 멀티 에이전트 아키텍처 및 선택 기준 도표](assets/screenshots/boost_vs_teamwork_architecture.png)
 
 ---
 
-#### 📊 1. 종합 비교표: 일반 단일 에이전트 vs `/boost` vs `/teamwork-preview`
+#### 📊 1. 종합 비교표: 일반 단일 에이전트 vs `/boost` vs `/teamwork`
 
-| 구분 | 일반 단일 에이전트 (기본 채팅) | ⚡ `/boost` (순차 집중 타격) | 🤝 `/teamwork-preview` (`/teamwork`) |
+| 구분 | 일반 단일 에이전트 (기본 채팅) | ⚡ `/boost` (순차 집중 타격) | 🤝 `/teamwork` (대규모 병렬 + 3중 감사) |
 | :---: | :--- | :--- | :--- |
 | **핵심 역할** | 단순 질문, 단일 파일 수정, 대화형 코딩 | **강결합(`Tightly-coupled`) 난제 해결** (`Iterative Coding`) | **분할 가능한 대규모 장기 프로젝트** (`Distributed Coding / Research`) |
 | **소요 시간 (`Horizon`)** | **수 초 ~ 수 분** (1턴) | **수 분 ~ 수 시간** (단일 턴 호출) | **수 시간 ~ 수 일** (장기 자율 캠페인) |
@@ -1123,9 +1123,9 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 #### 🛡️ 2. 왜 단일 에이전트 대신 쓰는가? — 단일 에이전트의 3대 구조적 한계와 해결 원리
 
-단일 에이전트(기본 채팅)는 빠르고 편리하지만, 과제가 복잡해지거나 길어지면 아래 **3가지 구조적 한계**에 부딪힙니다. `/boost`와 `/teamwork-preview`는 이를 아키텍처 차원에서 해결합니다:
+단일 에이전트(기본 채팅)는 빠르고 편리하지만, 과제가 복잡해지거나 길어지면 아래 **3가지 구조적 한계**에 부딪힙니다. `/boost`와 `/teamwork`는 이를 아키텍처 차원에서 해결합니다:
 
-| 단일 에이전트의 3대 한계 | 왜 문제가 발생하는가? | `/boost` & `/teamwork-preview`의 아키텍처 해결책 |
+| 단일 에이전트의 3대 한계 | 왜 문제가 발생하는가? | `/boost` & `/teamwork`의 아키텍처 해결책 |
 | :--- | :--- | :--- |
 | **① 확증 편향 (`Verification Bias`)** | **자기가 방금 짠 코드는 자기가 봐도 맞아 보입니다.** 단일 에이전트는 첫 번째 그럴듯한 오답을 찾으면 스스로 합리화하며 검증을 멈춥니다. | **작성자와 검증자의 컨텍스트 완전 분리:** 작성자(`Worker 1`)의 추론 과정과 변명(`Thinking/History`)을 전혀 모르는 **깨끗한 새 컨텍스트(`Fresh Context`)의 검증 에이전트(`Worker 2` / `Critic` / `Auditor`)**가 오직 결과물만 보고 냉정하게 검사합니다. |
 | **② 컨텍스트 고갈 및 오염 (`Scarce Context`)** | 파일 수십 개를 읽고 에러 로그가 한 대화창에 쌓이면 **어텐션이 흐려져 초기 요구사항을 잊어버리거나 이전에 실패했던 코드를 다시 짜는 루프**에 빠집니다. | **역할별 컨텍스트 격리 & 세대교체(`Succession`):** 서브에이전트마다 좁고 명확한 임무만 부여해 컨텍스트를 아끼고, `/teamwork`는 `.agents/teamwork/` 파일로만 상태를 공유하며 **16회 스폰마다 새 팀장에게 인수인계**합니다. |
@@ -1145,7 +1145,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ---
 
-#### 🤝 4. `/teamwork-preview` (`/teamwork`)가 진짜 잘하는 것 — 대규모 병렬 분업 + 3중 독립 감사
+#### 🤝 4. `/teamwork`가 진짜 잘하는 것 — 대규모 병렬 분업 + 3중 독립 감사
 
 ##### ① `Phase 1`: 5분 사전 인터뷰 (`Scoping Interview`)로 '꼼수(`Reward Hacking`)' 원천 차단
 장기 자율 실행에서는 에이전트가 테스트 통과를 위해 **실패하는 테스트를 지워버리거나 `return True`를 하드코딩하는 꼼수(`Reward Hacking`)**를 부릴 위험이 있습니다. 그래서 `/teamwork`는 시작 직후 **객관식 사전 인터뷰(`Phase 1`)**를 통해 다음 3가지를 확정하고 `.agents/teamwork/ORIGINAL_REQUEST.md`에 못 박습니다:
@@ -1183,15 +1183,15 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 #### 💼 5. LG 현업 직무별 추천 상황 & 실습 프롬프트
 
-| 현업 직무 / 상황 | ⚡ `/boost` (순차 집중 타격 · 강결합 난제) 추천 사례 | 🤝 `/teamwork-preview` (병렬 분업 + 3중 독립 감사) 추천 사례 |
+| 현업 직무 / 상황 | ⚡ `/boost` (순차 집중 타격 · 강결합 난제) 추천 사례 | 🤝 `/teamwork` (병렬 분업 + 3중 독립 감사) 추천 사례 |
 | :--- | :--- | :--- |
 | **📊 재무 · 경영관리** | • **원본 CSV vs 대시보드 숫자 불일치 루트코즈 추적**: 어느 행·수식에서 합계가 틀어졌는지 `Worker 1`(추적) ➔ `Worker 2`(새 컨텍스트 검증)로 정밀 보정<br>• **복합 손익(환율·물류비·구독률) 수식 무결성 검증** | • **월간 결산 패키지 3종 동시 생성 캠페인**: ① 실적 대시보드 업데이트 + ② 3개 시트 결산 엑셀(`.xlsx`) 생성 + ③ CFO 보고용 PPTX(`.pptx`) 생성 후 `Victory Auditor`가 숫자 일치 여부 포렌식 감사 |
 | **🎯 상품기획 · PM** | • **신제품 가격·마진 시뮬레이터 코너케이스 방어**: 극단값 입력 시 마진 역전이나 수식 깨짐을 찾아내 핀셋 패치 | • **글로벌 4대 권역(북미·유럽·한국·아시아) 동시 벤치마킹 & 대형 기획서 검증**: 작업자 4명이 권역별 데이터를 병렬 수집하고 `Challenger`가 기획서 논리 허점을 감사 |
 | **📣 그로스 · 마케팅** | • **캠페인 지표 왜곡(결측치 23건·시제품 0원 18건) 정밀 분리**: 평균 전환율·마진을 왜곡하는 이상치 필터링 로직 검증 | • **멀티 채널 캠페인 런칭 패키지**: ① K-Means 타겟 군집 스캐터 + ② 채널별 A/B 카피 시안 + ③ 예산 시뮬레이터를 파일 독점 소유권으로 동시 구축 |
 | **💻 포털 · SW 개발** | • **일반 채팅으로 2번 이상 안 고쳐지는 까다로운 버그·레이스 컨디션 해결**: 여러 파일로 쪼갤 수 없는 핵심 엔진 코드 집중 타격 | • **대규모 모듈 리팩토링 & 포털 전 탭 개편**: 탭 1~5 UI/다크모드/한영 전환 개편 + 자동 테스트 스크립트 작성 + `Victory Auditor` 전 항목 통과까지 자율 완주 |
 
-👉 **화면 확인 포인트:** (채팅창 `/` 슬래시 팝업에서 `① /boost` · `② /teamwork-preview` 선택 및 `③ 우측 Subagents 패널` 실시간 모니터링 · Direct Steering 화면)
-![Bonus 5 Antigravity 2.0 멀티 에이전트 /boost 및 /teamwork-preview 실행 화면](assets/screenshots/multiagent_boost_teamwork.png)
+👉 **화면 확인 포인트:** (채팅창 `/` 슬래시 팝업에서 `① /boost` · `② /teamwork` 선택 및 `③ 우측 Subagents 패널` 실시간 모니터링 · Direct Steering 화면)
+![Bonus 5 Antigravity 2.0 멀티 에이전트 /boost 및 /teamwork 실행 화면](assets/screenshots/multiagent_boost_teamwork.png)
 
 ---
 
@@ -1220,24 +1220,24 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ---
 
-#### 2️⃣ [`/teamwork-preview` 실습 — 대규모 병렬 분업 + 3중 독립 감사] 채팅창에 `/teamwork-preview` + `[Tab]` 선택 후 자율 캠페인 가동하기
-이번에는 모듈 단위로 쪼갤 수 있는 여러 산출물을 동시에 구축하고 포렌식 감사까지 수행하는 프로젝트를 에이전트 팀에게 맡겨 봅니다. 채팅창에 **`/teamwork-preview`를 타이핑한 뒤 `[Tab]` 키**로 선택하고 아래 프롬프트를 입력합니다:
-* *(참고: `/teamwork-preview` 실행 시 먼저 **`Phase 1 (사전 인터뷰)`**로 목표 범위·금지할 꼼수(`Hard Constraints`)·검증 기준을 `.agents/teamwork/ORIGINAL_REQUEST.md`에 확정한 뒤, `Explorer(x3)` ➔ `Worker(병렬)` ➔ `Critic/Challenger` ➔ `Victory Auditor`가 가동됩니다!)*
+#### 2️⃣ [`/teamwork` 실습 — 대규모 병렬 분업 + 3중 독립 감사] 채팅창에 `/teamwork` + `[Tab]` 선택 후 자율 캠페인 가동하기
+이번에는 모듈 단위로 쪼갤 수 있는 여러 산출물을 동시에 구축하고 포렌식 감사까지 수행하는 프로젝트를 에이전트 팀에게 맡겨 봅니다. 채팅창에 **`/teamwork`를 타이핑한 뒤 `[Tab]` 키**로 선택하고 아래 프롬프트를 입력합니다:
+* *(참고: `/teamwork` 실행 시 먼저 **`Phase 1 (사전 인터뷰)`**로 목표 범위·금지할 꼼수(`Hard Constraints`)·검증 기준을 `.agents/teamwork/ORIGINAL_REQUEST.md`에 확정한 뒤, `Explorer(x3)` ➔ `Worker(병렬)` ➔ `Critic/Challenger` ➔ `Victory Auditor`가 가동됩니다!)*
 
 * **[기본 실습 — 데이터 정합성 감사 스크립트 + 히트맵 UI 개편 + CFO 브리핑 문서 3종 병렬 분업 & Victory Auditor 감사]**
 ```text
-/teamwork-preview 우리 LG 통합 업무 포털(index.html)의 완성도를 높이기 위해 에이전트 팀을 꾸려 다음 3가지 마일스톤을 파일 독점 소유권(Disjoint Ownership) 병렬 분업으로 완수하고, 마지막에 Victory Auditor가 가짜 구현(Stub/TODO) 없이 100% 동작하는지 실제 실행 결과로 감사해줘:
+/teamwork 우리 LG 통합 업무 포털(index.html)의 완성도를 높이기 위해 에이전트 팀을 꾸려 다음 3가지 마일스톤을 파일 독점 소유권(Disjoint Ownership) 병렬 분업으로 완수하고, 마지막에 Victory Auditor가 가짜 구현(Stub/TODO) 없이 100% 동작하는지 실제 실행 결과로 감사해줘:
 1) 920행 가전 CSV 원본과 대시보드 내 모든 차트 수치의 정합성 자동 채점 스크립트(audit_verify.py) 작성
 2) 탭 3 수익성 히트맵에 권역별 Top/Bottom 하이라이트 배지 추가
 3) CFO 보고용 주간 경영 브리핑 마크다운(Executive_Briefing.md) 최종본 생성
 ```
 
 <details class="file-list-details" open>
-<summary><strong>🤝 (추가 샘플) 현업에서 바로 써먹는 `/teamwork-preview` 대규모 병렬 캠페인 프롬프트 2선 더 보기 (클릭하여 접기/펼치기)</strong></summary>
+<summary><strong>🤝 (추가 샘플) 현업에서 바로 써먹는 `/teamwork` 대규모 병렬 캠페인 프롬프트 2선 더 보기 (클릭하여 접기/펼치기)</strong></summary>
 
 * **[활용 사례 A — 임원 보고 패키지 3종(웹 대시보드 + 멀티시트 엑셀 `.xlsx` + 발표용 `.pptx`) 동시 제작 & 포렌식 감사]**
 ```text
-/teamwork-preview 다음 주 본부장 보고를 위해 에이전트 팀을 꾸려서 3가지 산출물을 파일 충돌 없이 병렬로 제작하고, Challenger와 Victory Auditor가 세 파일 간 숫자가 100% 일치하는지 포렌식 감사해줘:
+/teamwork 다음 주 본부장 보고를 위해 에이전트 팀을 꾸려서 3가지 산출물을 파일 충돌 없이 병렬로 제작하고, Challenger와 Victory Auditor가 세 파일 간 숫자가 100% 일치하는지 포렌식 감사해줘:
 1) Worker 1: 대시보드(index.html) 상단에 '이번 주 핵심 경영 성과 3줄 요약 배너' 추가
 2) Worker 2: 권역별·제품군별 정제 실적과 4분기 예측치가 담긴 3개 시트 엑셀 파일(LG_Weekly_Master.xlsx) 생성
 3) Worker 3: LG 브랜드 컬러(#A50034)가 적용된 5장짜리 임원 보고용 파워포인트(LG_Weekly_Deck.pptx) 및 발표 스크립트 생성
@@ -1245,7 +1245,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 * **[활용 사례 B — 대형 기획서·보고서 다각도 비평 토너먼트 (`Document Review` 진형 활용)]**
 ```text
-/teamwork-preview 현재 워크스페이스의 임원 보고서(Executive_Briefing.md)와 대시보드 데이터(04_AG_Analytics_lg_appliance_data.csv)를 Document Review 진형으로 정밀 감사해줘. 여러 비평 에이전트(Critics & Challengers)가 병렬로 ① 수치 계산 오차, ② 시제품(18건)·결측치(23건) 해석 오류, ③ CFO 예상 압박 질문에 대한 논리적 허점을 찾아내고, Auditor가 실제 CSV 원본과 대조해 결함이 수정된 최종 보고서로 업데이트해줘.
+/teamwork 현재 워크스페이스의 임원 보고서(Executive_Briefing.md)와 대시보드 데이터(04_AG_Analytics_lg_appliance_data.csv)를 Document Review 진형으로 정밀 감사해줘. 여러 비평 에이전트(Critics & Challengers)가 병렬로 ① 수치 계산 오차, ② 시제품(18건)·결측치(23건) 해석 오류, ③ CFO 예상 압박 질문에 대한 논리적 허점을 찾아내고, Auditor가 실제 CSV 원본과 대조해 결함이 수정된 최종 보고서로 업데이트해줘.
 ```
 
 </details>
@@ -1253,7 +1253,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 ---
 
 #### 3️⃣ [우측 `Subagents` 패널 & `.agents/teamwork/` 꿀팁] 실시간 분업 확인 및 작업 중 직접 지시(`Direct Steering`)
-1. `/boost`나 `/teamwork-preview`가 돌아가는 동안 우측 보조 패널 상단의 **`🤖 Subagents`** 탭을 클릭합니다.
+1. `/boost`나 `/teamwork`가 돌아가는 동안 우측 보조 패널 상단의 **`🤖 Subagents`** 탭을 클릭합니다.
 2. 현재 가동 중인 서브에이전트 카드(`Explorer`, `Worker-1`, `Critic`, `Challenger`, `Victory Auditor`)와 `.agents/teamwork/` 폴더 내 **`ORIGINAL_REQUEST.md` · `PROJECT.md` · `BRIEFING.md`**에서 실시간 진행 상황을 투명하게 확인할 수 있습니다.
 3. 특히 특정 서브에이전트 카드 안의 입력창에 **`"환율 기준일도 함께 표기해줘"`**처럼 메시지를 보내면, **전체 캠페인을 멈추지 않고 해당 작업자에게만 실시간으로 방향을 추가 지시(`Direct Steering`)**할 수 있습니다!
 
@@ -1267,4 +1267,4 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
    - <strong>탭 2 (`💓 실시간 시장·뉴스 LIVE`)</strong>: `/python-api-trend` 개조 ➔ <strong>LG 4대 계열사 멀티 주가 티커 + 4대 토픽 신호등(`🟢/🟡/🔴`) 뉴스 보드 + 상단 `KRW⇄USD` 실시간 환산 바 + 📸 `화면 캡처 1분 복제(Vision-to-Code)` & 💬 `채팅창 인라인 계산기 위젯(Generative UI)`</strong>
    - <strong>탭 3 (`📊 가전 실적·구독 분석`)</strong>: `@04_AG_Analytics_lg_appliance_data.csv` 파이썬 정제 파이프라인(`build_analytics_json.py`) ➔ <strong>시제품(0원 18건) 실시간 토글 + 권역×제품군 수익성 히트맵 & 이상징후(`⚠️ Anomaly`) 테이블 + 3축 What-if 손익 시뮬레이터</strong>
    - <strong>탭 4 (`📝 임원 보고서 빌더`) & 마지막 탭 (`🧠 AI 그로스·ML 분석 NEW`)</strong>: <strong>탭 1~3 데이터 종합 브리핑 & 원클릭 `.md` / `.csv` 다운로드 + 결측치 회귀 보간(23건)·K-Means 4대 군집 스캐터 차트·디시전 트리 예측·4분기 매출 회귀 예측 & 변수 기여도(XAI) 스튜디오 + 임원 보고용 엑셀(`.xlsx`)·파워포인트(`.pptx`) 추출</strong>
-   - <strong>🎁 Bonus 파워 팁·미니 실습 & 멀티 에이전트 부록</strong>: <strong>💡 `@conversation` · `@rule` · `/` 명령어 총정리 리뷰 + 💱 `generative_ui` 실시간 환율 계산기 미니 앱 + 🧩 `/plugin` 실습 + `/goal` · `/btw` · `Turbo` 모드 + 🤝 `/boost` · `/teamwork-preview` 멀티 에이전트 분업 마스터!</strong>
+   - <strong>🎁 Bonus 파워 팁·미니 실습 & 멀티 에이전트 부록</strong>: <strong>💡 `@conversation` · `@rule` · `/` 명령어 총정리 리뷰 + 💱 `generative_ui` 실시간 환율 계산기 미니 앱 + 🧩 `/plugin` 실습 + `/goal` · `/btw` · `Turbo` 모드 + 🤝 `/boost` · `/teamwork` 멀티 에이전트 분업 마스터!</strong>
