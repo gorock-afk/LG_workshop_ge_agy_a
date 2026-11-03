@@ -446,6 +446,11 @@ Gemini Agent 1: content
 
 ![Step 3-0 세팅 점검 2 - Settings General 하단 Browser 권한 확인](assets/screenshots/slide_11_ui_2.png)
 
+#### 3️⃣ [⚡ `Turbo` 모드 팁] 매번 승인 누르기 번거롭다면? 채팅창 우측 하단에서 `Turbo`로 달아두면 안 물어보고 바로 실행!
+* 실습 도중 터미널 실행이나 파일 수정 때마다 매번 승인(`Allow` / `Run`)을 누르기 번거롭다면, **채팅 입력창 우측 하단 방패 아이콘**을 클릭해 **`Turbo` (`Run all commands without restrictions`)** 모드로 달아두세요. 중간 확인 없이 에이전트가 알아서 끝까지 실행합니다!
+
+![Step 3-0 세팅 점검 3 - 채팅 입력창 우측 하단에서 Turbo 모드 선택 화면](assets/screenshots/turbo_mode_selector.png)
+
 ---
 
 ### 🔹 Step 3-1. `/grill-me` 역질문 인터뷰 & 구현 계획 승인하기
