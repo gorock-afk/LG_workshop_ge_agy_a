@@ -964,7 +964,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 ### 🔹 Bonus 5. 🤝 [부록 · 멀티 에이전트 아키텍처 & 실습] `/boost` (순차적 집중 타격) vs `/teamwork-preview` (대규모 병렬 분업 + 3중 독립 감사)
 
 > <strong>🎯 결론부터 말하면 `코드 결합도(Coupling)`와 `작업 시간(Horizon)`의 차이입니다:</strong>  
-> * **⚡ `/boost` (내부명 `/owl`) — 순차적 집중 타격 (`Iterative Coding`)**: 여러 파일로 쪼갤 수 없는 **하나의 빡센 버그, 까다로운 수식·알고리즘, 복잡한 루트코즈 추적**을 **수 분 ~ 수 시간** 안에 끝낼 때 씁니다. 여러 에이전트가 동시에 한 파일을 건드리면 충돌이 나므로, **`Worker 1 (초안 구현)` ➔ `Worker 2 (작성자의 추론 과정·변명은 버리고 코드 + 검증 리포트만 받아 새 컨텍스트에서 독립 검증·수정)`**가 **순차적(`Sequential`)으로 바통을 이어받으며 한 놈만 집중 타격**하는 구조입니다.
+> * **⚡ `/boost` — 순차적 집중 타격 (`Iterative Coding`)**: 여러 파일로 쪼갤 수 없는 **하나의 빡센 버그, 까다로운 수식·알고리즘, 복잡한 루트코즈 추적**을 **수 분 ~ 수 시간** 안에 끝낼 때 씁니다. 여러 에이전트가 동시에 한 파일을 건드리면 충돌이 나므로, **`Worker 1 (초안 구현)` ➔ `Worker 2 (작성자의 추론 과정·변명은 버리고 코드 + 검증 리포트만 받아 새 컨텍스트에서 독립 검증·수정)`**가 **순차적(`Sequential`)으로 바통을 이어받으며 한 놈만 집중 타격**하는 구조입니다.
 > * **🤝 `/teamwork-preview` (`/teamwork`) — 대규모 병렬 분업 + 3중 독립 감사 (`Distributed Campaign`)**: 모듈 단위로 쪼갤 수 있는 **대규모 프로젝트, 멀티 파일 리팩토링, 대시보드+엑셀+보고서 동시 구축, 논문/설계서 리뷰, 수리 증명**을 **수 시간 ~ 수 일** 동안 자율 주행시킬 때 씁니다. 탐색(`Explorer`)·구현(`Worker`)·비평(`Critic`)·공격(`Challenger`)·감사(`Auditor`)를 맡은 **수십~최대 128개의 서브에이전트가 병렬(`Parallel`)로 가동**되며, 파일 기반 인수인계(`.agents/teamwork/` 하위 `PROJECT.md`, `BRIEFING.md`)와 치팅 방지 포렌식 감사(`Victory Auditor`)까지 수행합니다.
 
 👉 **아키텍처 & 선택 기준 한눈에 보기:** (`코드 결합도 × 작업 시간 매트릭스` + `단일 에이전트 3대 한계 돌파` + `/boost 순차 바통 터치` vs `/teamwork 대규모 병렬 & 3중 감사 파이프라인`)
@@ -974,7 +974,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 #### 📊 1. 종합 비교표: 일반 단일 에이전트 vs `/boost` vs `/teamwork-preview`
 
-| 구분 | 일반 단일 에이전트 (기본 채팅) | ⚡ `/boost` (내부명 `/owl`) | 🤝 `/teamwork-preview` (`/teamwork` · Stellar Teamwork) |
+| 구분 | 일반 단일 에이전트 (기본 채팅) | ⚡ `/boost` (순차 집중 타격) | 🤝 `/teamwork-preview` (`/teamwork`) |
 | :---: | :--- | :--- | :--- |
 | **핵심 역할** | 단순 질문, 단일 파일 수정, 대화형 코딩 | **강결합(`Tightly-coupled`) 난제 해결** (`Iterative Coding`) | **분할 가능한 대규모 장기 프로젝트** (`Distributed Coding / Research`) |
 | **소요 시간 (`Horizon`)** | **수 초 ~ 수 분** (1턴) | **수 분 ~ 수 시간** (단일 턴 호출) | **수 시간 ~ 수 일** (장기 자율 캠페인) |
@@ -997,7 +997,7 @@ def fetch_lg_live_dashboard_data(stock_code="066570", keyword="LG전자 AI 가�
 
 ---
 
-#### ⚡ 3. `/boost` (내부명 `/owl`)가 진짜 잘하는 것 — 왜 병렬이 아닌 '순차 바통 터치'인가?
+#### ⚡ 3. `/boost`가 진짜 잘하는 것 — 왜 병렬이 아닌 '순차 바통 터치'인가?
 
 * **핵심 질문 — *"왜 에이전트 여러 개를 동시에 안 돌리고 `Worker 1 ➔ Worker 2` 순차로 돌리나요?"***
   * 하나의 파일이나 강하게 결합된(`Tightly-coupled`) 로직을 여러 에이전트가 동시에 수정하면 **코드 충돌(`Merge Conflict`)이 나거나 서로의 가정을 깨뜨리기 때문**입니다.
