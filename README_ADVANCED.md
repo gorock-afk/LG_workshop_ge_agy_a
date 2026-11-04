@@ -74,11 +74,20 @@
 
 ---
 
-### 🔹 Step 1-3. [GE Skill 실습] `.md` 파일 업로드로 나만의 Skill 설치 & `/lg-executive-briefing` 호출하기
+### 🔹 Step 1-3. [GE Skill 실습] `.md` 파일 업로드 & 직접 텍스트 입력으로 나만의 Skill 등록·호출하기
 
 > <strong>🎯 `Knowledge` vs `Skills` 한 줄 차이:</strong>  
 > * <strong>`Knowledge`</strong>: 이 프로젝트 안에서만 참고하는 배경 자료  
 > * <strong>`Skills`</strong>: 내 계정에 설치해 두고 <strong>어느 채팅창에서든 `/스킬이름` 한 줄로 바로 불러 쓰는 나만의 단축키</strong>
+
+| 스킬 등록 방식 | 진입 메뉴 | 특징 및 추천 상황 |
+| :--- | :--- | :--- |
+| **방식 A. 파일 업로드 (`Upload skill`)** | `Skills` ➔ `+` ➔ **`⬆️ Upload skill`** | 미리 만들어진 표준 `.md` 또는 `.zip` 스킬 파일을 그대로 가져와 팀 전체가 동일한 양식을 쓸 때 |
+| **방식 B. 직접 텍스트 입력 (`Create skill`)** | `Skills` ➔ `+` ➔ **`✨ Create skill`** | 별도 파일 없이 화면에서 **`① 이름*` · `② 설명*` · `③ 안내(지침)`**를 텍스트로 바로 타이핑해 30초 만에 나만의 스킬을 만들 때 |
+
+---
+
+#### 📌 [실습 A — 파일 업로드 방식] `.md` 파일 업로드로 `/lg-executive-briefing` 스킬 설치하기
 
 <details class="file-list-details">
 <summary><strong>📄 (참고) 실습 스킬 파일 내용 미리보기 (`01_GE_Skill_lg_executive_briefing_SKILL.md` — 클릭하여 펼치기)</strong></summary>
@@ -107,19 +116,19 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 
 </details>
 
-#### 1️⃣ `Skills` ➔ `+ (Add skill)` ➔ `Upload skill`에서 `.md` 파일 업로드하기
+##### 1️⃣ `Skills` ➔ `+ (Add skill)` ➔ `Upload skill`에서 `.md` 파일 업로드하기
 1. 좌측 메뉴에서 <strong>`📄 Skills`</strong>를 클릭합니다.
 2. 상단 <strong>`+` (`Add skill`)</strong> 버튼(또는 초기 화면의 `Upload skill` 버튼)을 누르고 메뉴에서 <strong>`⬆️ Upload skill`</strong>을 선택합니다.
 3. **`Import skill`** 팝업창(`Supports .md and .zip files`)에서 **`Browse files`**를 눌러 실습 파일 <strong>[`01_GE_Skill_lg_executive_briefing_SKILL.md`](./files/01_GE_Skill_lg_executive_briefing_SKILL.md)</strong>를 선택한 뒤 파란색 <strong>`Import`</strong> 버튼을 클릭합니다.
 
 ![Step 1-3-1 Gemini Enterprise Skills 메뉴에서 Upload skill 클릭 및 .md 스킬 파일 Import](assets/screenshots/ge_skill_01.png)
 
-#### 2️⃣ 설치된 `lg-executive-briefing` 스킬 확인 & `New chat` 클릭
+##### 2️⃣ 설치된 `lg-executive-briefing` 스킬 확인 & `New chat` 클릭
 * 업로드 즉시 좌측 `Enabled` 목록에 <strong>`📄 lg-executive-briefing`</strong>이 등록되고 트리거 명령어(<strong>`/lg-executive-briefing`</strong>)가 생성됩니다. 우측 상단의 파란색 <strong>`✏️ New chat`</strong> 버튼을 클릭합니다.
 
 ![Step 1-3-2 업로드 완료된 lg-executive-briefing 스킬 상세 프리뷰 및 New chat 버튼 클릭](assets/screenshots/ge_skill_02.png)
 
-#### 3️⃣ 채팅창에서 `/lg-executive-briefing` 스킬 칩으로 1줄 브리핑 실행하기
+##### 3️⃣ 채팅창에서 `/lg-executive-briefing` 스킬 칩으로 1줄 브리핑 실행하기
 * 채팅 입력창에 **`/lg-executive-briefing`** 칩이 자동 삽입된 상태에서(또는 일반 채팅창에서 `/`를 쳐서 스킬 선택 후), 아래 한 줄만 입력해 실행합니다:
 
 ```text
@@ -128,6 +137,56 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 
 👉 **실행 결과 화면:** (긴 양식 설명 없이도 스킬에 정의된 `[1. 경영진 3줄 요약 ➔ 2. 당사 vs 경쟁사 비교표 ➔ 3. 실무 액션 아이템]` 3단 구조로 즉시 출력!)
 ![Step 1-3-3 채팅창에서 lg-executive-briefing 스킬 칩을 호출해 3단 임원 보고서 출력](assets/screenshots/ge_skill_03.png)
+
+---
+
+#### ✍️ [실습 B — 직접 텍스트 입력 방식] 파일 없이 화면에서 텍스트만 쳐서 30초 만에 나만의 스킬 등록하기
+
+> <strong>💡 핵심 포인트:</strong> `.md` 파일을 따로 만들 필요 없이, 웹 화면에서 **`이름*` · `설명*` · `안내(지침)` 3칸만 텍스트로 채우고 `저장`을 누르면** 즉시 `/스킬이름` 단축키가 만들어집니다!
+
+##### 4️⃣ `Skills` ➔ `+ (Add skill)` ➔ `Create skill` 클릭 후 텍스트 직접 입력 & `저장`
+1. 좌측 메뉴 **`📄 Skills`** 상단의 **`+`** 버튼을 누르고 **`✨ Create skill` (스킬 만들기)**을 선택합니다.
+2. 아래 화면처럼 우측 입력창의 **3가지 항목**을 직접 타이핑하고 우측 상단 파란색 **`저장`** 버튼을 클릭합니다:
+   - **`① 이름*`** (`64자 이내`, 영문 소문자·숫자·하이픈 `-`만 사용): 예) **`my-skill`** ➔ 저장 즉시 채팅창에서 **`/my-skill`**로 호출됩니다.
+   - **`② 설명*`** (`1,024자 이내`, 스킬의 역할 한 줄 요약): 예) **`항상 객관성을 유지하는 스킬`**
+   - **`③ 안내`** (AI에게 부여할 역할·말투·보고서 양식 등 평문 지침): 예) **`항상 객관성을 유지해서 팩트폭행을 날려라`**
+   - *(💡 **선택 팁**: 직접 타이핑하는 대신 좌측 하단 **`🛡️ 기능 설명`** 입력창에 "어떤 스킬을 만들어줘"라고 말로 지시해서 우측 칸을 자동으로 채울 수도 있습니다!)*
+
+👉 **화면 확인 포인트:** (`① 이름*(my-skill)` ➔ `② 설명*` ➔ `③ 안내(지침 본문 텍스트 입력)` ➔ 우측 상단 `④ 저장` 클릭)
+![Step 1-3-4 파일 없이 화면에서 직접 텍스트(이름, 설명, 안내)를 입력해 스킬을 등록하는 화면](assets/screenshots/ge_skill_create_text.png)
+
+##### 5️⃣ [복사해서 바로 쓰는 텍스트 스킬 레시피 3선] 원하는 레시피를 골라 그대로 붙여넣어 보세요!
+
+* **[레시피 1 — ⚡ 초간단 '팩트폭행 심사관' 스킬 (`/my-skill` · 위 화면 예제 그대로 체험)]**
+  - **이름\***: `my-skill`
+  - **설명\***: `항상 객관성을 유지하는 스킬`
+  - **안내**:
+```text
+항상 객관성을 유지해서 팩트폭행을 날려라
+```
+
+* **[레시피 2 — 💼 CFO 수익성·리스크 압박 질문기 (`/lg-cfo-check`)]**
+  - **이름\***: `lg-cfo-check`
+  - **설명\***: `기획안이나 보고서의 낙관적 전망에 대해 원가·수익성·관세 리스크와 예상 압박 질문을 짚어주는 스킬`
+  - **안내**:
+```text
+사용자가 입력한 기획안이나 보고서에 대해 좋은 말은 생략하고, 1) 수익성·원가·환율 관점의 치명적 허점 3가지, 2) 임원 보고 시 나올 날카로운 압박 질문 2개와 방어 답변만 간결하게 제시하라.
+```
+
+* **[레시피 3 — 📌 임원 보고용 3줄 두괄식 압축기 (`/lg-3line-summary`)]**
+  - **이름\***: `lg-3line-summary`
+  - **설명\***: `길고 복잡한 회의록이나 뉴스 기사를 임원 보고용 두괄식 3줄 요약과 후속 액션으로 압축하는 스킬`
+  - **안내**:
+```text
+입력된 내용을 무조건 1) 핵심 결론 1줄(수치 포함), 2) 당사 영향 및 시사점 1줄, 3) 즉시 실행할 액션 아이템 1줄의 총 3줄 불릿으로만 압축해서 출력하라.
+```
+
+##### 6️⃣ 채팅창에서 방금 텍스트로 등록한 `/my-skill` 바로 호출해보기
+* **`저장`** 버튼을 누른 뒤 새 채팅창(`New chat`)으로 가서 **`/my-skill`**(또는 방금 만든 스킬 이름)을 입력하고 `[Tab]` 키로 선택한 뒤 아래 문장을 넣어 말투와 분석 관점이 즉시 바뀌는지 확인합니다:
+
+```text
+/my-skill 우리 팀이 이번에 '모든 가전 라인업 가격을 조건 없이 20% 일괄 인상하는 기획안'을 올리려는데 어떻게 생각해?
+```
 
 ---
 
