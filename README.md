@@ -45,28 +45,6 @@
 ---
 
 # 🌐 [1부 · 크롬 브라우저] Part 1. GE - Project · Knowledge & Skill (`.md` 설치)
-### 🔹 Step 1-0. ⚙️ [시작 전 1분 세팅] `개인화·메모리` 설정 & 입력창 `5대 도구(Tools)` 익히기
-
-> <strong>🎯 핵심 포인트:</strong> 본격적인 실습 전에 <strong>① 내 부서·직무 프로필과 메모리(`Memory`)를 켜두면</strong> 매번 배경 설명을 반복하지 않아도 내 직무에 맞춘 답변이 나오고, <strong>② 입력창 하단 `도구(Tools)` 버튼</strong>에서 웹 검색·Canvas·Deep Research·이미지·동영상 생성을 바로 꺼내 쓸 수 있습니다.
-
-#### 1️⃣ 좌측 하단 `⚙️ 설정 ➔ 개인화`에서 내 직무 프로필 & `메모리` 켜기
-1. 좌측 하단 톱니바퀴 아이콘(**`⚙️ 설정`**)을 클릭하고 **`개인화`** 탭을 선택합니다.
-2. **`직책 또는 직무`**(예: `HE사업본부 상품기획팀 매니저`)와 **`업종`**(`제조`)을 입력합니다.
-3. 아래로 스크롤하여 **`메모리`** 항목의 **`대화 기록`**과 **`저장된 메모리 참조`** 토글을 모두 **ON(파란색)**으로 켭니다. *(대화 중 `"앞으로 주간 보고서는 항상 두괄식 3줄 요약부터 써줘"`라고 말하면 메모리에 자동 기억됩니다!)*
-
-#### 2️⃣ 채팅 입력창 하단 `도구(Tools)` 5대 메뉴 확인하기
-* 채팅 입력창 왼쪽 하단의 **`도구(슬라이더 아이콘)`** 버튼을 누르면 언제든 아래 5가지 전용 도구를 켜서 실행할 수 있습니다:
-  - **`G Google 검색`**: 최신 글로벌 웹 뉴스·시장 지표 실시간 검색 및 인라인 출처 표기
-  - **`Canvas`**: 우측 전용 편집창에서 문서·보고용 발표 슬라이드를 만들고 **`.pptx` / `.pdf`로 즉시 다운로드**
-  - **`Deep Research`**: AI가 스스로 리서치 계획서를 세우고 수십 개 웹사이트를 교차 조사해 심층 보고서 + **오디오 브리핑** 생성
-  - **`이미지 만들기`**: 마케팅 포스터·제품 연출 시안 이미지 생성 및 대화형 부분 수정 (`Nano Banana`)
-  - **`동영상 만들기(Veo 3.1)`**: 한 줄 프롬프트로 8초 고화질 시네마틱 영상(MP4) 즉시 생성
-
-👉 **화면 확인 포인트:** (`A. 입력창 하단 [도구] 5대 메뉴` & `B. 좌측 하단 [⚙️ 설정 ➔ 개인화 프로필 · 메모리 ON]`)
-![Step 1-0 Gemini Enterprise 개인화·메모리 설정 및 입력창 5대 도구 메뉴 화면](assets/screenshots/ge_personalize_memory.png)
-
----
-
 ### 🔹 Step 1-1. 새 프로젝트(`Project`) 생성 및 팀원 공유하기
 
 > <strong>🎯 핵심 포인트:</strong> 팀 전용 <strong>`Project`</strong>를 만들고 팀원을 초대하면, 내가 올린 보고서 양식을 팀원 모두가 똑같이 쓸 수 있습니다.
@@ -212,7 +190,29 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 
 ---
 
-### 🔹 Step 1-4. 🧠 [멀티 모델 비교 실습] `Gemini 3.8 Flash` vs `Gemini 4 Argon` vs `Claude Opus 5.5` 직접 비교해보기
+### 🔹 Step 1-4. ⚙️ [개인화 & 도구 탐색] `개인화·메모리` 설정 & 입력창 `5대 도구(Tools)` 익히기
+
+> <strong>🎯 핵심 포인트:</strong> 본격적인 실습 전에 <strong>① 내 부서·직무 프로필과 메모리(`Memory`)를 켜두면</strong> 매번 배경 설명을 반복하지 않아도 내 직무에 맞춘 답변이 나오고, <strong>② 입력창 하단 `도구(Tools)` 버튼</strong>에서 웹 검색·Canvas·Deep Research·이미지·동영상 생성을 바로 꺼내 쓸 수 있습니다.
+
+#### 1️⃣ 좌측 하단 `⚙️ 설정 ➔ 개인화`에서 내 직무 프로필 & `메모리` 켜기
+1. 좌측 하단 톱니바퀴 아이콘(**`⚙️ 설정`**)을 클릭하고 **`개인화`** 탭을 선택합니다.
+2. **`직책 또는 직무`**(예: `HE사업본부 상품기획팀 매니저`)와 **`업종`**(`제조`)을 입력합니다.
+3. 아래로 스크롤하여 **`메모리`** 항목의 **`대화 기록`**과 **`저장된 메모리 참조`** 토글을 모두 **ON(파란색)**으로 켭니다. *(대화 중 `"앞으로 주간 보고서는 항상 두괄식 3줄 요약부터 써줘"`라고 말하면 메모리에 자동 기억됩니다!)*
+
+#### 2️⃣ 채팅 입력창 하단 `도구(Tools)` 5대 메뉴 확인하기
+* 채팅 입력창 왼쪽 하단의 **`도구(슬라이더 아이콘)`** 버튼을 누르면 언제든 아래 5가지 전용 도구를 켜서 실행할 수 있습니다:
+  - **`G Google 검색`**: 최신 글로벌 웹 뉴스·시장 지표 실시간 검색 및 인라인 출처 표기
+  - **`Canvas`**: 우측 전용 편집창에서 문서·보고용 발표 슬라이드를 만들고 **`.pptx` / `.pdf`로 즉시 다운로드**
+  - **`Deep Research`**: AI가 스스로 리서치 계획서를 세우고 수십 개 웹사이트를 교차 조사해 심층 보고서 + **오디오 브리핑** 생성
+  - **`이미지 만들기`**: 마케팅 포스터·제품 연출 시안 이미지 생성 및 대화형 부분 수정 (`Nano Banana`)
+  - **`동영상 만들기(Veo 3.1)`**: 한 줄 프롬프트로 8초 고화질 시네마틱 영상(MP4) 즉시 생성
+
+👉 **화면 확인 포인트:** (`A. 입력창 하단 [도구] 5대 메뉴` & `B. 좌측 하단 [⚙️ 설정 ➔ 개인화 프로필 · 메모리 ON]`)
+![Step 1-4 Gemini Enterprise 개인화·메모리 설정 및 입력창 5대 도구 메뉴 화면](assets/screenshots/ge_personalize_memory.png)
+
+---
+
+### 🔹 Step 1-5. 🧠 [멀티 모델 비교 실습] `Gemini 3.8 Flash` vs `Gemini 4 Argon` vs `Claude Opus 5.5` 직접 비교해보기
 
 > <strong>🎯 핵심 포인트:</strong> Gemini Enterprise 채팅창 우측 하단의 모델 선택기(<strong>`Auto ⌄`</strong>)를 열면 <strong>`Gemini 4 Argon`</strong>, <strong>`Gemini 3.8 Flash`</strong>, <strong>`Claude Opus 5.5`</strong> 등 여러 최신 모델을 자유롭게 골라 쓸 수 있습니다.  
 > 아래 직무별 샘플 프롬프트 중 원하는 주제를 골라 모델을 바꿔가며 실행해 보고, <strong>① 응답 속도, ② 표·목차 구조화 스타일, ③ 논리·수치 전개 방식, ④ 한국어 문장 톤앤매너</strong> 중 내 업무에 가장 잘 맞는 모델이 무엇인지 직접 비교해 보세요!
@@ -222,7 +222,7 @@ description: "LG전자 가전 및 TV 시장 뉴스를 임원 보고용 3줄 핵�
 2. 목록에서 <strong>`Gemini 4 Argon`</strong>, <strong>`Gemini 3.8 Flash`</strong>, <strong>`Claude Opus 5.5`</strong> 등을 번갈아 선택하며 아래 샘플 프롬프트를 입력해 봅니다.
 
 👉 **화면 확인 포인트:** (우측 하단 `Auto ⌄` 클릭 ➔ `Gemini 4 Argon` · `Gemini 3.8 Flash` · `Claude Opus 5.5` 전환)
-![Step 1-4-1 Gemini Enterprise 우측 하단 모델 선택기에서 Gemini 4 Argon, Gemini 3.8 Flash, Claude Opus 5.5 선택 화면](assets/screenshots/ge_model_compare_selector.png)
+![Step 1-5-1 Gemini Enterprise 우측 하단 모델 선택기에서 Gemini 4 Argon, Gemini 3.8 Flash, Claude Opus 5.5 선택 화면](assets/screenshots/ge_model_compare_selector.png)
 
 #### 2️⃣ [기본 비교 프롬프트 1~3] 한 줄로 모델 실력 차이 바로 비교하기
 
@@ -276,7 +276,7 @@ CFO가 "가전 구독은 당장 일시불 매출도 줄고 고객도 5년 총액
 
 ---
 
-### 🔹 Step 1-5. 📊 [데이터 분석 & `Canvas`] 실적 데이터 분석 후 경영진 보고 슬라이드(`.pptx` / `.pdf`) 즉시 다운로드하기
+### 🔹 Step 1-6. 📊 [데이터 분석 & `Canvas`] 실적 데이터 분석 후 경영진 보고 슬라이드(`.pptx` / `.pdf`) 즉시 다운로드하기
 
 > <strong>🎯 핵심 포인트:</strong> 엑셀이나 CSV 데이터를 채팅창에 올려 표와 차트로 분석한 뒤, <strong>`도구 ➔ Canvas`</strong>를 켜고 슬라이드 생성을 지시하면 우측 프리뷰 창에서 <strong>파워포인트(`.pptx`)와 `.pdf` 파일로 즉시 내려받을 수 있는 보고용 장표</strong>가 완성됩니다!
 
@@ -293,11 +293,11 @@ CFO가 "가전 구독은 당장 일시불 매출도 줄고 고객도 5년 총액
 2. 우측 상단의 하늘색 **`내보내기 ▾`** 버튼을 클릭하고 **`pptx로 다운로드`**(또는 **`PDF로 다운로드`**)를 선택해 내 PC로 파워포인트 원본 파일을 즉시 저장합니다!
 
 👉 **화면 확인 포인트:** (`① 하단 도구 ➔ Canvas 선택 후 슬라이드 생성` ➔ `② 우측 상단 [내보내기 ▾] ➔ pptx로 다운로드 / PDF로 다운로드`)
-![Step 1-5 데이터 분석 결과를 Canvas로 5장 슬라이드로 만들고 pptx로 다운로드하는 화면](assets/screenshots/ge_canvas_pptx_export.png)
+![Step 1-6 데이터 분석 결과를 Canvas로 5장 슬라이드로 만들고 pptx로 다운로드하는 화면](assets/screenshots/ge_canvas_pptx_export.png)
 
 ---
 
-### 🔹 Step 1-6. 🔬 [`Deep Research` & `Gemini Notebook`] 심층 시장 리서치(오디오 요약) & 다문서 마인드맵 만들기
+### 🔹 Step 1-7. 🔬 [`Deep Research` & `Gemini Notebook`] 심층 시장 리서치(오디오 요약) & 다문서 마인드맵 만들기
 
 > <strong>🎯 `Deep Research` vs `Gemini Notebook` 언제 무엇을 쓸까요?</strong>
 > * <strong>`Deep Research` (외부 웹 심층 조사)</strong>: AI가 스스로 조사 계획을 세워 수십 개 글로벌 웹 출처를 탐색해 장문 보고서와 <strong>음성 오디오 브리핑</strong>을 만들어 줄 때
@@ -314,7 +314,7 @@ CFO가 "가전 구독은 당장 일시불 매출도 줄고 고객도 5년 총액
 3. 완성된 심층 보고서 하단의 **`🎧 조사 오디오 요약`** 재생(▶) 버튼을 눌러 출근길 라디오 브리핑처럼 음성으로 듣거나 오디오 파일로 저장합니다!
 
 👉 **화면 확인 포인트:** (`① 좌측 Deep Research 진입` ➔ `② AI 조사 계획서 확인` ➔ `③ 완성된 보고서 하단 [조사 오디오 요약] 재생`)
-![Step 1-6A Deep Research 조사 계획 수립 및 심층 보고서 오디오 요약 재생 화면](assets/screenshots/ge_deep_research_audio.png)
+![Step 1-7A Deep Research 조사 계획 수립 및 심층 보고서 오디오 요약 재생 화면](assets/screenshots/ge_deep_research_audio.png)
 
 #### 📌 [실습 B — `Gemini Notebook`] 내 문서를 올려 `AI 오디오 오버뷰` & 인터랙티브 `마인드맵` 펼치기
 1. 좌측 사이드바에서 **`📓 Gemini Notebook`**을 클릭하고 **`+ 새로 만들기`**를 눌러 실습 파일(`01_GE_Workflow_lg_weekly_report_template.txt` 또는 보유 PDF 문서)을 소스로 추가합니다.
@@ -322,11 +322,11 @@ CFO가 "가전 구독은 당장 일시불 매출도 줄고 고객도 5년 총액
 3. 우측 화면처럼 문서 전체 구조가 **인터랙티브 마인드맵**으로 펼쳐지며, 각 노드를 클릭해 하위 목차를 확장하거나 해당 주제의 본문 근거를 즉시 질문할 수 있습니다!
 
 👉 **화면 확인 포인트:** (`① 좌측 Gemini Notebook 진입` ➔ `② [AI 오디오 오버뷰] & [마인드맵] 원클릭 변환` ➔ `③ 인터랙티브 마인드맵 노드 확장`)
-![Step 1-6B Gemini Notebook 다문서 자동 요약 및 인터랙티브 마인드맵 화면](assets/screenshots/ge_notebook_mindmap.png)
+![Step 1-7B Gemini Notebook 다문서 자동 요약 및 인터랙티브 마인드맵 화면](assets/screenshots/ge_notebook_mindmap.png)
 
 ---
 
-### 🔹 Step 1-7. 🎨 [멀티모달 스튜디오] `Nano Banana` 캠페인 포스터 이미지 & `Veo 3.1` 8초 홍보 영상 생성하기
+### 🔹 Step 1-8. 🎨 [멀티모달 스튜디오] `Nano Banana` 캠페인 포스터 이미지 & `Veo 3.1` 8초 홍보 영상 생성하기
 
 > <strong>🎯 핵심 포인트:</strong> 외부 디자인 툴 없이도 채팅창 <strong>`도구`</strong>에서 <strong>`이미지 만들기`(`Nano Banana`)</strong>와 <strong>`동영상 만들기`(`Veo 3.1`)</strong>를 선택해 기획안·마케팅 시안용 고화질 비주얼을 즉시 제작할 수 있습니다.
 
@@ -347,7 +347,7 @@ CFO가 "가전 구독은 당장 일시불 매출도 줄고 고객도 5년 총액
 ```
 
 👉 **화면 확인 포인트:** (`① [도구 ➔ 이미지 만들기] 생성 및 대화형 수정` & `② [도구 ➔ 동영상 만들기(Veo 3.1)] 8초 MP4 영상 생성`)
-![Step 1-7 Nano Banana 이미지 생성 및 Veo 3.1 8초 시네마틱 동영상 생성 화면](assets/screenshots/ge_media_image_veo.png)
+![Step 1-8 Nano Banana 이미지 생성 및 Veo 3.1 8초 시네마틱 동영상 생성 화면](assets/screenshots/ge_media_image_veo.png)
 
 ---
 
