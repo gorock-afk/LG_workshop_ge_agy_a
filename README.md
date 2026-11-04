@@ -13,7 +13,7 @@
 
 | 파트 (시간) | 실습 환경 | 내가 직접 만드는 누적 산출물 |
 | :--- | :---: | :--- |
-| <strong>Part 1 (30분)</strong> | 🌐 크롬 GE Web | <strong>개인화·메모리 + `Knowledge` 보고서 + `Skills`(`.md`·텍스트 직접 등록) + 멀티 모델 비교 + `Canvas` PPTX 다운로드 + `Deep Research`·`Gemini Notebook`·`Veo 3.1`</strong> |
+| <strong>Part 1 (30분)</strong> | 🌐 크롬 GE Web | <strong>`Knowledge` 보고서 + `Skills`(`.md`·텍스트 직접 등록) + 개인화·메모리 + 멀티 모델 비교 + `Nano Banana` 이미지·`Veo 3.1` 영상 생성</strong> |
 | <strong>Part 2 (30분)</strong> | 🌐 크롬 GE Web | <strong>HITL 승인(`Approval`) Gmail 자동화 `Workflow` + 노코드 `채팅 에이전트`(`@멘션`·하위 에이전트) + 자연어 정기 스케줄(`Schedule`) 자동화</strong> |
 | <strong>Part 3 (30분)</strong> | 💻 Antigravity 2.0 | <strong>LG 브랜드 컬러(`#A50034` 레드 + 화이트) 고정 웹 슬라이드(`index.html`)</strong> |
 | <strong>Part 4 (30분)</strong> | 💻 Antigravity 2.0 | <strong>좌측 사이드 탭 업무 포털 (`탭 1: 트렌드 슬라이드` + `탭 2: 실시간 시세·뉴스`)</strong> |
@@ -276,57 +276,7 @@ CFO가 "가전 구독은 당장 일시불 매출도 줄고 고객도 5년 총액
 
 ---
 
-### 🔹 Step 1-6. 📊 [데이터 분석 & `Canvas`] 실적 데이터 분석 후 경영진 보고 슬라이드(`.pptx` / `.pdf`) 즉시 다운로드하기
-
-> <strong>🎯 핵심 포인트:</strong> 엑셀이나 CSV 데이터를 채팅창에 올려 표와 차트로 분석한 뒤, <strong>`도구 ➔ Canvas`</strong>를 켜고 슬라이드 생성을 지시하면 우측 프리뷰 창에서 <strong>파워포인트(`.pptx`)와 `.pdf` 파일로 즉시 내려받을 수 있는 보고용 장표</strong>가 완성됩니다!
-
-#### 1️⃣ 데이터 파일 첨부(`+`) & `도구 ➔ Canvas`로 5장 보고 슬라이드 생성하기
-1. 채팅 입력창 좌측 하단 **`+` 버튼**을 눌러 실습 폴더의 **[`04_AG_Analytics_lg_appliance_data.csv`](./files/04_AG_Analytics_lg_appliance_data.csv)** 파일(또는 보유한 엑셀 파일)을 첨부합니다.
-2. 입력창 하단 **`도구`** 버튼을 눌러 **`Canvas`** 칩을 활성화한 뒤, 아래 프롬프트를 입력해 실행합니다:
-
-```text
-첨부한 5대 가전 실적 데이터를 분석해서 경영진 보고용 슬라이드 5장(표지 · 핵심 실적 요약 · 제품군별 매출 및 구독 비중 추이 · 리스크와 기회 · 다음 분기 과제)을 만들어줘.
-```
-
-#### 2️⃣ 우측 `Canvas` 프리뷰에서 슬라이드 확인 후 `내보내기 ➔ pptx로 다운로드` 클릭!
-1. 우측에 열리는 **Canvas 슬라이드 뷰어**에서 생성된 5장의 장표를 클릭해 넘겨보고, 수정할 부분이 있으면 채팅창에 *"2페이지 핵심 숫자를 더 크게 강조해줘"*처럼 말로 고칩니다.
-2. 우측 상단의 하늘색 **`내보내기 ▾`** 버튼을 클릭하고 **`pptx로 다운로드`**(또는 **`PDF로 다운로드`**)를 선택해 내 PC로 파워포인트 원본 파일을 즉시 저장합니다!
-
-👉 **화면 확인 포인트:** (`① 하단 도구 ➔ Canvas 선택 후 슬라이드 생성` ➔ `② 우측 상단 [내보내기 ▾] ➔ pptx로 다운로드 / PDF로 다운로드`)
-![Step 1-6 데이터 분석 결과를 Canvas로 5장 슬라이드로 만들고 pptx로 다운로드하는 화면](assets/screenshots/ge_canvas_pptx_export.png)
-
----
-
-### 🔹 Step 1-7. 🔬 [`Deep Research` & `Gemini Notebook`] 심층 시장 리서치(오디오 요약) & 다문서 마인드맵 만들기
-
-> <strong>🎯 `Deep Research` vs `Gemini Notebook` 언제 무엇을 쓸까요?</strong>
-> * <strong>`Deep Research` (외부 웹 심층 조사)</strong>: AI가 스스로 조사 계획을 세워 수십 개 글로벌 웹 출처를 탐색해 장문 보고서와 <strong>음성 오디오 브리핑</strong>을 만들어 줄 때
-> * <strong>`Gemini Notebook` (내 문서 집중 분석)</strong>: 내가 올린 여러 개의 PDF·사업소개서·규정집 안에서만 <strong>100% 근거 인용 답변, AI 오디오 오버뷰, 인터랙티브 마인드맵</strong>을 뽑아낼 때
-
-#### 📌 [실습 A — `Deep Research`] 글로벌 가전 규제·보조금 심층 조사 & 오디오 요약 듣기
-1. 좌측 사이드바에서 **`🫧 Deep Research`**를 클릭(또는 채팅창 `도구 ➔ Deep Research` 선택)하고 아래 주제를 입력합니다:
-
-```text
-북미·유럽 친환경 가전 에너지 효율 규제와 히트펌프(HVAC) 보조금 정책이 한국 가전 기업에 미치는 영향을 2026년 최신 시행 일정과 당사 대응 과제 중심으로 심층 조사해줘.
-```
-
-2. 에이전트가 먼저 제시하는 **`조사 계획서 (Research Plan)`**를 확인한 뒤 연구를 시작합니다.
-3. 완성된 심층 보고서 하단의 **`🎧 조사 오디오 요약`** 재생(▶) 버튼을 눌러 출근길 라디오 브리핑처럼 음성으로 듣거나 오디오 파일로 저장합니다!
-
-👉 **화면 확인 포인트:** (`① 좌측 Deep Research 진입` ➔ `② AI 조사 계획서 확인` ➔ `③ 완성된 보고서 하단 [조사 오디오 요약] 재생`)
-![Step 1-7A Deep Research 조사 계획 수립 및 심층 보고서 오디오 요약 재생 화면](assets/screenshots/ge_deep_research_audio.png)
-
-#### 📌 [실습 B — `Gemini Notebook`] 내 문서를 올려 `AI 오디오 오버뷰` & 인터랙티브 `마인드맵` 펼치기
-1. 좌측 사이드바에서 **`📓 Gemini Notebook`**을 클릭하고 **`+ 새로 만들기`**를 눌러 실습 파일(`01_GE_Workflow_lg_weekly_report_template.txt` 또는 보유 PDF 문서)을 소스로 추가합니다.
-2. 문서 핵심 요약 아래의 **`🎙️ AI 오디오 오버뷰`** 버튼이나 **`🌿 마인드맵`** 버튼을 클릭합니다.
-3. 우측 화면처럼 문서 전체 구조가 **인터랙티브 마인드맵**으로 펼쳐지며, 각 노드를 클릭해 하위 목차를 확장하거나 해당 주제의 본문 근거를 즉시 질문할 수 있습니다!
-
-👉 **화면 확인 포인트:** (`① 좌측 Gemini Notebook 진입` ➔ `② [AI 오디오 오버뷰] & [마인드맵] 원클릭 변환` ➔ `③ 인터랙티브 마인드맵 노드 확장`)
-![Step 1-7B Gemini Notebook 다문서 자동 요약 및 인터랙티브 마인드맵 화면](assets/screenshots/ge_notebook_mindmap.png)
-
----
-
-### 🔹 Step 1-8. 🎨 [멀티모달 스튜디오] `Nano Banana` 캠페인 포스터 이미지 & `Veo 3.1` 8초 홍보 영상 생성하기
+### 🔹 Step 1-6. 🎨 [멀티모달 스튜디오] `Nano Banana` 캠페인 포스터 이미지 & `Veo 3.1` 8초 홍보 영상 생성하기
 
 > <strong>🎯 핵심 포인트:</strong> 외부 디자인 툴 없이도 채팅창 <strong>`도구`</strong>에서 <strong>`이미지 만들기`(`Nano Banana`)</strong>와 <strong>`동영상 만들기`(`Veo 3.1`)</strong>를 선택해 기획안·마케팅 시안용 고화질 비주얼을 즉시 제작할 수 있습니다.
 
@@ -347,7 +297,7 @@ CFO가 "가전 구독은 당장 일시불 매출도 줄고 고객도 5년 총액
 ```
 
 👉 **화면 확인 포인트:** (`① [도구 ➔ 이미지 만들기] 생성 및 대화형 수정` & `② [도구 ➔ 동영상 만들기(Veo 3.1)] 8초 MP4 영상 생성`)
-![Step 1-8 Nano Banana 이미지 생성 및 Veo 3.1 8초 시네마틱 동영상 생성 화면](assets/screenshots/ge_media_image_veo.png)
+![Step 1-6 Nano Banana 이미지 생성 및 Veo 3.1 8초 시네마틱 동영상 생성 화면](assets/screenshots/ge_media_image_veo.png)
 
 ---
 
